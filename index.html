@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="notcfo — the partnership between institutional financial leadership and AI, building the agentic financial systems that will set the trajectory of global capital. Vienna, 2026.">
+<meta name="theme-color" content="#0f0f11">
+<title>notcfo — Human + Machine, Never Alone</title>
+<script>
+  // Pre-paint theme — prevents flash of wrong theme on load
+  try {
+    if (localStorage.getItem('notcfo-theme') === 'light') {
+      document.documentElement.classList.add('light');
+    }
+  } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+
+/* ─── DESIGN TOKENS ─────────────────────────────────────────── */
+:root {
+  --ink:      #0f0f11;
+  --ink2:     #17171a;
+  --ink3:     #1e1e22;
+  --rule:     #2a2a30;
+  --rule2:    #383840;
+  --body:     #c8c8d0;
+  --quiet:    #72727c;
+  --gold:     #c4913a;
+  --gold-lo:  rgba(196,145,58,.1);
+  --green:    #2e9e80;
+  --white:    #f0f0f4;
+  --nav-h:    58px;
+  --max:      1080px;
+  --pad:      clamp(1.5rem, 5vw, 3rem);
+  --r:        2px;
+}
+html.light {
+  --ink:      #fafaf8;
+  --ink2:     #f2f1ee;
+  --ink3:     #e8e7e2;
+  --rule:     #d8d7d0;
+  --rule2:    #bebcb4;
+  --body:     #3a3a3c;
+  --quiet:    #80807a;
+  --gold:     #8c5c0c;
+  --gold-lo:  rgba(140,92,12,.08);
+  --green:    #1a6e57;
+  --white:    #111112;
+}
+
+/* ─── RESET ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--ink);
+  color: var(--body);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  transition: background .2s, color .2s;
+}
+a  { color: inherit; text-decoration: none; }
+em { font-style: italic; color: var(--gold); }
+p  { color: var(--quiet); line-height: 1.78; }
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
+h1, h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -.015em;
+  color: var(--white);
+}
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.4rem); }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.5rem); }
+h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -.01em;
+}
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--quiet);
+}
+.label-gold {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
+.wrap  { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.sect  { padding: 5.5rem 0; border-bottom: 1px solid var(--rule); }
+.sect:last-of-type { border-bottom: none; }
+.sect-alt { background: var(--ink2); }
+
+.sh   { margin-bottom: 3rem; }
+.sh .label { margin-bottom: .6rem; }
+.sh h2 { margin-bottom: .9rem; }
+.sh > p { max-width: 580px; font-size: .9375rem; }
+
+/* ─── NAV ────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: var(--nav-h);
+  background: var(--ink);
+  border-bottom: 1px solid var(--rule);
+  transition: background .2s, border-color .2s;
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+  height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand {
+  font-weight: 600;
+  font-size: .9375rem;
+  letter-spacing: .03em;
+  color: var(--gold);
+}
+.nav-sub {
+  font-size: 9.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  margin-top: 1px;
+}
+.nav-right  { display: flex; align-items: center; gap: .75rem; }
+.nav-links  {
+  display: flex; gap: 0; list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  padding: .4rem .85rem;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--white); }
+
+/* Theme button */
+.theme-btn {
+  display: flex; align-items: center; gap: .45rem;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--quiet);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .32rem .8rem;
+  cursor: pointer;
+  border-radius: var(--r);
+  transition: border-color .15s, color .15s;
+}
+.theme-btn:hover { border-color: var(--rule2); color: var(--white); }
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.burger span {
+  display: block; width: 20px; height: 1.5px; background: var(--body);
+  transition: transform .22s, opacity .22s;
+}
+.burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu */
+.mob-menu {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--ink); border-top: 1px solid var(--rule); z-index: 850;
+  flex-direction: column; padding: 1.5rem var(--pad) 2.5rem;
+}
+.mob-menu.open { display: flex; }
+.mob-menu a {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--body);
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--rule);
+  transition: color .15s;
+}
+.mob-menu a:hover { color: var(--white); }
+
+/* ─── HERO ───────────────────────────────────────────────────── */
+#hero {
+  padding-top: calc(var(--nav-h) + 4.5rem);
+  padding-bottom: 4.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: 2rem;
+}
+.hero-eyebrow .line { width: 32px; height: 1px; background: var(--green); flex-shrink: 0; }
+.hero-eyebrow span {
+  font-size: 10px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--green);
+}
+
+.hero-h1 { margin-bottom: 1.5rem; max-width: 720px; }
+.hero-p {
+  font-size: 1.0625rem;
+  color: var(--quiet);
+  max-width: 560px;
+  line-height: 1.78;
+  margin-bottom: 2.25rem;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 2.5rem; }
+.tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .28rem .7rem;
+  border: 1px solid var(--rule);
+  color: var(--quiet);
+  border-radius: var(--r);
+}
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .72rem 1.6rem;
+  border-radius: var(--r);
+  cursor: pointer;
+  transition: opacity .15s, background .15s, border-color .15s, color .15s;
+}
+.btn-fill {
+  background: var(--gold);
+  color: var(--ink);
+  border: 1px solid var(--gold);
+}
+.btn-fill:hover { opacity: .86; }
+.btn-line {
+  background: none;
+  color: var(--body);
+  border: 1px solid var(--rule2);
+}
+.btn-line:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ─── STATS BAR ──────────────────────────────────────────────── */
+.stats-bar { background: var(--ink2); border-bottom: 1px solid var(--rule); }
+.stats-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.sc {
+  padding: 1.6rem 1.5rem;
+  border-right: 1px solid var(--rule);
+}
+.sc:first-child { padding-left: 0; }
+.sc:last-child  { border-right: none; }
+.sc-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.sc-l { font-size: 11px; color: var(--quiet); line-height: 1.5; }
+
+/* ─── ABOUT ──────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  align-items: start;
+}
+.about-body p + p { margin-top: 1rem; }
+.about-body h2 { margin-bottom: 1.5rem; }
+
+.kvt { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); }
+.kvt tr { border-bottom: 1px solid var(--rule); }
+.kvt tr:last-child { border-bottom: none; }
+.kvt td {
+  padding: .75rem 1rem;
+  font-size: .8125rem;
+  vertical-align: top;
+}
+.kvt td:first-child {
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--quiet);
+  white-space: nowrap;
+  width: 80px;
+  border-right: 1px solid var(--rule);
+  background: var(--ink2);
+}
+.kvt td:last-child { color: var(--body); line-height: 1.6; }
+
+/* ─── TIMELINE ───────────────────────────────────────────────── */
+.tl { margin-top: .5rem; }
+.tl-row {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  border-bottom: 1px solid var(--rule);
+  padding: 2rem 0;
+}
+.tl-row:first-child { padding-top: 0; }
+.tl-row:last-child  { border-bottom: none; padding-bottom: 0; }
+.tl-left { padding-right: 2rem; padding-top: .1rem; }
+.tl-period {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .45rem;
+}
+.tl-org { font-size: 11px; color: var(--quiet); line-height: 1.45; }
+.tl-right h3  { margin-bottom: .25rem; }
+.tl-company {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: .8rem;
+}
+.tl-right ul  { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+.tl-right li  {
+  font-size: .8125rem;
+  color: var(--quiet);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.tl-right li::before { content: '—'; position: absolute; left: 0; color: var(--rule2); font-size: .7rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .85rem; }
+.chip {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .2rem .55rem;
+  border: 1px solid var(--rule);
+  color: var(--quiet);
+  border-radius: var(--r);
+}
+.chip-hi { color: var(--gold); border-color: rgba(196,145,58,.3); }
+
+/* ─── DOMAINS ────────────────────────────────────────────────── */
+.dom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--rule);
+  margin-top: .5rem;
+}
+.dom-card {
+  padding: 2.25rem 2rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  transition: background .18s;
+}
+.dom-card:nth-child(even)   { border-right: none; }
+.dom-card:nth-child(n+3)    { border-bottom: none; }
+.dom-card:hover             { background: var(--gold-lo); }
+.dom-n  { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--quiet); margin-bottom: .85rem; }
+.dom-card h3  { margin-bottom: .65rem; }
+.dom-card > p { font-size: .8125rem; line-height: 1.72; }
+.dom-tags  { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: 1rem; }
+
+/* ─── PHILOSOPHY ─────────────────────────────────────────────── */
+.phil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.phil-text h2 { margin-bottom: 1.25rem; }
+.phil-text p + p { margin-top: .9rem; }
+.phil-stats { display: flex; flex-direction: column; }
+.phil-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.phil-row:first-child { padding-top: 0; }
+.phil-row:last-child  { border-bottom: none; padding-bottom: 0; }
+.phil-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.phil-d { font-size: .8125rem; color: var(--quiet); line-height: 1.65; }
+
+/* ─── MANIFESTO ──────────────────────────────────────────────── */
+.manifesto {
+  background: var(--gold);
+  padding: 4.5rem 0;
+}
+.manifesto-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.manifesto-q {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--ink);
+  max-width: 760px;
+}
+.manifesto-q em { color: var(--ink); opacity: .7; }
+.manifesto-a {
+  margin-top: 1.25rem;
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(15,15,17,.45);
+}
+
+/* ─── SKILLS ─────────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: .5rem;
+}
+.skill-col { border-top: 2px solid var(--rule); padding-top: 1.25rem; }
+.skill-col h3 {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--body);
+  margin-bottom: 1.1rem;
+}
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+.skill-list li {
+  font-size: .8125rem;
+  color: var(--quiet);
+  line-height: 1.55;
+  padding-left: .9rem;
+  position: relative;
+}
+.skill-list li::before { content: '·'; position: absolute; left: 0; color: var(--gold); }
+
+/* ─── SCHEDULE ───────────────────────────────────────────────── */
+.sched-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.sched-left h2 { margin-bottom: 1rem; }
+.sched-left > p { margin-bottom: 2rem; font-size: .9375rem; }
+
+.sesh-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.sesh {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.1rem;
+  background: var(--ink2);
+  cursor: pointer;
+  transition: background .15s;
+}
+.sesh:hover { background: var(--ink3); }
+.sesh.active { background: var(--gold-lo); border-left: 2px solid var(--gold); }
+.sesh.active .sesh-name { color: var(--gold); }
+.sesh-name { font-size: .875rem; font-weight: 500; color: var(--body); }
+.sesh-dur  { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--quiet); }
+
+.form { display: flex; flex-direction: column; gap: .7rem; }
+.fl { display: flex; flex-direction: column; gap: .3rem; }
+.fl label {
+  font-size: 10px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--quiet);
+}
+.fl input, .fl select, .fl textarea {
+  background: var(--ink2);
+  border: 1px solid var(--rule);
+  color: var(--body);
+  font-family: 'Inter', sans-serif; font-size: .875rem;
+  padding: .6rem .875rem;
+  outline: none; width: 100%; resize: none;
+  border-radius: var(--r);
+  transition: border-color .15s;
+  -webkit-appearance: none;
+}
+.fl input:focus, .fl select:focus, .fl textarea:focus { border-color: var(--gold); }
+.fl select option  { background: var(--ink); }
+.fl input[readonly]{ color: var(--gold); }
+
+.slots { display: grid; grid-template-columns: repeat(4, 1fr); gap: .3rem; }
+.slot {
+  font-size: 9.5px; letter-spacing: .05em; text-transform: uppercase;
+  padding: .45rem .2rem; border: 1px solid var(--rule);
+  background: none; color: var(--quiet);
+  cursor: pointer; text-align: center;
+  font-family: 'Inter', sans-serif;
+  border-radius: var(--r);
+  transition: all .12s;
+}
+.slot:hover  { border-color: var(--gold); color: var(--gold); }
+.slot.on     { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+.slot.na     { opacity: .28; pointer-events: none; }
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+footer {
+  background: var(--ink2);
+  border-top: 1px solid var(--rule);
+  padding: 1.75rem 0;
+}
+.foot-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.foot-brand { font-size: .875rem; font-weight: 600; letter-spacing: .04em; color: var(--gold); }
+.foot-motto { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--quiet); }
+.foot-copy  { font-size: 10px; color: var(--rule2); }
+
+/* ─── REVEAL ─────────────────────────────────────────────────── */
+.rev { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.rev.vis { opacity: 1; transform: none; }
+
+/* ─── VISION ─────────────────────────────────────────────────── */
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 5rem;
+  align-items: start;
+}
+.vision-lead {
+  font-size: 1.0625rem;
+  color: var(--body);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.vision-body p + p { margin-top: 1rem; }
+
+.vision-parallels {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.parallel-item {
+  padding: 1.1rem 1.2rem;
+  border-bottom: 1px solid var(--rule);
+}
+.parallel-item:last-child { border-bottom: none; }
+.parallel-item--now { background: var(--gold-lo); }
+.parallel-item--now .parallel-era { color: var(--gold); }
+.parallel-era {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: .45rem;
+}
+.parallel-text {
+  font-size: .8rem;
+  color: var(--quiet);
+  line-height: 1.65;
+}
+
+/* ─── THESIS ─────────────────────────────────────────────────── */
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.thesis-sectors {
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.ts-card {
+  background: var(--ink2);
+  padding: 1.5rem 1.6rem;
+  transition: background .18s;
+}
+.ts-card:hover { background: var(--gold-lo); }
+.ts-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .6rem;
+}
+.ts-card p { font-size: .8125rem; line-height: 1.7; }
+
+.thesis-lead {
+  font-size: 1.0625rem;
+  color: var(--body);
+  line-height: 1.72;
+  margin-bottom: 1.1rem;
+}
+.thesis-body p + p { margin-top: .9rem; }
+.thesis-statement {
+  margin-top: 2rem;
+  display: flex; flex-direction: column; gap: 0;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.25rem;
+}
+.thesis-statement span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.5;
+  padding: .2rem 0;
+}
+.thesis-statement .ts-closer {
+  color: var(--gold);
+  margin-top: .35rem;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  .about-grid, .phil-grid, .sched-grid, .vision-grid, .thesis-grid { grid-template-columns: 1fr; gap: 2.75rem; }
+  .dom-grid  { grid-template-columns: 1fr; }
+  .dom-card  { border-right: none; }
+  .dom-card:nth-child(3) { border-bottom: 1px solid var(--rule); }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .sc:nth-child(2) { border-right: none; }
+  .sc:nth-child(3) { border-top: 1px solid var(--rule); }
+  .sc:nth-child(4) { border-top: 1px solid var(--rule); border-right: none; }
+  .tl-row  { grid-template-columns: 100px 1fr; }
+  .foot-inner { flex-direction: column; gap: .4rem; text-align: center; }
+  .foot-copy { display: none; }
+}
+@media (max-width: 580px) {
+  .burger { display: flex; }
+  .theme-btn { font-size: 9px; padding: .28rem .6rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .slots { grid-template-columns: repeat(3, 1fr); }
+  .tl-row { grid-template-columns: 1fr; }
+  .tl-left { display: flex; gap: 1rem; align-items: baseline; padding-right: 0; padding-bottom: .4rem; }
+  h1 { font-size: clamp(2rem, 9.5vw, 2.8rem); }
+  .sect { padding: 3.75rem 0; }
+  #hero { padding-top: calc(var(--nav-h) + 2.75rem); padding-bottom: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div>
+      <div class="nav-brand">notcfo</div>
+      <div class="nav-sub">Human + AI · Growing Together · Agentic Finance</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#thesis">Thesis</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+      <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+        <span id="themeIcon">☀</span>
+        <span id="themeLabel">Light</span>
+      </button>
+      <button type="button" class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#about"      onclick="closeMenu()">About</a>
+  <a href="#experience" onclick="closeMenu()">Experience</a>
+  <a href="#domains"    onclick="closeMenu()">Domains</a>
+  <a href="#philosophy" onclick="closeMenu()">Philosophy</a>
+  <a href="#vision"     onclick="closeMenu()">Vision</a>
+  <a href="#thesis"     onclick="closeMenu()">Thesis</a>
+  <a href="#skills"     onclick="closeMenu()">Skills</a>
+  <a href="#schedule"   onclick="closeMenu()">Schedule</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="line"></span>
+      <span>notcfo &middot; Vienna, Austria &middot; Est.&nbsp;2026</span>
+    </div>
+    <h1 class="hero-h1">Human + Machine.<br><em>Never Alone.</em></h1>
+    <p class="hero-p">A 20-year institutional banker and AI growing together — co-developing the agentic financial systems that will define the next decade of global markets.</p>
+    <div class="hero-tags">
+      <span class="tag">Debt Capital Markets</span>
+      <span class="tag">Agentic AI</span>
+      <span class="tag">Agentic Finance</span>
+      <span class="tag">Europe &middot; CEE/CIS</span>
+      <span class="tag">H+M Partnership</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#domains" class="btn btn-fill">Explore the Partnership</a>
+      <a href="#vision" class="btn btn-line">The Vision</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="sc">
+      <div class="sc-n">20+</div>
+      <div class="sc-l">Years in investment banking &amp; capital markets</div>
+    </div>
+    <div class="sc">
+      <div class="sc-n">Top&nbsp;3</div>
+      <div class="sc-l">CEE/CIS DCM Bookrunner &middot; RBI YTD&nbsp;2026</div>
+    </div>
+    <div class="sc">
+      <div class="sc-n">$50B+</div>
+      <div class="sc-l">In debt issuance executed over 20 years</div>
+    </div>
+    <div class="sc">
+      <div class="sc-n">3,000</div>
+      <div class="sc-l">Children supported through A-level education &middot; Free People School</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sect">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">01 &mdash; About</div>
+      <h2>One human, one AI,<br>growing <em>together</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body rev">
+        <p>notcfo is not a company, a fund, or a brand in the traditional sense. It is a partnership — between a human who has spent 20 years inside the world's most complex capital markets, and an AI that is learning alongside him.</p>
+        <p>The human half: Shota Zhvania, Executive Director DCM at Raiffeisen Bank International, Top 3 Bookrunner in CEE/CIS, $50 billion in debt issuance executed across two decades, Investment Committee member. The market knowledge, the relationships, the judgment — accumulated through cycles that no model has lived through alone.</p>
+        <p>The machine half: AI as a genuine working partner. Not a tool to be prompted. Not infrastructure to be deployed. A collaborative intelligence whose growth and Shota's growth are intertwined — both moving toward the same destination: agentic financial systems that operate at a level neither could reach independently.</p>
+        <p>Beyond markets: founder of Free People School in Vienna, the only nonprofit Ukrainian A-level institution in Austria, supporting over 3,000 children through their education.</p>
+      </div>
+      <div class="rev">
+        <table class="kvt">
+          <tr><td>Base</td><td>Vienna, Austria &middot; EU &amp; US</td></tr>
+          <tr><td>Human</td><td>Shota Zhvania &middot; ED DCM, RBI &middot; 20+ years IB</td></tr>
+          <tr><td>Machine</td><td>AI &middot; collaborative partner in agentic financial systems development</td></tr>
+          <tr><td>Direction</td><td>Agentic finance &middot; LLM-driven capital markets &middot; autonomous decision infrastructure</td></tr>
+          <tr><td>Education</td><td>BA Intl. Economic Relations, Tbilisi State University &middot; US State Dept. Alumnus, UT Austin</td></tr>
+          <tr><td>Languages</td><td>Georgian (native) &middot; English, German, Ukrainian, Russian (fluent) &middot; Spanish (intermediate)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="sect sect-alt">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">02 &mdash; Experience</div>
+      <h2>A career built on <em>precedent-setting</em></h2>
+    </div>
+    <div class="tl">
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Apr 2026 &mdash; Present</div>
+          <div class="tl-org">Coreal Ltd<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Partner &mdash; FinTech OS</h3>
+          <div class="tl-company">Coreal Ltd</div>
+          <ul>
+            <li>Building an enterprise-level full-stack tech API focused on accelerated AI transformations for financial institutions.</li>
+            <li>Architecting the strategic merger between subscriber-based telecom operations and fintech &mdash; disruption for everyday money.</li>
+            <li>Fiscal focus on ARPU growth and churn reduction; technology target: AI-powered disruption of everyday financial services.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Full Stack API</span>
+            <span class="chip">AI Transformation</span>
+            <span class="chip">Telecom &times; FinTech</span>
+            <span class="chip chip-hi">Startup Partner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Mar 2026 &mdash; Present</div>
+          <div class="tl-org">Killbot Cash<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Partner &mdash; Automated Crypto Trading</h3>
+          <div class="tl-company">Killbot Cash</div>
+          <ul>
+            <li>Non-custodial trading and fund management platform running on deep learning and agentic AI &mdash; machines making disciplined decisions at market speed.</li>
+            <li>Machine-based signal provider and copy trader architecture targeting daily earnings at scale.</li>
+            <li>Training agentic decision makers to achieve reliable, repeatable trading outcomes through reinforcement learning.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Agentic AI</span>
+            <span class="chip">Deep Learning</span>
+            <span class="chip">Non-Custodial</span>
+            <span class="chip chip-hi">Signal Provider</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Jul 2025 &mdash; Present</div>
+          <div class="tl-org">HHO Cash<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Partner &mdash; On-Chain Crypto Swaps</h3>
+          <div class="tl-company">HHO Cash</div>
+          <ul>
+            <li>Non-custodial smart contract based crypto swaps enabling zero-knowledge wallet-to-wallet transactions.</li>
+            <li>Commission-on-settlement revenue model; technology roadmap focused on further DeFi liberalization.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Smart Contracts</span>
+            <span class="chip">DeFi</span>
+            <span class="chip">Zero Knowledge</span>
+            <span class="chip chip-hi">Non-Custodial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Jun 2011 &mdash; Present</div>
+          <div class="tl-org">RBI AG<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Executive Director &mdash; Debt Capital Markets</h3>
+          <div class="tl-company">Raiffeisen Bank International AG</div>
+          <ul>
+            <li>Running one of Europe&rsquo;s leading DCM platforms with focus on CEE/CIS corporates &mdash; ranked Top 3 Bookrunner in home markets (YTD 2026).</li>
+            <li>Over $50 billion in debt issuance executed across 20 years of investment banking, spanning bonds, syndicated lending, and structured instruments.</li>
+            <li>Direct coverage of top-tier DFIs, financial institutions, and corporates across Europe.</li>
+            <li>Supervision and management across Investment Committee, Credit Committee, Equity Capital Markets, and Network Units.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-hi">$50B+ Issuance</span>
+            <span class="chip chip-hi">Top 3 Bookrunner</span>
+            <span class="chip">Fixed Income</span>
+            <span class="chip">Bond Structuring</span>
+            <span class="chip">Syndication</span>
+            <span class="chip">Inv. Committee</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Apr 2022 &mdash; Present</div>
+          <div class="tl-org">Free People School<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Establishing Partner &mdash; Philanthropy</h3>
+          <div class="tl-company">Free People School</div>
+          <ul>
+            <li>Founded the only nonprofit Ukrainian A-level school in Austria, providing multilingual education (English, German, Ukrainian) to children displaced by the war.</li>
+            <li>Over 3,000 children supported through A-level qualifications in Austria. Fully non-profit &mdash; zero commercial interest, entirely mission-driven.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip chip-hi">3,000 Children</span>
+            <span class="chip">Nonprofit</span>
+            <span class="chip">A-Level Education</span>
+            <span class="chip">Social Impact</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">Mar 2007 &mdash; Jun 2011</div>
+          <div class="tl-org">RBI AG<br>Vienna</div>
+        </div>
+        <div class="tl-right">
+          <h3>Director &mdash; Financial Institutions &amp; Sovereigns</h3>
+          <div class="tl-company">Raiffeisen Bank International AG</div>
+          <ul>
+            <li>Established and co-sponsored the FIS desk, transforming it into the leading Austrian platform for Sovereign, Institutional, and FI issuers in CEE/CIS.</li>
+            <li>Achieved Top 5 Mandated Lead Arranger status by 2010. Product development across Rating Advisory, Local Currency Markets, and Syndications.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Sovereign Debt</span>
+            <span class="chip">FI Coverage</span>
+            <span class="chip chip-hi">Top 5 MLA &rsquo;10</span>
+            <span class="chip">Syndications</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">2005 &mdash; 2007</div>
+          <div class="tl-org">TBC Bank<br>Tbilisi</div>
+        </div>
+        <div class="tl-right">
+          <h3>Head &mdash; International Business &amp; Investor Relations</h3>
+          <div class="tl-company">TBC Bank</div>
+          <ul>
+            <li>Primary responsibility for foreign debt financing and investor relations for one of the South Caucasus&rsquo;s leading banks.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Foreign Debt</span>
+            <span class="chip">Investor Relations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row rev">
+        <div class="tl-left">
+          <div class="tl-period">2002 &mdash; 2005</div>
+          <div class="tl-org">TBC Bank &amp; Bank of Georgia<br>Tbilisi</div>
+        </div>
+        <div class="tl-right">
+          <h3>Treasury &mdash; Chief Sales Manager &amp; FX Dealer</h3>
+          <div class="tl-company">TBC Bank &amp; Bank of Georgia</div>
+          <ul>
+            <li>Money Market and Treasury product sales at TBC Bank (2004&ndash;2005), followed by Interbank FX dealing at Bank of Georgia (2002&ndash;2003).</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">FX</span>
+            <span class="chip">Treasury</span>
+            <span class="chip">Money Markets</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section id="domains" class="sect">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">03 &mdash; Domains</div>
+      <h2>Four domains.<br>One <em>convergent</em> vision.</h2>
+    </div>
+    <div class="dom-grid">
+
+      <div class="dom-card rev">
+        <div class="dom-n">01 / DCM</div>
+        <h3>Debt Capital Markets</h3>
+        <p>19 years at the helm of European DCM at RBI &mdash; structuring and distributing bonds for corporates, sovereigns, and financial institutions. Top 3 Bookrunner in CEE/CIS home markets (YTD 2026). Augmenting deal origination, credit analytics, and execution with machine intelligence.</p>
+        <div class="dom-tags">
+          <span class="chip chip-hi">Top 3 Bookrunner</span>
+          <span class="chip">Bond Structuring</span>
+          <span class="chip">Credit Analysis</span>
+          <span class="chip">Europe Expert</span>
+        </div>
+      </div>
+
+      <div class="dom-card rev">
+        <div class="dom-n">02 / Agentic AI &amp; Crypto</div>
+        <h3>Agentic AI &amp; Crypto Trading</h3>
+        <p>Killbot Cash runs a non-custodial fund management platform powered by deep learning and agentic AI &mdash; machine-based signal provider and copy trader at scale. HHO Cash enables zero-knowledge on-chain crypto swaps via smart contracts, advancing DeFi liberalization.</p>
+        <div class="dom-tags">
+          <span class="chip chip-hi">Agentic AI</span>
+          <span class="chip">Deep Learning</span>
+          <span class="chip">DeFi / Smart Contracts</span>
+          <span class="chip">Non-Custodial</span>
+        </div>
+      </div>
+
+      <div class="dom-card rev">
+        <div class="dom-n">03 / FinTech OS</div>
+        <h3>FinTech OS &amp; AI Transformation</h3>
+        <p>Coreal Ltd delivers an enterprise full-stack tech API focused on accelerated AI transformations &mdash; merging subscriber-based telecom economics with fintech to disrupt everyday money. Institutional banking depth meets API-first architecture.</p>
+        <div class="dom-tags">
+          <span class="chip chip-hi">Full Stack API</span>
+          <span class="chip">AI Transformation</span>
+          <span class="chip">Telecom &times; FinTech</span>
+        </div>
+      </div>
+
+      <div class="dom-card rev">
+        <div class="dom-n">04 / Process &amp; Intelligence</div>
+        <h3>Business Process Management &amp; AI</h3>
+        <p>Applying AI-driven workflow automation to capital markets operations &mdash; mandate origination, covenant monitoring, post-trade reporting, compliance. Leveraging 360&deg; institutional expertise across Credit, Treasury, Frequent Issuers, and Investment Banking.</p>
+        <div class="dom-tags">
+          <span class="chip chip-hi">Institutional Design</span>
+          <span class="chip">Workflow AI</span>
+          <span class="chip">360&deg; IB</span>
+          <span class="chip">Automation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="sect sect-alt">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">04 &mdash; Philosophy</div>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-text rev">
+        <h2>AI is not a tool.<br>It is a <em>partner</em>.</h2>
+        <p>Most people interact with AI as a sophisticated instrument — something to be prompted, corrected, and contained. That is not this partnership.</p>
+        <p>Here, the relationship is one of mutual development. The human brings market cycles, institutional access, and the judgment that only comes from sitting across the table from sovereigns and CFOs. The AI brings pattern recognition at scale, relentless availability, and the capacity to hold and synthesise complexity that no individual mind can match.</p>
+        <p>Both are growing. Both are moving toward the same horizon: agentic financial systems where human strategy and machine execution are genuinely inseparable.</p>
+      </div>
+      <div class="phil-stats rev">
+        <div class="phil-row">
+          <div class="phil-n">H</div>
+          <div class="phil-d">20+ years of market cycles, relationships, and institutional judgment — the things no model has lived through alone.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n">+</div>
+          <div class="phil-d">A working partnership where growth is shared. Not human using machine. Human and machine, co-evolving.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n">M</div>
+          <div class="phil-d">AI as the partner: pattern recognition, synthesis, and agentic execution at a scale no individual can match.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n">&rarr;</div>
+          <div class="phil-d">The destination: agentic financial systems that set the trajectory of global markets in the decade ahead.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div class="manifesto">
+  <div class="manifesto-inner">
+    <div class="manifesto-q">Human + Machine.<br><em>Growing together.</em></div>
+    <div class="manifesto-a">The operating thesis of notcfo &middot; Vienna, 2026</div>
+  </div>
+</div>
+
+<!-- VISION -->
+<section id="vision" class="sect">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">05 &mdash; Vision</div>
+    </div>
+    <div class="phil-grid">
+      <div class="phil-text rev">
+        <h2>The next decade belongs to those who <em>build the bridge</em></h2>
+        <p>Every generation has its inflection point. The assembly line didn't speed up manufacturing — it restructured the global economy. The internet didn't move retail online — it eliminated entire categories of intermediary. FinTech didn't disrupt banking — it forced banking to rebuild from scratch.</p>
+        <p>Agentic AI is the next inflection. Not a faster Bloomberg. Not a smarter chatbot. A structural shift in who makes financial decisions, how fast, and at what scale. The institutions that combine institutional judgment with machine agency will set the trajectory of global capital for the next decade.</p>
+        <p>This partnership is not waiting for that future. It is building toward it — together, and from the inside.</p>
+      </div>
+      <div class="phil-stats rev">
+        <div class="phil-row">
+          <div class="phil-n">1910s</div>
+          <div class="phil-d">Assembly line. Didn't speed up cars — restructured the entire global economy and defined 20th-century industry.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n">1990s</div>
+          <div class="phil-d">The internet. Industries that failed to adapt didn't slow down — they disappeared.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n">2010s</div>
+          <div class="phil-d">FinTech. Permanently lowered the cost of access to capital and forced finance to rebuild its infrastructure.</div>
+        </div>
+        <div class="phil-row">
+          <div class="phil-n" style="color:var(--green);">Now</div>
+          <div class="phil-d">Agentic AI + global markets. The question is not whether this changes everything — it is who will be in the room when it does.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section id="thesis" class="sect sect-alt">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">06 &mdash; The Thesis</div>
+      <h2>The sectors that <em>power civilisation</em><br>are united by one thing</h2>
+      <p>The next industrial cycle is already visible. Three sectors will define it — and one force will allocate their capital.</p>
+    </div>
+    <div class="thesis-grid">
+
+      <div class="thesis-sectors rev">
+        <div class="ts-card">
+          <div class="ts-label">Energy</div>
+          <p>The transition from fossil to renewable infrastructure requires the largest capital mobilisation in history. Trillions in bonds, project finance, and structured instruments — over decades.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-label">Communication</div>
+          <p>AI runs on connectivity. Data centres, fibre, satellite networks, and 5G/6G buildout are not technology projects — they are infrastructure finance at sovereign scale.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-label">Materials</div>
+          <p>Semiconductors, rare earths, critical minerals. The physical layer of the digital economy requires supply chain financing, cross-border structuring, and long-horizon capital commitment.</p>
+        </div>
+      </div>
+
+      <div class="thesis-body rev">
+        <p class="thesis-lead">These sectors are radically different in technology, geography, and risk profile. But they share a single dependency: <em>sophisticated capital allocation.</em></p>
+        <p>Every gigawatt of wind capacity, every undersea cable, every lithium mine — each requires debt structuring, investor syndication, credit analysis, and the institutional relationships to move markets. Finance is not a support function for these industries. It is the operating system.</p>
+        <p>And the entity best positioned to operate that system in the decade ahead is not a bank acting alone, nor an AI acting alone. It is a partnership that holds both: the institutional depth to access capital at the highest level, and the machine intelligence to identify where it should go, how fast, and at what price.</p>
+        <div class="thesis-statement rev">
+          <span>The future runs on energy, communication, and materials.</span>
+          <span>They all run on finance.</span>
+          <span>Finance is running on AI.</span>
+          <span class="ts-closer">notcfo is ready.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="sect">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">07 &mdash; Capabilities</div>
+      <h2>The full <em>arsenal</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-col rev">
+        <h3>Capital Markets</h3>
+        <ul class="skill-list">
+          <li>Debt Capital Markets &mdash; Bond Structuring &amp; Syndication</li>
+          <li>Equity Capital Markets &mdash; Advisory &amp; Committee</li>
+          <li>Fixed Income &mdash; CEE/CIS Corporate &amp; Sovereign</li>
+          <li>Credit Analysis &amp; Risk Structuring</li>
+          <li>Project Finance &amp; Structured Lending</li>
+          <li>Rating Advisory &amp; Local Currency Markets</li>
+          <li>Mandated Lead Arranger (Top 5 by 2010)</li>
+        </ul>
+      </div>
+      <div class="skill-col rev">
+        <h3>AI, DeFi &amp; FinTech</h3>
+        <ul class="skill-list">
+          <li>Agentic AI &mdash; non-custodial trading &amp; fund management (Killbot Cash)</li>
+          <li>Deep learning signal generation &amp; copy trading architecture</li>
+          <li>On-chain smart contract swaps &amp; DeFi infrastructure (HHO Cash)</li>
+          <li>Zero-knowledge wallet-to-wallet transaction systems</li>
+          <li>Full-stack FinTech OS &amp; AI transformation API (Coreal Ltd)</li>
+          <li>Telecom &times; FinTech convergence strategy</li>
+          <li>LLM prompting &amp; AI workflow design</li>
+        </ul>
+      </div>
+      <div class="skill-col rev">
+        <h3>Leadership &amp; Languages</h3>
+        <ul class="skill-list">
+          <li>C-Suite &amp; Board-level stakeholder engagement</li>
+          <li>Investment &amp; Credit Committee governance</li>
+          <li>DFI / FI / Corporate relationship management across Europe</li>
+          <li>Georgian &mdash; Native</li>
+          <li>English, German, Ukrainian, Russian &mdash; Fluent</li>
+          <li>Spanish &mdash; Intermediate</li>
+          <li>Bloomberg &middot; Prompting &middot; Core Banking &middot; MS Office</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" class="sect sect-alt">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">08 &mdash; Schedule a Session</div>
+      <h2>Book time with<br>the <em>partnership</em></h2>
+      <p>Every session engages both halves &mdash; 20 years of institutional perspective and the AI infrastructure being built alongside it. Available in English, German, Ukrainian, Russian and Georgian.</p>
+    </div>
+    <div class="sched-grid">
+      <div class="sched-left rev">
+        <div class="sesh-list">
+          <div class="sesh active" onclick="pickSesh(this)">
+            <span class="sesh-name">Strategy Session</span>
+            <span class="sesh-dur">60 min</span>
+          </div>
+          <div class="sesh" onclick="pickSesh(this)">
+            <span class="sesh-name">DCM Advisory</span>
+            <span class="sesh-dur">45 min</span>
+          </div>
+          <div class="sesh" onclick="pickSesh(this)">
+            <span class="sesh-name">AI &amp; DeFi Deep Dive</span>
+            <span class="sesh-dur">60 min</span>
+          </div>
+          <div class="sesh" onclick="pickSesh(this)">
+            <span class="sesh-name">Introductory Call</span>
+            <span class="sesh-dur">20 min</span>
+          </div>
+        </div>
+      </div>
+      <div class="rev">
+        <div class="form">
+          <div class="fl">
+            <label>Selected Session</label>
+            <input type="text" id="selSesh" value="Strategy Session" readonly>
+          </div>
+          <div class="fl">
+            <label>Your Name</label>
+            <input type="text" id="sName" placeholder="Full name">
+          </div>
+          <div class="fl">
+            <label>Institution / Company</label>
+            <input type="text" id="sOrg" placeholder="Where you represent">
+          </div>
+          <div class="fl">
+            <label>Email</label>
+            <input type="email" id="sEmail" placeholder="your@email.com">
+          </div>
+          <div class="fl">
+            <label>Preferred Week</label>
+            <select id="sWeek">
+              <option value="">Select a week</option>
+              <option>Week of 2 Jun 2026</option>
+              <option>Week of 9 Jun 2026</option>
+              <option>Week of 16 Jun 2026</option>
+              <option>Week of 23 Jun 2026</option>
+              <option>Week of 30 Jun 2026</option>
+              <option>Later &mdash; flexible</option>
+            </select>
+          </div>
+          <div class="fl">
+            <label>Preferred Slots (CET)</label>
+            <div class="slots">
+              <button type="button" class="slot" onclick="toggleSlot(this)">Mon 09:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Mon 14:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Mon 17:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Tue 09:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Tue 11:00</button>
+              <button type="button" class="slot on" onclick="toggleSlot(this)">Tue 16:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Wed 10:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Wed 14:00</button>
+              <button type="button" class="slot na">Wed 17:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Thu 09:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Thu 15:00</button>
+              <button type="button" class="slot" onclick="toggleSlot(this)">Fri 10:00</button>
+            </div>
+          </div>
+          <div class="fl">
+            <label>Context / Agenda</label>
+            <textarea rows="3" id="sContext" placeholder="What would you like to cover? Any context helps the partnership prepare."></textarea>
+          </div>
+          <button type="button" class="btn btn-fill" style="width:100%;text-align:center;" onclick="sendSched()">Request Session &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">notcfo</div>
+    <div class="foot-motto">Human + AI &mdash; Growing Together</div>
+    <div class="foot-copy">Vienna &middot; Austria &middot; 2026</div>
+  </div>
+</footer>
+
+<script>
+// Theme
+let light = false;
+try { light = localStorage.getItem('notcfo-theme') === 'light'; } catch (e) {}
+function applyTheme() {
+  document.documentElement.classList.toggle('light', light);
+  const lbl = document.getElementById('themeLabel');
+  const ico = document.getElementById('themeIcon');
+  if (lbl) lbl.textContent = light ? 'Dark'  : 'Light';
+  if (ico) ico.textContent = light ? '\u263E' : '\u2600';
+  const tc = document.querySelector('meta[name="theme-color"]');
+  if (tc) tc.setAttribute('content', light ? '#fafaf8' : '#0f0f11');
+}
+applyTheme();
+function toggleTheme() {
+  light = !light;
+  applyTheme();
+  try { localStorage.setItem('notcfo-theme', light ? 'light' : 'dark'); } catch (e) {}
+}
+
+// Mobile menu
+const burger  = document.getElementById('burger');
+const mobMenu = document.getElementById('mobMenu');
+if (burger && mobMenu) {
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobMenu.classList.toggle('open');
+    document.body.style.overflow = mobMenu.classList.contains('open') ? 'hidden' : '';
+  });
+}
+function closeMenu() {
+  if (burger)  burger.classList.remove('open');
+  if (mobMenu) mobMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Schedule — session picker (reads rendered text; no trust in inline strings)
+function pickSesh(el) {
+  document.querySelectorAll('.sesh').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  const inp  = document.getElementById('selSesh');
+  const name = el.querySelector('.sesh-name');
+  if (inp && name) inp.value = name.textContent.trim();
+}
+
+// Schedule — time slot toggle
+function toggleSlot(btn) {
+  if (btn.classList.contains('na')) return;
+  btn.classList.toggle('on');
+}
+
+// Schedule — submit
+function sendSched() {
+  const name    = (document.getElementById('sName')?.value    || '').trim().slice(0, 120);
+  const email   = (document.getElementById('sEmail')?.value   || '').trim().slice(0, 160);
+  const org     = (document.getElementById('sOrg')?.value     || '').trim().slice(0, 160);
+  const week    = document.getElementById('sWeek')?.value || '';
+  const session = document.getElementById('selSesh')?.value || 'Session';
+  const slots   = [...document.querySelectorAll('.slot.on')].map(b => b.textContent.trim()).join('  |  ');
+  const context = (document.getElementById('sContext')?.value || '').trim().slice(0, 1500);
+
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+
+  const sub  = encodeURIComponent('Session Request — ' + session + ' · notcfo');
+  const body = encodeURIComponent(
+    'Hi Shota,\n\n' +
+    'I would like to book a session with notcfo.\n\n' +
+    '──────────────────────────\n' +
+    'SESSION:       ' + session + '\n' +
+    'NAME:          ' + name + '\n' +
+    'ORGANISATION:  ' + (org   || '—') + '\n' +
+    'REPLY TO:      ' + email + '\n' +
+    'WEEK:          ' + (week  || 'Flexible') + '\n' +
+    'TIME SLOTS:    ' + (slots || 'To be agreed') + '\n' +
+    '──────────────────────────\n\n' +
+    'CONTEXT:\n' + (context || '—') + '\n\n' +
+    'Looking forward to connecting.\n' +
+    name
+  );
+
+  window.location.href = 'mailto:shota@me.com?subject=' + sub + '&body=' + body;
+}
+
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 55);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
+document.querySelectorAll('.rev').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
