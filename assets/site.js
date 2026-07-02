@@ -144,8 +144,8 @@ const NotcfoSignal = (function () {
   }
 
   function categoryLabel(cat) {
-    const map = { dcm: 'DCM', banking: 'Banking', markets: 'Markets', politics: 'Politics', ai: 'AI', crypto: 'Crypto', general: 'General' };
-    return map[cat] || (cat || 'General');
+    const map = { dcm: 'DCM', banking: 'Banking', markets: 'Markets', politics: 'Politics', ai: 'AI', crypto: 'Crypto', other: 'Other', general: 'Other' };
+    return map[cat] || (cat || 'Other');
   }
 
   function rowHtml(topic, rank) {
