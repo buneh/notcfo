@@ -1,55 +1,284 @@
 {
-  "generated_at": "2026-06-29T15:30:00Z",
+  "generated_at": "2026-07-02T20:49:09Z",
   "version": 1,
-  "ontology_categories": ["dcm", "banking", "markets", "politics", "ai", "crypto"],
+  "ontology_categories": [
+    "dcm",
+    "banking",
+    "markets",
+    "politics",
+    "ai",
+    "crypto",
+    "other"
+  ],
   "topics": [
     {
-      "id": "8c1f4e1b-4a3e-4d6c-9a7c-1f4e1b4a3e4d",
-      "label": "Argentina restructures eurobond, IMF pushes for fiscal adjustment ahead of November vote",
+      "id": "541e1dd7-10cd-4066-a961-9dbddc807f60",
+      "label": "BTC / ETH / Crypto Majors: Japan Takes Next Step In $2.3 Trillion Plan With Domestic AI Model And 10M Robot",
+      "theme": "BTC / ETH / Crypto Majors",
+      "category": "crypto",
+      "dis": 70.537,
+      "dis_normalized": 1.0,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.955,
+        "telegram": 33.61,
+        "google_trends": 35.973
+      },
+      "n_items": 105,
+      "n_participants": 712,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Japan Takes Next Step In $2.3 Trillion Plan With Domestic AI Model And 10M Robots\nhttps://www.zerohedge.com/ai/japan-unv",
+          "url": "https://t.me/zerohedge/174565"
+        },
+        {
+          "platform": "telegram",
+          "title": "Why Bernie Sanders' AI Bill Is Fascistic And Dangerous\nhttps://www.zerohedge.com/political/why-bernie-sanders-ai-bill-fa",
+          "url": "https://t.me/zerohedge/174564"
+        },
+        {
+          "platform": "google_trends",
+          "title": "ousd",
+          "url": "https://trends.google.com/trends/explore?q=ousd"
+        }
+      ]
+    },
+    {
+      "id": "9b730fb7-3459-4c0b-8d53-618155ca1b58",
+      "label": "FX & Macro: The Collapse Of Schengen... Over 1 Million Illegal Migrants Apply For Spanish Ci",
+      "theme": "FX & Macro",
+      "category": "markets",
+      "dis": 63.327,
+      "dis_normalized": 0.898,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 1.708,
+        "telegram": 61.619
+      },
+      "n_items": 106,
+      "n_participants": 917,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "The Collapse Of Schengen... Over 1 Million Illegal Migrants Apply For Spanish Citizenship\nhttps://www.zerohedge.com/geop",
+          "url": "https://t.me/zerohedge/174560"
+        },
+        {
+          "platform": "telegram",
+          "title": "KKR And SK Launch South Korea's Largest Renewable Energy Platform\nhttps://www.zerohedge.com/economics/kkr-and-sk-launch-",
+          "url": "https://t.me/zerohedge/174562"
+        },
+        {
+          "platform": "telegram",
+          "title": "Apple Negotiating To Buy Blacklisted Chinese Chips To Ease AI-Driven Shortage\nhttps://www.zerohedge.com/technology/apple",
+          "url": "https://t.me/zerohedge/174542"
+        }
+      ]
+    },
+    {
+      "id": "86ee6baa-1024-4035-b359-d859ef531de5",
+      "label": "Geopolitics & Conflict: Nomura Asset Management Taiwan: We are overweight in China as strong exports hel",
+      "theme": "Geopolitics & Conflict",
+      "category": "politics",
+      "dis": 47.122,
+      "dis_normalized": 0.668,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.017,
+        "telegram": 36.002,
+        "google_trends": 11.103
+      },
+      "n_items": 36,
+      "n_participants": 80,
+      "top_links": [
+        {
+          "platform": "google_trends",
+          "title": "ofgem standard tariffs meter readings",
+          "url": "https://trends.google.com/trends/explore?q=ofgem%20standard%20tariffs%20meter%20readings"
+        },
+        {
+          "platform": "google_trends",
+          "title": "china canada pea trade tariffs",
+          "url": "https://trends.google.com/trends/explore?q=china%20canada%20pea%20trade%20tariffs"
+        },
+        {
+          "platform": "google_trends",
+          "title": "canada china pea starch tariffs",
+          "url": "https://trends.google.com/trends/explore?q=canada%20china%20pea%20starch%20tariffs"
+        }
+      ]
+    },
+    {
+      "id": "6abe677c-35f3-41b1-9d50-2bba11a93320",
+      "label": "FX & Macro: \u203c BREAKING: SWISS CPI YOY ACTUAL 0.5% (FORECAST 0.5%, PREVIOUS 0.6%) $MACRO|FJ",
+      "theme": "FX & Macro",
+      "category": "markets",
+      "dis": 8.327,
+      "dis_normalized": 0.118,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.389,
+        "telegram": 7.938
+      },
+      "n_items": 9,
+      "n_participants": 152,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "\u203c BREAKING: SWISS CPI YOY ACTUAL 0.5% (FORECAST 0.5%, PREVIOUS 0.6%) $MACRO|FJ",
+          "url": "https://t.me/financialjuice/120927"
+        },
+        {
+          "platform": "telegram",
+          "title": "\u2757 SWISS CPI MOM ACTUAL 0% (FORECAST 0.1%, PREVIOUS 0.2%) $MACRO|FJ",
+          "url": "https://t.me/financialjuice/120926"
+        },
+        {
+          "platform": "telegram",
+          "title": "\u2757 EUROZONE UNEMPLOYMENT RATE ACTUAL 6.2% (FORECAST 6.3%, PREVIOUS 6.3%) $MACRO|FJ",
+          "url": "https://t.me/financialjuice/120948"
+        }
+      ]
+    },
+    {
+      "id": "df04f394-b615-4381-9e9f-a9b3c90b5b1a",
+      "label": "FX & Macro: \u203c BREAKING: SWISS CPI YOY ACTUAL 0.5% (FORECAST 0.5%, PREVIOUS 0.6%) $MACRO|FJ",
+      "theme": "FX & Macro",
+      "category": "markets",
+      "dis": 7.516,
+      "dis_normalized": 0.107,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.369,
+        "telegram": 7.148
+      },
+      "n_items": 9,
+      "n_participants": 155,
+      "top_links": []
+    },
+    {
+      "id": "5f252d7c-c454-41bd-bda1-6069529d6c6b",
+      "label": "Central Bank Policy: Japan's Nagahama: I personally think the June rate hike was appropriate, as dela",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 3.12,
+      "dis_normalized": 0.044,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.645,
+        "telegram": 2.476
+      },
+      "n_items": 7,
+      "n_participants": 167,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Japan's Nagahama: I personally think the June rate hike was appropriate, as delaying rate hikes would cause excessive Ye",
+          "url": "https://t.me/financialjuice/120925"
+        },
+        {
+          "platform": "telegram",
+          "title": "Japan's tax revenue rose to 84.2 trillion Yen in FY ended March, posting a fresh record for the sixth straight year|FJ",
+          "url": "https://t.me/financialjuice/120928"
+        },
+        {
+          "platform": "hackernews",
+          "title": "The <Usermedia> HTML Element",
+          "url": "https://developer.chrome.com/blog/usermedia-html-element"
+        }
+      ]
+    },
+    {
+      "id": "e4a9efd3-b89e-4b9d-aff4-3aca48071e40",
+      "label": "The Collapse Of Schengen... Over 1 Million Illegal Migrants Apply For Spanish Citizenship\nhttps://www.zerohedge.com/geop",
+      "theme": "General",
+      "category": "general",
+      "dis": 2.648,
+      "dis_normalized": 0.038,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.01,
+        "telegram": 2.638
+      },
+      "n_items": 2,
+      "n_participants": 51,
+      "top_links": []
+    },
+    {
+      "id": "b6a0c5b2-d99a-4c2e-96af-86e9271a6bf5",
+      "label": "Geopolitics & Conflict: Nomura Asset Management Taiwan: We are overweight in China as strong exports hel",
+      "theme": "Geopolitics & Conflict",
+      "category": "politics",
+      "dis": 1.941,
+      "dis_normalized": 0.028,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.261,
+        "telegram": 1.68
+      },
+      "n_items": 3,
+      "n_participants": 18,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Nomura Asset Management Taiwan: We are overweight in China as strong exports help to support overall growth while invest",
+          "url": "https://t.me/financialjuice/120933"
+        },
+        {
+          "platform": "hackernews",
+          "title": "The Underhanded C Contest",
+          "url": "https://underhanded-c.org/"
+        },
+        {
+          "platform": "hackernews",
+          "title": "The Wisdom of Quinn the Eskimo (Apple Developer Technical Support Engineer)",
+          "url": "https://github.com/macshome/The-Wisdom-of-Quinn"
+        }
+      ]
+    },
+    {
+      "id": "f45f82f5-b06a-42e6-9e1a-6d4fb7caac10",
+      "label": "EM Sovereign Debt: Ukraine's Power Company DTEK: Russian attack damaged its energy facilities in Ky",
       "theme": "EM Sovereign Debt",
       "category": "dcm",
-      "dis": 4.23,
-      "dis_normalized": 0.87,
-      "velocity_6h": 0.18,
-      "platforms": {"reddit": 1.82, "telegram": 1.54, "hackernews": 0.87},
-      "n_items": 14,
-      "n_participants": 423,
+      "dis": 1.78,
+      "dis_normalized": 0.025,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.01,
+        "telegram": 1.77
+      },
+      "n_items": 2,
+      "n_participants": 2,
       "top_links": [
-        {"platform": "telegram", "title": "Argentina debt working group considers extension on payment", "url": "https://t.me/financialjuice/12345"},
-        {"platform": "reddit",   "title": "Argentina bondholders reject restructuring terms", "url": "https://reddit.com/r/finance/comments/xyz"},
-        {"platform": "hackernews","title": "Argentina default risk analysis", "url": "https://news.ycombinator.com/item?id=12345"}
+        {
+          "platform": "telegram",
+          "title": "Ukraine's Power Company DTEK: Russian attack damaged its energy facilities in Kyiv, leaving some residents without power",
+          "url": "https://t.me/financialjuice/120952"
+        },
+        {
+          "platform": "hackernews",
+          "title": "Aerial Photographs (2017)",
+          "url": "https://www.toronto.ca/city-government/accountability-operations-customer-service/access-city-information-or-records/city-of-toronto-archives/whats-online/maps/aerial-photographs/"
+        }
       ]
     },
     {
-      "id": "2b8d4c7a-9e5f-4b1a-8d3c-7a9e5f4b1a8d",
-      "label": "USDC issuer Circle accelerates IPO timeline as MiCA stablecoin regime takes effect",
-      "theme": "Stablecoins",
-      "category": "crypto",
-      "dis": 3.78,
-      "dis_normalized": 0.78,
-      "velocity_6h": 0.11,
-      "platforms": {"telegram": 1.7, "reddit": 1.3, "hackernews": 0.78},
-      "n_items": 11,
-      "n_participants": 287,
-      "top_links": [
-        {"platform": "telegram", "title": "Circle S-1 filing details reserves composition", "url": "https://t.me/WatcherGuru/8765"},
-        {"platform": "reddit",   "title": "Circle IPO will reshape stablecoin market structure", "url": "https://reddit.com/r/CryptoCurrency/comments/abc"}
-      ]
-    },
-    {
-      "id": "5e9b3a2f-1d6c-4e8b-9a4f-3a2f1d6c4e8b",
-      "label": "Nvidia H200 supply constraints push hyperscaler capex revisions into Q3 guidance",
-      "theme": "AI Capex & Infrastructure",
-      "category": "ai",
-      "dis": 3.11,
-      "dis_normalized": 0.64,
-      "velocity_6h": 0.01,
-      "platforms": {"hackernews": 1.45, "reddit": 1.21, "telegram": 0.45},
-      "n_items": 9,
-      "n_participants": 201,
-      "top_links": [
-        {"platform": "hackernews", "title": "Show HN: tracking GPU supply bottlenecks", "url": "https://news.ycombinator.com/item?id=67890"}
-      ]
+      "id": "d5c11bca-1da6-49b7-afe1-424eb6d2f9fd",
+      "label": "EM Sovereign Debt: Ukraine's Power Company DTEK: Russian attack damaged its energy facilities in Ky",
+      "theme": "EM Sovereign Debt",
+      "category": "dcm",
+      "dis": 1.763,
+      "dis_normalized": 0.025,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.013,
+        "telegram": 1.75
+      },
+      "n_items": 2,
+      "n_participants": 2,
+      "top_links": []
     }
   ]
 }
