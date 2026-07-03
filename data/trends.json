@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T09:15:13Z",
+  "generated_at": "2026-07-03T17:31:59Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -12,12 +12,45 @@
   ],
   "topics": [
     {
+      "id": "049557f5-0b36-49a1-af70-4fd516803710",
+      "label": "AI Model Releases & Capability: Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.",
+      "theme": "AI Model Releases & Capability",
+      "category": "ai",
+      "dis": 146.846,
+      "dis_normalized": 1.0,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 2.758,
+        "telegram": 77.27,
+        "google_trends": 66.818
+      },
+      "n_items": 178,
+      "n_participants": 1405,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.com/political/why-left-really-hates-trum",
+          "url": "https://t.me/zerohedge/174624"
+        },
+        {
+          "platform": "telegram",
+          "title": "These Are The World's Most & Least Free Countries\nhttps://www.zerohedge.com/geopolitical/these-are-worlds-most-least-fre",
+          "url": "https://t.me/zerohedge/174614"
+        },
+        {
+          "platform": "telegram",
+          "title": "Bomber Who Targeted Ukrainian Tycoon In Monaco Identified, Manhunt Continues\nhttps://www.zerohedge.com/geopolitical/manh",
+          "url": "https://t.me/zerohedge/174615"
+        }
+      ]
+    },
+    {
       "id": "2ad0f835-b333-4f65-855b-d6c6bc4ac944",
       "label": "AI Model Releases & Capability: Sam Altman's OpenAI Discusses Handing Trump Admin A 5% Stake\nhttps://www.zerohed",
       "theme": "AI Model Releases & Capability",
       "category": "ai",
       "dis": 133.947,
-      "dis_normalized": 1.0,
+      "dis_normalized": 0.912,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 6.708,
@@ -50,7 +83,7 @@
       "theme": "BTC / ETH / Crypto Majors",
       "category": "crypto",
       "dis": 106.028,
-      "dis_normalized": 0.792,
+      "dis_normalized": 0.722,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 0.798,
@@ -83,7 +116,7 @@
       "theme": "AI Capex & Infrastructure",
       "category": "ai",
       "dis": 103.786,
-      "dis_normalized": 0.775,
+      "dis_normalized": 0.707,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 2.873,
@@ -116,7 +149,7 @@
       "theme": "BTC / ETH / Crypto Majors",
       "category": "crypto",
       "dis": 70.537,
-      "dis_normalized": 0.527,
+      "dis_normalized": 0.48,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 0.955,
@@ -149,7 +182,7 @@
       "theme": "FX & Macro",
       "category": "markets",
       "dis": 63.327,
-      "dis_normalized": 0.473,
+      "dis_normalized": 0.431,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 1.708,
@@ -181,7 +214,7 @@
       "theme": "Geopolitics & Conflict",
       "category": "politics",
       "dis": 47.122,
-      "dis_normalized": 0.352,
+      "dis_normalized": 0.321,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 0.017,
@@ -214,7 +247,7 @@
       "theme": "Geopolitics & Conflict",
       "category": "politics",
       "dis": 42.041,
-      "dis_normalized": 0.314,
+      "dis_normalized": 0.286,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 2.128,
@@ -225,13 +258,13 @@
       "top_links": [
         {
           "platform": "telegram",
-          "title": "Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.com/political/feds-lapd-announce-major-hum",
-          "url": "https://t.me/zerohedge/174601"
+          "title": "These Countries Have The Highest Percentage Of Female Population\nhttps://www.zerohedge.com/geopolitical/these-countries-",
+          "url": "https://t.me/zerohedge/174602"
         },
         {
           "platform": "telegram",
-          "title": "These Are The Countries With Lower GDP Than Elon Musk's Net Worth\nhttps://www.zerohedge.com/personal-finance/these-are-c",
-          "url": "https://t.me/zerohedge/174606"
+          "title": "Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.com/political/feds-lapd-announce-major-hum",
+          "url": "https://t.me/zerohedge/174601"
         },
         {
           "platform": "telegram",
@@ -246,7 +279,7 @@
       "theme": "Geopolitics & Conflict",
       "category": "politics",
       "dis": 36.065,
-      "dis_normalized": 0.269,
+      "dis_normalized": 0.246,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 0.358,
@@ -278,7 +311,7 @@
       "theme": "AI Capex & Infrastructure",
       "category": "ai",
       "dis": 21.522,
-      "dis_normalized": 0.161,
+      "dis_normalized": 0.147,
       "velocity_6h": null,
       "platforms": {
         "hackernews": 1.579,
@@ -303,22 +336,6 @@
           "url": "https://t.me/financialjuice/121068"
         }
       ]
-    },
-    {
-      "id": "4bcfa2ad-478a-4d51-bead-c93d0fd19e5b",
-      "label": "BTC / ETH / Crypto Majors: bitcoin casinos www.testbester24.de",
-      "theme": "BTC / ETH / Crypto Majors",
-      "category": "crypto",
-      "dis": 21.499,
-      "dis_normalized": 0.161,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.214,
-        "google_trends": 21.285
-      },
-      "n_items": 11,
-      "n_participants": 11,
-      "top_links": []
     }
   ]
 }
