@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T22:32:31Z",
+  "generated_at": "2026-07-03T09:15:13Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -39,8 +39,8 @@
         },
         {
           "platform": "telegram",
-          "title": "Japan's Biggest LNG Buyer Creates Standalone Trading Arm\nhttps://www.zerohedge.com/energy/japans-biggest-lng-buyer-creat",
-          "url": "https://t.me/zerohedge/174595"
+          "title": "Trump on Iran: I think they have accepted nearly everything we require|FJ",
+          "url": "https://t.me/financialjuice/121075"
         }
       ]
     },
@@ -67,13 +67,13 @@
         },
         {
           "platform": "telegram",
-          "title": "World's Largest Data Center Campus On Verge Of Collapse After Blackstone Unexpectedly Pulls Out\nhttps://www.zerohedge.co",
-          "url": "https://t.me/zerohedge/174594"
+          "title": "Ukrainian Capital Suffers 'Night Of Hell' In 11-Hour Russian Assault That Kills At Least 18\nhttps://www.zerohedge.com/ge",
+          "url": "https://t.me/zerohedge/174569"
         },
         {
           "platform": "telegram",
-          "title": "Ukrainian Capital Suffers 'Night Of Hell' In 11-Hour Russian Assault That Kills At Least 18\nhttps://www.zerohedge.com/ge",
-          "url": "https://t.me/zerohedge/174569"
+          "title": "Vegas Cops Disrupt Alleged Casino Terror Plot By Trans Gunman As Pattern Of Left-Wing Violence Raises Alarms\nhttps://www",
+          "url": "https://t.me/zerohedge/174577"
         }
       ]
     },
@@ -95,13 +95,13 @@
       "top_links": [
         {
           "platform": "telegram",
-          "title": "Feds Nab Alleged Member Of \"Sprawling\" Cuban Communist Subversion Network Linked To Hasan Piker's Havana Trip\nhttps://ww",
-          "url": "https://t.me/zerohedge/174596"
+          "title": "Building Codes For Energy Conservation Can Increase US Home Costs By $14,000: DOE\nhttps://www.zerohedge.com/political/bu",
+          "url": "https://t.me/zerohedge/174597"
         },
         {
           "platform": "telegram",
-          "title": "Building Codes For Energy Conservation Can Increase US Home Costs By $14,000: DOE\nhttps://www.zerohedge.com/political/bu",
-          "url": "https://t.me/zerohedge/174597"
+          "title": "Feds Nab Alleged Member Of \"Sprawling\" Cuban Communist Subversion Network Linked To Hasan Piker's Havana Trip\nhttps://ww",
+          "url": "https://t.me/zerohedge/174596"
         },
         {
           "platform": "google_trends",
@@ -209,6 +209,70 @@
       ]
     },
     {
+      "id": "f1e41d36-034a-4abd-87fb-51e30a9f1325",
+      "label": "Geopolitics & Conflict: Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.co",
+      "theme": "Geopolitics & Conflict",
+      "category": "politics",
+      "dis": 42.041,
+      "dis_normalized": 0.314,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 2.128,
+        "telegram": 39.913
+      },
+      "n_items": 102,
+      "n_participants": 1234,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.com/political/feds-lapd-announce-major-hum",
+          "url": "https://t.me/zerohedge/174601"
+        },
+        {
+          "platform": "telegram",
+          "title": "These Are The Countries With Lower GDP Than Elon Musk's Net Worth\nhttps://www.zerohedge.com/personal-finance/these-are-c",
+          "url": "https://t.me/zerohedge/174606"
+        },
+        {
+          "platform": "telegram",
+          "title": "America's $31 Trillion Economy By State\nhttps://www.zerohedge.com/markets/americas-31-trillion-economy-state",
+          "url": "https://t.me/zerohedge/174604"
+        }
+      ]
+    },
+    {
+      "id": "8345e7f7-c2cb-4ba9-a2cc-e9c8158f0a55",
+      "label": "Geopolitics & Conflict: Meta mulls Samsung for 10T Won custom AI chip production - Daily. $META|FJ",
+      "theme": "Geopolitics & Conflict",
+      "category": "politics",
+      "dis": 36.065,
+      "dis_normalized": 0.269,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.358,
+        "telegram": 35.707
+      },
+      "n_items": 25,
+      "n_participants": 97,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Meta mulls Samsung for 10T Won custom AI chip production - Daily. $META|FJ",
+          "url": "https://t.me/financialjuice/121137"
+        },
+        {
+          "platform": "telegram",
+          "title": "European Council's Costa: The EU will approve the savings and investment union this year|FJ",
+          "url": "https://t.me/financialjuice/121138"
+        },
+        {
+          "platform": "telegram",
+          "title": "Eurozone Composite PMI Final June 2026 Report|FJ",
+          "url": "https://t.me/financialjuice/121136"
+        }
+      ]
+    },
+    {
       "id": "cc5ad7bf-ed34-436b-89e0-69ad055b6324",
       "label": "AI Capex & Infrastructure: UK Leadership Candidate Burnham ends remarks.|FJ",
       "theme": "AI Capex & Infrastructure",
@@ -255,70 +319,6 @@
       "n_items": 11,
       "n_participants": 11,
       "top_links": []
-    },
-    {
-      "id": "a8f107ac-e2d2-43f1-a131-16c84574e2cf",
-      "label": "US Politics & Policy: ofgem standard tariffs meter readings",
-      "theme": "US Politics & Policy",
-      "category": "politics",
-      "dis": 12.638,
-      "dis_normalized": 0.094,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.76,
-        "google_trends": 11.878
-      },
-      "n_items": 17,
-      "n_participants": 203,
-      "top_links": [
-        {
-          "platform": "google_trends",
-          "title": "tariffs and maritime shipping rates",
-          "url": "https://trends.google.com/trends/explore?q=tariffs%20and%20maritime%20shipping%20rates"
-        },
-        {
-          "platform": "google_trends",
-          "title": "tariffs news",
-          "url": "https://trends.google.com/trends/explore?q=tariffs%20news"
-        },
-        {
-          "platform": "hackernews",
-          "title": "Show HN: ZeroFS \u2013 A log-structured filesystem for S3",
-          "url": "https://www.zerofs.net/"
-        }
-      ]
-    },
-    {
-      "id": "e72c8802-e7cc-487e-9c03-368bc1fe3314",
-      "label": "IG / HY Credit Markets: \"Set Your AC To 78F\": NYC Socialist Pleads With Residents As Fragile Grid Faces",
-      "theme": "IG / HY Credit Markets",
-      "category": "dcm",
-      "dis": 10.593,
-      "dis_normalized": 0.079,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.207,
-        "telegram": 10.385
-      },
-      "n_items": 9,
-      "n_participants": 10,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "\"Set Your AC To 78F\": NYC Socialist Pleads With Residents As Fragile Grid Faces Blackout Risk\nhttps://www.zerohedge.com/",
-          "url": "https://t.me/zerohedge/174567"
-        },
-        {
-          "platform": "telegram",
-          "title": "PJM: maximum generation and load management alerts active July 2, issued for July 3 in PJM footprint|FJ",
-          "url": "https://t.me/financialjuice/121071"
-        },
-        {
-          "platform": "telegram",
-          "title": "Friday FX Options Expiries|FJ",
-          "url": "https://t.me/financialjuice/121062"
-        }
-      ]
     }
   ]
 }
