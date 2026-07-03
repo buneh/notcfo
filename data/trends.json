@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T20:03:57Z",
+  "generated_at": "2026-07-03T20:34:37Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -107,6 +107,34 @@
           "platform": "telegram",
           "title": "Trump on Iran: I think they have accepted nearly everything we require|FJ",
           "url": "https://t.me/financialjuice/121075"
+        }
+      ]
+    },
+    {
+      "id": "77ef4ba1-49df-44a3-b6aa-aeb425e242ec",
+      "label": "Central Bank Policy: Anthropic Moves To Shut Loopholes Letting Chinese Tech Firms Access Claude\nhttps",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 133.353,
+      "dis_normalized": 0.908,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.648,
+        "telegram": 62.547,
+        "google_trends": 70.159
+      },
+      "n_items": 158,
+      "n_participants": 552,
+      "top_links": [
+        {
+          "platform": "google_trends",
+          "title": "us bond yields live",
+          "url": "https://trends.google.com/trends/explore?q=us%20bond%20yields%20live"
+        },
+        {
+          "platform": "telegram",
+          "title": "JUST IN - WHO gives emergency use listing to China's Shanghai Zhijiang Biotechnology, for the first PCR test for Ebola B",
+          "url": "https://t.me/disclosetv/21388"
         }
       ]
     },
@@ -270,8 +298,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "ousd stablecoin",
-          "url": "https://trends.google.com/trends/explore?q=ousd%20stablecoin"
+          "title": "openusd stablecoin",
+          "url": "https://trends.google.com/trends/explore?q=openusd%20stablecoin"
         }
       ]
     },
@@ -304,34 +332,6 @@
           "platform": "telegram",
           "title": "Apple Negotiating To Buy Blacklisted Chinese Chips To Ease AI-Driven Shortage\nhttps://www.zerohedge.com/technology/apple",
           "url": "https://t.me/zerohedge/174542"
-        }
-      ]
-    },
-    {
-      "id": "c49c8a96-1eaf-4347-8da6-cc4f3d2fb56c",
-      "label": "BTC / ETH / Crypto Majors: Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.",
-      "theme": "BTC / ETH / Crypto Majors",
-      "category": "crypto",
-      "dis": 60.094,
-      "dis_normalized": 0.409,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.312,
-        "telegram": 31.784,
-        "google_trends": 27.998
-      },
-      "n_items": 79,
-      "n_participants": 93,
-      "top_links": [
-        {
-          "platform": "google_trends",
-          "title": "us bond yields 10 year",
-          "url": "https://trends.google.com/trends/explore?q=us%20bond%20yields%2010%20year"
-        },
-        {
-          "platform": "hackernews",
-          "title": "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit",
-          "url": "https://www.ubicloud.com/blog/postgresql-and-the-oom-killer-why-we-use-strict-memory-overcommit"
         }
       ]
     }
