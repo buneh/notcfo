@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T17:31:59Z",
+  "generated_at": "2026-07-03T17:41:26Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -144,6 +144,39 @@
       ]
     },
     {
+      "id": "7eca7cf9-6b83-48f6-9c91-ad57ed506618",
+      "label": "Central Bank Policy: openusd",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 89.838,
+      "dis_normalized": 0.612,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.189,
+        "telegram": 43.442,
+        "google_trends": 46.207
+      },
+      "n_items": 82,
+      "n_participants": 247,
+      "top_links": [
+        {
+          "platform": "google_trends",
+          "title": "federal reserve holiday",
+          "url": "https://trends.google.com/trends/explore?q=federal%20reserve%20holiday"
+        },
+        {
+          "platform": "google_trends",
+          "title": "administrative civil or criminal sanctions may be imposed if there is an unauthorized disclosure",
+          "url": "https://trends.google.com/trends/explore?q=administrative%20civil%20or%20criminal%20sanctions%20may%20be%20imposed%20if%20there%20is%20an%20unauthorized%20disclosure"
+        },
+        {
+          "platform": "google_trends",
+          "title": "eu 21st sanctions package",
+          "url": "https://trends.google.com/trends/explore?q=eu%2021st%20sanctions%20package"
+        }
+      ]
+    },
+    {
       "id": "541e1dd7-10cd-4066-a961-9dbddc807f60",
       "label": "BTC / ETH / Crypto Majors: Japan Takes Next Step In $2.3 Trillion Plan With Domestic AI Model And 10M Robot",
       "theme": "BTC / ETH / Crypto Majors",
@@ -171,8 +204,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "openusd stablecoin",
-          "url": "https://trends.google.com/trends/explore?q=openusd%20stablecoin"
+          "title": "openusd",
+          "url": "https://trends.google.com/trends/explore?q=openusd"
         }
       ]
     },
@@ -205,6 +238,34 @@
           "platform": "telegram",
           "title": "Apple Negotiating To Buy Blacklisted Chinese Chips To Ease AI-Driven Shortage\nhttps://www.zerohedge.com/technology/apple",
           "url": "https://t.me/zerohedge/174542"
+        }
+      ]
+    },
+    {
+      "id": "c49c8a96-1eaf-4347-8da6-cc4f3d2fb56c",
+      "label": "BTC / ETH / Crypto Majors: Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.",
+      "theme": "BTC / ETH / Crypto Majors",
+      "category": "crypto",
+      "dis": 60.094,
+      "dis_normalized": 0.409,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.312,
+        "telegram": 31.784,
+        "google_trends": 27.998
+      },
+      "n_items": 79,
+      "n_participants": 93,
+      "top_links": [
+        {
+          "platform": "google_trends",
+          "title": "us bond yields 10 year",
+          "url": "https://trends.google.com/trends/explore?q=us%20bond%20yields%2010%20year"
+        },
+        {
+          "platform": "hackernews",
+          "title": "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit",
+          "url": "https://www.ubicloud.com/blog/postgresql-and-the-oom-killer-why-we-use-strict-memory-overcommit"
         }
       ]
     },
@@ -258,6 +319,11 @@
       "top_links": [
         {
           "platform": "telegram",
+          "title": "US Fentanyl Crisis Eases But Remains Dominant\nhttps://www.zerohedge.com/medical/us-fentanyl-crisis-eases-remains-dominan",
+          "url": "https://t.me/zerohedge/174609"
+        },
+        {
+          "platform": "telegram",
           "title": "These Countries Have The Highest Percentage Of Female Population\nhttps://www.zerohedge.com/geopolitical/these-countries-",
           "url": "https://t.me/zerohedge/174602"
         },
@@ -265,75 +331,6 @@
           "platform": "telegram",
           "title": "Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.com/political/feds-lapd-announce-major-hum",
           "url": "https://t.me/zerohedge/174601"
-        },
-        {
-          "platform": "telegram",
-          "title": "America's $31 Trillion Economy By State\nhttps://www.zerohedge.com/markets/americas-31-trillion-economy-state",
-          "url": "https://t.me/zerohedge/174604"
-        }
-      ]
-    },
-    {
-      "id": "8345e7f7-c2cb-4ba9-a2cc-e9c8158f0a55",
-      "label": "Geopolitics & Conflict: Meta mulls Samsung for 10T Won custom AI chip production - Daily. $META|FJ",
-      "theme": "Geopolitics & Conflict",
-      "category": "politics",
-      "dis": 36.065,
-      "dis_normalized": 0.246,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.358,
-        "telegram": 35.707
-      },
-      "n_items": 25,
-      "n_participants": 97,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "Meta mulls Samsung for 10T Won custom AI chip production - Daily. $META|FJ",
-          "url": "https://t.me/financialjuice/121137"
-        },
-        {
-          "platform": "telegram",
-          "title": "European Council's Costa: The EU will approve the savings and investment union this year|FJ",
-          "url": "https://t.me/financialjuice/121138"
-        },
-        {
-          "platform": "telegram",
-          "title": "Eurozone Composite PMI Final June 2026 Report|FJ",
-          "url": "https://t.me/financialjuice/121136"
-        }
-      ]
-    },
-    {
-      "id": "cc5ad7bf-ed34-436b-89e0-69ad055b6324",
-      "label": "AI Capex & Infrastructure: UK Leadership Candidate Burnham ends remarks.|FJ",
-      "theme": "AI Capex & Infrastructure",
-      "category": "ai",
-      "dis": 21.522,
-      "dis_normalized": 0.147,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 1.579,
-        "telegram": 19.942
-      },
-      "n_items": 27,
-      "n_participants": 313,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "Trump: Fed's Warsh faces somewhat hostile board|FJ",
-          "url": "https://t.me/financialjuice/121067"
-        },
-        {
-          "platform": "telegram",
-          "title": "State Department: Rubio spoke with China's Wang Yi|FJ",
-          "url": "https://t.me/financialjuice/121069"
-        },
-        {
-          "platform": "telegram",
-          "title": "Trump on Supreme court rejecting effort to remove Fed's Cook: we could oust her by winning the case|FJ",
-          "url": "https://t.me/financialjuice/121068"
         }
       ]
     }
