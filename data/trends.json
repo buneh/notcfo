@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T19:51:07Z",
+  "generated_at": "2026-07-03T20:03:57Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -34,13 +34,46 @@
         },
         {
           "platform": "telegram",
-          "title": "Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.com/political/why-left-really-hates-trum",
-          "url": "https://t.me/zerohedge/174624"
+          "title": "Anthropic Moves To Shut Loopholes Letting Chinese Tech Firms Access Claude\nhttps://www.zerohedge.com/technology/anthropi",
+          "url": "https://t.me/zerohedge/174626"
         },
         {
           "platform": "telegram",
           "title": "These Are The World's Most & Least Free Countries\nhttps://www.zerohedge.com/geopolitical/these-are-worlds-most-least-fre",
           "url": "https://t.me/zerohedge/174614"
+        }
+      ]
+    },
+    {
+      "id": "062900b3-6c0b-4085-a835-22df56628ecd",
+      "label": "Central Bank Policy: Anthropic Moves To Shut Loopholes Letting Chinese Tech Firms Access Claude\nhttps",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 139.9,
+      "dis_normalized": 0.953,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.668,
+        "telegram": 59.418,
+        "google_trends": 79.815
+      },
+      "n_items": 158,
+      "n_participants": 418,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "US Believed Israel Tried To Assassinate Iran's Top Negotiators As Ghalibaf's Plane Made Emergency Landing\nhttps://www.ze",
+          "url": "https://t.me/zerohedge/174630"
+        },
+        {
+          "platform": "google_trends",
+          "title": "zesa tariffs",
+          "url": "https://trends.google.com/trends/explore?q=zesa%20tariffs"
+        },
+        {
+          "platform": "google_trends",
+          "title": "understanding bond yields",
+          "url": "https://trends.google.com/trends/explore?q=understanding%20bond%20yields"
         }
       ]
     },
@@ -237,8 +270,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "ousd",
-          "url": "https://trends.google.com/trends/explore?q=ousd"
+          "title": "ousd stablecoin",
+          "url": "https://trends.google.com/trends/explore?q=ousd%20stablecoin"
         }
       ]
     },
@@ -299,39 +332,6 @@
           "platform": "hackernews",
           "title": "PostgreSQL and the OOM Killer: Why We Use Strict Memory Overcommit",
           "url": "https://www.ubicloud.com/blog/postgresql-and-the-oom-killer-why-we-use-strict-memory-overcommit"
-        }
-      ]
-    },
-    {
-      "id": "86ee6baa-1024-4035-b359-d859ef531de5",
-      "label": "Geopolitics & Conflict: Nomura Asset Management Taiwan: We are overweight in China as strong exports hel",
-      "theme": "Geopolitics & Conflict",
-      "category": "politics",
-      "dis": 47.122,
-      "dis_normalized": 0.321,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.017,
-        "telegram": 36.002,
-        "google_trends": 11.103
-      },
-      "n_items": 36,
-      "n_participants": 80,
-      "top_links": [
-        {
-          "platform": "google_trends",
-          "title": "ofgem standard tariffs meter readings",
-          "url": "https://trends.google.com/trends/explore?q=ofgem%20standard%20tariffs%20meter%20readings"
-        },
-        {
-          "platform": "google_trends",
-          "title": "canada china pea starch tariffs",
-          "url": "https://trends.google.com/trends/explore?q=canada%20china%20pea%20starch%20tariffs"
-        },
-        {
-          "platform": "google_trends",
-          "title": "china canada pea trade tariffs",
-          "url": "https://trends.google.com/trends/explore?q=china%20canada%20pea%20trade%20tariffs"
         }
       ]
     }
