@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T20:34:37Z",
+  "generated_at": "2026-07-03T21:04:51Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -135,6 +135,39 @@
           "platform": "telegram",
           "title": "JUST IN - WHO gives emergency use listing to China's Shanghai Zhijiang Biotechnology, for the first PCR test for Ebola B",
           "url": "https://t.me/disclosetv/21388"
+        }
+      ]
+    },
+    {
+      "id": "4bb4bc93-0844-430b-b868-d219c803da64",
+      "label": "Central Bank Policy: Anthropic Moves To Shut Loopholes Letting Chinese Tech Firms Access Claude\nhttps",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 132.568,
+      "dis_normalized": 0.903,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 3.882,
+        "telegram": 57.882,
+        "google_trends": 70.803
+      },
+      "n_items": 183,
+      "n_participants": 1470,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "Massive Security Presence For\u00a0Khamenei\u2019s 'Multi-City' Funeral Amid Hezbollah, Hamas, Taliban, China, Russia Paying Respe",
+          "url": "https://t.me/zerohedge/174631"
+        },
+        {
+          "platform": "google_trends",
+          "title": "anthropic",
+          "url": "https://trends.google.com/trends/explore?q=anthropic"
+        },
+        {
+          "platform": "google_trends",
+          "title": "federal holidays 2026",
+          "url": "https://trends.google.com/trends/explore?q=federal%20holidays%202026"
         }
       ]
     },
@@ -298,40 +331,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "openusd stablecoin",
-          "url": "https://trends.google.com/trends/explore?q=openusd%20stablecoin"
-        }
-      ]
-    },
-    {
-      "id": "9b730fb7-3459-4c0b-8d53-618155ca1b58",
-      "label": "FX & Macro: The Collapse Of Schengen... Over 1 Million Illegal Migrants Apply For Spanish Ci",
-      "theme": "FX & Macro",
-      "category": "markets",
-      "dis": 63.327,
-      "dis_normalized": 0.431,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 1.708,
-        "telegram": 61.619
-      },
-      "n_items": 106,
-      "n_participants": 917,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "The Collapse Of Schengen... Over 1 Million Illegal Migrants Apply For Spanish Citizenship\nhttps://www.zerohedge.com/geop",
-          "url": "https://t.me/zerohedge/174560"
-        },
-        {
-          "platform": "telegram",
-          "title": "KKR And SK Launch South Korea's Largest Renewable Energy Platform\nhttps://www.zerohedge.com/economics/kkr-and-sk-launch-",
-          "url": "https://t.me/zerohedge/174562"
-        },
-        {
-          "platform": "telegram",
-          "title": "Apple Negotiating To Buy Blacklisted Chinese Chips To Ease AI-Driven Shortage\nhttps://www.zerohedge.com/technology/apple",
-          "url": "https://t.me/zerohedge/174542"
+          "title": "ousd stablecoin",
+          "url": "https://trends.google.com/trends/explore?q=ousd%20stablecoin"
         }
       ]
     }
