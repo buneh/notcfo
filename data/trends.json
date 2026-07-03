@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T17:41:26Z",
+  "generated_at": "2026-07-03T19:51:07Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -29,6 +29,11 @@
       "top_links": [
         {
           "platform": "telegram",
+          "title": "Saudi Delegation Makes Unexpected Appearance In Tehran For Start Of Ayatollah's Funeral\nhttps://www.zerohedge.com/geopol",
+          "url": "https://t.me/zerohedge/174625"
+        },
+        {
+          "platform": "telegram",
           "title": "Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.com/political/why-left-really-hates-trum",
           "url": "https://t.me/zerohedge/174624"
         },
@@ -36,11 +41,6 @@
           "platform": "telegram",
           "title": "These Are The World's Most & Least Free Countries\nhttps://www.zerohedge.com/geopolitical/these-are-worlds-most-least-fre",
           "url": "https://t.me/zerohedge/174614"
-        },
-        {
-          "platform": "telegram",
-          "title": "Bomber Who Targeted Ukrainian Tycoon In Monaco Identified, Manhunt Continues\nhttps://www.zerohedge.com/geopolitical/manh",
-          "url": "https://t.me/zerohedge/174615"
         }
       ]
     },
@@ -74,6 +74,39 @@
           "platform": "telegram",
           "title": "Trump on Iran: I think they have accepted nearly everything we require|FJ",
           "url": "https://t.me/financialjuice/121075"
+        }
+      ]
+    },
+    {
+      "id": "d3eeca83-419a-429e-8283-863737891b9f",
+      "label": "Central Bank Policy: These Are The World's Most & Least Free Countries\nhttps://www.zerohedge.com/geop",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 110.519,
+      "dis_normalized": 0.753,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 0.619,
+        "telegram": 44.516,
+        "google_trends": 65.384
+      },
+      "n_items": 130,
+      "n_participants": 515,
+      "top_links": [
+        {
+          "platform": "telegram",
+          "title": "\"You Cannot Kill The Beast Until You Name It\": Democratic Politician Denounces Declaration Of Independence\nhttps://www.z",
+          "url": "https://t.me/zerohedge/174627"
+        },
+        {
+          "platform": "telegram",
+          "title": "France\u2019s President Macron: France has deployed mine countermeasures assets to the Middle East, including two minehunters",
+          "url": "https://t.me/financialjuice/121212"
+        },
+        {
+          "platform": "telegram",
+          "title": "France\u2019s President Macron: The aircraft carrier Charles de Gaulle is thus returning to its home port in Toulon, while ou",
+          "url": "https://t.me/financialjuice/121213"
         }
       ]
     },
@@ -161,18 +194,18 @@
       "top_links": [
         {
           "platform": "google_trends",
-          "title": "federal reserve holiday",
-          "url": "https://trends.google.com/trends/explore?q=federal%20reserve%20holiday"
-        },
-        {
-          "platform": "google_trends",
           "title": "administrative civil or criminal sanctions may be imposed if there is an unauthorized disclosure",
           "url": "https://trends.google.com/trends/explore?q=administrative%20civil%20or%20criminal%20sanctions%20may%20be%20imposed%20if%20there%20is%20an%20unauthorized%20disclosure"
         },
         {
           "platform": "google_trends",
-          "title": "eu 21st sanctions package",
-          "url": "https://trends.google.com/trends/explore?q=eu%2021st%20sanctions%20package"
+          "title": "federal reserve holiday",
+          "url": "https://trends.google.com/trends/explore?q=federal%20reserve%20holiday"
+        },
+        {
+          "platform": "google_trends",
+          "title": "ofsi sanctions list",
+          "url": "https://trends.google.com/trends/explore?q=ofsi%20sanctions%20list"
         }
       ]
     },
@@ -204,8 +237,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "openusd",
-          "url": "https://trends.google.com/trends/explore?q=openusd"
+          "title": "ousd",
+          "url": "https://trends.google.com/trends/explore?q=ousd"
         }
       ]
     },
@@ -292,45 +325,13 @@
         },
         {
           "platform": "google_trends",
-          "title": "china canada pea trade tariffs",
-          "url": "https://trends.google.com/trends/explore?q=china%20canada%20pea%20trade%20tariffs"
+          "title": "canada china pea starch tariffs",
+          "url": "https://trends.google.com/trends/explore?q=canada%20china%20pea%20starch%20tariffs"
         },
         {
           "platform": "google_trends",
-          "title": "canada china pea starch tariffs",
-          "url": "https://trends.google.com/trends/explore?q=canada%20china%20pea%20starch%20tariffs"
-        }
-      ]
-    },
-    {
-      "id": "f1e41d36-034a-4abd-87fb-51e30a9f1325",
-      "label": "Geopolitics & Conflict: Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.co",
-      "theme": "Geopolitics & Conflict",
-      "category": "politics",
-      "dis": 42.041,
-      "dis_normalized": 0.286,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 2.128,
-        "telegram": 39.913
-      },
-      "n_items": 102,
-      "n_participants": 1234,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "US Fentanyl Crisis Eases But Remains Dominant\nhttps://www.zerohedge.com/medical/us-fentanyl-crisis-eases-remains-dominan",
-          "url": "https://t.me/zerohedge/174609"
-        },
-        {
-          "platform": "telegram",
-          "title": "These Countries Have The Highest Percentage Of Female Population\nhttps://www.zerohedge.com/geopolitical/these-countries-",
-          "url": "https://t.me/zerohedge/174602"
-        },
-        {
-          "platform": "telegram",
-          "title": "Feds, LAPD Announce Major Human Trafficking Sting In LA\nhttps://www.zerohedge.com/political/feds-lapd-announce-major-hum",
-          "url": "https://t.me/zerohedge/174601"
+          "title": "china canada pea trade tariffs",
+          "url": "https://trends.google.com/trends/explore?q=china%20canada%20pea%20trade%20tariffs"
         }
       ]
     }
