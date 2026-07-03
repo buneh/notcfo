@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:33:09Z",
+  "generated_at": "2026-07-03T22:03:54Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -304,35 +304,35 @@
       ]
     },
     {
-      "id": "7eca7cf9-6b83-48f6-9c91-ad57ed506618",
-      "label": "Central Bank Policy: openusd",
-      "theme": "Central Bank Policy",
-      "category": "banking",
-      "dis": 89.838,
-      "dis_normalized": 0.612,
+      "id": "8605ea59-2a95-4c2f-8c6e-e6338c2a6823",
+      "label": "Geopolitics & Conflict: US Fentanyl Crisis Eases But Remains Dominant\nhttps://www.zerohedge.com/medical/",
+      "theme": "Geopolitics & Conflict",
+      "category": "politics",
+      "dis": 98.046,
+      "dis_normalized": 0.668,
       "velocity_6h": null,
       "platforms": {
-        "hackernews": 0.189,
-        "telegram": 43.442,
-        "google_trends": 46.207
+        "hackernews": 6.023,
+        "telegram": 59.121,
+        "google_trends": 32.902
       },
-      "n_items": 82,
-      "n_participants": 247,
+      "n_items": 163,
+      "n_participants": 2010,
       "top_links": [
         {
           "platform": "google_trends",
-          "title": "administrative civil or criminal sanctions may be imposed if there is an unauthorized disclosure",
-          "url": "https://trends.google.com/trends/explore?q=administrative%20civil%20or%20criminal%20sanctions%20may%20be%20imposed%20if%20there%20is%20an%20unauthorized%20disclosure"
+          "title": "online casino www.bestewahl24.de",
+          "url": "https://trends.google.com/trends/explore?q=online%20casino%20www.bestewahl24.de"
         },
         {
-          "platform": "google_trends",
-          "title": "federal reserve holiday",
-          "url": "https://trends.google.com/trends/explore?q=federal%20reserve%20holiday"
+          "platform": "telegram",
+          "title": "Independence Week\nhttps://www.zerohedge.com/economics/independence-week",
+          "url": "https://t.me/zerohedge/174632"
         },
         {
-          "platform": "google_trends",
-          "title": "ofsi sanctions list",
-          "url": "https://trends.google.com/trends/explore?q=ofsi%20sanctions%20list"
+          "platform": "hackernews",
+          "title": "Show HN: Topics, Not Feeds",
+          "url": "https://blogsreader.com"
         }
       ]
     }
