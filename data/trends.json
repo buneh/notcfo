@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T21:04:51Z",
+  "generated_at": "2026-07-03T21:33:09Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -29,11 +29,6 @@
       "top_links": [
         {
           "platform": "telegram",
-          "title": "Saudi Delegation Makes Unexpected Appearance In Tehran For Start Of Ayatollah's Funeral\nhttps://www.zerohedge.com/geopol",
-          "url": "https://t.me/zerohedge/174625"
-        },
-        {
-          "platform": "telegram",
           "title": "Anthropic Moves To Shut Loopholes Letting Chinese Tech Firms Access Claude\nhttps://www.zerohedge.com/technology/anthropi",
           "url": "https://t.me/zerohedge/174626"
         },
@@ -41,6 +36,44 @@
           "platform": "telegram",
           "title": "These Are The World's Most & Least Free Countries\nhttps://www.zerohedge.com/geopolitical/these-are-worlds-most-least-fre",
           "url": "https://t.me/zerohedge/174614"
+        },
+        {
+          "platform": "telegram",
+          "title": "Why The Left Really Hates Trump's America 250 Celebration\nhttps://www.zerohedge.com/political/why-left-really-hates-trum",
+          "url": "https://t.me/zerohedge/174624"
+        }
+      ]
+    },
+    {
+      "id": "0afa46c3-b50f-4ac3-874c-39c38f996407",
+      "label": "Central Bank Policy: US Fentanyl Crisis Eases But Remains Dominant\nhttps://www.zerohedge.com/medical/",
+      "theme": "Central Bank Policy",
+      "category": "banking",
+      "dis": 144.8,
+      "dis_normalized": 0.986,
+      "velocity_6h": null,
+      "platforms": {
+        "hackernews": 4.308,
+        "telegram": 59.934,
+        "google_trends": 80.559
+      },
+      "n_items": 195,
+      "n_participants": 1400,
+      "top_links": [
+        {
+          "platform": "google_trends",
+          "title": "ripple xrp stablecoin ai integration",
+          "url": "https://trends.google.com/trends/explore?q=ripple%20xrp%20stablecoin%20ai%20integration"
+        },
+        {
+          "platform": "google_trends",
+          "title": "russian bond yields",
+          "url": "https://trends.google.com/trends/explore?q=russian%20bond%20yields"
+        },
+        {
+          "platform": "google_trends",
+          "title": "uk sanctions list search",
+          "url": "https://trends.google.com/trends/explore?q=uk%20sanctions%20list%20search"
         }
       ]
     },
@@ -300,39 +333,6 @@
           "platform": "google_trends",
           "title": "ofsi sanctions list",
           "url": "https://trends.google.com/trends/explore?q=ofsi%20sanctions%20list"
-        }
-      ]
-    },
-    {
-      "id": "541e1dd7-10cd-4066-a961-9dbddc807f60",
-      "label": "BTC / ETH / Crypto Majors: Japan Takes Next Step In $2.3 Trillion Plan With Domestic AI Model And 10M Robot",
-      "theme": "BTC / ETH / Crypto Majors",
-      "category": "crypto",
-      "dis": 70.537,
-      "dis_normalized": 0.48,
-      "velocity_6h": null,
-      "platforms": {
-        "hackernews": 0.955,
-        "telegram": 33.61,
-        "google_trends": 35.973
-      },
-      "n_items": 105,
-      "n_participants": 712,
-      "top_links": [
-        {
-          "platform": "telegram",
-          "title": "Why Bernie Sanders' AI Bill Is Fascistic And Dangerous\nhttps://www.zerohedge.com/political/why-bernie-sanders-ai-bill-fa",
-          "url": "https://t.me/zerohedge/174564"
-        },
-        {
-          "platform": "telegram",
-          "title": "Japan Takes Next Step In $2.3 Trillion Plan With Domestic AI Model And 10M Robots\nhttps://www.zerohedge.com/ai/japan-unv",
-          "url": "https://t.me/zerohedge/174565"
-        },
-        {
-          "platform": "google_trends",
-          "title": "ousd stablecoin",
-          "url": "https://trends.google.com/trends/explore?q=ousd%20stablecoin"
         }
       ]
     }
