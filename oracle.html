@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORACLE — a live forecasting council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e14;
+    --bg-alt:#10141c;
+    --panel:#151a24;
+    --panel-line:#262c39;
+    --text:#e8e6df;
+    --text-dim:#9199ab;
+    --gold:#c9a24b;
+    --teal:#4a8c9c;
+    --brick:#b5544a;
+    --purple:#8c7a9c;
+    --orange:#c97b4a;
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono:'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:radial-gradient(ellipse at 50% -10%, #171d29 0%, var(--bg) 55%);
+    color:var(--text);
+    font-family:var(--font-body);
+    min-height:100vh;
+    line-height:1.5;
+  }
+  .app{max-width:880px;margin:0 auto;padding:48px 20px 100px;}
+
+  /* ---------- Header ---------- */
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:16px;height:1px;background:var(--gold);display:inline-block;}
+  h1.wordmark{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(40px,8vw,64px);
+    letter-spacing:.01em;
+    margin:6px 0 4px;
+  }
+  .tagline{color:var(--text-dim);font-size:15px;max-width:520px;margin-bottom:36px;}
+
+  /* ---------- Query bar ---------- */
+  .query-panel{
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .query-row{display:flex;gap:10px;}
+  input[type=text]{
+    flex:1;
+    background:var(--bg-alt);
+    border:1px solid var(--panel-line);
+    border-radius:9px;
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:15px;
+    padding:13px 14px;
+    outline:none;
+    transition:border-color .15s;
+  }
+  input[type=text]:focus{border-color:var(--gold);}
+  input[type=text]::placeholder{color:var(--text-dim);}
+  button.consult{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    background:var(--gold);
+    color:#171308;
+    border:none;
+    border-radius:9px;
+    padding:0 22px;
+    cursor:pointer;
+    font-weight:600;
+    transition:filter .15s, transform .15s;
+    white-space:nowrap;
+  }
+  button.consult:hover{filter:brightness(1.08);}
+  button.consult:active{transform:scale(.97);}
+  button.consult:disabled{opacity:.5;cursor:not-allowed;}
+
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    letter-spacing:.03em;
+    padding:7px 12px;
+    border-radius:99px;
+    border:1px solid var(--panel-line);
+    background:transparent;
+    color:var(--text-dim);
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .chip.active{background:rgba(201,162,75,.14);border-color:var(--gold);color:var(--gold);}
+  .chip:hover{border-color:var(--text-dim);}
+
+  /* ---------- Pipeline ---------- */
+  .pipeline{display:none;margin-top:34px;}
+  .pipeline.show{display:block;}
+  .stage-track{display:flex;align-items:center;gap:0;margin-bottom:10px;}
+  .stage{
+    display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;position:relative;
+  }
+  .stage .dot{
+    width:11px;height:11px;border-radius:50%;
+    background:var(--panel-line);
+    transition:background .3s, box-shadow .3s;
+  }
+  .stage.active .dot{background:var(--gold);box-shadow:0 0 0 5px rgba(201,162,75,.16);animation:pulse-dot 1.4s ease-in-out infinite;}
+  .stage.done .dot{background:var(--teal);}
+  .stage .label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--text-dim);}
+  .stage.active .label, .stage.done .label{color:var(--text);}
+  .stage-line{position:absolute;top:5px;left:50%;width:100%;height:1px;background:var(--panel-line);z-index:-1;}
+  .stage:last-child .stage-line{display:none;}
+  @keyframes pulse-dot{0%,100%{box-shadow:0 0 0 5px rgba(201,162,75,.16);}50%{box-shadow:0 0 0 9px rgba(201,162,75,.06);}}
+  .stage-note{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);text-align:center;min-height:16px;}
+
+  .error-box{
+    display:none;margin-top:18px;background:rgba(181,84,74,.1);border:1px solid var(--brick);
+    border-radius:10px;padding:16px 18px;font-size:13.5px;color:#e7b3ac;
+  }
+  .error-box.show{display:flex;justify-content:space-between;align-items:center;gap:14px;}
+  .error-box button{
+    font-family:var(--font-mono);font-size:11px;background:transparent;border:1px solid var(--brick);
+    color:#e7b3ac;padding:7px 12px;border-radius:7px;cursor:pointer;white-space:nowrap;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker-wrap{display:none;margin-top:26px;overflow:hidden;border-top:1px solid var(--panel-line);border-bottom:1px solid var(--panel-line);padding:10px 0;}
+  .ticker-wrap.show{display:block;}
+  .ticker-track{display:flex;gap:36px;white-space:nowrap;animation:ticker-scroll 38s linear infinite;width:max-content;}
+  @keyframes ticker-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .ticker-item{font-family:var(--font-mono);font-size:12.5px;color:var(--text-dim);display:flex;align-items:center;gap:8px;}
+  .ticker-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  @media (prefers-reduced-motion: reduce){.ticker-track{animation:none;overflow-x:auto;}}
+
+  /* ---------- Horizon tabs ---------- */
+  .horizon-tabs{display:none;gap:8px;margin-top:38px;}
+  .horizon-tabs.show{display:flex;}
+  .htab{
+    flex:1;font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+    padding:11px 8px;border-radius:9px;border:1px solid var(--panel-line);background:var(--panel);
+    color:var(--text-dim);cursor:pointer;text-align:center;transition:all .15s;
+  }
+  .htab.active{border-color:var(--gold);color:var(--gold);background:rgba(201,162,75,.08);}
+
+  /* ---------- Oracle card ---------- */
+  .oracle-card{display:none;margin-top:18px;background:var(--panel);border:1px solid var(--panel-line);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+  .oracle-card.show{display:flex;gap:30px;align-items:center;flex-wrap:wrap;}
+  .dial-wrap{position:relative;width:150px;height:150px;flex-shrink:0;}
+  .vapor-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,162,75,.25);animation:vapor 3.6s ease-in-out infinite;}
+  .vapor-ring.r2{animation-delay:1.2s;}
+  .vapor-ring.r3{animation-delay:2.4s;}
+  @keyframes vapor{0%{transform:scale(.85);opacity:.7;}100%{transform:scale(1.35);opacity:0;}}
+  @media (prefers-reduced-motion: reduce){.vapor-ring{animation:none;opacity:.15;}}
+  .dial-num{font-family:var(--font-display);font-size:34px;font-weight:600;color:var(--gold);}
+  .dial-sub{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);letter-spacing:.05em;text-transform:uppercase;}
+  .oracle-body{flex:1;min-width:240px;}
+  .oracle-eyebrow{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+  .oracle-headline{font-family:var(--font-display);font-size:22px;font-weight:600;line-height:1.3;margin-bottom:10px;}
+  .oracle-text{font-size:14.5px;color:var(--text-dim);margin-bottom:14px;}
+  .dissent-box{background:rgba(181,84,74,.08);border-left:2px solid var(--brick);padding:10px 14px;border-radius:0 8px 8px 0;font-size:13px;color:#d3a49d;}
+  .dissent-box b{color:#e7b3ac;}
+
+  /* ---------- Council row ---------- */
+  .council-row{display:none;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;}
+  .council-row.show{display:grid;}
+  .persona-card{background:var(--bg-alt);border:1px solid var(--panel-line);border-radius:12px;padding:16px;}
+  .persona-head{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .persona-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .persona-name{font-family:var(--font-display);font-size:15px;font-weight:600;}
+  .persona-prob{font-family:var(--font-mono);font-size:19px;color:var(--gold);margin:4px 0;}
+  .persona-headline{font-size:13px;font-weight:500;margin-bottom:5px;}
+  .persona-reason{font-size:12.5px;color:var(--text-dim);}
+
+  /* ---------- Sources ---------- */
+  .sources-footer{display:none;margin-top:30px;}
+  .sources-footer.show{display:block;}
+  .sources-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-dim);margin-bottom:10px;}
+  .source-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .source-chip{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);border:1px solid var(--panel-line);padding:5px 10px;border-radius:7px;}
+
+  /* ---------- Past auguries ---------- */
+  .past-section{margin-top:52px;border-top:1px solid var(--panel-line);padding-top:20px;}
+  .past-toggle{font-family:var(--font-mono);font-size:12px;color:var(--text-dim);letter-spacing:.05em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;user-select:none;}
+  .past-toggle .car{transition:transform .2s;}
+  .past-toggle.open .car{transform:rotate(90deg);}
+  .past-list{display:none;margin-top:14px;flex-direction:column;gap:8px;}
+  .past-list.open{display:flex;}
+  .past-item{
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:9px;padding:12px 14px;
+    cursor:pointer;display:flex;justify-content:space-between;gap:10px;transition:border-color .15s;
+  }
+  .past-item:hover{border-color:var(--gold);}
+  .past-item .q{font-size:13.5px;}
+  .past-item .t{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);white-space:nowrap;}
+  .past-empty{font-size:13px;color:var(--text-dim);}
+
+  footer.credit{margin-top:60px;font-family:var(--font-mono);font-size:11px;color:#4a5062;text-align:center;}
+
+  @media(max-width:560px){
+    .query-row{flex-direction:column;}
+    button.consult{padding:13px;}
+    .oracle-card.show{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="eyebrow">a live forecasting council</div>
+  <h1 class="wordmark">ORACLE</h1>
+  <p class="tagline">Ask it what happens next. Five personas argue over current signal, and the oracle synthesizes a forecast across four horizons — with its reasoning and its dissent, shown plainly.</p>
+
+  <div class="query-panel">
+    <div class="query-row">
+      <input type="text" id="topicInput" placeholder="e.g. Will the ECB cut rates before September? — or leave blank for a global scan">
+      <button class="consult" id="consultBtn">Consult</button>
+    </div>
+    <div class="chip-row" id="domainChips"></div>
+  </div>
+
+  <div class="error-box" id="errorBox">
+    <span id="errorText"></span>
+    <button id="retryBtn">Retry</button>
+  </div>
+
+  <div class="pipeline" id="pipeline">
+    <div class="stage-track">
+      <div class="stage" id="stage-sensing"><div class="stage-line"></div><div class="dot"></div><div class="label">Sensing</div></div>
+      <div class="stage" id="stage-council"><div class="stage-line"></div><div class="dot"></div><div class="label">Deliberating</div></div>
+      <div class="stage" id="stage-oracle"><div class="stage-line"></div><div class="dot"></div><div class="label">Speaking</div></div>
+    </div>
+    <div class="stage-note" id="stageNote">&nbsp;</div>
+  </div>
+
+  <div class="ticker-wrap" id="tickerWrap"><div class="ticker-track" id="tickerTrack"></div></div>
+
+  <div class="horizon-tabs" id="horizonTabs"></div>
+  <div class="oracle-card" id="oracleCard"></div>
+  <div class="council-row" id="councilRow"></div>
+
+  <div class="sources-footer" id="sourcesFooter">
+    <div class="sources-label">Signal drawn from</div>
+    <div class="source-chips" id="sourceChips"></div>
+  </div>
+
+  <div class="past-section">
+    <div class="past-toggle" id="pastToggle"><span class="car">▸</span> Past auguries</div>
+    <div class="past-list" id="pastList"></div>
+  </div>
+
+  <footer class="credit">local council · no cloud memory beyond this device · inspired by the Pythia/MiroFish/Osiris oracle concept</footer>
+</div>
+
+<script>
+const DOMAINS = [
+  {id:'geo', label:'Geopolitics', color:'var(--brick)', dot:'#b5544a'},
+  {id:'markets', label:'Markets', color:'var(--gold)', dot:'#c9a24b'},
+  {id:'disasters', label:'Disasters & Climate', color:'var(--teal)', dot:'#4a8c9c'},
+  {id:'cyber', label:'Cyber & Infrastructure', color:'var(--purple)', dot:'#8c7a9c'},
+  {id:'tech', label:'Technology', color:'var(--orange)', dot:'#c97b4a'},
+  {id:'health', label:'Public Health', color:'#7a9c5a', dot:'#7a9c5a'}
+];
+const DEFAULT_ACTIVE = ['geo','markets','disasters'];
+
+const PERSONAS = [
+  {id:'analyst', name:'The Analyst', dot:'#4a8c9c', descriptor:'base rates & hard data', lens:'Ground every claim in comparable historical frequencies and observable current data. Avoid speculation and hedging language.'},
+  {id:'skeptic', name:'The Skeptic', dot:'#b5544a', descriptor:'uncertainty & alternate reads', lens:'Actively look for reasons the obvious reading could be wrong. Question the framing of the question itself and what could be missing from the signal.'},
+  {id:'quant', name:'The Quant', dot:'#c9a24b', descriptor:'probability calibration', lens:'Think in explicit probability terms. Reference base rates and how you would update on new information. Be numerically precise.'},
+  {id:'historian', name:'The Historian', dot:'#8c7a9c', descriptor:'patterns across time', lens:'Draw on the closest historical analogues to this situation and how those resolved. Ground reasoning in precedent.'},
+  {id:'contrarian', name:'The Contrarian', dot:'#c97b4a', descriptor:"the crowd's blind spot", lens:'Argue for the scenario consensus is most likely underpricing, even if uncomfortable or low-probability. Find the tail risk.'}
+];
+
+const HORIZONS = [
+  {id:'24h', label:'24 Hours'},
+  {id:'1w', label:'1 Week'},
+  {id:'1m', label:'1 Month'},
+  {id:'1y', label:'1 Year'}
+];
+
+let activeDomains = new Set(DEFAULT_ACTIVE);
+let currentHorizon = '24h';
+let state = null; // { topic, domains, gathered, personaResults, synthesis }
+let lastRunArgs = null;
+
+// ---------- render static chip UI ----------
+function renderDomainChips(){
+  const wrap = document.getElementById('domainChips');
+  wrap.innerHTML = '';
+  DOMAINS.forEach(d=>{
+    const el = document.createElement('div');
+    el.className = 'chip' + (activeDomains.has(d.id) ? ' active' : '');
+    el.textContent = d.label;
+    el.onclick = ()=>{
+      if(activeDomains.has(d.id)) activeDomains.delete(d.id); else activeDomains.add(d.id);
+      renderDomainChips();
+    };
+    wrap.appendChild(el);
+  });
+}
+renderDomainChips();
+
+// ---------- Claude API helpers ----------
+async function callClaude(promptText, useSearch){
+  const body = {
+    model: "claude-sonnet-4-6",
+    max_tokens: 1000,
+    messages: [{ role: "user", content: promptText }]
+  };
+  if(useSearch){
+    body.tools = [{ type: "web_search_20250305", name: "web_search" }];
+  }
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+  if(!res.ok){
+    throw new Error("The oracle's line went dead (HTTP " + res.status + "). Try again.");
+  }
+  const data = await res.json();
+  const text = (data.content || [])
+    .filter(b => b.type === "text")
+    .map(b => b.text)
+    .join("\n")
+    .trim();
+  if(!text) throw new Error("The oracle returned silence. Try again.");
+  return text;
+}
+
+function parseJSONLoose(text){
+  let cleaned = text.replace(/^```json/i,'').replace(/^```/,'').replace(/```$/,'').trim();
+  const start = cleaned.indexOf('{');
+  const end = cleaned.lastIndexOf('}');
+  if(start >= 0 && end > start) cleaned = cleaned.slice(start, end+1);
+  return JSON.parse(cleaned);
+}
+
+// ---------- pipeline UI ----------
+function setStage(stage, note){
+  ['sensing','council','oracle'].forEach(s=>{
+    const el = document.getElementById('stage-'+s);
+    el.classList.remove('active','done');
+  });
+  const order = ['sensing','council','oracle'];
+  const idx = order.indexOf(stage);
+  order.forEach((s,i)=>{
+    const el = document.getElementById('stage-'+s);
+    if(i < idx) el.classList.add('done');
+    if(i === idx) el.classList.add('active');
+  });
+  document.getElementById('stageNote').textContent = note || '';
+}
+function showError(msg){
+  document.getElementById('errorText').textContent = msg;
+  document.getElementById('errorBox').classList.add('show');
+}
+function hideError(){
+  document.getElementById('errorBox').classList.remove('show');
+}
+
+// ---------- prompt builders ----------
+function gatherPrompt(topic, domains){
+  const domainLabels = domains.map(id => DOMAINS.find(d=>d.id===id).label).join(', ');
+  const focus = topic ? `the question: "${topic}"` : `a general scan of current world signal`;
+  return `You are the sensing layer of a live forecasting oracle. Use web search to find current real events (last few days) relevant to ${focus}, within these domains: ${domainLabels}.
+Return ONLY valid JSON, no markdown fences, no commentary, matching exactly this schema:
+{"summary":"one plain paragraph describing the current state relevant to the query","events":[{"title":"under 14 words","domain":"one of: ${domains.join(', ')}","source":"publication or site name only, no URL","intensity":1-5}],"asOf":"the current date you can infer from search results, e.g. 2026-07-04"}
+Limit events to 8-12 items. Do not include any text outside the JSON object.`;
+}
+
+function personaPrompt(persona, briefText, topic){
+  const q = topic ? `The question being forecast: "${topic}"` : `The question being forecast: "What is most likely to happen next, broadly?"`;
+  return `You are ${persona.name}, a member of a five-person forecasting council. Your lens: ${persona.lens}
+World-state brief:
+${briefText}
+${q}
+Produce a forecast for four time horizons: 24h, 1w, 1m, 1y.
+Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
+{"forecasts":[{"horizon":"24h","probability":0-100,"headline":"under 12 words, concrete claim","reasoning":"one to two sentences, in character"},{"horizon":"1w","probability":0-100,"headline":"...","reasoning":"..."},{"horizon":"1m","probability":0-100,"headline":"...","reasoning":"..."},{"horizon":"1y","probability":0-100,"headline":"...","reasoning":"..."}]}
+The "probability" is the likelihood of the headline claim being true by that horizon. Be specific and concrete, avoid hedging.`;
+}
+
+function synthesisPrompt(personaResults, topic){
+  const block = personaResults.map(pr=>{
+    const p = PERSONAS.find(x=>x.id===pr.persona);
+    return `${p.name}:\n` + pr.data.forecasts.map(f=>`  [${f.horizon}] ${f.probability}% — ${f.headline} (${f.reasoning})`).join('\n');
+  }).join('\n\n');
+  const q = topic || "what is most likely to happen next";
+  return `You are the Oracle's voice — the final synthesis layer of a forecasting council. Question: "${q}"
+Here are the five council members' forecasts:
+${block}
+For each of the four horizons (24h, 1w, 1m, 1y): compute a consensus probability weighing the five views, write one short grounded forecast paragraph (2-3 sentences, plain language, no mysticism), and identify the strongest dissenting voice with a one-sentence summary of their objection.
+Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
+{"horizons":[{"horizon":"24h","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"exact persona name","objection":"one sentence"}},{"horizon":"1w","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}},{"horizon":"1m","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}},{"horizon":"1y","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}}]}`;
+}
+
+// ---------- rendering results ----------
+function renderTicker(gathered){
+  const track = document.getElementById('tickerTrack');
+  track.innerHTML = '';
+  const items = gathered.events.concat(gathered.events); // loop for seamless scroll
+  items.forEach(ev=>{
+    const d = DOMAINS.find(x=>x.id===ev.domain) || DOMAINS[0];
+    const item = document.createElement('div');
+    item.className = 'ticker-item';
+    item.innerHTML = `<span class="ticker-dot" style="background:${d.dot}"></span>${ev.title} <span style="opacity:.5">— ${ev.source||''}</span>`;
+    track.appendChild(item);
+  });
+  document.getElementById('tickerWrap').classList.add('show');
+
+  const chips = document.getElementById('sourceChips');
+  chips.innerHTML = '';
+  const seen = new Set();
+  gathered.events.forEach(ev=>{
+    if(ev.source && !seen.has(ev.source)){
+      seen.add(ev.source);
+      const c = document.createElement('div');
+      c.className = 'source-chip';
+      c.textContent = ev.source;
+      chips.appendChild(c);
+    }
+  });
+  document.getElementById('sourcesFooter').classList.add('show');
+}
+
+function renderHorizonTabs(){
+  const wrap = document.getElementById('horizonTabs');
+  wrap.innerHTML = '';
+  HORIZONS.forEach(h=>{
+    const b = document.createElement('div');
+    b.className = 'htab' + (h.id===currentHorizon ? ' active' : '');
+    b.textContent = h.label;
+    b.onclick = ()=>{ currentHorizon = h.id; renderHorizonTabs(); renderForHorizon(); };
+    wrap.appendChild(b);
+  });
+  wrap.classList.add('show');
+}
+
+function renderForHorizon(){
+  if(!state || !state.synthesis) return;
+  const hz = state.synthesis.horizons.find(x=>x.horizon===currentHorizon);
+  const card = document.getElementById('oracleCard');
+  const pct = Math.max(0, Math.min(100, hz.consensusProbability));
+  const circumference = 2*Math.PI*62;
+  const offset = circumference * (1 - pct/100);
+  card.innerHTML = `
+    <div class="dial-wrap">
+      <div class="vapor-ring"></div><div class="vapor-ring r2"></div><div class="vapor-ring r3"></div>
+      <svg width="150" height="150" viewBox="0 0 150 150" style="position:absolute;inset:0;transform:rotate(-90deg)">
+        <circle cx="75" cy="75" r="62" fill="none" stroke="#262c39" stroke-width="6"/>
+        <circle cx="75" cy="75" r="62" fill="none" stroke="#c9a24b" stroke-width="6" stroke-linecap="round"
+          stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition:stroke-dashoffset 1s ease"/>
+      </svg>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div class="dial-num">${pct}%</div>
+        <div class="dial-sub">consensus</div>
+      </div>
+    </div>
+    <div class="oracle-body">
+      <div class="oracle-eyebrow">${HORIZONS.find(h=>h.id===currentHorizon).label} · the oracle speaks</div>
+      <div class="oracle-headline">${state.topic || 'The state of the world'}</div>
+      <div class="oracle-text">${hz.forecast}</div>
+      <div class="dissent-box"><b>${hz.dissent.persona} dissents:</b> ${hz.dissent.objection}</div>
+    </div>
+  `;
+  card.classList.add('show');
+
+  const row = document.getElementById('councilRow');
+  row.innerHTML = '';
+  state.personaResults.forEach(pr=>{
+    const p = PERSONAS.find(x=>x.id===pr.persona);
+    const f = pr.data.forecasts.find(x=>x.horizon===currentHorizon);
+    const el = document.createElement('div');
+    el.className = 'persona-card';
+    el.innerHTML = `
+      <div class="persona-head"><span class="persona-dot" style="background:${p.dot}"></span><span class="persona-name">${p.name}</span></div>
+      <div class="persona-prob">${f.probability}%</div>
+      <div class="persona-headline">${f.headline}</div>
+      <div class="persona-reason">${f.reasoning}</div>
+    `;
+    row.appendChild(el);
+  });
+  row.classList.add('show');
+}
+
+// ---------- main pipeline ----------
+async function runOracle(topic, domains){
+  hideError();
+  document.getElementById('pipeline').classList.add('show');
+  document.getElementById('consultBtn').disabled = true;
+  document.getElementById('oracleCard').classList.remove('show');
+  document.getElementById('councilRow').classList.remove('show');
+  document.getElementById('horizonTabs').classList.remove('show');
+  document.getElementById('tickerWrap').classList.remove('show');
+  document.getElementById('sourcesFooter').classList.remove('show');
+
+  try{
+    setStage('sensing', 'Scanning ' + domains.map(id=>DOMAINS.find(d=>d.id===id).label).join(', ') + ' for live signal…');
+    const gatherText = await callClaude(gatherPrompt(topic, domains), true);
+    const gathered = parseJSONLoose(gatherText);
+    renderTicker(gathered);
+
+    setStage('council', 'Five personas deliberating: Analyst, Skeptic, Quant, Historian, Contrarian…');
+    const briefText = gathered.summary + "\n" + gathered.events.map(e=>`- [${e.domain}] ${e.title} (${e.source})`).join('\n');
+    const personaResults = await Promise.all(PERSONAS.map(async p=>{
+      const t = await callClaude(personaPrompt(p, briefText, topic), false);
+      return { persona: p.id, data: parseJSONLoose(t) };
+    }));
+
+    setStage('oracle', 'Synthesizing consensus and dissent into a forecast…');
+    const synthText = await callClaude(synthesisPrompt(personaResults, topic), false);
+    const synthesis = parseJSONLoose(synthText);
+
+    setStage('oracle', 'Done.');
+    state = { topic, domains, gathered, personaResults, synthesis, ts: Date.now() };
+    currentHorizon = '24h';
+    renderHorizonTabs();
+    renderForHorizon();
+    saveAugury(state);
+    renderPastList();
+  }catch(err){
+    showError(err.message || 'Something interrupted the reading.');
+  }finally{
+    document.getElementById('consultBtn').disabled = false;
+  }
+}
+
+document.getElementById('consultBtn').onclick = ()=>{
+  const topic = document.getElementById('topicInput').value.trim();
+  const domains = Array.from(activeDomains);
+  if(domains.length === 0){ showError('Select at least one domain to scan.'); return; }
+  lastRunArgs = { topic, domains };
+  runOracle(topic, domains);
+};
+document.getElementById('topicInput').addEventListener('keydown', e=>{
+  if(e.key === 'Enter') document.getElementById('consultBtn').click();
+});
+document.getElementById('retryBtn').onclick = ()=>{
+  if(lastRunArgs) runOracle(lastRunArgs.topic, lastRunArgs.domains);
+};
+
+// ---------- persistence ----------
+async function saveAugury(s){
+  try{
+    await window.storage.set('augury:'+s.ts, JSON.stringify(s), false);
+  }catch(e){ /* non-fatal */ }
+}
+
+async function renderPastList(){
+  const listEl = document.getElementById('pastList');
+  try{
+    const res = await window.storage.list('augury:', false);
+    const keys = (res && res.keys) || [];
+    if(keys.length === 0){
+      listEl.innerHTML = '<div class="past-empty">No past auguries yet on this device.</div>';
+      return;
+    }
+    const items = [];
+    for(const k of keys){
+      try{
+        const r = await window.storage.get(k, false);
+        if(r && r.value) items.push(JSON.parse(r.value));
+      }catch(e){ /* skip missing */ }
+    }
+    items.sort((a,b)=>b.ts - a.ts);
+    listEl.innerHTML = '';
+    items.slice(0,20).forEach(item=>{
+      const d = new Date(item.ts);
+      const el = document.createElement('div');
+      el.className = 'past-item';
+      el.innerHTML = `<span class="q">${item.topic || 'Global scan'}</span><span class="t">${d.toLocaleDateString()} ${d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</span>`;
+      el.onclick = ()=>{
+        state = item;
+        activeDomains = new Set(item.domains);
+        renderDomainChips();
+        document.getElementById('topicInput').value = item.topic || '';
+        currentHorizon = '24h';
+        document.getElementById('pipeline').classList.add('show');
+        setStage('oracle','Recalled from past auguries.');
+        renderTicker(item.gathered);
+        renderHorizonTabs();
+        renderForHorizon();
+        window.scrollTo({top:0, behavior:'smooth'});
+      };
+      listEl.appendChild(el);
+    });
+  }catch(e){
+    listEl.innerHTML = '<div class="past-empty">Past auguries unavailable right now.</div>';
+  }
+}
+
+document.getElementById('pastToggle').onclick = ()=>{
+  const toggle = document.getElementById('pastToggle');
+  const list = document.getElementById('pastList');
+  toggle.classList.toggle('open');
+  list.classList.toggle('open');
+};
+
+renderPastList();
+</script>
+</body>
+</html>
