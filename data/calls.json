@@ -1,4 +1,21 @@
 {
-  "generatedAt": null,
-  "calls": []
+  "generatedAt": "2026-07-04T23:45:53.944Z",
+  "calls": [
+    {
+      "id": "fintech",
+      "domain": "Telecom × FinTech",
+      "question": "Will telecom-embedded financial services see a major new partnership or launch this month?",
+      "horizon": "1m",
+      "probability": 86,
+      "forecast": "Telecom-embedded financial services deals have been landing at a near-monthly clip (VEON-Mastercard-Bangladesh, Ericsson-Mastercard Move, Freedom Telecom-e&), and with over 100 telecom M&A/JV deals projected for the year, another qualifying announcement this month is highly likely. The main uncertainty is definitional—what counts as 'major'—but given the loose bar and steady deal cadence, non-occurrence would be the surprise, not occurrence."
+    },
+    {
+      "id": "signal",
+      "domain": "Signal Intelligence",
+      "question": "Will discussion intensity around AI regulation increase over the next week?",
+      "horizon": "1w",
+      "probability": 67,
+      "forecast": "AI regulation discussion is likely to intensify further this week, driven by the active Obernolte-Trahan preemption draft colliding with multiple state statutes, plus pending DOJ/FTC actions that could spark sudden coverage spikes. While there's a real chance the conversation has already reached a saturated plateau, the number of concurrent live triggers makes a further increase more probable than a flat or declining week. Expect continued or escalating coverage, with risk of a sharp jump if any single event (a floor vote, injunction, or agency statement) lands."
+    }
+  ]
 }
