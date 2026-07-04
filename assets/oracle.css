@@ -1,0 +1,103 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — Oracle section
+   Extends the existing design system. No new colors, no new
+   corner radii — reuses --ink/--gold/--signal/--red/--r and the
+   ls-list / mf-row / sesh / sc-n / machine-grid components already
+   defined in style.css. Load this file *after* style.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── API key panel ──────────────────────────────────────────── */
+.orc-key { background: var(--ink2); border: 1px solid var(--rule); border-radius: var(--r); padding: 1.25rem 1.4rem; margin-bottom: 1.25rem; }
+.orc-key-row { display: flex; gap: .6rem; margin-top: .4rem; }
+.orc-key-row input {
+  flex: 1; background: var(--ink); border: 1px solid var(--rule); color: var(--body);
+  font-family: 'JetBrains Mono', monospace; font-size: .8125rem; padding: .6rem .8rem;
+  outline: none; border-radius: var(--r); transition: border-color .15s; -webkit-appearance: none;
+}
+.orc-key-row input:focus { border-color: var(--gold); }
+.orc-key-status { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-top: .4rem; }
+.orc-key-change {
+  background: none; border: none; color: var(--quiet); font-family: 'Inter', sans-serif;
+  font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; text-decoration: underline;
+  cursor: pointer; padding: 0; transition: color .15s;
+}
+.orc-key-change:hover { color: var(--white); }
+.orc-key-note { font-size: 11px; color: var(--quiet); line-height: 1.6; margin-top: .75rem; }
+.orc-key-note a { color: var(--signal); border-bottom: 1px solid var(--signal); opacity: .85; }
+.orc-key-note a:hover { opacity: 1; }
+
+/* ─── Query row ──────────────────────────────────────────────── */
+.orc-query { margin-bottom: 1.25rem; opacity: 1; transition: opacity .2s; }
+.orc-query.locked { opacity: .4; pointer-events: none; }
+.orc-query-row { display: flex; gap: .6rem; margin-bottom: 1rem; }
+.orc-query-row input {
+  flex: 1; background: var(--ink2); border: 1px solid var(--rule); color: var(--body);
+  font-family: 'Inter', sans-serif; font-size: .875rem; padding: .72rem .9rem;
+  outline: none; border-radius: var(--r); transition: border-color .15s; -webkit-appearance: none;
+}
+.orc-query-row input:focus { border-color: var(--gold); }
+.orc-query-row .btn { border-radius: var(--r); border-width: 1px; border-style: solid; }
+.orc-query-row .btn:disabled { opacity: .35; cursor: not-allowed; }
+
+/* ─── Error state ────────────────────────────────────────────── */
+.orc-error {
+  display: none; border: 1px solid var(--red); background: rgba(184,90,72,.08);
+  border-radius: var(--r); padding: .85rem 1.1rem; margin-bottom: 1.25rem;
+  align-items: center; justify-content: space-between; gap: 1rem; font-size: .8125rem; color: var(--body);
+}
+.orc-error.show { display: flex; }
+.orc-retry {
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase;
+  background: none; border: 1px solid var(--red); color: var(--red); border-radius: var(--r);
+  padding: .4rem .8rem; cursor: pointer; white-space: nowrap; transition: background .15s;
+}
+.orc-retry:hover { background: rgba(184,90,72,.12); }
+
+/* ─── Pipeline status (mirrors .ls-status) ──────────────────── */
+.orc-pipeline { margin-bottom: 1.5rem; }
+.orc-stage { color: var(--quiet); transition: color .2s; }
+.orc-stage.active { color: var(--signal); }
+.orc-stage.done { color: var(--body); }
+
+/* ─── Signal ticker (reuses .ls-list / .ls-row) ──────────────── */
+.orc-ticker { margin-bottom: 1.5rem; }
+
+/* ─── Horizon tabs (reuses .ls-filters / .ls-filter) ─────────── */
+.orc-htabs { margin-bottom: 1.5rem; }
+
+/* ─── Synthesis card (reuses .machine-grid / .sc-n) ──────────── */
+.orc-card { margin-bottom: 1.5rem; }
+.orc-stat { padding-right: 1rem; }
+.orc-pct { font-size: clamp(2.4rem, 6vw, 3.4rem); margin-bottom: .35rem; }
+.orc-bar { margin-top: .75rem; }
+.orc-bar .ls-bar-fill { background: var(--gold); transition: width 1s ease; }
+.orc-forecast { margin: .9rem 0 1rem; font-size: .875rem; }
+.orc-dissent { border-left: 2px solid var(--red); padding-left: .9rem; font-size: .8125rem; color: var(--quiet); line-height: 1.6; }
+.orc-dissent .who { color: var(--red); font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .02em; }
+
+/* ─── Council (reuses .machine-fact-list / .mf-row) ──────────── */
+.orc-council { margin-bottom: 1.5rem; }
+.orc-persona-prob { color: var(--signal); font-weight: 700; }
+
+/* ─── Sources ─────────────────────────────────────────────────── */
+.orc-sources { margin-bottom: 2rem; }
+.orc-sources .ls-filter { pointer-events: none; }
+
+/* ─── Past auguries (reuses .sesh-list / .sesh) ──────────────── */
+.orc-past { border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+.orc-past-toggle {
+  display: flex; align-items: center; gap: .5rem; font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--quiet);
+  cursor: pointer; user-select: none; transition: color .15s;
+}
+.orc-past-toggle:hover { color: var(--white); }
+.orc-car { display: inline-block; transition: transform .2s; }
+.orc-past-toggle.open .orc-car { transform: rotate(90deg); }
+.orc-past-list { display: none; margin-top: 1rem; }
+.orc-past-list.open { display: flex; }
+.orc-past-empty { padding: 1rem 1.1rem; font-size: .8125rem; color: var(--quiet); background: var(--ink2); border: 1px solid var(--rule); border-radius: var(--r); }
+
+@media (max-width: 580px) {
+  .orc-query-row { flex-direction: column; }
+  .orc-key-row { flex-direction: column; }
+}
