@@ -13,7 +13,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/oracle.css">
-<link rel="stylesheet" href="/assets/events.css">
 </head>
 <body>
 
@@ -241,35 +240,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         Weights effortful engagement (replies, comments, forwards) by polarization signal and reply-tree depth, normalized for unique participants. Brigades and amplification are suppressed by design.
       </p>
     </div>
-
-    <!-- LIVE WORLD EVENTS — insert this block right after the existing .ls-foot div,
-         still inside #pulse's .wrap, before that section's closing </div></section> -->
-    <div class="ev-wrap rev">
-      <div class="ev-head">
-        <div class="label">What's actually happening, not just discussed</div>
-        <h3>Live world events</h3>
-        <p>Earthquakes (USGS), active wildfires / storms / volcanoes / sea &amp; lake ice (NASA EONET), and geotagged conflict &amp; unrest coverage (GDELT) &mdash; the raw physical and geopolitical signal underneath the conversation above.</p>
-      </div>
-    
-      <div class="ls-status" id="evStatus">
-        <span><span class="ls-dot"></span>Live &middot; updated <span id="evUpdated">&mdash;</span></span>
-        <span class="ls-status-sep">&middot;</span>
-        <span class="ls-sources" id="evCount">&mdash; events</span>
-        <span class="ls-status-sep">&middot;</span>
-        <span>USGS &middot; NASA EONET &middot; GDELT</span>
-        <span class="ls-status-sep">&middot;</span>
-        <span>5-min refresh</span>
-      </div>
-    
-      <div class="ev-legend" id="evLegend"></div>
-    
-      <div class="ev-map-frame">
-        <svg class="ev-map" id="evMap" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
-          <path id="evLand" class="ev-land" d=""></path>
-          <g id="evDots"></g>
-        </svg>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -329,8 +299,5 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 
 <script src="/assets/site.js"></script>
 <script src="/assets/oracle.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/d3-geo@3/dist/d3-geo.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-<script src="/assets/events.js"></script>
 </body>
 </html>
