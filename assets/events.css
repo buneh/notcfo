@@ -24,13 +24,24 @@
   border: 1px solid var(--rule); border-radius: var(--r); background: var(--ink2);
   margin-bottom: 1.5rem; overflow: hidden;
 }
-.ev-map { display: block; width: 100%; height: auto; }
+.ev-map { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; }
 .ev-grat { stroke: var(--rule); stroke-width: 1; }
 .ev-grat-strong { stroke: var(--rule2); stroke-width: 1; }
 .ev-dot { transition: r .15s ease; }
 .ev-dot:hover { r: 6; }
 
-.ev-empty { padding: 3rem 1.5rem; text-align: center; font-size: .875rem; color: var(--quiet); border: 1px solid var(--rule); border-radius: var(--r); }
+/* Category fill colors as real CSS classes — var() inside a bare SVG
+   presentation attribute (fill="var(--x)") is unreliable across browsers;
+   routing color through a stylesheet class is the robust way. */
+.ev-dot-quake    { fill: var(--gold); }
+.ev-dot-wildfire { fill: var(--red); }
+.ev-dot-volcano  { fill: var(--red); }
+.ev-dot-storm    { fill: var(--signal); }
+.ev-dot-ice      { fill: var(--signal); }
+.ev-dot-conflict { fill: var(--white); }
+.ev-dot-other    { fill: var(--quiet); }
+
+.ev-empty { padding: 3rem 1.5rem; text-align: center; font-size: .875rem; color: var(--quiet); border: 1px solid var(--rule); border-radius: var(--r); margin-bottom: 1.5rem; }
 .ev-empty strong { color: var(--body); font-weight: 600; display: block; margin-bottom: .25rem; }
 
 @media (max-width: 580px) {
