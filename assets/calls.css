@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — Standing Calls (ambient MiroFish predictions + track
+   record) and Commentary (human op-ed placeholder).
+   Reuses existing tokens/components — machine-fact-list/mf-row for
+   current calls, tl-row for the track record ledger (same pattern
+   as the About page timeline). Load after style.css and oracle.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── shared status line (mirrors ls-status) ─────────────────── */
+.calls-status {
+  display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;
+  padding: .9rem 1.1rem; background: var(--ink2); border: 1px solid var(--rule);
+  border-radius: var(--r); margin-bottom: 1.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--quiet);
+}
+.calls-status .ls-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--signal); margin-right: .55rem; vertical-align: middle; }
+.calls-status .sep { color: var(--rule2); }
+
+/* ─── standing calls (reuses .machine-fact-list / .mf-row) ───── */
+.calls-current { margin-bottom: 2.5rem; }
+.calls-current .mf-k { display: flex; justify-content: space-between; gap: 1rem; }
+.calls-prob { color: var(--gold); font-family: 'JetBrains Mono', monospace; }
+.calls-horizon { color: var(--quiet); font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+/* ─── track record subsection header ─────────────────────────── */
+.tr-head { margin-bottom: 1rem; }
+.tr-head .label { margin-bottom: .4rem; }
+.tr-head p { font-size: .8125rem; max-width: 560px; }
+
+/* ─── track record ledger (reuses .tl-row / .tl-left / .tl-right) ─── */
+.tr-outcome { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.tr-outcome-yes { color: var(--signal); }
+.tr-outcome-no { color: var(--red); }
+.tr-outcome-partial { color: var(--gold); }
+.tr-outcome-pending { color: var(--quiet); }
+.tr-called { font-size: 10.5px; color: var(--quiet); margin-top: .2rem; }
+
+/* ─── empty states ────────────────────────────────────────────── */
+.calls-empty, .tr-empty {
+  padding: 2.25rem 1.5rem; text-align: center; font-size: .8125rem; color: var(--quiet);
+  border: 1px solid var(--rule); border-radius: var(--r);
+}
+.calls-empty strong, .tr-empty strong { color: var(--body); font-weight: 600; display: block; margin-bottom: .25rem; }
+
+/* ─── Commentary (human op-ed) placeholder ───────────────────── */
+.notes-empty {
+  padding: 3rem 1.75rem; text-align: center; border: 1px solid var(--rule); border-radius: var(--r);
+}
+.notes-empty strong { color: var(--body); font-weight: 600; display: block; margin-bottom: .4rem; font-size: .9375rem; }
+.notes-empty p { font-size: .8125rem; max-width: 440px; margin: 0 auto; }
+
+/* Template for a real entry once one exists — kept here so the shape
+   is obvious to reuse by hand; unused until a .note-row is actually
+   added to the page. Mirrors .tl-row from the About page timeline. */
+.note-row { display: grid; grid-template-columns: 128px 1fr; border-bottom: 1px solid var(--rule); padding: 2rem 0; }
+.note-row:first-child { padding-top: 0; }
+.note-row:last-child { border-bottom: none; padding-bottom: 0; }
+.note-left { padding-right: 2rem; padding-top: .1rem; }
+.note-date { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; letter-spacing: .06em; color: var(--gold); margin-bottom: .45rem; }
+.note-tag { font-size: 11px; color: var(--quiet); line-height: 1.45; }
+.note-right h3 { margin-bottom: .5rem; }
+.note-right p { font-size: .875rem; line-height: 1.75; }
+
+@media (max-width: 580px) {
+  .note-row { grid-template-columns: 1fr; }
+  .note-left { display: flex; gap: 1rem; align-items: baseline; padding-right: 0; padding-bottom: .4rem; }
+}
