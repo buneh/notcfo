@@ -1,0 +1,38 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — Live World Events (Osiris-style feed layer, flat map)
+   Sits inside #pulse, beneath the Discussion Intensity list.
+   No new colors or radii — reuses --gold/--signal/--red/--quiet/--r
+   and the ls-status / ls-list / ls-row components from style.css.
+   Load after style.css and oracle.css.
+   ═══════════════════════════════════════════════════════════════ */
+
+.ev-wrap { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+.ev-head { margin-bottom: 1.25rem; }
+.ev-head .label { margin-bottom: .5rem; }
+.ev-head h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.ev-head p { font-size: .8125rem; max-width: 560px; }
+
+.ev-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
+.ev-legend-item {
+  display: flex; align-items: center; gap: .4rem;
+  font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--quiet);
+}
+.ev-legend-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+.ev-map-frame {
+  border: 1px solid var(--rule); border-radius: var(--r); background: var(--ink2);
+  margin-bottom: 1.5rem; overflow: hidden;
+}
+.ev-map { display: block; width: 100%; height: auto; }
+.ev-grat { stroke: var(--rule); stroke-width: 1; }
+.ev-grat-strong { stroke: var(--rule2); stroke-width: 1; }
+.ev-dot { transition: r .15s ease; }
+.ev-dot:hover { r: 6; }
+
+.ev-empty { padding: 3rem 1.5rem; text-align: center; font-size: .875rem; color: var(--quiet); border: 1px solid var(--rule); border-radius: var(--r); }
+.ev-empty strong { color: var(--body); font-weight: 600; display: block; margin-bottom: .25rem; }
+
+@media (max-width: 580px) {
+  .ev-legend { gap: .6rem .9rem; }
+}
