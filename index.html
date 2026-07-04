@@ -13,6 +13,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/oracle.css">
+<link rel="stylesheet" href="/assets/calls.css">
 </head>
 <body>
 
@@ -26,7 +27,8 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
       <ul class="nav-links">
         <li><a href="#domains">Domains</a></li>
         <li><a href="#oracle">Oracle</a></li>
-        <li><a href="#pulse">Live Signal</a></li>
+        <li><a href="#calls">Calls</a></li>
+        <li><a href="#notes">Notes</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
@@ -43,7 +45,8 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <div class="mob-menu" id="mobMenu">
   <a href="#domains" onclick="closeMenu()">Domains</a>
   <a href="#oracle" onclick="closeMenu()">Oracle</a>
-  <a href="#pulse" onclick="closeMenu()">Live Signal</a>
+  <a href="#calls" onclick="closeMenu()">Calls</a>
+  <a href="#notes" onclick="closeMenu()">Notes</a>
   <a href="#vision" onclick="closeMenu()">Vision</a>
   <a href="/about.html" onclick="closeMenu()">About</a>
 </div>
@@ -197,49 +200,74 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
   </div>
 </section>
 
-<!-- LIVE SIGNAL -->
-<section id="pulse" class="sect sect-alt">
+<!-- STANDING CALLS — insert as its own <section>, right after #oracle and before #notes -->
+<section id="calls" class="sect">
   <div class="wrap">
     <div class="sh rev">
-      <div class="label">What the machine half is watching</div>
-      <h2>Signal, <em>live</em></h2>
-      <p>Discussion intensity across Reddit, Hacker News, Telegram, and Google Trends. Scored by depth of argument, not volume of amplification — this is the same intelligence layer feeding the partnership's own decisions.</p>
+      <div class="label">Standing, not on-demand</div>
+      <h2>The swarm's <em>standing calls</em></h2>
+      <p>Four calls, one per domain, regenerated on a schedule by the same council model behind the Oracle above &mdash; no query needed, no key required to read them. Resolving them is a human act, not a machine one.</p>
     </div>
 
-    <div class="ls-status rev">
-      <span><span class="ls-dot"></span>Live &middot; updated <span id="ls-updated">&mdash;</span></span>
-      <span class="ls-status-sep">&middot;</span>
-      <span class="ls-sources" id="ls-topic-count">&mdash; topics</span>
-      <span class="ls-status-sep">&middot;</span>
-      <span>4 sources</span>
-      <span class="ls-status-sep">&middot;</span>
-      <span>30-min refresh</span>
+    <div class="calls-status rev" id="callsStatus">
+      <span><span class="ls-dot"></span>Standing calls &middot; refreshed <span id="callsUpdated">&mdash;</span></span>
+      <span class="sep">&middot;</span>
+      <span id="callsCount">&mdash; active</span>
     </div>
 
-    <div class="ls-filters rev">
-      <button type="button" class="ls-filter on" data-cat="all">All</button>
-      <button type="button" class="ls-filter" data-cat="dcm">DCM</button>
-      <button type="button" class="ls-filter" data-cat="banking">Banking</button>
-      <button type="button" class="ls-filter" data-cat="markets">Markets</button>
-      <button type="button" class="ls-filter" data-cat="politics">Politics</button>
-      <button type="button" class="ls-filter" data-cat="ai">AI</button>
-      <button type="button" class="ls-filter" data-cat="crypto">Crypto</button>
-      <button type="button" class="ls-filter" data-cat="other">Other</button>
-    </div>
-
-    <div class="ls-list rev" id="ls-list">
-      <div class="ls-empty">
-        <strong>Signal warming up</strong>
-        Topics will appear here once the first ingestion cycle completes.
+    <div class="calls-current rev" id="callsCurrent">
+      <div class="calls-empty">
+        <strong>No standing calls yet</strong>
+        The generator hasn't run for the first time. Once the scheduled job fires, four calls will appear here.
       </div>
     </div>
 
-    <div class="ls-foot rev">
-      <p class="ls-foot-note">
-        <strong>DIS &middot; Discussion Intensity Score.</strong>
-        Weights effortful engagement (replies, comments, forwards) by polarization signal and reply-tree depth, normalized for unique participants. Brigades and amplification are suppressed by design.
-      </p>
+    <div class="tr-head rev">
+      <div class="label">Track record</div>
+      <h3>What the swarm got right &mdash; and wrong</h3>
+      <p>Every call that's resolved, kept permanently. Nothing gets quietly removed when it doesn't pan out.</p>
     </div>
+
+    <div class="tl rev" id="trackRecord">
+      <div class="tr-empty">
+        <strong>No resolved calls yet</strong>
+        The first standing calls haven't reached their horizon. Check back once one resolves.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENTARY — insert as its own <section>, right after #calls and before #vision -->
+<section id="notes" class="sect sect-alt">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">The human half's take</div>
+      <h2>Commentary on <em>the moment</em></h2>
+      <p>Short, dated notes on the events actually moving markets and mandates &mdash; written, not generated. This is where judgment shows its work.</p>
+    </div>
+
+    <div class="rev" id="notesList">
+      <div class="notes-empty">
+        <strong>Nothing posted yet</strong>
+        <p>The first entry goes here once a key event calls for a view worth putting a name to.</p>
+      </div>
+    </div>
+
+    <!-- Template for a real entry — copy this markup below notesList's
+         opening tag once there's something to say, one .note-row per entry,
+         newest first. Mirrors the About page's timeline component.
+
+    <div class="note-row">
+      <div class="note-left">
+        <div class="note-date">2026-07-14</div>
+        <div class="note-tag">DCM &middot; Rates</div>
+      </div>
+      <div class="note-right">
+        <h3>Why the ECB's next move matters more than the headline number</h3>
+        <p>Two or three paragraphs of actual view here.</p>
+      </div>
+    </div>
+    -->
   </div>
 </section>
 
@@ -299,5 +327,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 
 <script src="/assets/site.js"></script>
 <script src="/assets/oracle.js"></script>
+<script src="/assets/calls.js"></script>
 </body>
 </html>
