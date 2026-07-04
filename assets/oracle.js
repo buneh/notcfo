@@ -84,7 +84,7 @@ refreshKeyUI();
 // ---------- Claude API ----------
 async function callClaude(promptText, useSearch){
   if(!userApiKey) throw new Error('Add your API key above first.');
-  const body = { model: 'claude-sonnet-4-6', max_tokens: 1000, messages: [{ role:'user', content: promptText }] };
+  const body = { model: 'claude-sonnet-5', max_tokens: 1000, messages: [{ role:'user', content: promptText }] };
   if(useSearch) body.tools = [{ type:'web_search_20250305', name:'web_search' }];
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
