@@ -264,7 +264,10 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
       <div class="ev-legend" id="evLegend"></div>
     
       <div class="ev-map-frame">
-        <svg class="ev-map" id="evMap" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg"></svg>
+        <svg class="ev-map" id="evMap" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
+          <path id="evLand" class="ev-land" d=""></path>
+          <g id="evDots"></g>
+        </svg>
       </div>
     </div>
   </div>
@@ -326,6 +329,8 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 
 <script src="/assets/site.js"></script>
 <script src="/assets/oracle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3/dist/d3-geo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <script src="/assets/events.js"></script>
 </body>
 </html>
