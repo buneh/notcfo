@@ -248,7 +248,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
       <div class="ev-head">
         <div class="label">What's actually happening, not just discussed</div>
         <h3>Live world events</h3>
-        <p>Earthquakes from USGS and active wildfires, storms, and volcanic activity from NASA EONET &mdash; the raw physical signal underneath the conversation above.</p>
+        <p>Earthquakes (USGS), active wildfires / storms / volcanoes / sea &amp; lake ice (NASA EONET), and geotagged conflict &amp; unrest coverage (GDELT) &mdash; the raw physical and geopolitical signal underneath the conversation above.</p>
       </div>
     
       <div class="ls-status" id="evStatus">
@@ -256,7 +256,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <span class="ls-status-sep">&middot;</span>
         <span class="ls-sources" id="evCount">&mdash; events</span>
         <span class="ls-status-sep">&middot;</span>
-        <span>USGS &middot; NASA EONET</span>
+        <span>USGS &middot; NASA EONET &middot; GDELT</span>
         <span class="ls-status-sep">&middot;</span>
         <span>5-min refresh</span>
       </div>
@@ -265,13 +265,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
     
       <div class="ev-map-frame">
         <svg class="ev-map" id="evMap" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg"></svg>
-      </div>
-    
-      <div class="ls-list" id="evList">
-        <div class="ev-empty">
-          <strong>Reading the feeds</strong>
-          Events will appear once USGS and EONET respond.
-        </div>
       </div>
     </div>
   </div>
