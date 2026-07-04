@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T20:29:54Z",
+  "generated_at": "2026-07-04T20:59:03Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -194,13 +194,13 @@
         },
         {
           "platform": "google_trends",
-          "title": "anthropic",
-          "url": "https://trends.google.com/trends/explore?q=anthropic"
+          "title": "federal holidays 2026",
+          "url": "https://trends.google.com/trends/explore?q=federal%20holidays%202026"
         },
         {
           "platform": "google_trends",
-          "title": "federal holidays 2026",
-          "url": "https://trends.google.com/trends/explore?q=federal%20holidays%202026"
+          "title": "anthropic",
+          "url": "https://trends.google.com/trends/explore?q=anthropic"
         }
       ]
     },
