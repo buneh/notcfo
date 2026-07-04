@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T12:47:18Z",
+  "generated_at": "2026-07-04T19:31:43Z",
   "version": 1,
   "ontology_categories": [
     "dcm",
@@ -105,8 +105,8 @@
         },
         {
           "platform": "google_trends",
-          "title": "japanese bond yields",
-          "url": "https://trends.google.com/trends/explore?q=japanese%20bond%20yields"
+          "title": "uk sanctions list search",
+          "url": "https://trends.google.com/trends/explore?q=uk%20sanctions%20list%20search"
         }
       ]
     },
@@ -188,6 +188,11 @@
       "n_participants": 1470,
       "top_links": [
         {
+          "platform": "telegram",
+          "title": "Massive Security Presence For\u00a0Khamenei\u2019s 'Multi-City' Funeral Amid Hezbollah, Hamas, Taliban, China, Russia Paying Respe",
+          "url": "https://t.me/zerohedge/174631"
+        },
+        {
           "platform": "google_trends",
           "title": "anthropic",
           "url": "https://trends.google.com/trends/explore?q=anthropic"
@@ -196,11 +201,6 @@
           "platform": "google_trends",
           "title": "federal holidays 2026",
           "url": "https://trends.google.com/trends/explore?q=federal%20holidays%202026"
-        },
-        {
-          "platform": "telegram",
-          "title": "Massive Security Presence For\u00a0Khamenei\u2019s 'Multi-City' Funeral Amid Hezbollah, Hamas, Taliban, China, Russia Paying Respe",
-          "url": "https://t.me/zerohedge/174631"
         }
       ]
     },
@@ -260,13 +260,13 @@
         },
         {
           "platform": "telegram",
-          "title": "China-Linked Socialist NGO Derailed $23.6 Billion In Data Center Buildouts: Report\nhttps://www.zerohedge.com/political/c",
-          "url": "https://t.me/zerohedge/174634"
+          "title": "Tucker Carlson Unveils Major Political Plan\nhttps://www.zerohedge.com/political/tucker-carlson-unveils-major-political-p",
+          "url": "https://t.me/zerohedge/174637"
         },
         {
           "platform": "telegram",
-          "title": "Mamdani Delivers Anti-America Speech For The Nation's 250th Birthday\nhttps://www.zerohedge.com/political/mamdani-deliver",
-          "url": "https://t.me/zerohedge/174638"
+          "title": "China-Linked Socialist NGO Derailed $23.6 Billion In Data Center Buildouts: Report\nhttps://www.zerohedge.com/political/c",
+          "url": "https://t.me/zerohedge/174634"
         }
       ]
     },
