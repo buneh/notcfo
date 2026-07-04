@@ -12,6 +12,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/oracle.css">
 </head>
 <body>
 
@@ -24,6 +25,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#domains">Domains</a></li>
+        <li><a href="#oracle">Oracle</a></li>
         <li><a href="#pulse">Live Signal</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="/about.html">About</a></li>
@@ -40,6 +42,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 
 <div class="mob-menu" id="mobMenu">
   <a href="#domains" onclick="closeMenu()">Domains</a>
+  <a href="#oracle" onclick="closeMenu()">Oracle</a>
   <a href="#pulse" onclick="closeMenu()">Live Signal</a>
   <a href="#vision" onclick="closeMenu()">Vision</a>
   <a href="/about.html" onclick="closeMenu()">About</a>
@@ -123,6 +126,73 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <h3>Cross-Platform Discussion Intensity</h3>
         <p>Real-time scoring of where markets, policy, and technology are being actively argued — not just amplified. The proof that the machine half is watching, not waiting.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORACLE — insert this entire <section> immediately before <section id="pulse" ...> in index.html -->
+<section id="oracle" class="sect">
+  <div class="wrap">
+    <div class="sh rev">
+      <div class="label">Ask what the machine half sees</div>
+      <h2>The <em>Oracle</em></h2>
+      <p>Five personas argue over live signal, then converge — a forecast across four horizons, with its reasoning and its dissent shown plainly.</p>
+    </div>
+
+    <div class="orc-key rev" id="orcKeyPanel">
+      <div class="fl">
+        <label for="orcKeyInput">Your Anthropic API key</label>
+        <div class="orc-key-row" id="orcKeyEntryRow">
+          <input type="password" id="orcKeyInput" placeholder="sk-ant-...">
+          <button type="button" class="btn btn-line" id="orcSaveKeyBtn">Use this key</button>
+        </div>
+        <div class="orc-key-status" id="orcKeyStatusRow" style="display:none">
+          <span class="label-signal"><span class="ls-dot"></span>Key set for this session</span>
+          <button type="button" class="orc-key-change" id="orcChangeKeyBtn">Change key</button>
+        </div>
+      </div>
+      <p class="orc-key-note">Kept in this tab's memory only — never saved to disk, never sent anywhere but Anthropic's API directly. Clears on reload. Get a key at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a>.</p>
+    </div>
+
+    <div class="orc-query rev locked" id="orcQueryPanel">
+      <div class="orc-query-row">
+        <input type="text" id="orcTopicInput" placeholder="e.g. Will the ECB cut rates before September? — or leave blank for a global scan">
+        <button type="button" class="btn btn-fill" id="orcConsultBtn" disabled>Consult</button>
+      </div>
+      <div class="ls-filters" id="orcDomainChips"></div>
+    </div>
+
+    <div class="orc-error" id="orcErrorBox">
+      <span id="orcErrorText"></span>
+      <button type="button" class="orc-retry" id="orcRetryBtn">Retry</button>
+    </div>
+
+    <div class="ls-status orc-pipeline rev" id="orcPipeline" style="display:none">
+      <span class="orc-stage" data-stage="sensing"><span class="ls-dot"></span>Sensing</span>
+      <span class="ls-status-sep">&middot;</span>
+      <span class="orc-stage" data-stage="council">Deliberating</span>
+      <span class="ls-status-sep">&middot;</span>
+      <span class="orc-stage" data-stage="oracle">Speaking</span>
+      <span class="ls-status-sep">&middot;</span>
+      <span id="orcStageNote">&mdash;</span>
+    </div>
+
+    <div class="ls-list orc-ticker" id="orcTicker" style="display:none"></div>
+
+    <div class="ls-filters orc-htabs" id="orcHorizonTabs" style="display:none"></div>
+
+    <div class="machine-grid orc-card rev" id="orcCard" style="display:none"></div>
+
+    <div class="machine-fact-list orc-council" id="orcCouncil" style="display:none"></div>
+
+    <div class="orc-sources" id="orcSources" style="display:none">
+      <div class="label" style="margin-bottom:.6rem">Signal drawn from</div>
+      <div class="ls-filters" id="orcSourceChips"></div>
+    </div>
+
+    <div class="orc-past rev">
+      <div class="orc-past-toggle" id="orcPastToggle"><span class="orc-car">&#9656;</span> Past auguries</div>
+      <div class="sesh-list orc-past-list" id="orcPastList"></div>
     </div>
   </div>
 </section>
@@ -228,5 +298,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 </footer>
 
 <script src="/assets/site.js"></script>
+<script src="/assets/oracle.js"></script>
 </body>
 </html>
