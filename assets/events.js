@@ -1,19 +1,24 @@
 // notcfo — Live World Events
 // Keyless, no-proxy, CORS-confirmed feeds:
-//   USGS (earthquakes) — CORS explicitly permissive per their own docs.
-//   NASA EONET (wildfires, severe storms, volcanoes, sea/lake ice) — public, keyless.
-//   GDELT GEO 2.0 (geotagged conflict/unrest mentions) — GDELT's blog states
-//     Access-Control-Allow-Origin: * is set on all API output by design.
-// Polymarket is deliberately NOT included here: its markets have no
-// geographic coordinates, so there's no honest way to plot them as map dots.
-// Refreshes every 5 minutes. Map only — no event list.
+//   USGS (earthquakes), NASA EONET (wildfires/storms/volcanoes/ice),
+//   GDELT GEO 2.0 (geotagged conflict/unrest mentions — GDELT's own docs
+//   state Access-Control-Allow-Origin: * is set on all API output).
+// Polymarket is not included: its markets have no geographic coordinates.
+//
+// The world outline is real public-domain Natural Earth data (via the
+// standard `world-atlas` land-110m topology, loaded from jsDelivr) rendered
+// with d3-geo — not hand-drawn — and every event dot is projected through
+// that same projection so dots land in the correct place relative to the
+// coastline. No graticule, no gridlines.
 
 (function(){
 
 const QUAKE_FEED = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson';
 const EONET_FEED = 'https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=25';
 const GDELT_FEED = 'https://api.gdeltproject.org/api/v2/geo/geo?query=conflict%20OR%20protest%20OR%20unrest%20OR%20war%20OR%20clashes&mode=PointData&format=GeoJSON&timespan=1d';
+const LAND_TOPO = 'https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json';
 const REFRESH_MS = 5 * 60 * 1000;
+const MAP_W = 720, MAP_H = 360;
 
 const CATS = {
   quake:    { label: 'Seismic',            color: 'var(--gold)',   dotClass: 'ev-dot-quake' },
@@ -40,6 +45,37 @@ function timeAgo(ts){
   return Math.floor(s/86400) + 'd ago';
 }
 
+// ---------- world outline (drawn once, real data, real projection) ----------
+let projection = null; // d3 projection fn: [lng,lat] -> [x,y] in the 720x360 box, or null on failure
+
+async function initMap(){
+  try{
+    if(typeof d3 === 'undefined' || typeof topojson === 'undefined'){
+      throw new Error('d3-geo / topojson-client did not load');
+    }
+    const topo = await (await fetch(LAND_TOPO)).json();
+    const land = topojson.feature(topo, topo.objects.land);
+    // small inset so the 1px stroke doesn't get clipped at the frame edge
+    projection = d3.geoEquirectangular().fitSize([MAP_W - 4, MAP_H - 4], land);
+    projection.translate([projection.translate()[0] + 2, projection.translate()[1] + 2]);
+    const pathGen = d3.geoPath(projection);
+    $('evLand').setAttribute('d', pathGen(land));
+  }catch(e){
+    // Outline unavailable (e.g. jsDelivr blocked) — dots still plot via a
+    // plain equirectangular fallback below, just without a visible coastline.
+    projection = null;
+  }
+}
+
+function project(lat, lng){
+  if(projection){
+    const p = projection([lng, lat]);
+    if(p) return { x: p[0], y: p[1] };
+  }
+  return { x: (lng + 180) / 360 * MAP_W, y: (90 - lat) / 180 * MAP_H };
+}
+
+// ---------- feeds ----------
 async function fetchQuakes(){
   const res = await fetch(QUAKE_FEED);
   if(!res.ok) throw new Error('USGS unavailable');
@@ -102,25 +138,10 @@ async function fetchGdelt(){
   }).filter(Boolean);
 }
 
-function project(lat, lng){
-  const x = (lng + 180) / 360 * 720;
-  const y = (90 - lat) / 180 * 360;
-  return { x, y };
-}
-
-function renderMap(events){
-  const svg = $('evMap');
+// ---------- render ----------
+function renderDots(events){
+  const g = $('evDots');
   let inner = '';
-  for(let lng = -180; lng <= 180; lng += 30){
-    const x = (lng + 180) / 360 * 720;
-    const cls = lng === 0 ? 'ev-grat-strong' : 'ev-grat';
-    inner += `<line class="${cls}" x1="${x}" y1="0" x2="${x}" y2="360"/>`;
-  }
-  for(let lat = -90; lat <= 90; lat += 30){
-    const y = (90 - lat) / 180 * 360;
-    const cls = lat === 0 ? 'ev-grat-strong' : 'ev-grat';
-    inner += `<line class="${cls}" x1="0" y1="${y}" x2="720" y2="${y}"/>`;
-  }
   events.forEach(ev => {
     const p = project(ev.lat, ev.lng);
     const cat = CATS[ev.category] || CATS.other;
@@ -128,7 +149,7 @@ function renderMap(events){
     const title = (ev.title || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
     inner += `<circle class="ev-dot ${cat.dotClass}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${r.toFixed(1)}" opacity="0.85"><title>${title}</title></circle>`;
   });
-  svg.innerHTML = inner;
+  g.innerHTML = inner;
 }
 
 function renderLegend(){
@@ -152,7 +173,7 @@ async function refresh(){
       fetchGdelt().catch(() => [])
     ]);
     const events = quakes.concat(eonet, gdelt).sort((a,b) => b.time - a.time);
-    renderMap(events);
+    renderDots(events);
     lastRefresh = Date.now();
     $('evUpdated').textContent = 'just now';
     $('evCount').textContent = events.length + ' events';
@@ -162,7 +183,7 @@ async function refresh(){
 }
 
 renderLegend();
-refresh();
+initMap().then(refresh);
 setInterval(refresh, REFRESH_MS);
 
 setInterval(() => {

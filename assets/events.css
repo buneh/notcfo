@@ -25,8 +25,7 @@
   margin-bottom: 1.5rem; overflow: hidden;
 }
 .ev-map { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; }
-.ev-grat { stroke: var(--rule); stroke-width: 1; }
-.ev-grat-strong { stroke: var(--rule2); stroke-width: 1; }
+.ev-land { fill: var(--ink3); stroke: var(--rule2); stroke-width: 1; }
 .ev-dot { transition: r .15s ease; }
 .ev-dot:hover { r: 6; }
 
