@@ -1,21 +1,29 @@
 {
-  "generatedAt": "2026-07-04T23:45:53.944Z",
+  "generatedAt": "2026-07-05T00:17:26.432Z",
   "calls": [
+    {
+      "id": "dcm",
+      "domain": "DCM",
+      "question": "Will CEE/CIS primary bond issuance volume increase over the next month?",
+      "horizon": "1m",
+      "probability": 24,
+      "forecast": "Most signals point to steady-to-softer CEE/CIS primary issuance over the next month, as sovereigns like Poland, Hungary and Romania have front-loaded 2026 funding and are leaning on liability management (switches/taps) rather than fresh benchmark supply. There's a real but minority risk that tight spreads and rollover pressure (notably Romania and Turkish sukuk) tempt issuers into opportunistic taps, which keeps the probability from falling lower. Overall, a modest pickup can't be ruled out, but the base case favors flat-to-lower volumes."
+    },
     {
       "id": "fintech",
       "domain": "Telecom × FinTech",
       "question": "Will telecom-embedded financial services see a major new partnership or launch this month?",
       "horizon": "1m",
-      "probability": 86,
-      "forecast": "Telecom-embedded financial services deals have been landing at a near-monthly clip (VEON-Mastercard-Bangladesh, Ericsson-Mastercard Move, Freedom Telecom-e&), and with over 100 telecom M&A/JV deals projected for the year, another qualifying announcement this month is highly likely. The main uncertainty is definitional—what counts as 'major'—but given the loose bar and steady deal cadence, non-occurrence would be the surprise, not occurrence."
+      "probability": 83,
+      "forecast": "Telecom-embedded finance has produced a major partnership or launch roughly every 3-6 weeks since early 2026 (VEON, Circles/Airwallex, Ericsson/Mastercard, Visa/Telefonica), and that promotional cadence plus broad 'major' criteria make another qualifying announcement this month likely. Some uncertainty remains since a few recent items may be recycled news rather than genuinely new deals, so the outcome isn't a lock, but the base rate strongly favors a yes."
     },
     {
       "id": "signal",
       "domain": "Signal Intelligence",
       "question": "Will discussion intensity around AI regulation increase over the next week?",
       "horizon": "1w",
-      "probability": 67,
-      "forecast": "AI regulation discussion is likely to intensify further this week, driven by the active Obernolte-Trahan preemption draft colliding with multiple state statutes, plus pending DOJ/FTC actions that could spark sudden coverage spikes. While there's a real chance the conversation has already reached a saturated plateau, the number of concurrent live triggers makes a further increase more probable than a flat or declining week. Expect continued or escalating coverage, with risk of a sharp jump if any single event (a floor vote, injunction, or agency statement) lands."
+      "probability": 77,
+      "forecast": "Multiple active pressure points—200+ state lawmaker letters, Blackburn-White House text negotiations, and 1,500+ pending state bills—point toward rising discussion intensity as stakeholders race to lock in positions before the recess deadline. The main caveat is that the Obernolte-Trahan proposal remains a discussion draft rather than a scheduled vote, which could cap escalation short of a full spike, but historical pre-recess dynamics favor increased commentary over a plateau. Net expectation: discussion volume rises meaningfully this week."
     }
   ]
 }
