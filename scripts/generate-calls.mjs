@@ -83,17 +83,23 @@ async function callClaude(promptText, useSearch){
   return text;
 }
 
-function parseJSONLoose(text){
-  let cleaned = text.replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
-  const start = cleaned.indexOf('{');
-  const end = cleaned.lastIndexOf('}');
-  if(start >= 0 && end > start) cleaned = cleaned.slice(start, end + 1);
-  // Models occasionally emit a raw newline/tab inside a string value, which
-  // is invalid JSON — control characters inside strings must be escaped
-  // ("\n", not an actual line break). Strip them; a legitimate escaped
-  // sequence is two separate characters (backslash + n) and is untouched.
-  cleaned = cleaned.replace(/[\r\n\t]+/g, ' ');
-  return JSON.parse(cleaned);
+// Extracts labeled fields from plain text like "PROBABILITY: 62\nHEADLINE: ...".
+// Each field's value runs until the next field label or end of text — no
+// escaping is ever required, so quotes, apostrophes, and line breaks inside
+// a value are all completely safe, unlike asking a model to hand-produce
+// valid JSON around free text (which failed twice in practice: unescaped
+// newlines, then unescaped quotes).
+function parseFields(text, fieldNames){
+  const out = {};
+  fieldNames.forEach((name, i) => {
+    const next = fieldNames[i + 1];
+    const re = next
+      ? new RegExp(name + ':\\s*([\\s\\S]*?)\\s*(?=' + next + ':)', 'i')
+      : new RegExp(name + ':\\s*([\\s\\S]+)$', 'i');
+    const m = text.match(re);
+    out[name.toLowerCase()] = m ? m[1].trim() : '';
+  });
+  return out;
 }
 
 function gatherPrompt(q){
@@ -106,9 +112,11 @@ function personaPrompt(persona, q, summary){
 World-state brief: ${summary}
 Question: "${q.question}"
 Produce a single forecast for the ${q.horizon} horizon only.
-Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
-{"probability":0-100,"headline":"under 12 words, concrete claim","reasoning":"one to two sentences, in character"}
-The "probability" is the likelihood of the headline claim being true by that horizon. Be specific and concrete, avoid hedging.`;
+Respond in EXACTLY this plain-text format, one field per line, nothing before or after it, no JSON, no markdown, no quotation marks wrapping values:
+PROBABILITY: <integer 0-100>
+HEADLINE: <under 12 words, concrete claim>
+REASONING: <one to two sentences, in character>
+The probability is the likelihood of the headline claim being true by that horizon. Be specific and concrete, avoid hedging.`;
 }
 
 function synthesisPrompt(q, personaResults){
@@ -120,8 +128,9 @@ function synthesisPrompt(q, personaResults){
 Council forecasts:
 ${block}
 Compute a consensus probability weighing all five views, and write one short grounded forecast paragraph (2-3 sentences, plain language).
-Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
-{"probability":0-100,"forecast":"..."}`;
+Respond in EXACTLY this plain-text format, one field per line, nothing before or after it, no JSON, no markdown, no quotation marks wrapping values:
+PROBABILITY: <integer 0-100>
+FORECAST: <2-3 sentences>`;
 }
 
 async function generateOne(q){
@@ -131,12 +140,24 @@ async function generateOne(q){
   console.log(`[${q.id}] convening council...`);
   const personaResults = await Promise.all(PERSONAS.map(async p => {
     const t = await callClaude(personaPrompt(p, q, summary), false);
-    return { persona: p.id, data: parseJSONLoose(t) };
+    const fields = parseFields(t, ['PROBABILITY', 'HEADLINE', 'REASONING']);
+    return {
+      persona: p.id,
+      data: {
+        probability: parseInt(fields.probability, 10) || 50,
+        headline: fields.headline,
+        reasoning: fields.reasoning
+      }
+    };
   }));
 
   console.log(`[${q.id}] synthesizing...`);
   const synthText = await callClaude(synthesisPrompt(q, personaResults), false);
-  const synth = parseJSONLoose(synthText);
+  const synthFields = parseFields(synthText, ['PROBABILITY', 'FORECAST']);
+  const synth = {
+    probability: parseInt(synthFields.probability, 10) || 50,
+    forecast: synthFields.forecast
+  };
 
   return {
     id: q.id,
