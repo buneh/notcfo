@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-07-05T00:28:50.475Z",
+  "generatedAt": "2026-07-05T09:15:44.624Z",
   "calls": [
     {
       "id": "dcm",
       "domain": "DCM",
       "question": "Will CEE/CIS primary bond issuance volume increase over the next month?",
       "horizon": "1m",
-      "probability": 61,
-      "forecast": "CEE/CIS bond issuance is likely to tick up over the next month, driven by typical January front-loading of sovereign funding and compressed Hungarian risk premia following the recent election. While full-year net supply may fall and month-to-month comparisons are noisy, the combination of refinancing walls and opportunistic issuance windows tilts the balance toward higher gross volume in the near term."
+      "probability": 42,
+      "forecast": "Most signals point to flat-to-softer CEE/CIS primary issuance over the next month, with falling net supply in Poland, Hungary and Romania outweighing the covered-bond and CEEMEA hard-currency upside cited by the Contrarian. There's genuine ambiguity in what \"increase\" means here (gross vs net vs segment), which tempers conviction in either direction. On balance the weight of evidence leans toward stabilization rather than a clear rise, but the covered-bond surge and front-loaded refinancing keep meaningful upside risk alive."
     },
     {
       "id": "defi",
       "domain": "Agentic AI & Crypto",
       "question": "Will total value locked in agentic-managed DeFi strategies grow over the next week?",
       "horizon": "1w",
-      "probability": 64,
-      "forecast": "Agentic DeFi TVL is small enough (~$39M) that new integrations and vault inflows can push it modestly higher even as broader DeFi bleeds out, matching patterns seen in past nascent-niche growth phases. That said, the metric is thin, noisy, and concentrated, so a single exploit or reporting quirk could flip a positive week into a decline. On balance growth is somewhat more likely than not, but confidence is moderate given the tail risk of a security incident."
+      "probability": 59,
+      "forecast": "Agentic-managed DeFi vaults have been growing from a small base even as overall DeFi TVL slides, and this week's institutional integrations (BlackRock/Aladdin, Aave, Uniswap-Spark) likely keep new inflows coming. That said, measurement is fuzzy and self-reported, and broader risk-off pressure from hacks and BTC/ETH weakness could dent USD-denominated balances, so continued growth is more likely than not but far from certain."
     },
     {
       "id": "fintech",
       "domain": "Telecom × FinTech",
       "question": "Will telecom-embedded financial services see a major new partnership or launch this month?",
       "horizon": "1m",
-      "probability": 78,
-      "forecast": "Telecom-embedded finance has shown a near-monthly cadence of partnerships and launches (Circles-Airwallex, Singtel-GXS, UAE super-apps, Ericsson API initiatives), and multiple parallel pipelines make continuation likely. The main uncertainty is definitional—what counts as \"major\"—rather than whether any announcement occurs at all. Expect at least one qualifying deal or launch this month, with high but not certain confidence."
+      "probability": 84,
+      "forecast": "Given a steady cadence of telecom-fintech tie-ups roughly every 2-4 weeks since December 2025 (Circles-Airwallex, Ericsson-Mastercard, Freedom Telecom-e&, MTN Uganda), another qualifying announcement this month is highly likely. The main uncertainty is not whether something gets announced, but whether it truly counts as \"major\" versus an incremental extension of existing deals. Weighing the strong base rate against that definitional ambiguity, consensus lands around 84%."
     },
     {
       "id": "signal",
       "domain": "Signal Intelligence",
       "question": "Will discussion intensity around AI regulation increase over the next week?",
       "horizon": "1w",
-      "probability": 78,
-      "forecast": "Discussion around AI regulation is likely to increase this week, driven by overlapping catalysts including active congressional bill feedback periods, preemption conflicts between competing state and federal frameworks, fresh executive-order fallout, and the OpenAI equity-stake controversy tied to IPO timing. While some of these storylines are ongoing rather than brand-new, their simultaneous convergence—especially the scandal-plus-legislation collision—makes a plateau or dip less likely than continued escalation. Some risk of news-cycle saturation or holiday-adjacent attention dips tempers the estimate slightly below the more bullish forecasts."
+      "probability": 83,
+      "forecast": "Multiple converging catalysts—the NDAA AI preemption fight, EU Omnibus VII rollout, Colorado's enforcement now live, and ongoing state-level bill activity—make a genuine uptick in AI regulation discussion very likely this week. The main uncertainty isn't whether attention rises but how sharply, since \"intensity\" is hard to measure precisely and coverage may already be running hot. Still, the convergence of a must-pass legislative vehicle with international and state-level news pegs strongly favors an increase over a plateau."
     }
   ]
 }
