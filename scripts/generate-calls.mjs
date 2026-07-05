@@ -88,14 +88,17 @@ function parseJSONLoose(text){
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
   if(start >= 0 && end > start) cleaned = cleaned.slice(start, end + 1);
+  // Models occasionally emit a raw newline/tab inside a string value, which
+  // is invalid JSON — control characters inside strings must be escaped
+  // ("\n", not an actual line break). Strip them; a legitimate escaped
+  // sequence is two separate characters (backslash + n) and is untouched.
+  cleaned = cleaned.replace(/[\r\n\t]+/g, ' ');
   return JSON.parse(cleaned);
 }
 
 function gatherPrompt(q){
   return `You are the sensing layer of a forecasting council. Use web search to find current real information (last few days) relevant to this question: "${q.question}" (domain: ${q.domain}).
-Return ONLY valid JSON, no markdown fences, no commentary, matching exactly:
-{"summary":"one plain paragraph describing the current state relevant to the question"}
-Do not include any text outside the JSON object.`;
+Respond with a single plain-prose paragraph (no JSON, no markdown, no headers, no bullet points, no line breaks — one continuous paragraph) describing the current state relevant to the question. Output nothing except that paragraph.`;
 }
 
 function personaPrompt(persona, q, summary){
@@ -123,8 +126,7 @@ Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
 
 async function generateOne(q){
   console.log(`[${q.id}] sensing...`);
-  const gatherText = await callClaude(gatherPrompt(q), true);
-  const { summary } = parseJSONLoose(gatherText);
+  const summary = (await callClaude(gatherPrompt(q), true)).replace(/[\r\n\t]+/g, ' ').trim();
 
   console.log(`[${q.id}] convening council...`);
   const personaResults = await Promise.all(PERSONAS.map(async p => {
