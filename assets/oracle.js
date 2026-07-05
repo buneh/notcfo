@@ -112,12 +112,60 @@ function parseJSONLoose(text){
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
   if(start >= 0 && end > start) cleaned = cleaned.slice(start, end+1);
-  // Models occasionally emit a raw newline/tab inside a string value, which
-  // is invalid JSON — control characters inside strings must be escaped
-  // ("\n", not an actual line break). Strip them; a legitimate escaped
-  // sequence is two separate characters (backslash + n) and is untouched.
   cleaned = cleaned.replace(/[\r\n\t]+/g, ' ');
   return JSON.parse(cleaned);
+}
+
+// Persona/synthesis responses use a plain delimited format instead of JSON —
+// quotes, apostrophes, and line breaks inside a value need no escaping this
+// way, unlike asking a model to hand-produce valid JSON around free text
+// (which failed twice in practice: an unescaped newline, then an unescaped
+// quote, in two different real runs).
+function parseHorizonBlocks(text){
+  const parts = text.split(/===\s*(24H|1W|1M|1Y)\s*===/i);
+  const blocks = {};
+  for(let i = 1; i < parts.length; i += 2){
+    blocks[parts[i].toLowerCase()] = parts[i + 1] || '';
+  }
+  return blocks;
+}
+function parseFields(text, fieldNames){
+  const out = {};
+  fieldNames.forEach((name, i) => {
+    const next = fieldNames[i + 1];
+    const re = next
+      ? new RegExp(name + ':\\s*([\\s\\S]*?)\\s*(?=' + next + ':)', 'i')
+      : new RegExp(name + ':\\s*([\\s\\S]+)$', 'i');
+    const m = text.match(re);
+    out[name.toLowerCase()] = m ? m[1].trim() : '';
+  });
+  return out;
+}
+function parsePersonaResponse(text){
+  const blocks = parseHorizonBlocks(text);
+  const forecasts = HORIZONS.map(h => {
+    const fields = parseFields(blocks[h.id] || '', ['PROBABILITY', 'HEADLINE', 'REASONING']);
+    return {
+      horizon: h.id,
+      probability: parseInt(fields.probability, 10) || 50,
+      headline: fields.headline,
+      reasoning: fields.reasoning
+    };
+  });
+  return { forecasts };
+}
+function parseSynthesisResponse(text){
+  const blocks = parseHorizonBlocks(text);
+  const horizons = HORIZONS.map(h => {
+    const fields = parseFields(blocks[h.id] || '', ['PROBABILITY', 'FORECAST', 'DISSENT_PERSONA', 'DISSENT_OBJECTION']);
+    return {
+      horizon: h.id,
+      consensusProbability: parseInt(fields.probability, 10) || 50,
+      forecast: fields.forecast,
+      dissent: { persona: fields.dissent_persona, objection: fields.dissent_objection }
+    };
+  });
+  return { horizons };
 }
 
 // ---------- prompts ----------
@@ -135,10 +183,24 @@ function personaPrompt(persona, briefText, topic){
 World-state brief:
 ${briefText}
 ${q}
-Produce a forecast for four time horizons: 24h, 1w, 1m, 1y.
-Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
-{"forecasts":[{"horizon":"24h","probability":0-100,"headline":"under 12 words, concrete claim","reasoning":"one to two sentences, in character"},{"horizon":"1w","probability":0-100,"headline":"...","reasoning":"..."},{"horizon":"1m","probability":0-100,"headline":"...","reasoning":"..."},{"horizon":"1y","probability":0-100,"headline":"...","reasoning":"..."}]}
-The "probability" is the likelihood of the headline claim being true by that horizon. Be specific and concrete, avoid hedging.`;
+Produce a forecast for four time horizons. Respond in EXACTLY this plain-text format, no JSON, no markdown, no quotation marks wrapping values, nothing before or after it:
+===24H===
+PROBABILITY: <integer 0-100>
+HEADLINE: <under 12 words, concrete claim>
+REASONING: <one to two sentences, in character>
+===1W===
+PROBABILITY: <integer 0-100>
+HEADLINE: <under 12 words, concrete claim>
+REASONING: <one to two sentences, in character>
+===1M===
+PROBABILITY: <integer 0-100>
+HEADLINE: <under 12 words, concrete claim>
+REASONING: <one to two sentences, in character>
+===1Y===
+PROBABILITY: <integer 0-100>
+HEADLINE: <under 12 words, concrete claim>
+REASONING: <one to two sentences, in character>
+Each PROBABILITY is the likelihood of that horizon's HEADLINE claim being true by that horizon. Be specific and concrete, avoid hedging.`;
 }
 function synthesisPrompt(personaResults, topic){
   const block = personaResults.map(pr=>{
@@ -149,9 +211,28 @@ function synthesisPrompt(personaResults, topic){
   return `You are the Oracle's voice — the final synthesis layer of a forecasting council. Question: "${q}"
 Here are the five council members' forecasts:
 ${block}
-For each of the four horizons (24h, 1w, 1m, 1y): compute a consensus probability weighing the five views, write one short grounded forecast paragraph (2-3 sentences, plain language, no mysticism), and identify the strongest dissenting voice with a one-sentence summary of their objection.
-Respond with ONLY valid JSON, no markdown, no commentary, matching exactly:
-{"horizons":[{"horizon":"24h","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"exact persona name","objection":"one sentence"}},{"horizon":"1w","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}},{"horizon":"1m","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}},{"horizon":"1y","consensusProbability":0-100,"forecast":"...","dissent":{"persona":"...","objection":"..."}}]}`;
+For each of the four horizons: compute a consensus probability weighing the five views, write one short grounded forecast paragraph (2-3 sentences, plain language, no mysticism), and identify the strongest dissenting voice with a one-sentence summary of their objection.
+Respond in EXACTLY this plain-text format, no JSON, no markdown, no quotation marks wrapping values, nothing before or after it:
+===24H===
+PROBABILITY: <integer 0-100>
+FORECAST: <2-3 sentences>
+DISSENT_PERSONA: <exact persona name from the list above>
+DISSENT_OBJECTION: <one sentence>
+===1W===
+PROBABILITY: <integer 0-100>
+FORECAST: <2-3 sentences>
+DISSENT_PERSONA: <exact persona name from the list above>
+DISSENT_OBJECTION: <one sentence>
+===1M===
+PROBABILITY: <integer 0-100>
+FORECAST: <2-3 sentences>
+DISSENT_PERSONA: <exact persona name from the list above>
+DISSENT_OBJECTION: <one sentence>
+===1Y===
+PROBABILITY: <integer 0-100>
+FORECAST: <2-3 sentences>
+DISSENT_PERSONA: <exact persona name from the list above>
+DISSENT_OBJECTION: <one sentence>`;
 }
 
 // ---------- pipeline UI ----------
@@ -283,12 +364,12 @@ async function runOracle(topic, domains){
     const briefText = gathered.summary + '\n' + gathered.events.map(e=>`- [${e.domain}] ${e.title} (${e.source})`).join('\n');
     const personaResults = await Promise.all(PERSONAS.map(async p=>{
       const t = await callClaude(personaPrompt(p, briefText, topic), false);
-      return { persona: p.id, data: parseJSONLoose(t) };
+      return { persona: p.id, data: parsePersonaResponse(t) };
     }));
 
     setStage('oracle', 'Synthesizing consensus and dissent into a forecast…');
     const synthText = await callClaude(synthesisPrompt(personaResults, topic), false);
-    const synthesis = parseJSONLoose(synthText);
+    const synthesis = parseSynthesisResponse(synthText);
 
     setStage('oracle', 'Done.');
     state = { topic, domains, gathered, personaResults, synthesis, ts: Date.now() };
