@@ -112,6 +112,11 @@ function parseJSONLoose(text){
   const start = cleaned.indexOf('{');
   const end = cleaned.lastIndexOf('}');
   if(start >= 0 && end > start) cleaned = cleaned.slice(start, end+1);
+  // Models occasionally emit a raw newline/tab inside a string value, which
+  // is invalid JSON — control characters inside strings must be escaped
+  // ("\n", not an actual line break). Strip them; a legitimate escaped
+  // sequence is two separate characters (backslash + n) and is untouched.
+  cleaned = cleaned.replace(/[\r\n\t]+/g, ' ');
   return JSON.parse(cleaned);
 }
 
@@ -122,7 +127,7 @@ function gatherPrompt(topic, domains){
   return `You are the sensing layer of a live forecasting oracle. Use web search to find current real events (last few days) relevant to ${focus}, within these domains: ${domainLabels}.
 Return ONLY valid JSON, no markdown fences, no commentary, matching exactly this schema:
 {"summary":"one plain paragraph describing the current state relevant to the query","events":[{"title":"under 14 words","domain":"one of: ${domains.join(', ')}","source":"publication or site name only, no URL","intensity":1-5}],"asOf":"the current date you can infer from search results, e.g. 2026-07-04"}
-Limit events to 8-12 items. Do not include any text outside the JSON object.`;
+Limit events to 8-12 items. Every string value must be a single line with no literal line breaks. Do not include any text outside the JSON object.`;
 }
 function personaPrompt(persona, briefText, topic){
   const q = topic ? `The question being forecast: "${topic}"` : `The question being forecast: "What is most likely to happen next, broadly?"`;
