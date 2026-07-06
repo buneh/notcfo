@@ -1,3 +1,17 @@
 {
-  "drafts": []
+  "drafts": [
+    {
+      "id": "test-draft-1",
+      "domain": "Test",
+      "question": "Is the Desk working correctly?",
+      "resolutionCriteria": "Resolves YES if the Desk loads this draft and Approve/Decline both work without errors.",
+      "calledAt": "2026-07-01T00:00:00.000Z",
+      "calledProbability": 50,
+      "horizon": "1w",
+      "researchedAt": "2026-07-06T00:00:00.000Z",
+      "proposedOutcome": "yes",
+      "evidenceSummary": "This is a manually-added test draft, not real research, used to verify the Desk's read/write flow before any real call comes due.",
+      "sources": ["manual test"]
+    }
+  ]
 }
