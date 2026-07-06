@@ -5,13 +5,22 @@
 // section, but headless, on a fixed set of standing questions (one per
 // notcfo domain), and writes the result to data/calls.json.
 //
+// IMPORTANT BEHAVIOR: a call is a discrete commitment, made once. This
+// script only fills an EMPTY slot for a domain — if a domain already has
+// an active call in data/calls.json, it's left completely untouched (no
+// API calls spent on it, no probability re-rolled daily). A slot only
+// opens up again once a human approves that call's resolution on the
+// Desk, which removes it from calls.json. That's what makes the track
+// record mean anything: a forecast is fixed at the moment it's made,
+// not a live number that drifts until someone happens to check it.
+//
+// Each call also gets a RESOLUTION_CRITERIA field now, written by the
+// same synthesis pass that sets the probability — decided before any
+// outcome is known, not invented later by whatever resolves it.
+//
 // Triggered by .github/workflows/generate-calls.yml on a schedule, using
 // ANTHROPIC_API_KEY as a repo secret. Requires Node 18+ (built-in fetch).
 // No npm dependencies.
-//
-// Resolving a call (deciding whether it came true) is deliberately NOT
-// automated here — that's a human judgment step. See data/track-record.json
-// and move a call there by hand once you're ready to score it.
 
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 if(!API_KEY){
@@ -128,9 +137,11 @@ function synthesisPrompt(q, personaResults){
 Council forecasts:
 ${block}
 Compute a consensus probability weighing all five views, and write one short grounded forecast paragraph (2-3 sentences, plain language).
+Also write the resolution criteria for this call NOW, before anyone knows the outcome: the specific, checkable condition that would make this resolve YES, and what would make it NO. Be concrete enough that someone else, doing the research later with no other context, could apply it without having to make a new judgment call themselves.
 Respond in EXACTLY this plain-text format, one field per line, nothing before or after it, no JSON, no markdown, no quotation marks wrapping values:
 PROBABILITY: <integer 0-100>
-FORECAST: <2-3 sentences>`;
+FORECAST: <2-3 sentences>
+RESOLUTION_CRITERIA: <one to two sentences: resolves YES if ___; resolves NO if ___>`;
 }
 
 async function generateOne(q){
@@ -153,50 +164,49 @@ async function generateOne(q){
 
   console.log(`[${q.id}] synthesizing...`);
   const synthText = await callClaude(synthesisPrompt(q, personaResults), false);
-  const synthFields = parseFields(synthText, ['PROBABILITY', 'FORECAST']);
-  const synth = {
-    probability: parseInt(synthFields.probability, 10) || 50,
-    forecast: synthFields.forecast
-  };
+  const synthFields = parseFields(synthText, ['PROBABILITY', 'FORECAST', 'RESOLUTION_CRITERIA']);
+  const probability = parseInt(synthFields.probability, 10);
 
+  const now = new Date().toISOString();
   return {
     id: q.id,
     domain: q.domain,
     question: q.question,
     horizon: q.horizon,
-    probability: Math.max(0, Math.min(100, Math.round(synth.probability))),
-    forecast: synth.forecast
+    probability: Math.max(0, Math.min(100, Number.isFinite(probability) ? Math.round(probability) : 50)),
+    forecast: synthFields.forecast,
+    resolutionCriteria: synthFields.resolution_criteria,
+    calledAt: now
   };
 }
 
 async function main(){
-  const calls = [];
-  for(const q of STANDING_QUESTIONS){
-    try{
-      calls.push(await generateOne(q));
-    }catch(e){
-      console.error(`[${q.id}] failed:`, e.message);
-      // skip this domain rather than fail the whole run — the last good
-      // value for this domain simply won't be refreshed this cycle.
-    }
-  }
-
-  if(calls.length === 0){
-    console.error('All domains failed — not overwriting data/calls.json.');
-    process.exit(1);
-  }
-
   const fs = await import('node:fs/promises');
   const path = await import('node:path');
   const outPath = path.join(process.cwd(), 'data', 'calls.json');
   const existing = await fs.readFile(outPath, 'utf8').then(JSON.parse).catch(() => ({ calls: [] }));
+  const existingCalls = existing.calls || [];
 
-  // keep any domain not refreshed this run (partial failure) rather than dropping it
-  const byId = new Map(calls.map(c => [c.id, c]));
-  const merged = STANDING_QUESTIONS.map(q => byId.get(q.id) || (existing.calls || []).find(c => c.id === q.id)).filter(Boolean);
+  const openSlots = STANDING_QUESTIONS.filter(q => !existingCalls.find(c => c.id === q.id));
 
+  if(openSlots.length === 0){
+    console.log('All four domains already have an active call — nothing to generate this run.');
+    return;
+  }
+
+  const generated = [];
+  for(const q of openSlots){
+    try{
+      generated.push(await generateOne(q));
+    }catch(e){
+      console.error(`[${q.id}] failed:`, e.message);
+      // leave this slot open — next run will try again
+    }
+  }
+
+  const merged = existingCalls.concat(generated);
   await fs.writeFile(outPath, JSON.stringify({ generatedAt: new Date().toISOString(), calls: merged }, null, 2) + '\n');
-  console.log(`Wrote ${merged.length} calls to data/calls.json`);
+  console.log(`Filled ${generated.length}/${openSlots.length} open slot(s). ${merged.length} active call(s) total.`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

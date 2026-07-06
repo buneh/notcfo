@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — The Desk
+   Private review interface for standing-call resolutions. Not linked
+   from public nav. Reuses style.css tokens (--bg/--fg/--gold) and the
+   .fl input pattern (hairline underline, gold on focus). No new colors.
+   ═══════════════════════════════════════════════════════════════ */
+
+.desk-head { padding: calc(var(--nav-h) + 3rem) 0 2.5rem; }
+.desk-head h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: .6rem; }
+.desk-head p { font-size: .875rem; max-width: 560px; }
+
+.desk-status {
+  display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;
+  padding-bottom: .9rem; margin-bottom: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-faint);
+}
+.desk-status .ls-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-right: .55rem; vertical-align: middle; }
+
+.desk-list { display: flex; flex-direction: column; gap: 3.5rem; padding-bottom: 6rem; }
+.desk-card { }
+.desk-card-head { margin-bottom: 1.25rem; }
+.desk-domain { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+.desk-question { font-size: 1.1rem; font-weight: 600; color: var(--fg); line-height: 1.4; }
+
+.desk-context {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  padding: 1.25rem 0; margin-bottom: 1.5rem;
+}
+.desk-ctx-item .label { display: block; margin-bottom: .35rem; }
+.desk-ctx-item .val { font-size: .8125rem; color: var(--fg-dim); line-height: 1.55; }
+.desk-ctx-item .val.gold { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+
+.desk-field { margin-bottom: 1.25rem; }
+.desk-field label {
+  display: block; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--fg-faint); margin-bottom: .5rem;
+}
+.desk-field textarea, .desk-field select {
+  width: 100%; background: none; border: none; border-bottom: 1px solid var(--fg-hair);
+  color: var(--fg); font-family: 'Inter', sans-serif; font-size: .875rem; line-height: 1.6;
+  padding: .5rem 0; outline: none; resize: vertical; min-height: 3.2rem;
+  transition: border-color .15s; -webkit-appearance: none;
+}
+.desk-field textarea:focus, .desk-field select:focus { border-color: var(--gold); }
+.desk-field select option { background: var(--bg); color: var(--fg); }
+.desk-sources { font-size: .8125rem; color: var(--fg-faint); }
+
+.desk-actions { display: flex; gap: 1.75rem; align-items: center; margin-top: 1.5rem; }
+.desk-approve, .desk-decline {
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  padding: .65rem 1.4rem; border-radius: var(--r); cursor: pointer; border: none; transition: opacity .15s;
+}
+.desk-approve { background: var(--gold); color: var(--on-gold); }
+.desk-approve:hover { opacity: .82; }
+.desk-decline { background: none; color: var(--fg-dim); padding-left: 0; padding-right: 0; }
+.desk-decline:hover { color: var(--fg); text-decoration: underline; }
+.desk-card-status { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--fg-faint); }
+.desk-card-status.err { color: var(--gold); }
+.desk-card.busy { opacity: .5; pointer-events: none; }
+.desk-card.done { display: none; }
+
+.desk-empty { padding: 3rem 0; text-align: center; }
+.desk-empty strong { color: var(--fg-dim); font-weight: 600; display: block; margin-bottom: .4rem; font-size: .9375rem; }
+.desk-empty p { font-size: .8125rem; max-width: 440px; margin: 0 auto; }
+
+.desk-locked { opacity: .35; pointer-events: none; }
+
+@media (max-width: 700px) {
+  .desk-context { grid-template-columns: 1fr; gap: .9rem; }
+}

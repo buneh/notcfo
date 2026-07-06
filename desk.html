@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Desk — notcfo</title>
+<script>
+try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/desk.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div>
+      <div class="nav-brand">notcfo</div>
+      <div class="nav-sub">The Desk &middot; Private</div>
+    </div>
+    <div class="nav-right">
+      <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+        <span id="themeIcon">&#9728;</span><span id="themeLabel">Light</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="desk-head">
+    <h1>The <em>Desk</em></h1>
+    <p>Where the swarm's resolution research lands before anything becomes public. Review the evidence, edit anything that needs it, then approve or decline &mdash; nothing reaches the track record without a sign-off here.</p>
+  </div>
+
+  <div class="orc-key" id="keyPanel">
+    <div class="fl">
+      <label for="patInput">GitHub personal access token</label>
+      <div class="orc-key-row" id="keyEntryRow">
+        <input type="password" id="patInput" placeholder="ghp_...">
+        <button type="button" class="btn btn-soft" id="saveKeyBtn">Use this token</button>
+      </div>
+      <div class="orc-key-status" id="keyStatusRow" style="display:none">
+        <span class="label-signal"><span class="ls-dot"></span>Token set for this session</span>
+        <button type="button" class="orc-key-change" id="changeKeyBtn">Change token</button>
+      </div>
+    </div>
+    <p class="orc-key-note">Kept in this tab's memory only &mdash; never saved to disk. Needs repo scope (read + write) on buneh/notcfo. Create one at <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">github.com/settings/tokens</a>. Clears on reload.</p>
+  </div>
+
+  <div class="desk-status" id="deskStatus" style="display:none">
+    <span><span class="ls-dot"></span>Drafts <span id="deskUpdated">&mdash;</span></span>
+    <span id="deskCount">&mdash; pending</span>
+  </div>
+
+  <div class="desk-locked" id="deskBody">
+    <div class="desk-list" id="deskList">
+      <div class="desk-empty">
+        <strong>Add a token to load drafts</strong>
+        <p>Nothing loads until a token is set above.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/desk.js"></script>
+</body>
+</html>
