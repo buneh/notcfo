@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T12:04:16.822Z",
+  "generatedAt": "2026-07-07T12:23:41.328Z",
   "calls": [
     {
       "id": "macro",
@@ -41,6 +41,38 @@
       "_debug": {
         "personaCount": 50,
         "thinEvidenceCount": 42
+      }
+    },
+    {
+      "id": "geopolitics",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Will the CBOE Volatility Index (VIX) be higher in 30 days than its trailing 3-month average?",
+      "horizon": "1m",
+      "probability": 52,
+      "forecast": "VIX is roughly even-money to close above its trailing 3-month average in 30 days, with slight upward tilt from mean-reversion.",
+      "resolutionCriteria": "Resolves YES if the CBOE VIX closing value 30 calendar days from now (per CBOE official data) exceeds the arithmetic average of daily VIX closes over the trailing 90 calendar days ending on that date; resolves NO if it is equal to or below that average.",
+      "calledAt": "2026-07-07T12:22:05.364Z",
+      "_debug": {
+        "personaCount": 50,
+        "respondedCount": 50,
+        "droppedCount": 0,
+        "thinEvidenceCount": 45
+      }
+    },
+    {
+      "id": "ai",
+      "domain": "Frontier AI & Energy",
+      "question": "Will a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity within 30 days?",
+      "horizon": "1m",
+      "probability": 87,
+      "forecast": "A hyperscaler (Amazon, Google, Meta, Microsoft, Oracle, xAI, or OpenAI) will announce a new dedicated power-generation or PPA deal within 30 days.",
+      "resolutionCriteria": "Resolves YES if a press release, SEC filing, or utility/PJM/FERC filing within 30 days documents a new signed power-purchase agreement or dedicated generation commitment (nuclear, gas, solar, storage, or grid interconnection ≥50MW) by any of Amazon, Google, Meta, Microsoft, Oracle, xAI, or OpenAI for AI/data-center load; resolves NO if no such announcement appears in company press releases, trade press (e.g., Utility Dive, Reuters energy desk), or regulatory filings during the window.",
+      "calledAt": "2026-07-07T12:23:41.328Z",
+      "_debug": {
+        "personaCount": 50,
+        "respondedCount": 49,
+        "droppedCount": 1,
+        "thinEvidenceCount": 45
       }
     }
   ]
