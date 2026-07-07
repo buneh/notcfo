@@ -116,6 +116,41 @@ function parseJSONLoose(text){
   return JSON.parse(cleaned);
 }
 
+// Gather's own response used to be JSON with a variable-length events
+// array — exactly the pattern that already broke twice elsewhere
+// (unescaped newline, then unescaped quote) before being replaced with
+// plain delimited text. Same fix here: no JSON, so no escaping failure
+// mode. A malformed event line just gets skipped, not the whole batch.
+function parseGatherResponse(text){
+  const summaryMatch = text.match(/SUMMARY:\s*([\s\S]*?)\s*(?=ASOF:)/i);
+  const asOfMatch = text.match(/ASOF:\s*(.+)/i);
+  const eventsMatch = text.match(/EVENTS:\s*([\s\S]+)$/i);
+
+  const summary = summaryMatch ? summaryMatch[1].trim() : text.trim();
+  const asOf = asOfMatch ? asOfMatch[1].trim() : '';
+
+  const events = [];
+  if(eventsMatch){
+    eventsMatch[1].split('\n').forEach(line => {
+      line = line.trim();
+      if(!line) return;
+      const parts = line.split('|').map(s => s.trim());
+      if(parts.length < 4) return; // malformed line — skip it, doesn't affect the other events
+      const [domain, intensityStr, source, ...titleParts] = parts;
+      const title = titleParts.join('|').trim();
+      const intensity = parseInt(intensityStr, 10);
+      if(!domain || !title) return;
+      events.push({
+        domain: domain.toLowerCase(),
+        intensity: Number.isFinite(intensity) ? intensity : 3,
+        source,
+        title
+      });
+    });
+  }
+  return { summary, events, asOf };
+}
+
 // Persona/synthesis responses use a plain delimited format instead of JSON —
 // quotes, apostrophes, and line breaks inside a value need no escaping this
 // way, unlike asking a model to hand-produce valid JSON around free text
@@ -173,9 +208,13 @@ function gatherPrompt(topic, domains){
   const domainLabels = domains.map(id => DOMAINS.find(d=>d.id===id).label).join(', ');
   const focus = topic ? `the question: "${topic}"` : 'a general scan of current world signal';
   return `You are the sensing layer of a live forecasting oracle. Use web search to find current real events (last few days) relevant to ${focus}, within these domains: ${domainLabels}.
-Return ONLY valid JSON, no markdown fences, no commentary, matching exactly this schema:
-{"summary":"one plain paragraph describing the current state relevant to the query","events":[{"title":"under 14 words","domain":"one of: ${domains.join(', ')}","source":"publication or site name only, no URL","intensity":1-5}],"asOf":"the current date you can infer from search results, e.g. 2026-07-04"}
-Limit events to 8-12 items. Every string value must be a single line with no literal line breaks. Do not include any text outside the JSON object.`;
+Respond in EXACTLY this plain-text format, no JSON, no markdown, nothing before or after it:
+SUMMARY: <one plain paragraph describing the current state relevant to the query, single line, no line breaks>
+ASOF: <the current date you can infer from search results, e.g. 2026-07-04>
+EVENTS:
+<one line per event, 8-12 lines total, exactly this shape, one event per line:>
+domain | intensity(1-5) | source | title
+Use domain values only from: ${domains.join(', ')}. Do not use the "|" character inside source or title. Keep each event to a single line, under 14 words for the title.`;
 }
 function personaPrompt(persona, briefText, topic){
   const q = topic ? `The question being forecast: "${topic}"` : `The question being forecast: "What is most likely to happen next, broadly?"`;
@@ -357,7 +396,7 @@ async function runOracle(topic, domains){
   try{
     setStage('sensing', 'Scanning ' + domains.map(id=>DOMAINS.find(d=>d.id===id).label).join(', ') + ' for live signal…');
     const gatherText = await callClaude(gatherPrompt(topic, domains), true);
-    const gathered = parseJSONLoose(gatherText);
+    const gathered = parseGatherResponse(gatherText);
     renderTicker(gathered);
 
     setStage('council', 'Five personas deliberating: Analyst, Skeptic, Quant, Historian, Contrarian…');
