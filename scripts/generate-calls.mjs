@@ -221,22 +221,41 @@ async function generateOne(q){
   const briefBlocks = parseBlocks(gatherText, EVIDENCE_LENSES.map(e => e.id));
 
   console.log(`[${q.id}] convening 50-member council...`);
-  const personaResults = await runWithConcurrency(PERSONAS, 8, async p => {
-    const t = await callClaude(personaPrompt(p, q, briefBlocks), false);
-    const fields = parseFields(t, ['PROBABILITY', 'HEADLINE', 'REASONING', 'INSUFFICIENT_EVIDENCE']);
-    return {
-      persona: p,
-      data: {
-        probability: parseInt(fields.probability, 10) || 50,
-        headline: fields.headline,
-        reasoning: fields.reasoning,
-        insufficientEvidence: (fields.insufficient_evidence || '').toUpperCase().startsWith('Y') ? 'YES' : 'NO'
-      }
-    };
+  const rawResults = await runWithConcurrency(PERSONAS, 8, async p => {
+    try{
+      const t = await callClaude(personaPrompt(p, q, briefBlocks), false);
+      const fields = parseFields(t, ['PROBABILITY', 'HEADLINE', 'REASONING', 'INSUFFICIENT_EVIDENCE']);
+      return {
+        persona: p,
+        data: {
+          probability: parseInt(fields.probability, 10) || 50,
+          headline: fields.headline,
+          reasoning: fields.reasoning,
+          insufficientEvidence: (fields.insufficient_evidence || '').toUpperCase().startsWith('Y') ? 'YES' : 'NO'
+        }
+      };
+    }catch(e){
+      // A single persona failing (transient blip, empty response, etc.) should
+      // drop that one voice, not the whole domain — Promise.all inside
+      // runWithConcurrency fails its whole batch on any one rejection, so this
+      // catch has to live here, per-call, not around the batch.
+      console.error(`[${q.id}]   ${p.name} failed: ${e.message}`);
+      return null;
+    }
   });
 
+  const personaResults = rawResults.filter(Boolean);
+  const droppedCount = PERSONAS.length - personaResults.length;
+  if(droppedCount > 0){
+    console.log(`[${q.id}] ${droppedCount}/${PERSONAS.length} voices failed outright and were dropped`);
+  }
+  const MIN_QUORUM = 25; // at least half the council actually responded
+  if(personaResults.length < MIN_QUORUM){
+    throw new Error(`Only ${personaResults.length}/${PERSONAS.length} voices succeeded \u2014 too few for a reliable synthesis`);
+  }
+
   const thinCount = personaResults.filter(pr => pr.data.insufficientEvidence === 'YES').length;
-  console.log(`[${q.id}] ${thinCount}/${PERSONAS.length} voices flagged thin evidence for their lens`);
+  console.log(`[${q.id}] ${thinCount}/${personaResults.length} responding voices flagged thin evidence for their lens`);
 
   console.log(`[${q.id}] synthesizing (single flat pass across all 50)...`);
   const synthText = await callClaude(synthesisPrompt(q, personaResults), false, 1500);
@@ -256,7 +275,7 @@ async function generateOne(q){
     // kept for this experimental run only, not rendered by calls.js —
     // useful for eyeballing whether the 50-voice/flat-synthesis test
     // actually produced a sensible read before building the two-pass version
-    _debug: { personaCount: PERSONAS.length, thinEvidenceCount: thinCount }
+    _debug: { personaCount: PERSONAS.length, respondedCount: personaResults.length, droppedCount, thinEvidenceCount: thinCount }
   };
 }
 
