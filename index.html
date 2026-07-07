@@ -15,7 +15,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <link rel="stylesheet" href="/assets/oracle.css">
 <link rel="stylesheet" href="/assets/calls.css">
 <link rel="stylesheet" href="/assets/signal.css">
-<link rel="stylesheet" href="/assets/howitworks.css">
 </head>
 <body>
 
@@ -23,7 +22,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
   <div class="nav-inner">
     <div>
       <div class="nav-brand">notcfo</div>
-      <div class="nav-sub">Forecasts &middot; Argued in the Open</div>
     </div>
     <div class="nav-right">
       <ul class="nav-links">
@@ -32,7 +30,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <li><a href="#calls">Orchestra</a></li>
         <li><a href="#notes">Desk Notes</a></li>
         <li><a href="#coverage">Coverage</a></li>
-        <li><a href="#how">How It Works</a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
       <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
@@ -51,7 +48,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
   <a href="#calls" onclick="closeMenu()">Orchestra</a>
   <a href="#notes" onclick="closeMenu()">Desk Notes</a>
   <a href="#coverage" onclick="closeMenu()">Coverage</a>
-  <a href="#how" onclick="closeMenu()">How It Works</a>
   <a href="/about.html" onclick="closeMenu()">About</a>
 </div>
 
@@ -67,23 +63,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
     <div class="hero-cta">
       <a href="#oracle" class="btn btn-fill">Ask the Oracle</a>
       <a href="#calls" class="btn btn-soft">See the standing calls</a>
-    </div>
-  </div>
-
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="sc">
-        <div class="sc-n">20+</div>
-        <div class="sc-l">Years in investment banking &amp; capital markets</div>
-      </div>
-      <div class="sc">
-        <div class="sc-n">$50B+</div>
-        <div class="sc-l">In debt issuance executed by the human half</div>
-      </div>
-      <div class="sc">
-        <div class="sc-n">5</div>
-        <div class="sc-l">Standing forecasts, refreshed on a schedule</div>
-      </div>
     </div>
   </div>
 </section>
@@ -283,48 +262,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <h3>Frontier AI &amp; Energy</h3>
         <p>Model releases, compute buildouts, and the power infrastructure now underwriting the AI industry.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. HOW IT WORKS -->
-<section id="how" class="sect sect-alt">
-  <div class="wrap">
-    <div class="sh rev">
-      <div class="label">The mechanism, plainly</div>
-      <h2>How it <em>works</em></h2>
-      <p>Two systems, one shared foundation. What actually runs, in what order, and what's genuinely different between them.</p>
-    </div>
-
-    <div class="hiw-step rev">
-      <div class="label-gold">Every cycle starts here</div>
-      <h3>Sensing</h3>
-      <p>An autonomous web search gathers current, real information for each domain &mdash; organized into ten categories (official data, market pricing, deal flow, social discourse, and more) rather than one vague paragraph, so what follows has something concrete to actually weigh. This is also what feeds the Signal above: the same research, condensed into one public read per domain, every day.</p>
-    </div>
-
-    <div class="hiw-grid">
-      <div class="hiw-path rev">
-        <div class="label-gold">On-demand</div>
-        <h3>The Oracle</h3>
-        <ol class="hiw-list">
-          <li><strong>5 personas</strong> &mdash; Analyst, Skeptic, Quant, Historian, Contrarian &mdash; reason independently over your question, no cross-talk between them.</li>
-          <li><strong>Synthesis</strong> &mdash; one pass weighs the five into a consensus and names the strongest dissent, rather than smoothing disagreement away.</li>
-          <li><strong>Runs when you ask</strong> &mdash; your own API key, four horizons every time: 24 hours, one week, one month, one year.</li>
-        </ol>
-      </div>
-      <div class="hiw-path rev">
-        <div class="label-gold">Scheduled</div>
-        <h3>The Orchestra</h3>
-        <ol class="hiw-list">
-          <li><strong>50 personas</strong> &mdash; 5 reasoning methodologies &times; 10 evidence lenses &mdash; each told which slice of the brief to weight most heavily.</li>
-          <li><strong>Synthesis</strong> &mdash; one pass weighs all 50, discounting any voice that flagged its lens had nothing substantive to go on.</li>
-          <li><strong>Runs itself daily</strong> &mdash; one call per domain, no person triggering it, resolved later by a human on the Desk.</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="hiw-close rev">
-      <p>Both produce the same three things: a probability, a one-line verdict, and resolution criteria written before anyone knows the outcome &mdash; so every forecast can be checked later, not just believed.</p>
     </div>
   </div>
 </section>
