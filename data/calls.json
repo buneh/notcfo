@@ -1,4 +1,47 @@
 {
-  "generatedAt": null,
-  "calls": []
+  "generatedAt": "2026-07-07T12:04:16.822Z",
+  "calls": [
+    {
+      "id": "macro",
+      "domain": "Macro Health & Sentiment",
+      "question": "Will both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their next releases than their prior month’s readings?",
+      "horizon": "1m",
+      "probability": 28,
+      "forecast": "Unlikely both prints accelerate; US CPI may rise again but Eurozone HICP acceleration is unconfirmed and joint occurrence is a minority outcome.",
+      "resolutionCriteria": "Resolves YES if the next published US CPI YoY (BLS) and Eurozone HICP flash/final YoY (Eurostat) both exceed their respective immediately prior month's reported YoY figures. Resolves NO if either series is equal to or lower than its prior month's YoY reading, per the official BLS and Eurostat releases.",
+      "calledAt": "2026-07-07T11:58:23.182Z",
+      "_debug": {
+        "personaCount": 50,
+        "thinEvidenceCount": 47
+      }
+    },
+    {
+      "id": "markets",
+      "domain": "Financial & Capital Markets",
+      "question": "Will the ICE BofA US High Yield Index Option-Adjusted Spread be wider in 30 days than it is today?",
+      "horizon": "1m",
+      "probability": 54,
+      "forecast": "ICE BofA US HY OAS likely edges modestly wider over the next 30 days from near cycle-tight levels.",
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) on the date 30 calendar days from today is higher than today's published value; resolves NO if it is equal to or lower.",
+      "calledAt": "2026-07-07T11:59:37.628Z",
+      "_debug": {
+        "personaCount": 50,
+        "thinEvidenceCount": 45
+      }
+    },
+    {
+      "id": "crypto",
+      "domain": "Crypto Market Dynamics",
+      "question": "Will US-listed spot Bitcoin ETFs register net inflows over the next 7 days?",
+      "horizon": "1w",
+      "probability": 38,
+      "forecast": "US spot Bitcoin ETFs likely post net outflows over the next 7 days, extending the multi-week negative trend.",
+      "resolutionCriteria": "Resolves YES if the summed daily net flow across US-listed spot Bitcoin ETFs (per Farside Investors or SoSoValue aggregate data) over the next 7 calendar days is positive; resolves NO if the 7-day cumulative net flow is zero or negative.",
+      "calledAt": "2026-07-07T12:01:12.927Z",
+      "_debug": {
+        "personaCount": 50,
+        "thinEvidenceCount": 42
+      }
+    }
+  ]
 }
