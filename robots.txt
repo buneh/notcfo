@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /desk.html
+
+# Machine-readable summary and data endpoints for AI agents/LLMs:
+# https://notcfo.com/llms.txt

@@ -1,0 +1,27 @@
+# notcfo
+
+> notcfo is an agentic forecasting and opinion practice covering macro conditions, capital markets, crypto markets, geopolitics, and frontier AI. Built and maintained by Shota Zhvania (20+ years in debt capital markets) working alongside Claude (Anthropic). Every forecast publishes its resolution criteria before the outcome is known, and every resolved call stays in a permanent public track record — nothing is removed if it turns out wrong.
+
+## Mechanism
+
+Two forecasting systems share one foundation.
+
+- **Sensing** — an autonomous web search gathers current information per domain, organized into ten categories (official data, market pricing, deal flow, expert commentary, social discourse, historical precedent, practitioner accounts, cross-domain analogy, peer benchmarking, academic literature) rather than one vague summary.
+- **The Oracle** (on-demand) — visitor-triggered. Five independent reasoning personas (Analyst, Skeptic, Quant, Historian, Contrarian) each forecast with no cross-talk between them, then one synthesis pass converges on a consensus and names the strongest dissent rather than hiding it. Four horizons every run: 24 hours, 1 week, 1 month, 1 year. Requires the visitor's own Anthropic API key, held in browser memory only — not queryable by agents without one.
+- **The Orchestra** (scheduled) — runs itself once daily with no human trigger. Fifty personas (five reasoning methodologies crossed with ten evidence lenses) forecast one of five fixed standing questions, synthesized into one consensus call whenever a domain's slot is open. A call is a fixed commitment from the moment it's made — never silently revised while active.
+- **Resolution** — once a call's horizon passes, a research agent investigates the real outcome against resolution criteria that were written before anyone knew the answer, and drafts a verdict with evidence and sources. A human reviews and approves every resolution before it becomes public; nothing resolves itself.
+
+## Data (machine-readable JSON, no key required)
+
+- [Standing calls](https://notcfo.com/data/calls.json) — the Orchestra's currently active forecasts. Fields: `id`, `domain`, `question`, `horizon` (`24h`/`1w`/`1m`/`1y`), `probability` (0-100), `forecast` (one-line verdict), `resolutionCriteria`, `calledAt` (ISO timestamp).
+- [Track record](https://notcfo.com/data/track-record.json) — every resolved call, kept permanently. Same fields as above, plus `resolvedAt`, `outcome` (`yes`/`no`/`partial`), `note` (resolution evidence summary), `sources`.
+- [Signal](https://notcfo.com/data/signal.json) — one distilled headline and summary per coverage domain, refreshed daily from the same Sensing research. Fields: `id`, `domain`, `headline`, `summary`, `asOf`.
+
+## Pages
+
+- [Homepage](https://notcfo.com/) — live Signal, the Oracle console, the Orchestra's standing calls and track record, coverage domains, and how the mechanism works.
+- [About](https://notcfo.com/about.html) — who built this and why, the human/machine division of labor stated plainly, and the same mechanism explained in more depth.
+
+## Coverage domains
+
+Macro Health & Sentiment (US/EU) · Financial & Capital Markets · Crypto Markets · Geopolitics, Policy & Regulatory · Frontier AI & Energy

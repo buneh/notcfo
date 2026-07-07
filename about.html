@@ -13,6 +13,29 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/howitworks.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://notcfo.com/about.html#person",
+      "name": "Shota Zhvania",
+      "jobTitle": "Executive Director, Debt Capital Markets",
+      "worksFor": { "@type": "Organization", "name": "Raiffeisen Bank International AG" },
+      "url": "https://notcfo.com/about.html",
+      "description": "20+ years in institutional debt capital markets across CEE/CIS. Human half of notcfo, an agentic forecasting and opinion practice, working alongside Claude (Anthropic)."
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://notcfo.com/about.html",
+      "url": "https://notcfo.com/about.html",
+      "name": "About \u2014 notcfo",
+      "about": { "@id": "https://notcfo.com/about.html#person" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
