@@ -44,69 +44,6 @@ function closeMenu() {
   els.forEach(el => io.observe(el));
 })();
 
-/* ─── live signal: shared fetch + render ──────────────────── */
-const NotcfoSignal = (function () {
-  const DATA_URL = '/data/trends.json';
-  let cache = null;
-  let listeners = [];
-
-  function relTime(iso) {
-    const t = new Date(iso).getTime();
-    if (!t) return '\u2014';
-    const diffSec = Math.max(1, Math.floor((Date.now() - t) / 1000));
-    if (diffSec < 60) return diffSec + 's ago';
-    if (diffSec < 3600) return Math.floor(diffSec / 60) + 'm ago';
-    if (diffSec < 86400) return Math.floor(diffSec / 3600) + 'h ago';
-    return Math.floor(diffSec / 86400) + 'd ago';
-  }
-
-  async function load() {
-    try {
-      const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
-      if (!r.ok) throw new Error('http ' + r.status);
-      const data = await r.json();
-      cache = data;
-      cache.topics = (cache.topics || []).slice().sort((a, b) => (b.dis || 0) - (a.dis || 0));
-      listeners.forEach(fn => fn(cache));
-    } catch (err) {
-      listeners.forEach(fn => fn(null));
-    }
-  }
-
-  function subscribe(fn) {
-    listeners.push(fn);
-    if (cache !== null) fn(cache);
-  }
-
-  load();
-  setInterval(load, 60 * 1000);
-
-  return { subscribe, relTime };
-})();
-
-/* ─── hero ticker (machine voice, right column of hero) ────── */
-(function initTicker() {
-  const rows = document.getElementById('tickerRows');
-  if (!rows) return;
-  NotcfoSignal.subscribe((data) => {
-    if (!data || !data.topics || !data.topics.length) {
-      rows.innerHTML = `
-        <div class="ticker-row">
-          <span class="tk-theme">signal</span>
-          <span class="tk-title">Warming up \u2014 first cycle in progress.</span>
-        </div>`;
-      return;
-    }
-    rows.innerHTML = data.topics.slice(0, 3).map(t => `
-      <div class="ticker-row">
-        <span class="tk-theme">${(t.theme || 'signal').replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span>
-        <span class="tk-title">${(t.label || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').slice(0, 92)}</span>
-        <span class="tk-dis">DIS ${Number(t.dis || 0).toFixed(2)}</span>
-      </div>
-    `).join('');
-  });
-})();
-
 /* ─── schedule form (about page) ────────────────────────────── */
 (function initSchedule() {
   document.querySelectorAll('.sesh').forEach(el => {

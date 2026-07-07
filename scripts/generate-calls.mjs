@@ -1,25 +1,33 @@
 #!/usr/bin/env node
 // scripts/generate-calls.mjs
 //
-// EXPERIMENTAL: 50-persona version, single flat synthesis pass.
+// Runs Sensing for all 5 standing-question domains on every scheduled run,
+// regardless of whether a call is being generated for them. This is a
+// deliberate architecture decision: Signal (data/signal.json) needs fresh
+// data every run to feel live; call-generation only happens when a domain's
+// slot is actually open. Both now share one Sensing call per domain per
+// run rather than fetching twice.
 //
-// This is explicitly a test of whether one synthesis call can handle 50
-// persona outputs directly, before building the (probably necessary)
-// hierarchical two-pass aggregation. Worth being clear about what this
-// is NOT: 50 personas is a larger ensemble, not emergent swarm behavior —
-// it's still one model, prompted 50 different ways. The two things that
-// make this a real test of differentiation rather than 50 cosmetically
-// different names on the same output:
+// Cost note, stated plainly rather than left implicit: this means 5
+// search-based Sensing calls every single day now, not just on days a
+// slot happens to be open. That's the real price of a live Signal feed.
+//
+// EXPERIMENTAL: the council itself is still the 50-persona / single flat
+// synthesis pass test. Worth being clear about what this is NOT: 50
+// personas is a larger ensemble, not emergent swarm behavior — it's still
+// one model, prompted 50 different ways. The two things that make this a
+// real test of differentiation rather than 50 cosmetically different names
+// on the same output:
 //
 //   1. Five reasoning METHODOLOGIES (how a persona reasons) crossed with
 //      ten evidence LENSES (what a persona is told to weight) = 50
 //      genuinely distinct (methodology, evidence) pairs, not 50 arbitrary
 //      personalities.
-//   2. Sensing now gathers a CATEGORIZED brief (one section per evidence
+//   2. Sensing gathers a CATEGORIZED brief (one section per evidence
 //      lens) instead of one flat paragraph — so the 10 evidence lenses
 //      actually differ in what they're looking at, not just how a single
-//      shared paragraph is described. Still one web-search call (cost
-//      control), not ten.
+//      shared paragraph is described. Still one web-search call per
+//      domain (cost control), not ten.
 //
 // Personas are explicitly permitted to say their lens had nothing
 // substantive to go on (INSUFFICIENT_EVIDENCE), rather than being
@@ -27,9 +35,12 @@
 // personas without this is 50 confident-sounding hallucinations instead
 // of 5.
 //
-// Calls are still discrete commitments: this script only fills an empty
-// slot, never overwrites an active call. See prior version's comments
-// for that behavior; unchanged here.
+// Signal is a separate, much cheaper by-product of the same Sensing call:
+// each domain's 10-section brief gets condensed (no search, just
+// distillation) into one tight headline + summary for a public feed.
+//
+// Calls are still discrete commitments: a domain only gets a new call
+// generated when its slot is empty, never overwritten while active.
 
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 if(!API_KEY){
@@ -215,11 +226,23 @@ FORECAST: <one sentence, under 25 words \u2014 the verdict, not a discussion>
 RESOLUTION_CRITERIA: <one to two sentences: resolves YES if ___ (name the comparator/source); resolves NO if ___>`;
 }
 
-async function generateOne(q){
-  console.log(`[${q.id}] sensing (categorized, ${EVIDENCE_LENSES.length} sections)...`);
-  const gatherText = await callClaude(gatherPrompt(q), true, 1500);
-  const briefBlocks = parseBlocks(gatherText, EVIDENCE_LENSES.map(e => e.id));
+// Signal is a separate, cheaper use of the same Sensing brief: no search,
+// just distilling the 10-section categorized brief into one tight public
+// entry. This is what makes "The Signal" section on the site possible —
+// previously Sensing's output was thrown away after feeding the council;
+// now every domain's brief gets condensed into something publishable,
+// every run, regardless of whether that domain also got a new call.
+function condensePrompt(q, briefBlocks){
+  const fullBrief = EVIDENCE_LENSES.map(e => `${e.name}: ${briefBlocks[e.id] || 'Limited/no direct signal found'}`).join('\n');
+  return `You gathered the following categorized brief on this question: "${q.question}" (domain: ${q.domain}).
+${fullBrief}
+Distill this into ONE tight, concise signal entry for a live feed \u2014 not a summary of every category, just what's genuinely most notable right now. If most categories reported "Limited/no direct signal found," say plainly that there's little fresh signal right now rather than padding with unrelated content.
+Respond in EXACTLY this plain-text format, one field per line, nothing before or after it, no JSON, no markdown, no quotation marks wrapping values:
+HEADLINE: <under 12 words, concrete and specific to what's actually happening>
+SUMMARY: <one to two sentences, plain language, what's genuinely notable right now>`;
+}
 
+async function generateCallFromBrief(q, briefBlocks){
   console.log(`[${q.id}] convening 50-member council...`);
   const rawResults = await runWithConcurrency(PERSONAS, 8, async p => {
     try{
@@ -272,44 +295,84 @@ async function generateOne(q){
     forecast: synthFields.forecast,
     resolutionCriteria: synthFields.resolution_criteria,
     calledAt: now,
-    // kept for this experimental run only, not rendered by calls.js —
-    // useful for eyeballing whether the 50-voice/flat-synthesis test
-    // actually produced a sensible read before building the two-pass version
     _debug: { personaCount: PERSONAS.length, respondedCount: personaResults.length, droppedCount, thinEvidenceCount: thinCount }
+  };
+}
+
+async function senseOne(q){
+  console.log(`[${q.id}] sensing (categorized, ${EVIDENCE_LENSES.length} sections)...`);
+  const gatherText = await callClaude(gatherPrompt(q), true, 1500);
+  return parseBlocks(gatherText, EVIDENCE_LENSES.map(e => e.id));
+}
+
+async function condenseOne(q, briefBlocks){
+  const text = await callClaude(condensePrompt(q, briefBlocks), false, 400);
+  const fields = parseFields(text, ['HEADLINE', 'SUMMARY']);
+  return {
+    id: q.id,
+    domain: q.domain,
+    headline: fields.headline,
+    summary: fields.summary,
+    asOf: new Date().toISOString()
   };
 }
 
 async function main(){
   const fs = await import('node:fs/promises');
   const path = await import('node:path');
-  const outPath = path.join(process.cwd(), 'data', 'calls.json');
-  const existing = await fs.readFile(outPath, 'utf8').then(JSON.parse).catch(() => ({ calls: [] }));
+  const callsPath = path.join(process.cwd(), 'data', 'calls.json');
+  const signalPath = path.join(process.cwd(), 'data', 'signal.json');
+
+  const existing = await fs.readFile(callsPath, 'utf8').then(JSON.parse).catch(() => ({ calls: [] }));
   const existingCalls = existing.calls || [];
 
-  const openSlots = STANDING_QUESTIONS.filter(q => !existingCalls.find(c => c.id === q.id));
+  const generatedCalls = [];
+  const signalTopics = [];
 
-  if(openSlots.length === 0){
-    console.log('All four domains already have an active call \u2014 nothing to generate this run.');
-    return;
-  }
-
-  const generated = [];
-  for(const q of openSlots){
+  for(const q of STANDING_QUESTIONS){
+    let briefBlocks;
     try{
-      generated.push(await generateOne(q));
+      briefBlocks = await senseOne(q);
     }catch(e){
-      console.error(`[${q.id}] failed:`, e.message);
+      console.error(`[${q.id}] sensing failed: ${e.message} \u2014 skipping signal and any call generation for this domain this run`);
+      continue;
+    }
+
+    try{
+      signalTopics.push(await condenseOne(q, briefBlocks));
+    }catch(e){
+      console.error(`[${q.id}] signal condensation failed: ${e.message}`);
+    }
+
+    const hasActiveCall = existingCalls.find(c => c.id === q.id);
+    if(hasActiveCall){
+      console.log(`[${q.id}] already has an active call \u2014 sensed for Signal only, no new call generated`);
+      continue;
+    }
+
+    try{
+      generatedCalls.push(await generateCallFromBrief(q, briefBlocks));
+    }catch(e){
+      console.error(`[${q.id}] call generation failed: ${e.message}`);
     }
   }
 
-  if(generated.length === 0){
-    console.log('All generation attempts failed this run \u2014 nothing written.');
-    return;
+  // --- write signal.json (always, if anything was sensed) ---
+  if(signalTopics.length > 0){
+    await fs.writeFile(signalPath, JSON.stringify({ generatedAt: new Date().toISOString(), topics: signalTopics }, null, 2) + '\n');
+    console.log(`Wrote ${signalTopics.length}/${STANDING_QUESTIONS.length} topic(s) to data/signal.json`);
+  }else{
+    console.log('No signal topics produced this run \u2014 leaving data/signal.json untouched');
   }
 
-  const merged = existingCalls.concat(generated);
-  await fs.writeFile(outPath, JSON.stringify({ generatedAt: new Date().toISOString(), calls: merged }, null, 2) + '\n');
-  console.log(`Filled ${generated.length}/${openSlots.length} open slot(s) using the 50-persona / single-synthesis test path.`);
+  // --- write calls.json (only if any new calls were actually generated) ---
+  if(generatedCalls.length > 0){
+    const merged = existingCalls.concat(generatedCalls);
+    await fs.writeFile(callsPath, JSON.stringify({ generatedAt: new Date().toISOString(), calls: merged }, null, 2) + '\n');
+    console.log(`Filled ${generatedCalls.length} open slot(s).`);
+  }else{
+    console.log('No new calls generated this run \u2014 leaving data/calls.json untouched');
+  }
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

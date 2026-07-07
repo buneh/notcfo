@@ -1,0 +1,32 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — How It Works
+   Sequence is conveyed with numbers (CSS counters) and layout, not
+   drawn arrows or connecting lines — consistent with the no-lines
+   constraint everywhere else on the site.
+   ═══════════════════════════════════════════════════════════════ */
+
+.hiw-step { margin-bottom: 3rem; max-width: 640px; }
+.hiw-step h3 { margin-bottom: .6rem; font-size: 1.05rem; }
+.hiw-step p { font-size: .875rem; }
+
+.hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.hiw-path h3 { margin: .5rem 0 1.1rem; font-size: 1.2rem; }
+
+.hiw-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; counter-reset: hiw; }
+.hiw-list li {
+  font-size: .8125rem; color: var(--fg-dim); line-height: 1.7;
+  position: relative; padding-left: 1.6rem; counter-increment: hiw;
+}
+.hiw-list li::before {
+  content: counter(hiw);
+  position: absolute; left: 0; top: 0;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--gold);
+}
+.hiw-list li strong { color: var(--fg); font-weight: 600; }
+
+.hiw-close { max-width: 640px; }
+.hiw-close p { font-size: 1rem; color: var(--fg); line-height: 1.75; }
+
+@media (max-width: 880px) {
+  .hiw-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
