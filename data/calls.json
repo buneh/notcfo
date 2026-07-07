@@ -1,37 +1,4 @@
 {
-  "generatedAt": "2026-07-06T10:51:41.476Z",
-  "calls": [
-    {
-      "id": "dcm",
-      "domain": "DCM",
-      "question": "Will CEE/CIS primary bond issuance volume increase over the next month?",
-      "horizon": "1m",
-      "probability": 68,
-      "forecast": "CEE/CIS bond issuance is likely to rise over the next month, mainly due to a strong seasonal pattern: sovereigns and corporates typically front-load funding in January to get ahead of 2026 refinancing needs after a quiet December. While full-year 2026 volumes are expected to be flat-to-softer versus 2025, this near-term seasonal effect should dominate the one-month reading, making a month-on-month increase more likely than not."
-    },
-    {
-      "id": "defi",
-      "domain": "Agentic AI & Crypto",
-      "question": "Will total value locked in agentic-managed DeFi strategies grow over the next week?",
-      "horizon": "1w",
-      "probability": 62,
-      "forecast": "Agentic DeFi TVL will likely tick modestly higher over the next week, driven by incentive programs like Bond Labs and continued vault integrations across Morpho, Kamino, and Pendle. However, the sector remains fragile—recent exploits (Step Finance) and Morpho's sharp drawdown show how quickly correlated agent strategies can unwind, so the growth path is far from assured. Net, base-rate momentum and fresh incentives outweigh exploit risk, but not by a wide margin."
-    },
-    {
-      "id": "fintech",
-      "domain": "Telecom × FinTech",
-      "question": "Will telecom-embedded financial services see a major new partnership or launch this month?",
-      "horizon": "1m",
-      "probability": 89,
-      "forecast": "Given the rapid cadence of telecom-embedded fintech deals (Gigs' multiple partner additions, Singtel-GXS, and emerging-market wallet launches), another qualifying partnership or launch this month is highly likely. The main uncertainty isn't whether something happens, but whether it's clearly \"major\" versus a minor regional rollout, and whether concentration in a few vendors creates fragility. Expect a new announcement, though its headline significance may be debatable."
-    },
-    {
-      "id": "signal",
-      "domain": "Signal Intelligence",
-      "question": "Will discussion intensity around AI regulation increase over the next week?",
-      "horizon": "1w",
-      "probability": 80,
-      "forecast": "Multiple concrete catalysts—the UN Geneva dialogue opening, pre-recess lobbying on GAAIA, ongoing DOJ-Colorado litigation, and already-high public salience—converge in the same week, making an uptick in AI regulation discussion likely. The main uncertainty is how measurable and sustained that \"intensity\" actually is, since summer news cycles can dilute coverage even with real events driving it. Barring a slow news week overriding these triggers, discussion volume should rise noticeably."
-    }
-  ]
+  "generatedAt": null,
+  "calls": []
 }
