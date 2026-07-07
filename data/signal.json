@@ -1,4 +1,33 @@
 {
-  "generatedAt": null,
-  "topics": []
+  "generatedAt": "2026-07-07T18:15:28.062Z",
+  "topics": [
+    {
+      "id": "macro",
+      "domain": "Macro Health & Sentiment",
+      "headline": "Eurozone HICP already decelerating; US CPI joint-acceleration bet looks shaky",
+      "summary": "Eurostat's flash estimate shows June HICP falling to 2.8% from 3.2%, breaking the \"both higher\" condition outright, while the Cleveland Fed nowcasts US CPI slowing to 3.96% from 4.2% — together making a simultaneous acceleration in both readings unlikely.",
+      "asOf": "2026-07-07T18:13:30.925Z"
+    },
+    {
+      "id": "markets",
+      "domain": "Financial & Capital Markets",
+      "headline": "HY spreads near 2.7%, historically tight; no fresh deal-flow signal",
+      "summary": "HY OAS sits around 2.74-2.75%, a level reached only ~5% of the time since 2000, so mean-reversion risk favors widening over further tightening; beyond official spread and rates data, no meaningful deal-flow, expert, or sentiment signals were found to sharpen the 30-day call.",
+      "asOf": "2026-07-07T18:14:00.650Z"
+    },
+    {
+      "id": "crypto",
+      "domain": "Crypto Market Dynamics",
+      "headline": "Bitcoin ETF flows whipsaw as $221M inflow flips to $520M outflow",
+      "summary": "A single-day $221.7M inflow ended a brutal 10-day, $2.73B outflow streak, but selling resumed the very next session with over $520M in outflows, leaving analysts calling it a cautious re-entry rather than a trend reversal. With YTD outflows still at $5.4B and weekly outflow pace only easing from ~$2B to $700M, sustained net inflows over the next week remain uncertain and highly momentum-dependent.",
+      "asOf": "2026-07-07T18:14:24.799Z"
+    },
+    {
+      "id": "geopolitics",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "headline": "VIX sits below its own trailing average, tilting odds lower",
+      "summary": "Spot VIX (~15.6-16.4) is running well under the trailing one-month average (~18.06), so it would need a notable spike just to reach that bar in 30 days; historically VIX also tends to overstate future volatility and mean-revert, though practitioners warn the current low-vol complacency could snap into a shock given past swings between sub-11 and 30+ this year.",
+      "asOf": "2026-07-07T18:14:55.307Z"
+    }
+  ]
 }
