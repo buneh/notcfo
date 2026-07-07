@@ -7,7 +7,10 @@
 <meta name="theme-color" content="#1F1E1E">
 <title>notcfo — Forecasts, argued in the open</title>
 <script>
-try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+try {
+  if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light');
+  if (localStorage.getItem('notcfo-view') === 'machine') document.documentElement.classList.add('machine-view');
+} catch (e) {}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,6 +74,9 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <li><a href="#coverage">Coverage</a></li>
         <li><a href="/about.html">About</a></li>
       </ul>
+      <button type="button" class="theme-btn" id="viewBtn" onclick="toggleView()">
+        <span id="viewLabel">Machine View</span>
+      </button>
       <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
         <span id="themeIcon">&#9728;</span><span id="themeLabel">Light</span>
       </button>
@@ -93,6 +99,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 <!-- 1. INTRO -->
 <section id="hero">
   <div class="wrap">
+    <div class="mv-banner" id="mvBanner">Machine view &mdash; the same literal fields a script or agent reads, sourced from the same JSON as <a href="/llms.txt">llms.txt</a>. Toggle back for the human-readable version.</div>
     <div class="hero-eyebrow">
       <span class="line"></span>
       <span>notcfo &middot; Vienna, Austria &middot; Est. 2026</span>
@@ -250,9 +257,10 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 
     <!-- Template for a real entry — copy this markup below notesList's
          opening tag once there's something to say, one .note-row per entry,
-         newest first, wrapped in a container styled like .tl (background:
-         var(--ink3); display:flex; flex-direction:column; gap:1px) for the
-         same seam rhythm as the About page timeline.
+         newest first, wrapped in a container styled like .tl (display:flex;
+         flex-direction:column; gap:2.75rem — spacing only, no background
+         tiers under the monochrome system) for the same rhythm as the
+         About page timeline.
 
     <div class="note-row">
       <div class="note-left">

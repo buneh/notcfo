@@ -4,8 +4,16 @@
 //   /data/track-record.json   — hand-curated: a call moves here once a human resolves it
 // No live API calls, no key needed to view — this is the "ambient" counterpart to the
 // interactive Oracle section above it.
+//
+// Supports the human/machine view toggle: machine view renders the
+// literal fetched JSON via <pre> blocks, not a restyled approximation
+// of it — see renderJSONBlock below.
 
 (function(){
+
+let latestCalls = null;
+let latestTrackRecord = null;
+let machineMode = document.documentElement.classList.contains('machine-view');
 
 function $(id){ return document.getElementById(id); }
 
@@ -17,18 +25,27 @@ function timeAgo(iso){
   return Math.floor(s/86400) + 'd ago';
 }
 
+function esc(s){
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+}
+
+function renderJSONBlock(obj){
+  const json = JSON.stringify(obj, null, 2);
+  const escaped = esc(json);
+  const highlighted = escaped.replace(/"([^"\n]+)":/g, '<span class="mv-key">"$1"</span>:');
+  return `<pre class="mv-block">${highlighted}</pre>`;
+}
+
 const HORIZON_LABEL = { '24h': '24 Hours', '1w': '1 Week', '1m': '1 Month', '1y': '1 Year' };
 
-function renderCurrent(data){
+function renderCurrentHuman(data){
   const wrap = $('callsCurrent');
   const calls = (data && data.calls) || [];
-  $('callsUpdated').textContent = timeAgo(data && data.generatedAt);
-  $('callsCount').textContent = calls.length + ' active';
 
   if(calls.length === 0){
     wrap.innerHTML = `<div class="calls-empty">
       <strong>No standing calls yet</strong>
-      The generator hasn't run for the first time. Once the scheduled job fires, four calls will appear here.
+      The generator hasn't run for the first time. Once the scheduled job fires, five calls will appear here.
     </div>`;
     return;
   }
@@ -50,7 +67,7 @@ function renderCurrent(data){
   wrap.appendChild(list);
 }
 
-function renderTrackRecord(data){
+function renderTrackRecordHuman(data){
   const wrap = $('trackRecord');
   const resolved = (data && data.resolved) || [];
 
@@ -87,6 +104,26 @@ function renderTrackRecord(data){
     wrap.appendChild(row);
   });
 }
+
+function renderCurrent(data){
+  latestCalls = data;
+  $('callsUpdated').textContent = timeAgo(data && data.generatedAt);
+  $('callsCount').textContent = ((data && data.calls) || []).length + ' active';
+  if(machineMode) $('callsCurrent').innerHTML = renderJSONBlock(data || { calls: [] });
+  else renderCurrentHuman(data);
+}
+
+function renderTrackRecord(data){
+  latestTrackRecord = data;
+  if(machineMode) $('trackRecord').innerHTML = renderJSONBlock(data || { resolved: [] });
+  else renderTrackRecordHuman(data);
+}
+
+document.addEventListener('notcfo:viewchange', (e) => {
+  machineMode = e.detail.machine;
+  if(latestCalls) renderCurrent(latestCalls);
+  if(latestTrackRecord) renderTrackRecord(latestTrackRecord);
+});
 
 async function load(){
   try{

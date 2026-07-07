@@ -382,3 +382,47 @@ footer { padding: 1.75rem 0; }
    editable, without it. Kept to the thinnest possible hairline, at low
    opacity, and only on inputs — nowhere else in the file. Flag if you'd
    rather this be handled a different way (e.g. a placeholder-only cue). */
+
+/* ═══════════════════════════════════════════════════════════════
+   MACHINE VIEW
+   A visible toggle, not a technical mechanism — real agents fetch
+   /llms.txt and the JSON files directly and never see this. This is
+   for a human to see the same thing: dense, monospace, structural
+   typography throughout, and the three JSON-backed sections (Signal,
+   Orchestra, Track Record) rendered as the literal JSON an agent
+   actually receives, via <pre> blocks built by signal.js/calls.js —
+   not a redesigned approximation of it.
+   ═══════════════════════════════════════════════════════════════ */
+html.machine-view body,
+html.machine-view h1, html.machine-view h2, html.machine-view h3 {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+html.machine-view em { font-style: normal; }
+html.machine-view .hero-h1 { font-size: clamp(1.5rem, 3vw, 2.1rem); max-width: none; }
+html.machine-view .hero-p { font-size: .9375rem; }
+html.machine-view .sh h2 { font-size: 1.2rem; }
+html.machine-view .manifesto-q { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1.05rem; }
+html.machine-view .hero-eyebrow .line { display: none; }
+html.machine-view .btn { border-radius: 0; }
+
+.mv-banner {
+  display: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  margin-bottom: 2rem;
+}
+.mv-banner a { color: var(--gold); text-decoration: underline; }
+html.machine-view .mv-banner { display: block; }
+
+.mv-block {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--fg-dim);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  margin: 0;
+}
+.mv-block .mv-key { color: var(--gold); }

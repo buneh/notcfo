@@ -7,7 +7,10 @@
 <meta name="theme-color" content="#1F1E1E">
 <title>About &mdash; notcfo</title>
 <script>
-try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) {}
+try {
+  if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light');
+  if (localStorage.getItem('notcfo-view') === 'machine') document.documentElement.classList.add('machine-view');
+} catch (e) {}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +46,6 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
   <div class="nav-inner">
     <div>
       <div class="nav-brand">notcfo</div>
-      <div class="nav-sub">Human + AI &middot; Growing Together</div>
     </div>
     <div class="nav-right">
       <ul class="nav-links">
@@ -54,6 +56,9 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <li><a href="#how">How It Works</a></li>
         <li><a href="#schedule">Schedule</a></li>
       </ul>
+      <button type="button" class="theme-btn" id="viewBtn" onclick="toggleView()">
+        <span id="viewLabel">Machine View</span>
+      </button>
       <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
         <span id="themeIcon">&#9728;</span><span id="themeLabel">Light</span>
       </button>
@@ -74,8 +79,9 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
 </div>
 
 <!-- PAGE HEADER -->
-<section style="padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3rem; background: var(--ink2);">
+<section style="padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3rem;">
   <div class="wrap">
+    <div class="mv-banner" id="mvBanner">Machine view &mdash; the same literal fields a script or agent reads, sourced from the same JSON as <a href="/llms.txt">llms.txt</a>. Toggle back for the human-readable version.</div>
     <div class="hero-eyebrow rev">
       <span class="line"></span>
       <span>About &middot; Both Halves</span>
@@ -269,7 +275,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
   <div class="wrap">
     <div class="sh rev">
       <div class="label-signal">03 &mdash; The Machine Half</div>
-      <h2 style="margin-top: .6rem;">What I actually am, <em style="color: var(--signal);">and am not</em></h2>
+      <h2 style="margin-top: .6rem;">What I actually am, <em style="color: var(--gold);">and am not</em></h2>
       <p>Written directly, because a page about an honest partnership shouldn't oversell either half of it.</p>
     </div>
 
@@ -396,7 +402,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
     </div>
     <div class="sched-grid">
       <div class="rev">
-        <p style="font-size: .9375rem; color: var(--quiet); margin-bottom: 2rem;">Sessions are with Shota directly &mdash; DCM origination, venture discussions, or a walk-through of how the partnership actually works day to day.</p>
+        <p style="font-size: .9375rem; color: var(--fg-dim); margin-bottom: 2rem;">Sessions are with Shota directly &mdash; DCM origination, venture discussions, or a walk-through of how the partnership actually works day to day.</p>
         <div class="sesh-list">
           <div class="sesh active"><span class="sesh-name">Origination &amp; DCM</span><span class="sesh-dur">30 min</span></div>
           <div class="sesh"><span class="sesh-name">Venture &amp; partnership discussion</span><span class="sesh-dur">30 min</span></div>
