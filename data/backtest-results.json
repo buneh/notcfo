@@ -1,0 +1,493 @@
+{
+  "runAt": "2026-07-09T09:38:17.008Z",
+  "summary": {
+    "error": 10,
+    "yes": 6,
+    "partial": 1,
+    "no": 2,
+    "unresolvable": 1
+  },
+  "cases": [
+    {
+      "caseId": "macro_1m",
+      "domain": "Macro Health & Sentiment",
+      "question": "Did both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their releases during 2026-06-09 to 2026-07-09 than their prior month's readings?",
+      "lookbackLabel": "1m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-06-09",
+        "resolvesAt": "2026-07-09"
+      },
+      "resolutionCriteria": "Resolves YES if the US CPI YoY print and the Eurozone HICP flash/final YoY print published between 2026-06-09 and 2026-07-09 were BOTH higher than the respective prior month's readings (check BLS releases for CPI, Eurostat for HICP). Resolves NO if either was flat or lower. Resolves PARTIAL only if one accelerated and the other's reading is genuinely disputed or revised ambiguously.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "macro_2m",
+      "domain": "Macro Health & Sentiment",
+      "question": "Did both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their releases during 2026-05-10 to 2026-06-09 than their prior month's readings?",
+      "lookbackLabel": "2m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-05-10",
+        "resolvesAt": "2026-06-09"
+      },
+      "resolutionCriteria": "Resolves YES if the US CPI YoY print and the Eurozone HICP flash/final YoY print published between 2026-05-10 and 2026-06-09 were BOTH higher than the respective prior month's readings (check BLS releases for CPI, Eurostat for HICP). Resolves NO if either was flat or lower. Resolves PARTIAL only if one accelerated and the other's reading is genuinely disputed or revised ambiguously.",
+      "proposedOutcome": "yes",
+      "keyFigures": "US CPI (BLS, released May 12, 2026, covering April 2026): headline CPI-U rose 3.8% YoY (NSA), up from 3.3% YoY for the 12 months ending March 2026 (release dated April 10, 2026). Eurozone HICP flash (Eurostat, released June 2, 2026, covering May 2026): headline annual inflation 3.2%, up from 3.0% in April 2026 (Eurostat flash release dated May 20, 2026, covering April data, itself up from 2.6% in March).",
+      "evidenceSummary": "The US CPI release on May 12, 2026 showed the year-over-year headline print accelerating to \n3.8%, the highest since May 2023\n, up from the 3.3% reported for March. The Eurozone flash HICP release on June 2, 2026 showed \nEuro area annual inflation is expected to be 3.2% in May 2026, up from 3.0% in April according to a flash estimate from Eurostat\n, confirming acceleration from April's 3.0% (itself up from 2.6% in March per the May 20, 2026 Eurostat release). Both releases occurred within the 2026-05-10 to 2026-06-09 window and both showed the headline YoY figure higher than the respective prior month's reading, satisfying the YES condition.",
+      "sources": [
+        "Bureau of Labor Statistics (bls.gov CPI news releases)",
+        "CNBC",
+        "Eurostat (ec.europa.eu Euro indicators releases)",
+        "Trading Economics"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "macro_3m",
+      "domain": "Macro Health & Sentiment",
+      "question": "Did both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their releases during 2026-04-10 to 2026-05-10 than their prior month's readings?",
+      "lookbackLabel": "3m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-04-10",
+        "resolvesAt": "2026-05-10"
+      },
+      "resolutionCriteria": "Resolves YES if the US CPI YoY print and the Eurozone HICP flash/final YoY print published between 2026-04-10 and 2026-05-10 were BOTH higher than the respective prior month's readings (check BLS releases for CPI, Eurostat for HICP). Resolves NO if either was flat or lower. Resolves PARTIAL only if one accelerated and the other's reading is genuinely disputed or revised ambiguously.",
+      "proposedOutcome": "yes",
+      "keyFigures": "US CPI: BLS release on April 10, 2026 (for March 2026 data) showed headline CPI-U up 3.3% YoY (NSA), up from 2.4% YoY in February 2026 (released March 11, 2026). Eurozone HICP: Eurostat flash estimate released April 30, 2026 showed euro area annual inflation at 3.0% in April 2026, up from 2.6% in March 2026 (confirmed in the final release on May 20, 2026, which fell just after the window but reported the same 3.0%/2.6% figures).",
+      "evidenceSummary": "The US CPI print published on April 10, 2026 (within the 2026-04-10 to 2026-05-10 window) showed headline YoY inflation accelerating to 3.3% from 2.4% the prior month, driven largely by an energy/gasoline shock tied to the Iran conflict. \nThe consumer price index rose 3.3% year over year in March 2026, up from 2.4% in February, according to the Bureau of Labor Statistics.\n The Eurozone HICP flash estimate, published April 30, 2026 (also within the window), likewise showed acceleration: \nEuro area annual inflation is expected to be 3.0% in April 2026, up from 2.6% in March according to a flash estimate from Eurostat\n. Since both the US CPI (released April 10) and the Eurozone HICP flash (released April 30) came in higher than their respective prior-month readings, and both releases fall within the specified window, the criteria for a YES resolution are met.",
+      "sources": [
+        "U.S. Bureau of Labor Statistics (bls.gov)",
+        "CNBC",
+        "Eurostat (ec.europa.eu)",
+        "Center for Commercial Agriculture (Purdue)",
+        "Advisor Perspectives/dshort"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "macro_4m",
+      "domain": "Macro Health & Sentiment",
+      "question": "Did both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their releases during 2026-03-11 to 2026-04-10 than their prior month's readings?",
+      "lookbackLabel": "4m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-03-11",
+        "resolvesAt": "2026-04-10"
+      },
+      "resolutionCriteria": "Resolves YES if the US CPI YoY print and the Eurozone HICP flash/final YoY print published between 2026-03-11 and 2026-04-10 were BOTH higher than the respective prior month's readings (check BLS releases for CPI, Eurostat for HICP). Resolves NO if either was flat or lower. Resolves PARTIAL only if one accelerated and the other's reading is genuinely disputed or revised ambiguously.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "markets_1m",
+      "domain": "Financial & Capital Markets",
+      "question": "Was the ICE BofA US High Yield Index Option-Adjusted Spread wider on 2026-07-09 than on 2026-06-09?",
+      "lookbackLabel": "1m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-06-09",
+        "resolvesAt": "2026-07-09"
+      },
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) closing value on 2026-07-09 (or nearest prior business day) was higher than on 2026-06-09 (or nearest prior business day). Resolves NO if equal or lower. State both values with their exact dates.",
+      "proposedOutcome": "partial",
+      "keyFigures": "Nearby dated observations found (no exact match for 06-09 or 07-09): GuruFocus reports the spread \nwas 2.75 as of 2026-06-03\n. Convex/FRED reports it \nwas 278 bps (2.78%), last updated June 25, 2026\n, and MacroRadar cites a \nlatest reading of 2.80 percent as of June 2026 (data through 2026-06-29)\n. A StockCharts market commentary published right at the July 1 mark referenced \n280 basis points on the ICE BofA US High Yield Index Option-Adjusted Spread\n and noted \nHY and IG credit spreads are tame, but they have crept higher as stocks have wobbled in recent weeks\n. Then govspending.org shows it \nwas 2.75 Percent as of July 2, 2026\n, and YCharts/Convex show it at \n2.74% for Jul 03 2026\n (confirmed by a Convex page titled \"HY Credit Spread (OAS): 274 bps (Jul 3, 2026)\").",
+      "evidenceSummary": "The available data shows the spread hovering in a very tight 2.74%–2.80% band across the June 3 – July 3, 2026 window, with a modest rise from ~2.75% (June 3) to ~2.78–2.80% (June 25–29), then easing back to ~2.74–2.75% by July 2-3. Since June 9 falls near the low end of this range (likely ~2.75-2.76%) and July 9 falls just after the July 3 reading of 2.74% (likely similarly ~2.73-2.75%), the two values appear to be very close to each other, with a slight lean toward July being flat-to-lower rather than wider. However, without the exact closing prints for 2026-06-09 and 2026-07-09 specifically, the outcome cannot be confirmed with full certainty given how narrow the day-to-day moves are in this series.",
+      "sources": [
+        "GuruFocus",
+        "Convex (convextrade.com)",
+        "MacroRadar",
+        "StockCharts (articles.stockcharts.com)",
+        "govspending.org",
+        "YCharts",
+        "FRED (fred.stlouisfed.org)"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "markets_2m",
+      "domain": "Financial & Capital Markets",
+      "question": "Was the ICE BofA US High Yield Index Option-Adjusted Spread wider on 2026-06-09 than on 2026-05-10?",
+      "lookbackLabel": "2m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-05-10",
+        "resolvesAt": "2026-06-09"
+      },
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) closing value on 2026-06-09 (or nearest prior business day) was higher than on 2026-05-10 (or nearest prior business day). Resolves NO if equal or lower. State both values with their exact dates.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "markets_3m",
+      "domain": "Financial & Capital Markets",
+      "question": "Was the ICE BofA US High Yield Index Option-Adjusted Spread wider on 2026-05-10 than on 2026-04-10?",
+      "lookbackLabel": "3m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-04-10",
+        "resolvesAt": "2026-05-10"
+      },
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) closing value on 2026-05-10 (or nearest prior business day) was higher than on 2026-04-10 (or nearest prior business day). Resolves NO if equal or lower. State both values with their exact dates.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "markets_4m",
+      "domain": "Financial & Capital Markets",
+      "question": "Was the ICE BofA US High Yield Index Option-Adjusted Spread wider on 2026-04-10 than on 2026-03-11?",
+      "lookbackLabel": "4m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-03-11",
+        "resolvesAt": "2026-04-10"
+      },
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) closing value on 2026-04-10 (or nearest prior business day) was higher than on 2026-03-11 (or nearest prior business day). Resolves NO if equal or lower. State both values with their exact dates.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "crypto_1w",
+      "domain": "Crypto Market Dynamics",
+      "question": "Did US-listed spot Bitcoin ETFs register net inflows over the 7 days from 2026-07-02 to 2026-07-09?",
+      "lookbackLabel": "1w",
+      "horizon": "1w",
+      "window": {
+        "calledAt": "2026-07-02",
+        "resolvesAt": "2026-07-09"
+      },
+      "resolutionCriteria": "Resolves YES if aggregate net flows across all US-listed spot Bitcoin ETFs summed over 2026-07-02 to 2026-07-09 were positive (check flow trackers such as Farside Investors or SoSoValue). Resolves NO if net negative. State the approximate net figure in USD.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "crypto_2w",
+      "domain": "Crypto Market Dynamics",
+      "question": "Did US-listed spot Bitcoin ETFs register net inflows over the 7 days from 2026-06-25 to 2026-07-02?",
+      "lookbackLabel": "2w",
+      "horizon": "1w",
+      "window": {
+        "calledAt": "2026-06-25",
+        "resolvesAt": "2026-07-02"
+      },
+      "resolutionCriteria": "Resolves YES if aggregate net flows across all US-listed spot Bitcoin ETFs summed over 2026-06-25 to 2026-07-02 were positive (check flow trackers such as Farside Investors or SoSoValue). Resolves NO if net negative. State the approximate net figure in USD.",
+      "proposedOutcome": "no",
+      "keyFigures": "Daily net flows for US spot Bitcoin ETFs (Farside/SoSoValue/The Block data): June 25, 2026: approximately -$691.7M to -$696.29M outflow (the worst day of a seven-day outflow streak, per The Block/Coinpedia); June 26, 2026: -$444.51M outflow (per The Block); June 29, 2026: -$231.0M; June 30, 2026: -$222.6M; July 1, 2026: -$296.0M; July 2, 2026: +$221.7M to +$223.5M inflow (per Farside/SoSoValue/CoinDesk), which broke a 10-day outflow streak. The week ending June 26 totaled about -$1.79B (second-largest weekly outflow on record), and the week of June 29-July 2 totaled about -$526.1M to -$527M (eighth straight negative week).",
+      "evidenceSummary": "",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "crypto_3w",
+      "domain": "Crypto Market Dynamics",
+      "question": "Did US-listed spot Bitcoin ETFs register net inflows over the 7 days from 2026-06-18 to 2026-06-25?",
+      "lookbackLabel": "3w",
+      "horizon": "1w",
+      "window": {
+        "calledAt": "2026-06-18",
+        "resolvesAt": "2026-06-25"
+      },
+      "resolutionCriteria": "Resolves YES if aggregate net flows across all US-listed spot Bitcoin ETFs summed over 2026-06-18 to 2026-06-25 were positive (check flow trackers such as Farside Investors or SoSoValue). Resolves NO if net negative. State the approximate net figure in USD.",
+      "proposedOutcome": "unresolvable",
+      "keyFigures": "",
+      "evidenceSummary": "",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "crypto_4w",
+      "domain": "Crypto Market Dynamics",
+      "question": "Did US-listed spot Bitcoin ETFs register net inflows over the 7 days from 2026-06-11 to 2026-06-18?",
+      "lookbackLabel": "4w",
+      "horizon": "1w",
+      "window": {
+        "calledAt": "2026-06-11",
+        "resolvesAt": "2026-06-18"
+      },
+      "resolutionCriteria": "Resolves YES if aggregate net flows across all US-listed spot Bitcoin ETFs summed over 2026-06-11 to 2026-06-18 were positive (check flow trackers such as Farside Investors or SoSoValue). Resolves NO if net negative. State the approximate net figure in USD.",
+      "proposedOutcome": "no",
+      "keyFigures": "Daily US spot Bitcoin ETF net flows for the window (from Farside/SoSoValue-sourced reporting): June 11, 2026: -$19M outflow (Bitcoin.com News, citing SoSoValue); June 12, 2026: +$85.85M inflow (Bitcoin.com News/SpotedCrypto, citing SoSoValue/Farside); June 13-14 (weekend, no trading): $0; June 15, 2026 (Monday): -$64M outflow (CoinDesk \"Live updates\" June 16 article); June 16, 2026 (Tuesday): +$10.06M inflow (SoSoValue via Bitget News); June 17, 2026 (Wednesday, FOMC day): -$82.16M outflow (99Bitcoins); June 18, 2026 (Thursday): -$90.7M outflow (SpotedCrypto, citing Farside). A separate source noted the cumulative Farside total for June 1–18 was roughly -$2.27 billion, consistent with a persistently negative June.",
+      "evidenceSummary": "Summing the daily prints across the resolution window (June 11 through June 18, 2026) gives roughly -$19M + $85.85M + (-$64M) + $10.06M + (-$82.16M) + (-$90.7M) ≈ -$160M net outflow for the week. Although the week included two positive days (June 12 and June 16), the larger outflows on June 15, 17, and 18 outweighed the inflows, producing a net negative aggregate flow for the 7-day window. This places the period within the broader multi-week outflow trend that characterized US spot Bitcoin ETFs through June 2026 (a record ~$4.06-4.5B monthly outflow), so the criteria resolve NO with an approximate net outflow of $150-160 million.",
+      "sources": [
+        "Bitcoin"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "geopolitics_1m",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Was the CBOE Volatility Index (VIX) on 2026-07-09 higher than its trailing 3-month average as of that date?",
+      "lookbackLabel": "1m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-06-09",
+        "resolvesAt": "2026-07-09"
+      },
+      "resolutionCriteria": "Resolves YES if the VIX closing value on 2026-07-09 (or nearest prior trading day) was above the average of its daily closes over the 3 months ending 2026-07-09. Resolves NO if at or below. State the closing value and the trailing average you computed or found.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "geopolitics_2m",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Was the CBOE Volatility Index (VIX) on 2026-06-09 higher than its trailing 3-month average as of that date?",
+      "lookbackLabel": "2m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-05-10",
+        "resolvesAt": "2026-06-09"
+      },
+      "resolutionCriteria": "Resolves YES if the VIX closing value on 2026-06-09 (or nearest prior trading day) was above the average of its daily closes over the 3 months ending 2026-06-09. Resolves NO if at or below. State the closing value and the trailing average you computed or found.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "geopolitics_3m",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Was the CBOE Volatility Index (VIX) on 2026-05-10 higher than its trailing 3-month average as of that date?",
+      "lookbackLabel": "3m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-04-10",
+        "resolvesAt": "2026-05-10"
+      },
+      "resolutionCriteria": "Resolves YES if the VIX closing value on 2026-05-10 (or nearest prior trading day) was above the average of its daily closes over the 3 months ending 2026-05-10. Resolves NO if at or below. State the closing value and the trailing average you computed or found.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "geopolitics_4m",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Was the CBOE Volatility Index (VIX) on 2026-04-10 higher than its trailing 3-month average as of that date?",
+      "lookbackLabel": "4m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-03-11",
+        "resolvesAt": "2026-04-10"
+      },
+      "resolutionCriteria": "Resolves YES if the VIX closing value on 2026-04-10 (or nearest prior trading day) was above the average of its daily closes over the 3 months ending 2026-04-10. Resolves NO if at or below. State the closing value and the trailing average you computed or found.",
+      "proposedOutcome": "error",
+      "keyFigures": "",
+      "evidenceSummary": "Run failed: Empty response from model",
+      "sources": [],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "ai_1m",
+      "domain": "Frontier AI & Energy",
+      "question": "Did a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity between 2026-06-09 and 2026-07-09?",
+      "lookbackLabel": "1m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-06-09",
+        "resolvesAt": "2026-07-09"
+      },
+      "resolutionCriteria": "Resolves YES if at least one announcement of a new dedicated power-generation project or power-purchase agreement for AI/data-center capacity by a major hyperscaler (e.g. Microsoft, Google, Amazon, Meta) or AI lab was made between 2026-06-09 and 2026-07-09 (check energy trade press and company announcements). Resolves NO if none. Name the specific deal(s), parties, and announcement date(s).",
+      "proposedOutcome": "yes",
+      "keyFigures": "Chevron Corp (via subsidiary Energy Forge One LLC) announced on June 22, 2026 a 20-year power purchase agreement with Microsoft Corp. to build a co-located natural gas power facility (\"Project Kilby\") in West Texas, expected to deliver approximately 2.67 GW of capacity, primarily via GE Vernova turbines with additional Solar Turbines (Caterpillar) units; first power delivery anticipated in 2028, Chevron Final Investment Decision expected by end of 2026 (Chevron Newsroom, June 22, 2026). Separately, DCD's grid-level news tracker also lists a Google PPA-related deal (Voltus supplying capacity to Google operations across the PJM grid) reported around June 1-3, 2026, just outside/at the edge of the window, and multiple other prior 2026 deals (Meta-Vistra nuclear PPA in January 2026, Google-TotalEnergies Texas solar PPAs in February 2026, Meta-Louisiana Hyperion gas expansion and Google-Crusoe Texas gas plant reported early April 2026) established the ongoing trend but predate the window.",
+      "evidenceSummary": "The Chevron-Microsoft \"Project Kilby\" 20-year dedicated power purchase agreement, announced June 22, 2026, directly satisfies the resolution criteria: it is a new dedicated power-generation/PPA deal for AI/data-center capacity, involves a major hyperscaler (Microsoft), and falls within the June 9–July 9, 2026 window. This is a specific, named, dated deal reported by both Chevron's own newsroom and independent press (TechCrunch reference to the broader trend), meeting the bar for a clear YES resolution.",
+      "sources": [
+        "Chevron Newsroom",
+        "DatacenterDynamics",
+        "TechCrunch",
+        "MarketScale",
+        "SMR Intel"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "ai_2m",
+      "domain": "Frontier AI & Energy",
+      "question": "Did a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity between 2026-05-10 and 2026-06-09?",
+      "lookbackLabel": "2m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-05-10",
+        "resolvesAt": "2026-06-09"
+      },
+      "resolutionCriteria": "Resolves YES if at least one announcement of a new dedicated power-generation project or power-purchase agreement for AI/data-center capacity by a major hyperscaler (e.g. Microsoft, Google, Amazon, Meta) or AI lab was made between 2026-05-10 and 2026-06-09 (check energy trade press and company announcements). Resolves NO if none. Name the specific deal(s), parties, and announcement date(s).",
+      "proposedOutcome": "yes",
+      "keyFigures": "(1) Meta and Zelestra announced a new 20-year power purchase agreement for the 180 MWdc (140 MWac) Palmera Solar Plant in Freestone County, Texas on June 9, 2026 — the final day of the resolution window — bringing their cumulative contracted solar capacity to roughly 1.4 GWdc across eight U.S. projects (Utility Dive, Electrek, PV Tech, SolarQuarter, June 9, 2026). (2) SpaceX's S-1 IPO filing, made public May 20, 2026, disclosed that its xAI division will spend $2.8 billion on new natural-gas turbines over the next three years to power AI data-center infrastructure (Colossus/Colossus 2 in Memphis), including a $2 billion contract for mobile gas turbines (TechCrunch, Gizmodo, The AI Insider, DataCenterDynamics — all May 20-21, 2026). Additional related deals cited in coverage (RWE-Meta 298 MW Rabbit's Foot PPA, June 11, 2026; Chevron-Microsoft 2.67 GW Project Kilby PPA, June 22, 2026) fall just outside the window's end date.",
+      "evidenceSummary": "The resolution criteria require at least one new dedicated power-generation or power-purchase announcement for AI/data-center capacity by a major hyperscaler or AI lab between 2026-05-10 and 2026-06-09. \nMeta signed a power purchase agreement with renewable energy company Zelestra, the companies announced June 9, 2026, for the 180 MWdc Palmera Solar Plant in Freestone County, Texas.\n Separately, \nSpaceX's IPO filing disclosed plans to spend a further $2.8 billion on gas turbines over three years to power its Memphis data centre infrastructure — including $2 billion specifically for the mobile gas turbines\n, an announcement made public on May 20-21, 2026. Both fall squarely inside the window and satisfy the criteria (Meta as a named hyperscaler, xAI/SpaceX as a major AI lab), so the question resolves YES.",
+      "sources": [
+        "Utility Dive",
+        "Electrek",
+        "PV Tech",
+        "SolarQuarter",
+        "IndexBox",
+        "TechCrunch",
+        "Gizmodo",
+        "The AI Insider",
+        "DataCenterDynamics",
+        "Solar Power World",
+        "Standard-Journal/BusinessWire"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "ai_3m",
+      "domain": "Frontier AI & Energy",
+      "question": "Did a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity between 2026-04-10 and 2026-05-10?",
+      "lookbackLabel": "3m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-04-10",
+        "resolvesAt": "2026-05-10"
+      },
+      "resolutionCriteria": "Resolves YES if at least one announcement of a new dedicated power-generation project or power-purchase agreement for AI/data-center capacity by a major hyperscaler (e.g. Microsoft, Google, Amazon, Meta) or AI lab was made between 2026-04-10 and 2026-05-10 (check energy trade press and company announcements). Resolves NO if none. Name the specific deal(s), parties, and announcement date(s).",
+      "proposedOutcome": "yes",
+      "keyFigures": "(1) Amazon Australia announced on April 16, 2026 nine new renewable energy PPAs across New South Wales and Victoria, adding 430MW of capacity and lifting its total contracted renewable footprint to 990MW, explicitly tied to expanding its \"cloud and AI infrastructure\" (Amazon AU press release, April 16, 2026). (2) OGE Energy announced on April 30, 2026 that its utility subsidiary OG&E will supply power to three new Google (Alphabet) data centers in Muskogee and Stillwater, Oklahoma, with Google contributing 600 MW of nameplate solar capacity and covering 100% of grid connection costs (Barchart/Yahoo Finance, dated May 8, 2026, describing the April 30 announcement).",
+      "evidenceSummary": "Both deals fall squarely inside the April 10–May 10, 2026 resolution window and involve major hyperscalers (Amazon, Google) announcing new dedicated power-generation/PPA capacity explicitly linked to AI/data-center/cloud infrastructure growth. These satisfy the resolution criteria requiring at least one such announcement in the window, since Amazon's April 16 filing states the projects support expansion of \"cloud and AI infrastructure,\" and Google's April 30 Oklahoma deal ties new solar-backed utility capacity directly to three new Google data centers.",
+      "sources": [
+        "Amazon AU (GCS-web press release)",
+        "Barchart/Yahoo Finance (via 247wallst/finance.yahoo.com)",
+        "Moby/OGE Energy Q1 2026 earnings coverage",
+        "PowerMag",
+        "S&P Global",
+        "Latitude Media",
+        "Perkins Coie",
+        "Carnegie Endowment"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    },
+    {
+      "caseId": "ai_4m",
+      "domain": "Frontier AI & Energy",
+      "question": "Did a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity between 2026-03-11 and 2026-04-10?",
+      "lookbackLabel": "4m",
+      "horizon": "1m",
+      "window": {
+        "calledAt": "2026-03-11",
+        "resolvesAt": "2026-04-10"
+      },
+      "resolutionCriteria": "Resolves YES if at least one announcement of a new dedicated power-generation project or power-purchase agreement for AI/data-center capacity by a major hyperscaler (e.g. Microsoft, Google, Amazon, Meta) or AI lab was made between 2026-03-11 and 2026-04-10 (check energy trade press and company announcements). Resolves NO if none. Name the specific deal(s), parties, and announcement date(s).",
+      "proposedOutcome": "yes",
+      "keyFigures": "(1) March 27, 2026 — Entergy Louisiana announced a new agreement with Meta under which Meta will fund construction of seven new natural gas-fired power plants (adding to three previously approved, for a total of 10 plants / 7.5 GW capacity, plus up to 2.5 GW of renewables/storage) dedicated to powering Meta's Hyperion AI data center campus in Richland Parish, Louisiana; the deal is tied to a roughly $27B generation capex commitment and includes ~$2B in customer savings (Entergy/PRNewswire, Bloomberg, Fortune, Forbes, Utility Dive). (2) March 24-27, 2026 — Microsoft and Nvidia announced an \"AI for nuclear\" collaboration at CERAWeek, aimed at accelerating nuclear plant permitting/construction for AI-related power supply (Microsoft Cloud Blog, Axios, World Nuclear News) — supportive but more of a technology partnership than a new PPA itself.",
+      "evidenceSummary": "The Entergy-Meta announcement of March 27, 2026 squarely fits the resolution criteria: a major hyperscaler (Meta) announced, within the window (2026-03-11 to 2026-04-10), a new dedicated power-generation agreement (financing/building seven new gas plants) specifically to supply its AI/data-center campus. This was independently confirmed by Entergy's own press release, Bloomberg, Fortune, and Forbes, all dated March 27, 2026. This single, well-documented deal is sufficient to resolve the question YES; the Microsoft-Nvidia nuclear collaboration (March 24-27, 2026) provides additional corroborating context of hyperscaler activity in dedicated power generation during the same window, though it is a technology partnership rather than a direct PPA.",
+      "sources": [
+        "Entergy.com press release",
+        "PRNewswire",
+        "Bloomberg",
+        "Fortune",
+        "Forbes (Jon Markman)",
+        "Utility Dive",
+        "Yahoo Finance",
+        "Microsoft Cloud Blog",
+        "Axios",
+        "World Nuclear News",
+        "The Register",
+        "TechSpot"
+      ],
+      "review": {
+        "humanVerdict": null,
+        "figuresCorrect": null,
+        "notes": ""
+      }
+    }
+  ]
+}
