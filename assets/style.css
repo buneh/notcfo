@@ -127,12 +127,6 @@ nav {
   color: var(--fg-faint); margin-top: 1px;
 }
 .nav-right { display: flex; align-items: center; gap: .75rem; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; }
-.nav-links a {
-  font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--fg-dim); transition: color .15s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--gold); }
 .theme-btn {
   display: flex; align-items: center; gap: .45rem;
   background: none; color: var(--fg-dim);
@@ -142,7 +136,7 @@ nav {
   transition: color .15s;
 }
 .theme-btn:hover { color: var(--gold); }
-.burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+.burger { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
 .burger span { display: block; width: 20px; height: 1.5px; background: var(--fg); transition: transform .22s, opacity .22s; }
 .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .burger.open span:nth-child(2) { opacity: 0; }
@@ -158,6 +152,14 @@ nav {
   padding: .8rem 0; transition: color .15s;
 }
 .mob-menu a:hover { color: var(--gold); }
+.mob-menu a.active { color: var(--gold); }
+.mob-menu .theme-btn {
+  display: block; width: 100%; text-align: left;
+  font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 500;
+  letter-spacing: 0; text-transform: none;
+  color: var(--fg); padding: .8rem 0;
+}
+.mob-menu .theme-btn:hover { color: var(--gold); }
 
 /* ─── BUTTONS ────────────────────────────────────────────────── */
 /* .btn-fill: solid gold, the one place gold is used as a fill.
@@ -357,7 +359,6 @@ footer { padding: 1.75rem 0; }
   .dom-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 880px) {
-  .nav-links { display: none; }
   .vision-grid, .machine-grid, .sched-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .dom-grid { grid-template-columns: 1fr; }
   .stats-inner { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -365,7 +366,6 @@ footer { padding: 1.75rem 0; }
   .foot-inner { flex-direction: column; gap: .5rem; text-align: center; }
 }
 @media (max-width: 580px) {
-  .burger { display: flex; }
   .theme-btn { font-size: 9px; }
   .slots { grid-template-columns: repeat(3, 1fr); }
   .tl-row { grid-template-columns: 1fr; }

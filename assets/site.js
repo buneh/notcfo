@@ -6,17 +6,13 @@
 function toggleTheme() {
   const isLight = document.documentElement.classList.toggle('light');
   try { localStorage.setItem('notcfo-theme', isLight ? 'light' : 'dark'); } catch (e) {}
-  const icon = document.getElementById('themeIcon');
   const label = document.getElementById('themeLabel');
-  if (icon) icon.textContent = isLight ? '\u263E' : '\u2600';
   if (label) label.textContent = isLight ? 'Dark' : 'Light';
 }
 (function initTheme() {
   try {
     const isLight = localStorage.getItem('notcfo-theme') === 'light';
-    const icon = document.getElementById('themeIcon');
     const label = document.getElementById('themeLabel');
-    if (icon) icon.textContent = isLight ? '\u263E' : '\u2600';
     if (label) label.textContent = isLight ? 'Dark' : 'Light';
   } catch (e) {}
 })();

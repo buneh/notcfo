@@ -47,19 +47,8 @@ try {
       <div class="nav-brand">notcfo</div>
     </div>
     <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="/#signal">Signal</a></li>
-        <li><a href="/#oracle">Oracle</a></li>
-        <li><a href="/#calls">Orchestra</a></li>
-        <li><a href="/notes.html" class="active">Desk Notes</a></li>
-        <li><a href="/#coverage">Coverage</a></li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-      <button type="button" class="theme-btn" id="viewBtn" onclick="toggleView()">
-        <span id="viewLabel">Machine View</span>
-      </button>
       <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
-        <span id="themeIcon">&#9728;</span><span id="themeLabel">Light</span>
+        <span id="themeLabel">Light</span>
       </button>
       <button type="button" class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -72,9 +61,12 @@ try {
   <a href="/#signal" onclick="closeMenu()">Signal</a>
   <a href="/#oracle" onclick="closeMenu()">Oracle</a>
   <a href="/#calls" onclick="closeMenu()">Orchestra</a>
-  <a href="/notes.html" onclick="closeMenu()">Desk Notes</a>
+  <a href="/notes.html" class="active" onclick="closeMenu()">Desk Notes</a>
   <a href="/#coverage" onclick="closeMenu()">Coverage</a>
   <a href="/about.html" onclick="closeMenu()">About</a>
+  <button type="button" class="theme-btn" id="viewBtn" onclick="toggleView()">
+    <span id="viewLabel">Machine View</span>
+  </button>
 </div>
 
 <!-- PAGE HEADER -->
