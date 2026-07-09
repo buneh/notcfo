@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — Track Record infographic
+   Five domain rows, each with 4 resolution windows (monthly for
+   most domains, weekly for crypto). Monochrome: gold marks a YES
+   outcome only, everything else stays neutral. No lines, no
+   borders — spacing and typography carry the structure.
+   ═══════════════════════════════════════════════════════════════ */
+
+.tr-info { margin-top: 2rem; }
+.tr-domain { margin-bottom: 2.75rem; }
+.tr-domain-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 1rem; flex-wrap: wrap; gap: .5rem;
+}
+.tr-domain-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--gold);
+}
+.tr-domain-horizon {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--fg-faint);
+}
+
+.tr-windows { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+.tr-window { }
+.tr-window-dates {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: .04em;
+  color: var(--fg-faint); margin-bottom: .5rem;
+}
+.tr-window-outcome {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; margin-bottom: .4rem;
+}
+.tr-window-outcome.out-yes { color: var(--gold); }
+.tr-window-outcome.out-no { color: var(--fg-dim); }
+.tr-window-outcome.out-partial { color: var(--fg-dim); }
+.tr-window-outcome.out-unresolvable { color: var(--fg-faint); }
+.tr-window-outcome.out-error { color: var(--fg-faint); }
+.tr-window-outcome.out-pending { color: var(--fg-faint); }
+
+.tr-window-figures {
+  font-size: 11px; color: var(--fg-dim); line-height: 1.55;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tr-window-evidence {
+  font-size: .8125rem; color: var(--fg-faint); line-height: 1.55;
+  margin-top: .35rem;
+}
+
+.tr-info-empty {
+  padding: 2rem 0; text-align: center; font-size: .8125rem; color: var(--fg-faint);
+}
+.tr-info-empty strong { color: var(--fg-dim); font-weight: 600; display: block; margin-bottom: .3rem; }
+
+.tr-info-note {
+  margin-top: 2rem; font-size: 11px; color: var(--fg-faint); line-height: 1.6;
+  max-width: 600px;
+}
+
+@media (max-width: 700px) {
+  .tr-windows { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+@media (max-width: 420px) {
+  .tr-windows { grid-template-columns: 1fr; }
+}

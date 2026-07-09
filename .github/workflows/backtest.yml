@@ -1,0 +1,30 @@
+name: Backtest resolution agent
+
+on:
+  workflow_dispatch: {}   # manual trigger only — this is a diagnostic, not a scheduled job
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run 20 historical resolution cases
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/backtest-resolutions.mjs
+
+      - name: Commit results
+        run: |
+          git config user.name "notcfo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/backtest-results.json
+          git diff --staged --quiet || git commit -m "Backtest: resolution agent vs 20 historical windows [manual]"
+          git push
