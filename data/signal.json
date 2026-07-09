@@ -1,19 +1,33 @@
 {
-  "generatedAt": "2026-07-08T08:38:55.000Z",
+  "generatedAt": "2026-07-09T09:57:48.017Z",
   "topics": [
-    {
-      "id": "macro",
-      "domain": "Macro Health & Sentiment",
-      "headline": "Little fresh signal on joint US CPI/Eurozone HICP uptick odds",
-      "summary": "Aside from a partial BLS data confirmation, no meaningful market, expert, or historical signal was found addressing whether both US CPI and Eurozone HICP will rise simultaneously next release. Current view rests on limited official data alone, so confidence in either outcome remains low.",
-      "asOf": "2026-07-08T08:38:00.683Z"
-    },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near historic tights at 2.75%, little fresh catalyst",
-      "summary": "With option-adjusted spreads sitting around 2.74-2.75% (well below the 20-year 4.9% average), Schwab and others flag valuation risk and skew cautious, but no new Fed action, deal-flow data, or fresh catalysts have emerged in the past few days to suggest a near-term move wider or tighter.",
-      "asOf": "2026-07-08T08:38:30.053Z"
+      "headline": "HY spread at 2.75% amid hawkish Fed rate-path shift",
+      "summary": "The ICE BofA US High Yield OAS sits near multi-decade tights at 2.75%, but the Fed's June SEP raised its 2026 median rate projection to 3.8% (from 3.4%) while dropping forward guidance, a hawkish surprise that could pressure risk sentiment and widen spreads. Beyond this, there's little fresh signal across other categories right now.",
+      "asOf": "2026-07-09T09:56:14.634Z"
+    },
+    {
+      "id": "crypto",
+      "domain": "Crypto Market Dynamics",
+      "headline": "Bitcoin ETF flows turn positive after record 10-day outflow streak",
+      "summary": "Bitcoin ETFs snapped a historic outflow run with $221.72M in inflows on July 2 and $352M over the past week, but sentiment remains fragile with Bitcoin near $62,852 and Fear & Greed at 22 (extreme fear), so continued net inflows over the next 7 days are plausible but not assured.",
+      "asOf": "2026-07-09T09:56:41.113Z"
+    },
+    {
+      "id": "geopolitics",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "headline": "VIX spikes 17% on Iran strikes, now above trailing 3-month average",
+      "summary": "Fresh U.S.-Iran military escalation and a looming July 24 tariff deadline pushed VIX to 18.85, already exceeding its trailing 3-month average of 17.70, while elevated OVX, MOVE, and SKEW readings suggest volatility pressure could persist through the 30-day window.",
+      "asOf": "2026-07-09T09:57:21.603Z"
+    },
+    {
+      "id": "ai",
+      "domain": "Frontier AI & Energy",
+      "headline": "Microsoft-Chevron 20-year PPA anchors wave of new AI power deals",
+      "summary": "Microsoft just signed a 20-year, 2 GW power purchase agreement with Chevron's Energy Forge One for its Texas data center campus, part of a broader burst this week of hyperscaler-linked power deals (National Grid-Joulent, GridMarket-Deployable Energy, Meta-Reliance) confirming the question resolves yes; regulatory activity in Virginia and Wisconsin shows policymakers reacting to, not enabling, this buildout.",
+      "asOf": "2026-07-09T09:57:48.016Z"
     }
   ]
 }
