@@ -387,28 +387,50 @@ footer { padding: 1.75rem 0; }
    MACHINE VIEW
    A visible toggle, not a technical mechanism — real agents fetch
    /llms.txt and the JSON files directly and never see this. This is
-   for a human to see the same thing: dense, monospace, structural
-   typography throughout, and the three JSON-backed sections (Signal,
-   Orchestra, Track Record) rendered as the literal JSON an agent
-   actually receives, via <pre> blocks built by signal.js/calls.js —
-   not a redesigned approximation of it.
+   for a human to see the same thing: the three JSON-backed sections
+   (Signal, Orchestra, Desk Notes) rendered as the literal JSON an
+   agent actually receives, via <pre> blocks — not a redesigned
+   approximation of it.
+
+   Terminal aesthetic: black background, one monospace font, one
+   size, everywhere — overrides light/dark mode entirely while
+   active, since a terminal doesn't have a "light mode." Achieved by
+   redefining the exact same tokens every component already uses
+   (--bg/--fg/--fg-dim/--fg-faint/--fg-hair/--on-gold), so the retint
+   cascades to every section automatically with no per-component
+   overrides needed. Gold stays the same brand accent across all
+   three modes (light/dark/machine) — it's what stays recognizable
+   as notcfo no matter which mode you're in.
    ═══════════════════════════════════════════════════════════════ */
-html.machine-view body,
-html.machine-view h1, html.machine-view h2, html.machine-view h3 {
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+html.machine-view {
+  --bg: #000000;
+  --fg: #E8E8E8;
+  --fg-dim: rgba(232,232,232,.68);
+  --fg-faint: rgba(232,232,232,.42);
+  --fg-hair: rgba(232,232,232,.18);
+  --on-gold: #000000;
 }
-html.machine-view em { font-style: normal; }
-html.machine-view .hero-h1 { font-size: clamp(1.5rem, 3vw, 2.1rem); max-width: none; }
-html.machine-view .hero-p { font-size: .9375rem; }
-html.machine-view .sh h2 { font-size: 1.2rem; }
-html.machine-view .manifesto-q { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1.05rem; }
+
+/* One font, one size, everywhere — real terminal output has no type
+   scale. Rem-based spacing elsewhere is untouched since it's relative
+   to the root, not to any individual element's font-size. */
+html.machine-view.machine-view * {
+  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-transform: none;
+  font-style: normal;
+}
+html.machine-view .hero-h1,
+html.machine-view .sh h2,
+html.machine-view .hero-p,
+html.machine-view .manifesto-q { max-width: none; }
 html.machine-view .hero-eyebrow .line { display: none; }
 html.machine-view .btn { border-radius: 0; }
 
 .mv-banner {
   display: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
   color: var(--gold);
   margin-bottom: 2rem;
 }
@@ -416,9 +438,6 @@ html.machine-view .btn { border-radius: 0; }
 html.machine-view .mv-banner { display: block; }
 
 .mv-block {
-  font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
-  font-size: 11.5px;
-  line-height: 1.7;
   color: var(--fg-dim);
   white-space: pre-wrap;
   word-break: break-word;

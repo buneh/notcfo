@@ -92,12 +92,12 @@ function domainBlockHTML(domainId, currentCall, resolvedForDomain, backtestForDo
          <span>${esc(label)}</span>
          <span class="calls-prob">${currentCall.probability}% <span class="calls-horizon">&middot; ${HORIZON_LABEL[currentCall.horizon] || currentCall.horizon}</span></span>
        </div>
-       <div class="mf-v"><em>${esc(currentCall.question)}</em><br>${esc(currentCall.forecast)}</div>`
+       <div class="mf-v"><strong>${esc(currentCall.question)}</strong><br>${esc(currentCall.forecast)}</div>`
     : `<div class="mf-k"><span>${esc(label)}</span></div>
        <div class="mf-v">No active call right now \u2014 this domain's slot is between calls.</div>`;
 
   const trackerSeq = resolvedForDomain.length === 0
-    ? 'No verdict yet \u2014 the Orchestra hasn\u2019t called this one yet.'
+    ? 'Pending'
     : seqHTML(
         resolvedForDomain.slice().sort((a,b) => new Date(b.resolvedAt) - new Date(a.resolvedAt)),
         r => TRACKER_LABEL[r.outcome] || r.outcome,
@@ -141,15 +141,21 @@ function renderHuman(){
   wrap.innerHTML = html;
 }
 
+function safeBlock(label, obj, fallback){
+  try{
+    return `<div class="label-gold" style="margin:1.5rem 0 .5rem">${label}</div>${renderJSONBlock(obj)}`;
+  }catch(e){
+    console.error(`Machine view: failed to render ${label}:`, e);
+    return `<div class="label-gold" style="margin:1.5rem 0 .5rem">${label}</div><div class="calls-empty">Couldn't render this file.</div>`;
+  }
+}
+
 function renderMachine(){
   const wrap = $('callsCurrent');
-  let html = '<div class="label-gold" style="margin-bottom:.5rem">calls.json</div>';
-  html += renderJSONBlock(latestCalls || { calls: [] });
-  html += '<div class="label-gold" style="margin:1.5rem 0 .5rem">track-record.json</div>';
-  html += renderJSONBlock(latestTrackRecord || { resolved: [] });
-  html += '<div class="label-gold" style="margin:1.5rem 0 .5rem">backtest-results.json</div>';
-  html += renderJSONBlock(latestBacktest || { cases: [] });
-  wrap.innerHTML = html;
+  wrap.innerHTML =
+    safeBlock('calls.json', latestCalls || { calls: [] }) +
+    safeBlock('track-record.json', latestTrackRecord || { resolved: [] }) +
+    safeBlock('backtest-results.json', latestBacktest || { cases: [] });
 }
 
 function renderAll(){
