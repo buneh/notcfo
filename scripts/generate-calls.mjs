@@ -116,7 +116,7 @@ const PERSONAS = METHODOLOGIES.flatMap(m =>
   }))
 );
 
-async function callClaude(promptText, useSearch, maxTokens){
+async function callClaude(promptText, useSearch, maxTokens, attempt){
   const body = {
     model: 'claude-sonnet-5',
     max_tokens: maxTokens || 1000,
@@ -139,7 +139,18 @@ async function callClaude(promptText, useSearch, maxTokens){
   }
   const data = await res.json();
   const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
-  if(!text) throw new Error('Empty response from model');
+  if(!text){
+    // Same diagnosis as resolve-calls.mjs/backtest-resolutions.mjs: a
+    // search-heavy call can end on stop_reason "pause_turn" mid-tool-loop
+    // with no final text yet, which reads as an empty response. Log the
+    // real reason and retry once rather than losing the whole domain.
+    console.error(`  API returned no text. stop_reason: ${data.stop_reason}, content blocks: ${(data.content || []).map(b => b.type).join(', ')}`);
+    if(!attempt){
+      console.error('  retrying once...');
+      return callClaude(promptText, useSearch, maxTokens, 1);
+    }
+    throw new Error(`Empty response from model (stop_reason: ${data.stop_reason})`);
+  }
   return text;
 }
 
@@ -301,7 +312,7 @@ async function generateCallFromBrief(q, briefBlocks){
 
 async function senseOne(q){
   console.log(`[${q.id}] sensing (categorized, ${EVIDENCE_LENSES.length} sections)...`);
-  const gatherText = await callClaude(gatherPrompt(q), true, 1500);
+  const gatherText = await callClaude(gatherPrompt(q), true, 4000);
   return parseBlocks(gatherText, EVIDENCE_LENSES.map(e => e.id));
 }
 

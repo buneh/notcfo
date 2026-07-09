@@ -6,6 +6,10 @@
 // output was thrown away after feeding the council; now it's condensed
 // into something publishable every run.
 //
+// Uses the same .machine-fact-list/.mf-row/.mf-k/.mf-v components as
+// Standing Calls — domain name as a line above the content, not a side
+// column — so the two sections read as one coherent visual system.
+//
 // Supports the human/machine view toggle: machine view renders the
 // literal fetched JSON via a <pre> block, not a restyled approximation
 // of it — see renderJSONBlock below.
@@ -43,25 +47,16 @@ function renderHuman(data){
   const topics = (data && data.topics) || [];
 
   if(topics.length === 0){
-    list.innerHTML = `<div class="ls-empty"><strong>Signal warming up</strong>The first Sensing cycle hasn't completed yet.</div>`;
+    list.innerHTML = `<div class="calls-empty"><strong>Signal warming up</strong>The first Sensing cycle hasn't completed yet.</div>`;
     return;
   }
 
-  list.innerHTML = '';
-  topics.forEach((t, i) => {
-    const row = document.createElement('div');
-    row.className = 'ls-row';
-    row.innerHTML = `
-      <div class="ls-cat">
-        <div class="ls-cat-tag">${esc(t.domain)}</div>
-        <div class="ls-cat-rank">${String(i + 1).padStart(2, '0')}</div>
-      </div>
-      <div class="ls-body">
-        <div class="ls-title">${esc(t.headline)}</div>
-        <p class="signal-summary">${esc(t.summary)}</p>
-      </div>`;
-    list.appendChild(row);
-  });
+  const rows = topics.map(t => `
+    <div class="mf-row">
+      <div class="mf-k">${esc(t.domain)}</div>
+      <div class="mf-v"><strong>${esc(t.headline)}</strong><br>${esc(t.summary)}</div>
+    </div>`).join('');
+  list.innerHTML = `<div class="machine-fact-list">${rows}</div>`;
 }
 
 function renderMachine(data){
@@ -86,7 +81,7 @@ async function load(){
     if(!res.ok) throw new Error('http ' + res.status);
     render(await res.json());
   }catch(e){
-    $('signalList').innerHTML = `<div class="ls-empty"><strong>Signal unavailable</strong>Couldn't load the latest read right now.</div>`;
+    $('signalList').innerHTML = `<div class="calls-empty"><strong>Signal unavailable</strong>Couldn't load the latest read right now.</div>`;
   }
 }
 

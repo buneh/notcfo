@@ -1,14 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════
    notcfo — The Signal
-   Deliberately almost no new CSS: this reuses .ls-status/.ls-list/
-   .ls-row/.ls-cat/.ls-cat-tag/.ls-title wholesale from style.css,
-   since a headline+summary feed is a simpler case of the same
-   component the Oracle's ticker already uses. Only the summary
-   paragraph style is new.
+   No custom CSS needed: this reuses .machine-fact-list/.mf-row/
+   .mf-k/.mf-v wholesale from style.css — the exact same components
+   Standing Calls uses — so the two sections read as one coherent
+   system rather than two different visual languages.
    ═══════════════════════════════════════════════════════════════ */
-
-.signal-summary {
-  font-size: .875rem;
-  color: var(--fg-dim);
-  line-height: 1.65;
-}
