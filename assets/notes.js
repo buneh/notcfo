@@ -20,6 +20,43 @@ function esc(s){
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
 }
 
+// Five abstract marks, one per domain — same primitive (a small filled
+// circle) throughout, only the arrangement differs. No representational
+// meaning intended; purely a visual distinguishing pattern.
+const DOMAIN_ICON_DOTS = {
+  macro: [[12,13],[19,11],[14,17],[21,19],[15,23]],
+  markets: [[8,9],[24,8],[9,20],[25,17],[16,24]],
+  crypto: [[16,8],[8,16],[16,16],[24,16],[16,24]],
+  geopolitics: [[9,10],[13,14],[16,19],[21,17],[19,9]],
+  ai: [[10,20],[22,21],[16,8],[7,14],[25,12]]
+};
+function domainIcon(id){
+  const dots = DOMAIN_ICON_DOTS[id];
+  if(!dots) return '';
+  const circles = dots.map(([x,y]) => `<circle cx="${x}" cy="${y}" r="2.2"/>`).join('');
+  return `<svg class="dom-icon" viewBox="0 0 32 32" width="16" height="16" aria-hidden="true">${circles}</svg>`;
+}
+
+// Notes carry a free-text tag, not a strict domain id — a future note can
+// set an explicit `domain` field to match exactly; failing that, this
+// checks the tag text against each domain's known keywords. Returns null
+// (no icon shown) rather than guessing wrong if nothing matches.
+const DOMAIN_KEYWORDS = {
+  macro: ['macro', 'sentiment'],
+  markets: ['market', 'financial', 'capital', 'dcm', 'rates'],
+  crypto: ['crypto', 'bitcoin', 'defi'],
+  geopolitics: ['geopolit', 'policy', 'regulat'],
+  ai: ['frontier ai', ' ai', 'energy']
+};
+function matchDomain(note){
+  if(note.domain && DOMAIN_ICON_DOTS[note.domain]) return note.domain;
+  const tag = (' ' + (note.tag || '')).toLowerCase();
+  for(const [id, keywords] of Object.entries(DOMAIN_KEYWORDS)){
+    if(keywords.some(k => tag.includes(k))) return id;
+  }
+  return null;
+}
+
 function renderJSONBlock(obj){
   const json = JSON.stringify(obj, null, 2);
   const escaped = esc(json);
@@ -40,11 +77,12 @@ function sortedNotes(notes){
 
 function noteRowHTML(n){
   const bullets = (n.body || []).map(p => `<li>${esc(p)}</li>`).join('');
+  const domainId = matchDomain(n);
   return `
     <div class="note-row" id="note-${esc(n.id)}">
       <div class="note-left">
         <div class="note-date">${formatDate(n.date)}</div>
-        <div class="note-tag">${esc(n.tag)}</div>
+        <div class="note-tag"><span class="note-tag-row">${domainId ? domainIcon(domainId) : ''}${esc(n.tag)}</span></div>
       </div>
       <div class="note-right">
         <h3>${esc(n.title)}</h3>

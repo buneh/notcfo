@@ -313,6 +313,18 @@ footer { padding: 1.75rem 0; }
 .mf-k { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--fg-faint); margin-bottom: .35rem; }
 .mf-v { font-size: .8125rem; color: var(--fg-dim); line-height: 1.6; }
 
+/* ─── domain icons ───────────────────────────────────────────
+   Five abstract marks, one per coverage domain — same primitive
+   (a small filled circle) throughout, only the arrangement differs.
+   No representational meaning intended. currentColor + a color
+   token means these adapt correctly across light/dark/machine-view
+   instead of a hardcoded hex that would look wrong in light mode. */
+.dom-icon { color: var(--gold); flex-shrink: 0; display: inline-block; vertical-align: middle; }
+.dom-icon circle { fill: currentColor; }
+.mf-k-name { display: inline-flex; align-items: center; gap: .5rem; }
+.note-tag-row { display: inline-flex; align-items: center; gap: .4rem; }
+.dom-icon-wrap { margin-bottom: .7rem; }
+
 /* ─── ABOUT PAGE: KVT (key-value table) ──────────────────────── */
 .kvt { width: 100%; border-collapse: collapse; }
 .kvt tr + tr td { padding-top: .9rem; }
