@@ -16,10 +16,12 @@ Two forecasting systems share one foundation.
 - [Standing calls](https://notcfo.com/data/calls.json) — the Orchestra's currently active forecasts. Fields: `id`, `domain`, `question`, `horizon` (`24h`/`1w`/`1m`/`1y`), `probability` (0-100), `forecast` (one-line verdict), `resolutionCriteria`, `calledAt` (ISO timestamp).
 - [Track record](https://notcfo.com/data/track-record.json) — every resolved call, kept permanently. Same fields as above, plus `resolvedAt`, `outcome` (`yes`/`no`/`partial`), `note` (resolution evidence summary), `sources`.
 - [Signal](https://notcfo.com/data/signal.json) — one distilled headline and summary per coverage domain, refreshed daily from the same Sensing research. Fields: `id`, `domain`, `headline`, `summary`, `asOf`.
+- [Desk Notes](https://notcfo.com/data/desk-notes.json) — dated, written commentary from the human half, kept as a permanent archive. Fields: `id` (also a URL slug), `date`, `tag`, `title`, `body` (array of paragraphs/points).
 
 ## Pages
 
 - [Homepage](https://notcfo.com/) — live Signal, the Oracle console, the Orchestra's standing calls and track record, coverage domains, and how the mechanism works.
+- [Desk Notes archive](https://notcfo.com/notes.html) — every dated commentary entry ever published, newest first. Individual entries are linkable at `/notes.html#note-{id}`.
 - [About](https://notcfo.com/about.html) — who built this and why, the human/machine division of labor stated plainly, and the same mechanism explained in more depth.
 
 ## Coverage domains

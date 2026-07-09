@@ -167,35 +167,27 @@ function renderBacktestHuman(data){
     grouped[domId].push(c);
   }
 
-  let html = '';
+  let html = '<div class="machine-fact-list">';
   for(const domId of DOMAIN_ORDER){
     const cases = grouped[domId];
     if(!cases || cases.length === 0) continue;
 
     cases.sort((a,b) => a.window.calledAt > b.window.calledAt ? -1 : 1);
-    const isWeekly = cases[0].horizon === '1w';
 
-    html += `<div class="tr-domain">
-      <div class="tr-domain-head">
-        <span class="tr-domain-name">${esc(DOMAIN_LABELS[domId] || domId)}</span>
-        <span class="tr-domain-horizon">${isWeekly ? 'Weekly' : 'Monthly'}</span>
-      </div>
-      <div class="tr-windows">`;
+    const sequence = cases.map(c => {
+      const label = OUTCOME_LABELS[c.proposedOutcome] || c.proposedOutcome || '\u2014';
+      const cls = c.proposedOutcome === 'yes' ? 'tr-bt-yes' : '';
+      return `<span class="${cls}">${formatDate(c.window.calledAt)}: ${esc(label)}</span>`;
+    }).join(' <span class="tr-bt-sep">&middot;</span> ');
 
-    for(const c of cases){
-      const outcomeClass = 'out-' + (c.proposedOutcome || 'pending');
-      const outcomeLabel = OUTCOME_LABELS[c.proposedOutcome] || c.proposedOutcome || '\u2014';
-      html += `<div class="tr-window">
-          <div class="tr-window-dates">${formatDate(c.window.calledAt)} \u2192 ${formatDate(c.window.resolvesAt)}</div>
-          <div class="tr-window-outcome ${outcomeClass}">${esc(outcomeLabel)}</div>
-          ${c.keyFigures ? `<div class="tr-window-figures">${esc(c.keyFigures).slice(0, 200)}</div>` : ''}
-        </div>`;
-    }
-
-    html += '</div></div>';
+    html += `<div class="mf-row">
+      <div class="mf-k">${esc(DOMAIN_LABELS[domId] || domId)}</div>
+      <div class="mf-v">${sequence}</div>
+    </div>`;
   }
+  html += '</div>';
 
-  html += `<p class="tr-info-note">Backtest: resolution agent researched ${data.cases.length} historical windows across ${DOMAIN_ORDER.length} domains to verify it can find and judge the specific figures each question requires.</p>`;
+  html += `<p class="tr-info-note">Backtest: the resolution agent's research verdict on ${data.cases.length} historical windows across ${DOMAIN_ORDER.length} domains, run before any live call has reached its horizon.</p>`;
 
   wrap.innerHTML = html;
 }

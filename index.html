@@ -54,6 +54,14 @@ try {
       "description": "Daily distilled research summary, one entry per coverage domain, drawn from the same Sensing step that feeds both forecasting systems.",
       "creator": { "@id": "https://notcfo.com/#org" },
       "distribution": { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://notcfo.com/data/signal.json" }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://notcfo.com/#desk-notes",
+      "name": "notcfo Desk Notes",
+      "description": "Dated, written commentary from the human half on the events actually moving markets and mandates \u2014 not generated, kept permanently.",
+      "creator": { "@id": "https://notcfo.com/#org" },
+      "distribution": { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://notcfo.com/data/desk-notes.json" }
     }
   ]
 }
@@ -254,29 +262,9 @@ try {
 
     <div class="rev" id="notesList">
       <div class="notes-empty">
-        <strong>Nothing posted yet</strong>
-        <p>The first entry goes here once a key event calls for a view worth putting a name to.</p>
+        <strong>Loading&hellip;</strong>
       </div>
     </div>
-
-    <!-- Template for a real entry — copy this markup below notesList's
-         opening tag once there's something to say, one .note-row per entry,
-         newest first, wrapped in a container styled like .tl (display:flex;
-         flex-direction:column; gap:2.75rem — spacing only, no background
-         tiers under the monochrome system) for the same rhythm as the
-         About page timeline.
-
-    <div class="note-row">
-      <div class="note-left">
-        <div class="note-date">2026-07-14</div>
-        <div class="note-tag">DCM &middot; Rates</div>
-      </div>
-      <div class="note-right">
-        <h3>Why the ECB's next move matters more than the headline number</h3>
-        <p>Two or three paragraphs of actual view here.</p>
-      </div>
-    </div>
-    -->
   </div>
 </section>
 
@@ -342,5 +330,6 @@ try {
 <script src="/assets/oracle.js"></script>
 <script src="/assets/calls.js"></script>
 <script src="/assets/signal.js"></script>
+<script src="/assets/notes.js"></script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="notcfo Desk Notes — the human half's dated, written commentary on the events actually moving markets and mandates. Every entry kept permanently.">
+<meta name="theme-color" content="#1F1E1E">
+<title>Desk Notes — notcfo</title>
+<script>
+try {
+  if (localStorage.getItem('notcfo-theme') === 'light') document.documentElement.classList.add('light');
+  if (localStorage.getItem('notcfo-view') === 'machine') document.documentElement.classList.add('machine-view');
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/calls.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Dataset",
+      "@id": "https://notcfo.com/#desk-notes",
+      "name": "notcfo Desk Notes",
+      "description": "Dated, written commentary from the human half on the events actually moving markets and mandates \u2014 not generated, kept permanently.",
+      "creator": { "@id": "https://notcfo.com/#org" },
+      "distribution": { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://notcfo.com/data/desk-notes.json" }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://notcfo.com/notes.html",
+      "url": "https://notcfo.com/notes.html",
+      "name": "Desk Notes \u2014 notcfo",
+      "isPartOf": { "@id": "https://notcfo.com/#desk-notes" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div>
+      <div class="nav-brand">notcfo</div>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/#signal">Signal</a></li>
+        <li><a href="/#oracle">Oracle</a></li>
+        <li><a href="/#calls">Orchestra</a></li>
+        <li><a href="/notes.html" class="active">Desk Notes</a></li>
+        <li><a href="/#coverage">Coverage</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <button type="button" class="theme-btn" id="viewBtn" onclick="toggleView()">
+        <span id="viewLabel">Machine View</span>
+      </button>
+      <button type="button" class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+        <span id="themeIcon">&#9728;</span><span id="themeLabel">Light</span>
+      </button>
+      <button type="button" class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="/#signal" onclick="closeMenu()">Signal</a>
+  <a href="/#oracle" onclick="closeMenu()">Oracle</a>
+  <a href="/#calls" onclick="closeMenu()">Orchestra</a>
+  <a href="/notes.html" onclick="closeMenu()">Desk Notes</a>
+  <a href="/#coverage" onclick="closeMenu()">Coverage</a>
+  <a href="/about.html" onclick="closeMenu()">About</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section style="padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 2.5rem;">
+  <div class="wrap">
+    <div class="mv-banner" id="mvBanner">Machine view &mdash; the same literal fields a script or agent reads, sourced from the same JSON as <a href="/llms.txt">llms.txt</a>. Toggle back for the human-readable version.</div>
+    <div class="hero-eyebrow rev">
+      <span class="line"></span>
+      <span>The human half's take &middot; every entry, permanently</span>
+    </div>
+    <h1 class="rev" style="max-width: 720px;">Desk <em>Notes</em></h1>
+    <p class="hero-p rev" style="margin-top: 1rem; margin-bottom: 0;">Short, dated commentary on the events actually moving markets and mandates &mdash; written, not generated. Nothing here gets quietly edited or removed once it's posted.</p>
+  </div>
+</section>
+
+<section class="sect" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="rev" id="notesArchiveList">
+      <div class="notes-empty">
+        <strong>Loading&hellip;</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">notcfo</div>
+      <div class="foot-motto">Human + Machine &middot; Never Alone</div>
+    </div>
+    <div class="foot-links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="foot-copy">&copy; 2026 notcfo</div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script src="/assets/notes.js"></script>
+</body>
+</html>

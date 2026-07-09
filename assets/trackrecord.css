@@ -1,0 +1,15 @@
+/* ═══════════════════════════════════════════════════════════════
+   notcfo — Track Record: backtest infographic
+   Deliberately almost no CSS here. The backtest reuses
+   .machine-fact-list / .mf-row / .mf-k / .mf-v wholesale from
+   style.css — the exact same component Standing Calls uses above
+   it — rather than inventing a separate visual language.
+   ═══════════════════════════════════════════════════════════════ */
+
+.tr-bt-yes { color: var(--gold); font-weight: 600; }
+.tr-bt-sep { color: var(--fg-faint); }
+
+.tr-info-note {
+  margin-top: 1.5rem; font-size: 11px; color: var(--fg-faint); line-height: 1.6;
+  max-width: 600px;
+}
