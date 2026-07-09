@@ -29,10 +29,12 @@ const HORIZON_MS = {
   '1y':  365 * 24 * 60 * 60 * 1000
 };
 
-async function callClaude(promptText, useSearch){
+async function callClaude(promptText, useSearch, attempt){
   const body = {
     model: 'claude-sonnet-5',
-    max_tokens: 1200,
+    max_tokens: 4000, // was 1200 — too tight for a search-heavy resolution query;
+                       // see scripts/backtest-resolutions.mjs for the diagnosis
+                       // that surfaced this before it could hit a real live call
     messages: [{ role: 'user', content: promptText }]
   };
   if(useSearch) body.tools = [{ type: 'web_search_20250305', name: 'web_search' }];
@@ -52,7 +54,14 @@ async function callClaude(promptText, useSearch){
   }
   const data = await res.json();
   const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
-  if(!text) throw new Error('Empty response from model');
+  if(!text){
+    console.error(`  API returned no text. stop_reason: ${data.stop_reason}, content blocks: ${(data.content || []).map(b => b.type).join(', ')}`);
+    if(!attempt){
+      console.error('  retrying once...');
+      return callClaude(promptText, useSearch, 1);
+    }
+    throw new Error(`Empty response from model (stop_reason: ${data.stop_reason})`);
+  }
   return text;
 }
 

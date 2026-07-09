@@ -126,7 +126,7 @@ function buildCases(){
 }
 
 // ---------- API ----------
-async function callClaude(promptText){
+async function callClaude(promptText, attempt){
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -136,7 +136,10 @@ async function callClaude(promptText){
     },
     body: JSON.stringify({
       model: 'claude-sonnet-5',
-      max_tokens: 1500,
+      max_tokens: 4000, // was 1500 — a search-heavy query (explicitly told to run
+                         // "as many searches as needed") can exhaust a small budget
+                         // mid-loop before ever writing a final answer; that reads
+                         // as an empty response with no other symptom
       messages: [{ role: 'user', content: promptText }],
       tools: [{ type: 'web_search_20250305', name: 'web_search' }]
     })
@@ -147,7 +150,18 @@ async function callClaude(promptText){
   }
   const data = await res.json();
   const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
-  if(!text) throw new Error('Empty response from model');
+  if(!text){
+    // Log the real reason rather than guessing next time. If this reads
+    // "max_tokens" even at 4000, that's hard confirmation of the token-
+    // exhaustion theory rather than inference from a scattered failure
+    // pattern — and would mean some queries genuinely need more still.
+    console.error(`  API returned no text. stop_reason: ${data.stop_reason}, content blocks: ${(data.content || []).map(b => b.type).join(', ')}`);
+    if(!attempt){
+      console.error('  retrying once...');
+      return callClaude(promptText, 1);
+    }
+    throw new Error(`Empty response from model (stop_reason: ${data.stop_reason})`);
+  }
   return text;
 }
 
