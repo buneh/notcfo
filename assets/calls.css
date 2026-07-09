@@ -23,24 +23,28 @@
 .calls-prob { color: var(--gold); font-family: 'JetBrains Mono', monospace; }
 .calls-horizon { color: var(--fg-faint); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
-/* ─── track record subsection header ─────────────────────────── */
-.tr-head { margin-bottom: 1.25rem; }
-.tr-head .label { margin-bottom: .4rem; }
-.tr-head p { font-size: .8125rem; max-width: 560px; }
-
-/* ─── track record ledger (reuses .tl-row / .tl-left / .tl-right) ─── */
-.tr-outcome { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
-.tr-outcome-yes { color: var(--gold); }       /* the one outcome worth highlighting */
-.tr-outcome-no { color: var(--fg-dim); }
-.tr-outcome-partial { color: var(--fg-dim); }
-.tr-outcome-pending { color: var(--fg-faint); }
-.tr-called { font-size: 10.5px; color: var(--fg-faint); margin-top: .25rem; }
+/* ─── per-domain history, integrated under each current call ───
+   Two distinct things, deliberately worded differently:
+   "Orchestra forecast tracker" = real resolved calls (In tune /
+   Out of tune / Partial) — earned language, only for real results.
+   "Resolution agent forecast verification" = backtest research
+   check on historical windows (Confirmed / Not confirmed /
+   Unresolved) — plain factual language, since no real Orchestra
+   forecast was ever made for those windows. Never conflate the two. */
+.orch-tracker { margin-top: .9rem; }
+.orch-tracker-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--fg-faint); margin-bottom: .3rem;
+}
+.orch-tracker-seq { font-size: .8125rem; color: var(--fg-dim); line-height: 1.6; }
+.tr-bt-yes { color: var(--gold); font-weight: 600; }
+.tr-bt-sep { color: var(--fg-faint); }
 
 /* ─── empty states ────────────────────────────────────────────── */
-.calls-empty, .tr-empty {
+.calls-empty {
   padding: 2.5rem 0; text-align: center; font-size: .8125rem; color: var(--fg-faint);
 }
-.calls-empty strong, .tr-empty strong { color: var(--fg-dim); font-weight: 600; display: block; margin-bottom: .25rem; }
+.calls-empty strong { color: var(--fg-dim); font-weight: 600; display: block; margin-bottom: .25rem; }
 
 /* ─── Commentary (human op-ed) ────────────────────────────────── */
 .notes-empty {

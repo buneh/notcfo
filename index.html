@@ -17,7 +17,6 @@ try {
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/oracle.css">
 <link rel="stylesheet" href="/assets/calls.css">
-<link rel="stylesheet" href="/assets/trackrecord.css">
 <link rel="stylesheet" href="/assets/signal.css">
 <script type="application/ld+json">
 {
@@ -228,25 +227,8 @@ try {
 
     <div class="calls-current rev" id="callsCurrent">
       <div class="calls-empty">
-        <strong>No standing calls yet</strong>
-        The generator hasn't run for the first time. Once the scheduled job fires, five calls will appear here.
+        <strong>Loading&hellip;</strong>
       </div>
-    </div>
-
-    <div class="tr-head rev">
-      <div class="label">Track record</div>
-      <h3>What the Orchestra got right &mdash; and wrong</h3>
-      <p>Every call that's resolved, kept permanently. Nothing gets quietly removed when it doesn't pan out.</p>
-    </div>
-
-    <div id="trackRecord">
-      <div class="tl rev" id="trResolved">
-        <div class="tr-empty">
-          <strong>No resolved calls yet</strong>
-          The first standing calls haven't reached their horizon. Check back once one resolves.
-        </div>
-      </div>
-      <div class="tr-info rev" id="trBacktest"></div>
     </div>
   </div>
 </section>
