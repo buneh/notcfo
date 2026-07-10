@@ -14,6 +14,21 @@
         "Path forward: Pragmatic incrementalism (extended talks, confidence measures on shipping/sanctions) beats maximalist goals. Both sides have incentives to stabilize\u2014US to avoid broader entanglement ahead of domestic timelines, Iran to ease economic isolation. The alternative is costly attrition that benefits no one long-term.",
         "Markets and policymakers should price in persistent uncertainty rather than assuming linear progress; hedging energy exposure and watching diplomatic signals will be essential in the weeks ahead."
       ]
+    },
+    {
+      "id": "2026-07-10-hyperscaler-trajectory",
+      "date": "2026-07-10",
+      "tag": "Frontier AI",
+      "title": "Op-Ed: Thoughts on the Hyperscaler Trajectory",
+      "body": [
+        "Tiered families and explicit efficiency plays (newly launched GPT-5.6 Terra/Luna, Grok 4.5 pricing) represent a mature response to real usage data, as most value lies in reliable, affordable tools for daily work, not pure flagship benchmarks.",
+        "Pricing competition is net positive for the users and ecosystem, driving down cost-per-task and expanding access, but risks commoditizing frontier intelligence if not matched by sustained capability leaps.",
+        "U.S. regulatory involvement (unprecedented export controls) adds safety guardrails yet creates asymmetric friction that non-U.S. labs can exploit for speed. Long-term, this could erode American leadership if overdone.",
+        "Usage statistics reveal a divided market: explosive consumer/enterprise growth in accessible segments, but flagship premiums can limit their own upside. Labs ignoring workflow data (vs. raw benchmarks) will lose share.",
+        "The next 30 days will test whether tiering + efficiency translates to sustained usage lifts or just temporary share shifts. Winners will integrate real deployment telemetry into roadmaps.",
+        "Broader implication: Frontier AI is transitioning from capability races to value-delivery. This is healthy for adoption but may push labs to balance innovation with economic accessibility, or face faster commoditization by open/Chinese alternatives.",
+        "Optimistic view: Continued competition and tiering could democratize frontier capabilities faster than scaling alone ever would, aligning tech progress with actual economic impact."
+      ]
     }
   ]
 }
