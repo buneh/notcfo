@@ -1,33 +1,40 @@
 {
-  "generatedAt": "2026-07-09T09:57:48.017Z",
+  "generatedAt": "2026-07-10T09:49:45.465Z",
   "topics": [
+    {
+      "id": "macro",
+      "domain": "Macro Health & Sentiment",
+      "headline": "Both US CPI and Eurozone HICP likely to miss \"both higher\" condition",
+      "summary": "Eurozone HICP already decelerated to 2.8% in June's flash estimate (from 3.2%), and US CPI is now expected to cool to ~3.9% YoY (from 4.2%) as Strait of Hormuz de-escalation reverses energy prices—making a simultaneous acceleration in both measures unlikely despite still-elevated SPF forecasts.",
+      "asOf": "2026-07-10T09:46:38.757Z"
+    },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spread at 2.75% amid hawkish Fed rate-path shift",
-      "summary": "The ICE BofA US High Yield OAS sits near multi-decade tights at 2.75%, but the Fed's June SEP raised its 2026 median rate projection to 3.8% (from 3.4%) while dropping forward guidance, a hawkish surprise that could pressure risk sentiment and widen spreads. Beyond this, there's little fresh signal across other categories right now.",
-      "asOf": "2026-07-09T09:56:14.634Z"
+      "headline": "HY spreads near cycle-tights but showing modest widening bias",
+      "summary": "At ~267-280bps, HY OAS sits in the tightest 5% of 25-year history with limited cushion, and recent AI-equity selloffs plus a more hawkish Fed have nudged spreads modestly wider; still, strategists note spreads can linger tight for long periods absent a genuine recession/inflation catalyst.",
+      "asOf": "2026-07-10T09:47:27.170Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETF flows turn positive after record 10-day outflow streak",
-      "summary": "Bitcoin ETFs snapped a historic outflow run with $221.72M in inflows on July 2 and $352M over the past week, but sentiment remains fragile with Bitcoin near $62,852 and Fear & Greed at 22 (extreme fear), so continued net inflows over the next 7 days are plausible but not assured.",
-      "asOf": "2026-07-09T09:56:41.113Z"
+      "headline": "BTC ETFs slip back to outflows after brief 3-day inflow streak",
+      "summary": "After a record eight-week outflow streak broke with $202M inflows through July 8, Bitcoin ETFs posted back-to-back daily outflows ($84.9M, $95.3M) on July 8-9 while Ethereum ETFs kept drawing money, leaving the 7-day outlook hinged on the July 14 CPI print and July 28-29 FOMC meeting.",
+      "asOf": "2026-07-10T09:48:04.953Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX spikes 17% on Iran strikes, now above trailing 3-month average",
-      "summary": "Fresh U.S.-Iran military escalation and a looming July 24 tariff deadline pushed VIX to 18.85, already exceeding its trailing 3-month average of 17.70, while elevated OVX, MOVE, and SKEW readings suggest volatility pressure could persist through the 30-day window.",
-      "asOf": "2026-07-09T09:57:21.603Z"
+      "headline": "VIX near mid-range 17, but FOMC and tariff risks loom",
+      "summary": "VIX sits around 16.8-16.9, inside its calm 12-20 \"MID\" band, but the July 28-29 FOMC meeting falls within the 30-day window alongside unresolved Section 122 tariff litigation and elevated single-stock (VIXEQ) volatility, all of which could push VIX above its trailing 3-month average even as index-level risk currently looks historically muted.",
+      "asOf": "2026-07-10T09:48:55.417Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Microsoft-Chevron 20-year PPA anchors wave of new AI power deals",
-      "summary": "Microsoft just signed a 20-year, 2 GW power purchase agreement with Chevron's Energy Forge One for its Texas data center campus, part of a broader burst this week of hyperscaler-linked power deals (National Grid-Joulent, GridMarket-Deployable Energy, Meta-Reliance) confirming the question resolves yes; regulatory activity in Virginia and Wisconsin shows policymakers reacting to, not enabling, this buildout.",
-      "asOf": "2026-07-09T09:57:48.016Z"
+      "headline": "Hyperscaler power deals keep accelerating; near-certain \"yes\" within 30 days",
+      "summary": "Microsoft/Chevron just signed the 2.67 GW Project Kilby gas campus, National Grid put $1.75B behind it, and Meta is closing Canadian and Crusoe capacity deals — continuing an almost weekly cadence of gigawatt-scale PPAs and generation agreements that makes another qualifying announcement highly likely.",
+      "asOf": "2026-07-10T09:49:45.465Z"
     }
   ]
 }
