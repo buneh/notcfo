@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-11T08:08:26.946Z",
+  "generatedAt": "2026-07-12T08:29:30.153Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Eurozone HICP set to decelerate in June, breaking joint-rise scenario",
-      "summary": "Eurozone flash HICP is expected to fall to 2.8% from 3.2% as the oil-driven energy shock reverses, while US CPI momentum and inflation expectations still point higher; this divergence makes a simultaneous US-EU acceleration unlikely despite prediction markets pricing high odds for CPI alone staying elevated.",
-      "asOf": "2026-07-11T08:05:18.381Z"
+      "headline": "US CPI set to decelerate in June, breaking joint-acceleration condition",
+      "summary": "Both Eurostat's flash HICP (2.8%, down from 3.2%) and multiple US CPI nowcasts/forecasts point to a June deceleration as the Middle East-driven energy spike reverses, making it very unlikely both US and Eurozone inflation rise simultaneously versus May.",
+      "asOf": "2026-07-12T08:26:31.628Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads sit near cycle lows at 2.67%, FOMC looms",
-      "summary": "Spreads have retraced most of the spring's Iran-conflict widening to sit at 2.67%, but heavy issuance, CCC-tier weakness, and a July 28-29 FOMC meeting inside the 30-day window leave room for a volatility-driven bounce off historically tight levels.",
-      "asOf": "2026-07-11T08:06:04.534Z"
+      "headline": "HY spreads near cycle lows, but hikes odds and CCC stress build",
+      "summary": "The ICE BofA HY OAS sits around 2.67-2.70%, well below its 20-year average, even as markets price rising odds of a Fed rate hike and CCC-vs-single-B spread dispersion widens sharply, hinting that broad spreads could drift modestly wider without a fundamental shock.",
+      "asOf": "2026-07-12T08:27:13.625Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETF flows stay net negative, momentum tilts against inflows",
-      "summary": "After a brief $510M three-day inflow streak in early July, Bitcoin ETFs reverted to outflows on July 9-10 (FBTC and ARKB leading exits while IBIT sat flat), suggesting the prior bounce was tactical dip-buying rather than institutional re-engagement; all eyes now turn to July 14 CPI data as the key catalyst before the July 28-29 Fed meeting.",
-      "asOf": "2026-07-11T08:06:42.598Z"
+      "headline": "Bitcoin ETFs post third straight inflow day after eight-week outflow streak",
+      "summary": "BTC ETFs pulled in about $282M for the week of July 7-11, snapping eight weeks of outflows totaling $9.46B, but daily flows remain choppy (+$90M July 10) and analysts call it a cautious re-entry, not a confirmed reversal, with June CPI on July 14 seen as the key catalyst.",
+      "asOf": "2026-07-12T08:27:43.895Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX near lows, but compression looks fragile amid rising realized vol",
-      "summary": "VIX sits around 15.3-16.4, well below its trailing-month average of 17.54, yet realized S&P volatility has nearly doubled since June and Goldman's Panic Index (correlation, skew, VIX composite) just hit a two-year low — a classic pre-unwind divergence that, combined with Fed-hike odds rising and Iran oil-export risk, favors VIX reverting upward toward its 3-month average over the next 30 days.",
-      "asOf": "2026-07-11T08:07:32.871Z"
+      "headline": "VIX spot at 15 sits below its 17.10 3-month average",
+      "summary": "Spot VIX has dropped to ~15, well under its trailing 3-month average of 17.10, as Iran de-escalation talks resume; but elevated SKEW (150) and VIX1Y (23) show hedgers still paying up for tail risk, and the July 17 Iran oil sanctions deadline could reignite a spike within the 30-day window.",
+      "asOf": "2026-07-12T08:28:38.487Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Chevron-Microsoft 2.67GW deal confirms near-certain weekly PPA cadence",
-      "summary": "Chevron just signed a 20-year, 2.67GW power deal with Microsoft (Project Kilby), the latest in an unbroken run of hyperscaler generation deals (Meta, Google, Oracle/OpenAI) that, combined with FERC's grid-reliability push, makes another major announcement within 30 days highly likely.",
-      "asOf": "2026-07-11T08:08:26.946Z"
+      "headline": "Hyperscaler power deals now near-monthly; base rate strongly favors YES",
+      "summary": "With Chevron-Microsoft's 2.67GW Kilby PPA, Meta's 6.6GW nuclear commitments, and GE Vernova's order book full through 2029-2031, gigawatt-scale power deals are being announced on a roughly monthly cadence, making another major announcement within 30 days highly likely.",
+      "asOf": "2026-07-12T08:29:30.153Z"
     }
   ]
 }
