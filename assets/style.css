@@ -64,7 +64,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ─── TYPOGRAPHY: TWO VOICES ─────────────────────────────────── */
-h1, h2, .voice-human {
+h1, h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
   line-height: 1.08;
@@ -81,7 +81,7 @@ h3 {
   letter-spacing: -.01em;
 }
 
-.voice-machine, .mono {
+.mono {
   font-family: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
   letter-spacing: -.01em;
 }
@@ -172,8 +172,8 @@ nav {
 }
 .btn-fill { background: var(--gold); color: var(--on-gold); }
 .btn-fill:hover { opacity: .82; }
-.btn-line, .btn-soft { background: none; color: var(--gold); padding-left: 0; padding-right: 0; }
-.btn-line:hover, .btn-soft:hover { text-decoration: underline; }
+.btn-soft { background: none; color: var(--gold); padding-left: 0; padding-right: 0; }
+.btn-soft:hover { text-decoration: underline; }
 
 /* ─── HERO (intro) ───────────────────────────────────────────── */
 #hero { padding-top: calc(var(--nav-h) + 4rem); padding-bottom: 0; }
@@ -200,12 +200,7 @@ nav {
 
 /* ─── VISION / MISSION ───────────────────────────────────────── */
 .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.vision-lead { font-size: 1.0625rem; color: var(--fg); line-height: 1.75; margin-bottom: 1.1rem; }
 .vision-body p + p { margin-top: .9rem; }
-.mission-list { display: flex; flex-direction: column; gap: 1.75rem; }
-.mission-item { }
-.mission-era { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
-.mission-text { font-size: .8125rem; color: var(--fg-dim); line-height: 1.65; }
 
 /* ─── MANIFESTO STRIP (the one large solid-gold moment) ──────── */
 .manifesto { background: var(--gold); padding: 3.5rem 0; }
@@ -245,7 +240,6 @@ footer { padding: 1.75rem 0; }
   background: var(--gold); margin-right: .55rem; vertical-align: middle;
 }
 .ls-status-sep { color: var(--fg-faint); }
-.ls-status .ls-sources { color: var(--fg-dim); }
 
 .ls-filters { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
 .ls-filter {
@@ -266,22 +260,12 @@ footer { padding: 1.75rem 0; }
 .ls-body { display: flex; flex-direction: column; gap: .55rem; }
 .ls-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 .ls-theme { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-faint); }
-.ls-vel { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: .02em; font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: .35rem; color: var(--fg-dim); }
-.ls-vel--up, .ls-vel--down, .ls-vel--flat { color: var(--fg-dim); } /* direction now reads from the arrow glyph itself, not color */
 .ls-title { font-size: .9375rem; font-weight: 500; line-height: 1.5; color: var(--fg); transition: color .15s; }
 .ls-bar-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.25rem; margin-top: .15rem; }
 .ls-bar { height: 2px; background: var(--fg-hair); position: relative; }
 .ls-bar-fill { position: absolute; top: 0; left: 0; bottom: 0; background: var(--gold); transition: width .4s ease; }
 .ls-dis { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--gold); font-variant-numeric: tabular-nums; }
 .ls-data { display: flex; flex-wrap: wrap; gap: 1.1rem; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--fg-faint); margin-top: .15rem; }
-.ls-platforms { display: inline-flex; gap: .5rem; align-items: center; }
-.ls-plat { font-weight: 700; color: var(--fg-faint); opacity: .5; }
-.ls-plat.on { opacity: 1; color: var(--gold); }
-.ls-plat.mid { opacity: .8; color: var(--fg-dim); }
-.ls-data-num { color: var(--fg-dim); font-weight: 500; }
-.ls-foot { margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-.ls-foot-note { font-size: 11px; color: var(--fg-faint); line-height: 1.6; max-width: 560px; }
-.ls-foot-note strong { color: var(--fg-dim); font-weight: 600; }
 .ls-foot-link { font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); transition: opacity .15s; }
 .ls-foot-link:hover { text-decoration: underline; }
 .ls-empty { padding: 3rem 0; text-align: center; font-size: .875rem; color: var(--fg-faint); }
