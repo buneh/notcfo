@@ -25,6 +25,17 @@
 .orc-key-note { font-size: 11px; color: var(--fg-faint); line-height: 1.6; margin-top: .9rem; }
 .orc-key-note a { color: var(--gold); }
 .orc-key-note a:hover { text-decoration: underline; }
+.orc-cost-note { font-size: 11px; color: var(--fg-faint); line-height: 1.6; margin-top: .5rem; }
+.orc-cost-note a { color: var(--gold); }
+.orc-cost-note a:hover { text-decoration: underline; }
+.orc-cost-note em { font-style: normal; color: var(--fg-dim); }
+
+.orc-session-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: .02em; color: var(--fg-faint);
+  margin-top: 1rem;
+}
+.orc-session-note.warn { color: var(--gold); }
 
 /* ─── Query row ──────────────────────────────────────────────── */
 .orc-query { margin-bottom: 1.5rem; opacity: 1; transition: opacity .2s; }

@@ -39,5 +39,31 @@ jobs:
           git config user.name "notcfo-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/calls.json data/signal.json data/resolution-drafts.json
-          git diff --staged --quiet || git commit -m "Standing calls: refresh Signal + fill slots + draft resolutions [automated]"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nothing changed — skipping commit."
+            exit 0
+          fi
+          git commit -m "Standing calls: refresh Signal + fill slots + draft resolutions [automated]"
+          # A concurrent commit (e.g. from the Desk approving/declining a
+          # draft) can land between checkout and push. Rebase once before
+          # giving up — this handles the common case (an unrelated or
+          # non-overlapping concurrent change) automatically, the same
+          # fetch+rebase recovery used manually throughout this project.
+          # A genuine same-line conflict still fails the job rather than
+          # guessing at a resolution — but this run's real API spend is
+          # at least not thrown away on every ordinary timing collision.
+          for i in 1 2 3; do
+            if git push; then
+              echo "Pushed successfully."
+              exit 0
+            fi
+            echo "Push rejected — fetching and rebasing (attempt $i)..."
+            git fetch origin
+            if ! git rebase origin/main; then
+              echo "Rebase hit a real conflict — needs manual resolution. Leaving as-is."
+              git rebase --abort
+              exit 1
+            fi
+          done
+          echo "Still couldn't push after 3 attempts."
+          exit 1

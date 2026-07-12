@@ -17,6 +17,16 @@ let draftsCache = [];
 
 function $(id){ return document.getElementById(id); }
 
+// Draft content (resolutionCriteria, evidenceSummary, sources) is
+// AI-generated text shaped by live web search results — untrusted by
+// definition. Escaping before innerHTML insertion matches the rule
+// applied everywhere else on the site. This page also holds a
+// repo-write GitHub token in memory, which raises the stakes of any
+// injection here well above a typical rendering bug.
+function esc(s){
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+}
+
 // ---------- UTF-8 safe base64 helpers ----------
 function b64DecodeUnicode(str){
   return decodeURIComponent(atob(str).split('').map(c =>
@@ -117,17 +127,17 @@ function renderDrafts(){
     ).join('');
     card.innerHTML = `
       <div class="desk-card-head">
-        <div class="desk-domain">${draft.domain}</div>
-        <div class="desk-question">${draft.question}</div>
+        <div class="desk-domain">${esc(draft.domain)}</div>
+        <div class="desk-question">${esc(draft.question)}</div>
       </div>
       <div class="desk-context">
         ${fieldRow('Called', new Date(draft.calledAt).toLocaleDateString())}
         ${fieldRow('Original probability', draft.calledProbability + '%', 'gold')}
-        ${fieldRow('Horizon', draft.horizon)}
+        ${fieldRow('Horizon', esc(draft.horizon))}
       </div>
       <div class="desk-field">
         <label>Resolution criteria</label>
-        <textarea class="f-criteria">${draft.resolutionCriteria || ''}</textarea>
+        <textarea class="f-criteria">${esc(draft.resolutionCriteria)}</textarea>
       </div>
       <div class="desk-field">
         <label>Proposed outcome</label>
@@ -135,11 +145,11 @@ function renderDrafts(){
       </div>
       <div class="desk-field">
         <label>Evidence</label>
-        <textarea class="f-evidence">${draft.evidenceSummary || ''}</textarea>
+        <textarea class="f-evidence">${esc(draft.evidenceSummary)}</textarea>
       </div>
       <div class="desk-field">
         <label>Sources</label>
-        <div class="desk-sources">${(draft.sources || []).join(', ') || '\u2014'}</div>
+        <div class="desk-sources">${esc((draft.sources || []).join(', ')) || '\u2014'}</div>
       </div>
       <div class="desk-actions">
         <button type="button" class="desk-approve">Approve</button>
@@ -169,21 +179,31 @@ async function approveDraft(draft, card){
   try{
     const tr = await ghGetFile('data/track-record.json');
     tr.content.resolved = tr.content.resolved || [];
-    tr.content.resolved.push({
-      id: draft.id,
-      domain: draft.domain,
-      question: draft.question,
-      resolutionCriteria: criteria,
-      calledAt: draft.calledAt,
-      calledProbability: draft.calledProbability,
-      horizon: draft.horizon,
-      resolvedAt: new Date().toISOString(),
-      outcome,
-      note: evidence,
-      sources: draft.sources || []
-    });
-    await ghPutFile('data/track-record.json', tr.content, tr.sha, `Resolve ${draft.id}: ${outcome.toUpperCase()} [desk]`);
+    // Idempotency guard: if a prior attempt already wrote this id (e.g. this
+    // write succeeded but a later step in the same run failed, and Approve
+    // got retried), don't push a second copy — just move on to the
+    // remaining steps so the retry can actually finish cleanly.
+    const alreadyResolved = tr.content.resolved.some(r => r.id === draft.id);
+    if(!alreadyResolved){
+      tr.content.resolved.push({
+        id: draft.id,
+        domain: draft.domain,
+        question: draft.question,
+        resolutionCriteria: criteria,
+        calledAt: draft.calledAt,
+        calledProbability: draft.calledProbability,
+        horizon: draft.horizon,
+        resolvedAt: new Date().toISOString(),
+        outcome,
+        note: evidence,
+        sources: draft.sources || []
+      });
+      await ghPutFile('data/track-record.json', tr.content, tr.sha, `Resolve ${draft.id}: ${outcome.toUpperCase()} [desk]`);
+    }
 
+    // Both of these are naturally idempotent (filtering out an id that's
+    // already gone is a safe no-op), so a retry after a partial failure
+    // just re-runs them harmlessly rather than needing its own guard.
     const cj = await ghGetFile('data/calls.json');
     cj.content.calls = (cj.content.calls || []).filter(c => c.id !== draft.id);
     await ghPutFile('data/calls.json', cj.content, cj.sha, `Remove resolved call ${draft.id} [desk]`);
@@ -229,7 +249,7 @@ async function loadDrafts(){
     $('deskUpdated').textContent = 'loaded ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
     renderDrafts();
   }catch(e){
-    $('deskList').innerHTML = `<div class="desk-empty"><strong>Couldn't load drafts</strong><p>${e.message}</p></div>`;
+    $('deskList').innerHTML = `<div class="desk-empty"><strong>Couldn't load drafts</strong><p>${esc(e.message)}</p></div>`;
   }
 }
 

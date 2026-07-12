@@ -157,6 +157,7 @@ try {
         </div>
       </div>
       <p class="orc-key-note">Kept in this tab's memory only &mdash; never saved to disk, never sent anywhere but Anthropic's API directly. Clears on reload. Get a key at <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com/settings/keys</a>.</p>
+      <p class="orc-cost-note">Each consult runs about 7 API calls (a live search, five independent personas, one synthesis) against <em>your</em> key &mdash; typically $0.10&ndash;$0.25 depending on search depth. Track exact spend at <a href="https://console.anthropic.com/settings/usage" target="_blank" rel="noopener">console.anthropic.com/settings/usage</a>.</p>
     </div>
 
     <div class="orc-query rev locked" id="orcQueryPanel">
@@ -165,6 +166,7 @@ try {
         <button type="button" class="btn btn-fill" id="orcConsultBtn" disabled>Consult</button>
       </div>
       <div class="ls-filters" id="orcDomainChips"></div>
+      <div class="orc-session-note" id="orcSessionNote" style="display:none"></div>
     </div>
 
     <div class="orc-error" id="orcErrorBox">

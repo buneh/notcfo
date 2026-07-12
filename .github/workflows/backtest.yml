@@ -26,5 +26,23 @@ jobs:
           git config user.name "notcfo-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/backtest-results.json
-          git diff --staged --quiet || git commit -m "Backtest: resolution agent vs 20 historical windows [manual]"
-          git push
+          if git diff --staged --quiet; then
+            echo "Nothing changed — skipping commit."
+            exit 0
+          fi
+          git commit -m "Backtest: resolution agent vs 20 historical windows [manual]"
+          for i in 1 2 3; do
+            if git push; then
+              echo "Pushed successfully."
+              exit 0
+            fi
+            echo "Push rejected — fetching and rebasing (attempt $i)..."
+            git fetch origin
+            if ! git rebase origin/main; then
+              echo "Rebase hit a real conflict — needs manual resolution. Leaving as-is."
+              git rebase --abort
+              exit 1
+            fi
+          done
+          echo "Still couldn't push after 3 attempts."
+          exit 1

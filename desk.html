@@ -47,7 +47,7 @@ try { if (localStorage.getItem('notcfo-theme') === 'light') document.documentEle
         <button type="button" class="orc-key-change" id="changeKeyBtn">Change token</button>
       </div>
     </div>
-    <p class="orc-key-note">Kept in this tab's memory only &mdash; never saved to disk. Needs repo scope (read + write) on buneh/notcfo. Create one at <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">github.com/settings/tokens</a>. Clears on reload.</p>
+    <p class="orc-key-note">Kept in this tab's memory only &mdash; never saved to disk. Use a <strong>fine-grained</strong> token scoped to only the <code>buneh/notcfo</code> repository, with Contents: Read and write &mdash; not a classic token, which defaults to every repo you own. Create one at <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>. Clears on reload.</p>
   </div>
 
   <div class="desk-status" id="deskStatus" style="display:none">

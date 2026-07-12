@@ -37,8 +37,24 @@ let currentHorizon = '24h';
 let state = null;
 let lastRunArgs = null;
 let userApiKey = null;
+let sessionConsultCount = 0;
+const COOLDOWN_MS = 6000; // literal rate limit: a brief pause between consults,
+                          // so accidental rapid re-clicking can't silently
+                          // rack up several full runs before anyone notices
+const COST_LOW = 0.10, COST_HIGH = 0.25; // per-consult estimate shown in the UI
+const WARN_THRESHOLD = 5; // session count at which the tracker turns gold
 
 function $(id){ return document.getElementById(id); }
+
+// Sensing/persona/synthesis content is AI-generated text shaped by live
+// web search results — untrusted by definition, regardless of intent.
+// Escaping before innerHTML insertion is the same rule applied
+// everywhere else on the site (signal.js/calls.js/notes.js); this file
+// predates that pattern and was never retrofitted. Also covers the
+// user's own typed topic, since it renders back unmediated (self-XSS).
+function esc(s){
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+}
 
 // ---------- domain chips ----------
 function renderDomainChips(){
@@ -82,9 +98,9 @@ $('orcKeyInput').addEventListener('keydown', e=>{ if(e.key === 'Enter') $('orcSa
 refreshKeyUI();
 
 // ---------- Claude API ----------
-async function callClaude(promptText, useSearch){
+async function callClaude(promptText, useSearch, maxTokens, attempt){
   if(!userApiKey) throw new Error('Add your API key above first.');
-  const body = { model: 'claude-sonnet-5', max_tokens: 1000, messages: [{ role:'user', content: promptText }] };
+  const body = { model: 'claude-sonnet-5', max_tokens: maxTokens || 1000, messages: [{ role:'user', content: promptText }] };
   if(useSearch) body.tools = [{ type:'web_search_20250305', name:'web_search' }];
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -103,7 +119,11 @@ async function callClaude(promptText, useSearch){
   }
   const data = await res.json();
   const text = (data.content || []).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();
-  if(!text) throw new Error('The oracle returned silence. Try again.');
+  if(!text){
+    console.error('Oracle: empty response, stop_reason:', data.stop_reason);
+    if(!attempt) return callClaude(promptText, useSearch, maxTokens, 1);
+    throw new Error('The oracle returned silence twice in a row \u2014 this can happen on a hard question. Try a narrower topic, or try again in a moment.');
+  }
   return text;
 }
 
@@ -307,12 +327,12 @@ function renderTicker(gathered){
         <div class="ls-meta">
           <span class="ls-theme">signal</span>
         </div>
-        <div class="ls-title">${ev.title}</div>
+        <div class="ls-title">${esc(ev.title)}</div>
         <div class="ls-bar-row">
           <div class="ls-bar"><div class="ls-bar-fill" style="width:${pct}%"></div></div>
           <div class="ls-dis">${ev.intensity}/5</div>
         </div>
-        <div class="ls-data"><span>${ev.source || 'unattributed'}</span></div>
+        <div class="ls-data"><span>${esc(ev.source) || 'unattributed'}</span></div>
       </div>`;
     wrap.appendChild(row);
   });
@@ -361,9 +381,9 @@ function renderForHorizon(){
     </div>
     <div>
       <div class="label-signal" style="margin-bottom:.5rem">The oracle speaks</div>
-      <h3>${state.topic || 'The state of the world'}</h3>
-      <p class="mono orc-forecast">${hz.forecast}</p>
-      <div class="orc-dissent"><span class="who">${hz.dissent.persona} dissents</span> &mdash; ${hz.dissent.objection}</div>
+      <h3>${esc(state.topic) || 'The state of the world'}</h3>
+      <p class="mono orc-forecast">${esc(hz.forecast)}</p>
+      <div class="orc-dissent"><span class="who">${esc(hz.dissent.persona)} dissents</span> &mdash; ${esc(hz.dissent.objection)}</div>
     </div>`;
   card.style.display = 'grid';
 
@@ -376,15 +396,48 @@ function renderForHorizon(){
     row.className = 'mf-row';
     row.innerHTML = `
       <div class="mf-k">${p.name} &middot; <span class="orc-persona-prob mono-num">${f.probability}%</span></div>
-      <div class="mf-v">${f.headline}. ${f.reasoning}</div>`;
+      <div class="mf-v">${esc(f.headline)}. ${esc(f.reasoning)}</div>`;
     council.appendChild(row);
   });
   council.style.display = 'flex';
 }
 
+// ---------- session cost tracker ----------
+function updateSessionNote(){
+  const note = $('orcSessionNote');
+  if(sessionConsultCount === 0){ note.style.display = 'none'; return; }
+  const lowTotal = (sessionConsultCount * COST_LOW).toFixed(2);
+  const highTotal = (sessionConsultCount * COST_HIGH).toFixed(2);
+  note.textContent = sessionConsultCount + (sessionConsultCount === 1 ? ' consult' : ' consults') +
+    ' this session \u00b7 ~$' + lowTotal + '\u2013$' + highTotal + ' estimated';
+  note.classList.toggle('warn', sessionConsultCount >= WARN_THRESHOLD);
+  note.style.display = 'block';
+}
+
+function startCooldown(){
+  const btn = $('orcConsultBtn');
+  let remaining = Math.ceil(COOLDOWN_MS / 1000);
+  btn.disabled = true;
+  const label = btn.textContent;
+  btn.textContent = 'Wait ' + remaining + 's\u2026';
+  const tick = setInterval(() => {
+    remaining -= 1;
+    if(remaining <= 0){
+      clearInterval(tick);
+      btn.textContent = 'Consult';
+      btn.disabled = false;
+    }else{
+      btn.textContent = 'Wait ' + remaining + 's\u2026';
+    }
+  }, 1000);
+}
+
 // ---------- main pipeline ----------
 async function runOracle(topic, domains){
   hideError();
+  sessionConsultCount += 1; // counted at start — even a failed run has already
+                            // spent real tokens by the time it fails
+  updateSessionNote();
   $('orcPipeline').style.display = 'flex';
   $('orcConsultBtn').disabled = true;
   $('orcCard').style.display = 'none';
@@ -395,7 +448,7 @@ async function runOracle(topic, domains){
 
   try{
     setStage('sensing', 'Scanning ' + domains.map(id=>DOMAINS.find(d=>d.id===id).label).join(', ') + ' for live signal…');
-    const gatherText = await callClaude(gatherPrompt(topic, domains), true);
+    const gatherText = await callClaude(gatherPrompt(topic, domains), true, 4000);
     const gathered = parseGatherResponse(gatherText);
     renderTicker(gathered);
 
@@ -420,7 +473,7 @@ async function runOracle(topic, domains){
   }catch(err){
     showError(err.message || 'Something interrupted the reading.');
   }finally{
-    $('orcConsultBtn').disabled = false;
+    startCooldown();
   }
 }
 
@@ -457,7 +510,7 @@ function renderPastList(){
     const d = new Date(item.ts);
     const el = document.createElement('div');
     el.className = 'sesh';
-    el.innerHTML = `<span class="sesh-name">${item.topic || 'Global scan'}</span><span class="sesh-dur">${d.toLocaleDateString()} ${d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</span>`;
+    el.innerHTML = `<span class="sesh-name">${esc(item.topic) || 'Global scan'}</span><span class="sesh-dur">${d.toLocaleDateString()} ${d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</span>`;
     el.onclick = ()=>{
       state = item;
       activeDomains = new Set(item.domains);
