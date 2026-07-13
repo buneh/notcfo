@@ -57,6 +57,7 @@
    in a container with display:flex; flex-direction:column; gap:2.75rem
    (matches .tl's rhythm) for the same spacing as the About timeline. */
 .note-row { display: grid; grid-template-columns: 128px 1fr; }
+.note-row + .note-row { margin-top: 2.75rem; }
 .note-left { padding-right: 2rem; padding-top: .1rem; }
 .note-date { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 500; letter-spacing: .06em; color: var(--gold); margin-bottom: .45rem; }
 .note-tag { font-size: 11px; color: var(--fg-faint); line-height: 1.45; }
