@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-12T08:29:30.153Z",
+  "generatedAt": "2026-07-13T09:42:08.178Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "US CPI set to decelerate in June, breaking joint-acceleration condition",
-      "summary": "Both Eurostat's flash HICP (2.8%, down from 3.2%) and multiple US CPI nowcasts/forecasts point to a June deceleration as the Middle East-driven energy spike reverses, making it very unlikely both US and Eurozone inflation rise simultaneously versus May.",
-      "asOf": "2026-07-12T08:26:31.628Z"
+      "headline": "Eurozone flash confirms drop; US June CPI also expected lower",
+      "summary": "Eurozone June flash HICP fell to 2.8% from 3.2%, already breaking the \"both higher\" scenario, while forecasters (BMO, FutureSearch) expect US June CPI to post a negative monthly print on collapsing gasoline prices post-Hormuz de-escalation—making a joint acceleration in both CPI and HICP highly unlikely.",
+      "asOf": "2026-07-13T09:39:08.936Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near cycle lows, but hikes odds and CCC stress build",
-      "summary": "The ICE BofA HY OAS sits around 2.67-2.70%, well below its 20-year average, even as markets price rising odds of a Fed rate hike and CCC-vs-single-B spread dispersion widens sharply, hinting that broad spreads could drift modestly wider without a fundamental shock.",
-      "asOf": "2026-07-12T08:27:13.625Z"
+      "headline": "HY spreads near multi-decade tights, but supply and Fed risks tilt wider",
+      "summary": "HY OAS sits around 267-282bps, just off historic lows, with weekly data already showing modest widening amid heavy issuance; most sell-side desks (LPL, PineBridge, Allianz GI) see limited room to tighten further and lean toward gradual widening risk from record 2026 supply, though fundamentals and fund flows remain supportive for now.",
+      "asOf": "2026-07-13T09:39:57.657Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETFs post third straight inflow day after eight-week outflow streak",
-      "summary": "BTC ETFs pulled in about $282M for the week of July 7-11, snapping eight weeks of outflows totaling $9.46B, but daily flows remain choppy (+$90M July 10) and analysts call it a cautious re-entry, not a confirmed reversal, with June CPI on July 14 seen as the key catalyst.",
-      "asOf": "2026-07-12T08:27:43.895Z"
+      "headline": "BTC ETF flows flip positive after 8-week outflow streak, but conviction is thin",
+      "summary": "US spot Bitcoin ETFs posted $197M in weekly inflows and a positive 7-day tally ($124.9M), snapping an eight-week, ~$8B redemption streak, but 30-day flows remain -$4.73B and volume is 20% below average, so analysts call it a cautious re-entry, not a confirmed reversal. July 14-15 CPI/PPI data and the July 28-29 FOMC meeting are the key near-term catalysts that could decide whether inflows persist through the next week.",
+      "asOf": "2026-07-13T09:40:42.799Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX spot at 15 sits below its 17.10 3-month average",
-      "summary": "Spot VIX has dropped to ~15, well under its trailing 3-month average of 17.10, as Iran de-escalation talks resume; but elevated SKEW (150) and VIX1Y (23) show hedgers still paying up for tail risk, and the July 17 Iran oil sanctions deadline could reignite a spike within the 30-day window.",
-      "asOf": "2026-07-12T08:28:38.487Z"
+      "headline": "VIX compression meets Iran escalation risk as sanctions deadline nears",
+      "summary": "VIX sits near 15 with implied vol below realized vol—an unusual compression—even as Treasury cuts off Iran oil sales July 17 and traders eye a break above 22 as confirmation of a real volatility spike; the setup looks fragile but the level itself remains historically unremarkable.",
+      "asOf": "2026-07-13T09:41:23.170Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Hyperscaler power deals now near-monthly; base rate strongly favors YES",
-      "summary": "With Chevron-Microsoft's 2.67GW Kilby PPA, Meta's 6.6GW nuclear commitments, and GE Vernova's order book full through 2029-2031, gigawatt-scale power deals are being announced on a roughly monthly cadence, making another major announcement within 30 days highly likely.",
-      "asOf": "2026-07-12T08:29:30.153Z"
+      "headline": "Hyperscaler power deals show no signs of slowing",
+      "summary": "Given the near-continuous cadence of nuclear, gas, and renewable PPAs (OpenAI-Oracle's 4.5GW Stargate expansion, Chevron's 4GW behind-the-meter buildout, Valar/Nvidia's nuclear-powered data center), a new dedicated power deal within 30 days is highly likely; the real story is regulators and ratepayers pushing back via FERC show-cause orders and Virginia's new data-center taxes/rate classes.",
+      "asOf": "2026-07-13T09:42:08.178Z"
     }
   ]
 }
