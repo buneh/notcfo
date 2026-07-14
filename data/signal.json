@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-13T09:42:08.178Z",
+  "generatedAt": "2026-07-14T08:21:38.637Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Eurozone flash confirms drop; US June CPI also expected lower",
-      "summary": "Eurozone June flash HICP fell to 2.8% from 3.2%, already breaking the \"both higher\" scenario, while forecasters (BMO, FutureSearch) expect US June CPI to post a negative monthly print on collapsing gasoline prices post-Hormuz de-escalation—making a joint acceleration in both CPI and HICP highly unlikely.",
-      "asOf": "2026-07-13T09:39:08.936Z"
+      "headline": "Both US CPI and Eurozone HICP set to decelerate, not accelerate",
+      "summary": "Eurozone HICP already confirmed at 2.8% in June, down from 3.2% in May, and US consensus (FactSet, Goldman, Natixis, Cleveland Fed Nowcast) overwhelmingly points to June CPI easing to ~3.9% from 4.2% on falling gas prices—making simultaneous acceleration in both highly unlikely this cycle.",
+      "asOf": "2026-07-14T08:19:00.009Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near multi-decade tights, but supply and Fed risks tilt wider",
-      "summary": "HY OAS sits around 267-282bps, just off historic lows, with weekly data already showing modest widening amid heavy issuance; most sell-side desks (LPL, PineBridge, Allianz GI) see limited room to tighten further and lean toward gradual widening risk from record 2026 supply, though fundamentals and fund flows remain supportive for now.",
-      "asOf": "2026-07-13T09:39:57.657Z"
+      "headline": "HY spreads near historic tights, but asymmetric widening risk builds",
+      "summary": "At ~2.7% OAS, high-yield spreads sit near 20-year lows even as record AI-driven bond issuance (Amazon's $25B deal, Oracle's downgrade toward junk) and strategist warnings from State Street and Schwab suggest limited room for further compression and higher odds of widening over the next 30 days.",
+      "asOf": "2026-07-14T08:19:37.480Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "BTC ETF flows flip positive after 8-week outflow streak, but conviction is thin",
-      "summary": "US spot Bitcoin ETFs posted $197M in weekly inflows and a positive 7-day tally ($124.9M), snapping an eight-week, ~$8B redemption streak, but 30-day flows remain -$4.73B and volume is 20% below average, so analysts call it a cautious re-entry, not a confirmed reversal. July 14-15 CPI/PPI data and the July 28-29 FOMC meeting are the key near-term catalysts that could decide whether inflows persist through the next week.",
-      "asOf": "2026-07-13T09:40:42.799Z"
+      "headline": "Bitcoin ETF inflow rebound looks fragile amid Fed and Iran risk",
+      "summary": "A single $197.4M inflow week snapped an eight-week, $8.26B outflow streak, but BTC's drop toward $62K on Iran tensions, hawkish Fed minutes ahead of July 28-29, and thin volumes suggest this is more likely a pause than a reversal—analysts say a second consecutive inflow week is the real signal to watch.",
+      "asOf": "2026-07-14T08:20:16.572Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX compression meets Iran escalation risk as sanctions deadline nears",
-      "summary": "VIX sits near 15 with implied vol below realized vol—an unusual compression—even as Treasury cuts off Iran oil sales July 17 and traders eye a break above 22 as confirmation of a real volatility spike; the setup looks fragile but the level itself remains historically unremarkable.",
-      "asOf": "2026-07-13T09:41:23.170Z"
+      "headline": "VIX spikes 13.7% to 17.09 on Middle East oil supply fears",
+      "summary": "Fighting near the Strait of Hormuz pushed oil and the VIX sharply higher, but VIX's strong mean-reversion tendency and the fact that 17.09 remains within its 3-month range suggest the spike may fade unless geopolitical or CPI-driven shocks persist over the next 30 days.",
+      "asOf": "2026-07-14T08:20:54.664Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Hyperscaler power deals show no signs of slowing",
-      "summary": "Given the near-continuous cadence of nuclear, gas, and renewable PPAs (OpenAI-Oracle's 4.5GW Stargate expansion, Chevron's 4GW behind-the-meter buildout, Valar/Nvidia's nuclear-powered data center), a new dedicated power deal within 30 days is highly likely; the real story is regulators and ratepayers pushing back via FERC show-cause orders and Virginia's new data-center taxes/rate classes.",
-      "asOf": "2026-07-13T09:42:08.178Z"
+      "headline": "Microsoft-Chevron 20-year Texas PPA headlines new hyperscaler power deal wave",
+      "summary": "Microsoft signed a 20-year, 2 GW co-located gas PPA with Chevron's Energy Forge One in Pecos, Texas, and bought 2.7 GW of GE Vernova turbines, extending a pattern of gigawatt-scale hyperscaler power deals (Meta-TerraPower/Oklo/Vistra, Google-Clearway) that easily satisfies this question within any 30-day window.",
+      "asOf": "2026-07-14T08:21:38.637Z"
     }
   ]
 }
