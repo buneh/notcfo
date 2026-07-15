@@ -1,3 +1,26 @@
 {
-  "drafts": []
+  "drafts": [
+    {
+      "id": "crypto",
+      "domain": "Crypto Market Dynamics",
+      "question": "Will US-listed spot Bitcoin ETFs register net inflows over the next 7 days?",
+      "resolutionCriteria": "Resolves YES if the summed daily net flow across US-listed spot Bitcoin ETFs (per Farside Investors or SoSoValue aggregate data) over the next 7 calendar days is positive; resolves NO if the 7-day cumulative net flow is zero or negative.",
+      "calledAt": "2026-07-07T12:01:12.927Z",
+      "calledProbability": 38,
+      "horizon": "1w",
+      "researchedAt": "2026-07-15T08:28:41.360Z",
+      "proposedOutcome": "no",
+      "evidenceSummary": "Daily Farside/SoSoValue flow data for the week following the July 7, 2026 forecast show a clearly negative cumulative total: July 7 (+$21.5M), July 8 (‑$84.9M), July 9 (‑$95.3M), July 10 (+$90.4M), then a sharp reversal with July 13 posting a \n$424.7 million in net outflows on July 13, undoing $197.4 million in inflows from the prior week, brought the weekly total to -$227.3 million\n (measured from July 6). Even with a positive July 14 print reported by SoSoValue \nBitcoin spot ETFs recorded a total net inflow of $181 million yesterday (Eastern Time July 14), with BlackRock's IBIT leading at $139 million net inflow\n, the 7-day cumulative sum from July 7 through July 14 remains solidly negative (roughly ‑$300M to ‑$500M depending on exact window), driven overwhelmingly by the July 13 outflow spike. Under any reasonable interpretation of the \"next 7 days\" window from the July 7 forecast timestamp, the summed net flow across US spot Bitcoin ETFs is negative, meeting the NO resolution criterion.",
+      "sources": [
+        "CryptoSlate",
+        "KuCoin",
+        "Bloomingbit",
+        "Odaily",
+        "Farside Investors",
+        "SoSoValue",
+        "TechTimes",
+        "Memeburn"
+      ]
+    }
+  ]
 }
