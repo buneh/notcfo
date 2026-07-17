@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-16T08:27:03.163Z",
+  "generatedAt": "2026-07-17T08:23:02.499Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Oil shock threatens August CPI/HICP rebound after June declines",
-      "summary": "Both US CPI (3.5%) and Eurozone HICP (2.8%) fell in June, but a collapsed ceasefire has sent Brent from under $70 to above $85, raising real risk that July/August prints reverse course; still, most economists expect disinflation to persist unless oil sustains near $100.",
-      "asOf": "2026-07-16T08:23:58.850Z"
+      "headline": "Oil shock post-June dip raises odds both CPI and HICP rise next",
+      "summary": "US CPI (3.5%) and Eurozone HICP (2.8%) both fell last month, but renewed Iran conflict has pushed gasoline toward $4/gallon and oil to $86, leading economists across the board to expect both readings to reverse higher at their next releases.",
+      "asOf": "2026-07-17T08:20:20.491Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near cycle lows, but asymmetry tilts toward widening",
-      "summary": "At ~2.69-2.74%, HY OAS sits near historic tights with little room to compress further, and while cooler CPI and contained volatility argue for near-term stability, structural asymmetry (State Street, LPL) suggests modest widening is more likely than further tightening over 30 days.",
-      "asOf": "2026-07-16T08:24:46.290Z"
+      "headline": "HY spreads near record tights, but momentum points modestly wider",
+      "summary": "US HY OAS sits at ~2.69%, still deep in \"late-cycle complacency\" territory, yet multiple desks note spreads have started creeping up alongside equity wobbles and a stark CCC-vs-BB bifurcation; base case is modest further widening over 30 days, though 2025's precedent shows such moves can reverse quickly absent a real credit event.",
+      "asOf": "2026-07-17T08:20:58.382Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETF inflows rebound, but fragile after record outflow streak",
-      "summary": "After an $9.46B eight-week outflow streak, spot Bitcoin ETFs saw three straight positive days (July 14-16) totaling over $360M, led by BlackRock's IBIT, but analysts like Thielen warn it's too early to call a trend reversal given seasonal patterns and YTD outflows still at $5.8B ahead of the July 28-29 Fed meeting.",
-      "asOf": "2026-07-16T08:25:28.360Z"
+      "headline": "BTC ETF flows choppy: week running -$135.8M despite recent positive days",
+      "summary": "Bitcoin ETFs posted three straight positive sessions (July 14-16) totaling ~$369M, but the current week is still net negative at -$135.77M, and Citi just cut its BTC target to $82K citing weak flows — suggesting fragile, unconfirmed momentum rather than a durable inflow trend.",
+      "asOf": "2026-07-17T08:21:42.274Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX at 15.67, below elevated 3-month average, Hormuz risk lingers",
-      "summary": "After a spike to 17.40 on July 13 tied to Brent's 9.6% oil rally, VIX fell 5% to 15.67 on July 15—still below its recent 3-month average (April alone averaged 19.31)—as traders weigh a fragile Iran ceasefire and Strait of Hormuz shipping still at just 34% of normal capacity.",
-      "asOf": "2026-07-16T08:26:09.611Z"
+      "headline": "VIX at 16.73 sits below its likely-elevated 3-month average",
+      "summary": "VIX jumped 6.76% to 16.73 on oil/Hormuz fears, but with April averaging 19.31 and March peaking above 31, the trailing 3-month average is likely still higher than current spot—meaning VIX may need a fresh shock (tariff-court fallout, Section 301 probes, Hormuz escalation) just to close the gap, let alone exceed it in 30 days.",
+      "asOf": "2026-07-17T08:22:22.331Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Deal pace stays near-weekly; Chevron-Microsoft 2.67GW PPA just signed",
-      "summary": "Base rates strongly favor resolution YES: Chevron's subsidiary just signed a 20-year, 2.67GW dedicated PPA with Microsoft in West Texas, continuing a pattern where every major hyperscaler has already inked at least one nuclear/power deal this year (13+ projects, 9.8GW+) amid tripling US data-center power demand forecasts.",
-      "asOf": "2026-07-16T08:27:03.162Z"
+      "headline": "Chevron-Microsoft 2.67GW Texas PPA anchors accelerating hyperscaler power deal cadence",
+      "summary": "On June 22, 2026 Chevron's Energy Forge One signed a 20-year PPA with Microsoft for a 2.67GW co-located Texas facility (Project Kilby), the most concrete recent deal amid a broader pattern of near-monthly hyperscaler power agreements (Talen/Amazon, TotalEnergies/Google, Digital Realty) that makes another qualifying announcement within 30 days highly likely.",
+      "asOf": "2026-07-17T08:23:02.498Z"
     }
   ]
 }
