@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-18T08:04:57.518Z",
+  "generatedAt": "2026-07-19T08:31:00.076Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Oil rebound points to higher US CPI, but Eurozone rise less certain",
-      "summary": "With Brent surging from under $70 to above $85 post-ceasefire collapse and gasoline prices already rising, expert consensus points to a US headline CPI rebound in July; but Eurozone HICP needs simultaneous reversals across Germany, France, Italy and Spain, making a joint US-Eurozone acceleration plausible but not assured.",
-      "asOf": "2026-07-18T08:01:56.173Z"
+      "headline": "Oil spike post-ceasefire collapse threatens July CPI/HICP reacceleration",
+      "summary": "June's US CPI (3.5%) and Eurozone HICP (2.8%) both cooled on falling energy prices, but the Iran ceasefire's collapse has since sent Brent crude toward $90, and economists warn July's readings (due Aug 12 and Jul 31/Aug 19) could reverse higher rather than extend the downtrend.",
+      "asOf": "2026-07-19T08:27:50.419Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near cycle tights at 2.69%, asymmetric widening risk builds",
-      "summary": "HY OAS sits near multi-year lows (2.69-2.84%) versus a 4.9% long-term average, kept compressed by record issuance and inflows even as CCC-vs-B dispersion widens and analysts warn of complacency; near-term odds favor stability to modest widening rather than continued compression.",
-      "asOf": "2026-07-18T08:02:45.541Z"
+      "headline": "HY spreads near cycle lows, absorbing rate rise without widening",
+      "summary": "HY OAS sits near 2.7%, close to its 18-month low, and held firm even as Treasury yields backed up and CCC-vs-B dispersion widened; most desks and strategists see modest upside risk to spreads but no imminent widening, with quality bifurcation (isolated defaults, hyperscaler IG stress) the main watch item.",
+      "asOf": "2026-07-19T08:28:33.722Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETFs ride three-day inflow streak, but momentum remains fragile",
-      "summary": "US spot Bitcoin ETFs pulled in roughly $368 million over three straight sessions (Jul 22-24 range), continuing a whipsaw pattern of sharp inflow/outflow reversals seen all month; with YTD outflows still at $5.8 billion and analysts split on whether this marks a bottom, near-term net inflows look plausible but far from assured.",
-      "asOf": "2026-07-18T08:03:34.121Z"
+      "headline": "BTC ETFs post third straight inflow day, but momentum remains fragile",
+      "summary": "Spot Bitcoin ETFs logged $79.15M in inflows on July 16, a third consecutive positive session following an eight-week, $8.2B outflow streak that only just broke in early July. Flows have whipsawed between sharp inflows and outflows week to week, and with Fear & Greed still at 28, the trend leans modestly positive but is too shaky to call durable.",
+      "asOf": "2026-07-19T08:29:20.349Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "",
-      "summary": "",
-      "asOf": "2026-07-18T08:04:10.444Z"
+      "headline": "VIX jumps 12% to 18.77 amid Iran conflict, but curve stays calm",
+      "summary": "VIX spiked from 16.73",
+      "asOf": "2026-07-19T08:30:13.269Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Hyperscaler power deals hit near-weekly cadence across gas, nuclear, renewables",
-      "summary": "Multi-gigawatt PPAs and co-located generation deals (Microsoft/Chevron, Meta nuclear trio, Google/Intersect) have become routine monthly occurrences in 2026, making another announcement within 30 days highly likely given regulatory, market, and competitive pressures all pointing the same direction.",
-      "asOf": "2026-07-18T08:04:57.518Z"
+      "headline": "Dedicated power deals keep landing despite NY moratorium headlines",
+      "summary": "Chevron-Microsoft's 2.67GW Texas gas deal, BlackRock/ACS's Coravel data-center launch, and an ECL-PowerCell 300MW+ hydrogen tie-up all closed within weeks, confirming hyperscalers are still striking new build/PPA agreements monthly even as New York's moratorium and community pushback (xAI Memphis) create political friction.",
+      "asOf": "2026-07-19T08:31:00.076Z"
     }
   ]
 }
