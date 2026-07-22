@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-21T08:41:19.143Z",
+  "generatedAt": "2026-07-22T08:41:22.564Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "US CPI, Eurozone HICP both fell two straight months; rebound risk brews",
-      "summary": "June saw US CPI drop to 3.5% and Eurozone HICP to 2.8%, both cooling for a second month on fading energy shocks, but rising gasoline prices and Iran ceasefire tensions create real upside risk for the July prints, making a simultaneous rebound in both unlikely but not negligible.",
-      "asOf": "2026-07-21T08:38:17.438Z"
+      "headline": "Oil shock clouds July CPI/HICP outlook; both need to reaccelerate together",
+      "summary": "US June CPI decelerated to 3.5% and Eurozone HICP eased to 2.8%, but renewed Iran-conflict oil spikes and ECB forecasts of 3.4% peaks suggest both could reaccelerate in July/August data—though prediction markets see July US CPI as a coin-flip, making simultaneous acceleration in both gauges uncertain.",
+      "asOf": "2026-07-22T08:37:51.306Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near record tights despite rising Fed hike odds",
-      "summary": "HY OAS sits around 2.69-2.84% near multi-decade lows even as September hike odds jumped to 67% and BofA now forecasts three more hikes; the July 29 FOMC meeting lacks a fresh dot plot, but a weak June jobs report and warnings from Citi and desk strategists about \"complacency\" suggest asymmetric risk toward widening rather than further tightening.",
-      "asOf": "2026-07-21T08:39:11.571Z"
+      "headline": "HY spreads near historic lows, but ticking up slightly",
+      "summary": "The ICE BofA HY OAS edged up from 2.69% to 2.71% as of mid-July 2026, still near two-decade lows; strong bank earnings and resilient IG demand argue for continued tightness, but analysts warn compressed spreads leave little cushion if growth or sentiment weakens.",
+      "asOf": "2026-07-22T08:38:53.405Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "BTC ETFs post modest second inflow week, but conviction remains thin",
-      "summary": "Spot Bitcoin ETFs added $75.7M last week after $197.4M prior week, breaking an 8-week, $8B outflow streak, but analysts call the recovery fragile absent a decisive break above $65,500, and Citi has cut its 12-month inflow forecast to zero.",
-      "asOf": "2026-07-21T08:39:53.150Z"
+      "headline": "Bitcoin ETFs post five-day inflow streak, but 2026 remains deeply negative",
+      "summary": "Spot Bitcoin ETFs pulled in ~$727M over five sessions, the longest inflow streak since May, but year-to-date flows are still about -$5.2B and June alone saw $4.5B in outflows, so analysts and even Citi (which zeroed its inflow forecast) say it's too early to call this a durable trend rather than a bounce off oversold conditions.",
+      "asOf": "2026-07-22T08:39:32.373Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX near 3-month lows, but FOMC and Hormuz risks loom",
-      "summary": "VIX sits around 18-18.6, below its 3-month average and well under the 35+ spike from the Iran/Strait of Hormuz crisis, but the July 28-29 FOMC meeting and lingering Strait tensions give it room to pop within 30 days; base case favors mean-reversion lower unless a fresh shock hits.",
-      "asOf": "2026-07-21T08:40:30.138Z"
+      "headline": "VIX calm at 18.65, but FOMC and skew signal risk of a pop",
+      "summary": "Spot VIX sits low in its recent 16-19 range with the trailing average likely near here, but elevated SKEW, hot single-stock vol, and the July 29 FOMC create real upside risk over 30 days even though mean-reversion and options' historical over-pricing of realized vol favor a pullback rather than a sustained rise.",
+      "asOf": "2026-07-22T08:40:26.828Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Deal pace stays torrid: Chevron-Microsoft, Meta nuclear, KKR's Helix all active",
-      "summary": "Base rate resolves YES trivially given near-continuous hyperscaler power deals (Chevron/Microsoft's 2.67GW Project Kilby PPA, Meta's 6.6GW nuclear procurement, KKR's $10B Helix Digital Infrastructure with Vistra), while states like Texas and Virginia scramble to regulate the resulting load surge and grid strain.",
-      "asOf": "2026-07-21T08:41:19.143Z"
+      "headline": "Deal pace stays torrid: Chevron-Microsoft 2.67GW gas PPA leads June",
+      "summary": "Despite a March White House ratepayer pledge, hyperscalers keep signing new power deals almost weekly—Chevron's 20-year Project Kilby gas PPA with Microsoft, TotalEnergies-Google solar, and Meta's nuclear buildout—making another announcement within 30 days highly likely given the near-continuous two-year deal cadence.",
+      "asOf": "2026-07-22T08:41:22.564Z"
     }
   ]
 }
