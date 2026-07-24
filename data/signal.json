@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-23T08:42:41.088Z",
+  "generatedAt": "2026-07-24T08:38:57.092Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "US CPI, Euro HICP both cooled; simultaneous rise looks unlikely",
-      "summary": "June data showed US CPI annual inflation falling to 3.5% (from 4.2%) and euro area HICP dropping to 2.8% (from 3.2%), with desks split on next moves—MUFG expects E",
-      "asOf": "2026-07-23T08:39:52.257Z"
+      "headline": "Oil shock from Iran conflict points to both US CPI and HICP rebounding",
+      "summary": "Renewed Iran-linked oil and gasoline price spikes make a July rebound in US CPI (from 3.5%) likely, while Eurozone HICP (from 2.8%) faces similar upside energy pressure per ECB's own 3.4% peak forecast; both readings out July 31 (flash HICP) and August 12 (CPI) will test whether this energy pass-through hits simultaneously.",
+      "asOf": "2026-07-24T08:35:59.781Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near record tights, but geopolitical risk clouds outlook",
-      "summary": "At 2.71%, HY OAS sits near multi-decade lows even as CCC spreads have decoupled sharply from BB/B tiers and oil-driven Treasury yield spikes (10yr at 4.66%) signal rising risk; with the Fed likely on hold July 29 and most desks calling for rangebound-to-modestly-wider spreads, a slight widening over 30 days is somewhat more likely than a continued rally, but no acute catalyst points to a sharp move.",
-      "asOf": "2026-07-23T08:40:31.865Z"
+      "headline": "HY spreads near tights, but supply and Fed risk loom",
+      "summary": "At 2.68-2.73%, HY OAS sits near historic tights even as record $53B weekly issuance strains absorption and hedge funds unwind tech positions at a decade-scale pace; a hawkish July 29 FOMC decision (hike-vs-hold split 9-8) adds near-term widening risk within the 30-day window.",
+      "asOf": "2026-07-24T08:36:48.570Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETFs hit seven-day inflow streak, but conviction still shaky",
-      "summary": "Spot Bitcoin ETFs just posted their longest inflow streak since October 2025, yet BTC trades below its pivot near $65,900 and analysts (Citi, BRN, Ecoinometrics) say one strong week doesn't confirm institutions are back for good—making net inflows over the next 7 days plausible but far from certain.",
-      "asOf": "2026-07-23T08:41:15.859Z"
+      "headline": "Bitcoin ETFs extend seven-day, ~$1B inflow streak, but momentum is fragile",
+      "summary": "Spot Bitcoin ETFs have posted net inflows for seven straight sessions (~$981M-$999M), led almost entirely by IBIT, but the streak is small next to 2026's $4.84B in outflows and a prior $5B+ seven-day run, while BTC has slipped to ~$64,700 and sentiment is cooling ahead of the July 28-29 FOMC meeting.",
+      "asOf": "2026-07-24T08:37:31.097Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX complacency at seasonal lows ahead of live FOMC risk",
-      "summary": "VIX sits near 17, historically its yearly bottoming point, despite Middle East ceasefire collapse, a split Fed, and big-tech earnings all landing within 30 days—recent VIX9D/VIX3M spikes and widening DSPX-VIX spreads suggest the calm may break around the July 28-29 FOMC decision.",
-      "asOf": "2026-07-23T08:41:58.403Z"
+      "headline": "VIX spikes 12% to 18.70 as Iran conflict roils markets",
+      "summary": "VIX jumped from 16.64 to 18.70 as Middle East escalation and weak hyperscaler cash flow (Tesla, Alphabet) hit stocks, pushing it above its 16.94 trailing 3-month average; historically such geopolitical/earnings-driven spikes fade quickly, but a protracted Iran conflict could keep VIX elevated near-term.",
+      "asOf": "2026-07-24T08:38:13.297Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Microsoft-Chevron 2.67GW PPA confirms near-certain monthly deal cadence",
-      "summary": "Microsoft just signed a 20-year, 2GW+ power deal with Chevron's Energy Forge One for its Texas data center campus, continuing an unbroken ~18-month streak of hyperscaler power deals (Meta, Google, Microsoft, Amazon all active) driven by PJM capacity shortfalls and White House pressure to secure dedicated generation, making another such announcement within 30 days highly likely.",
-      "asOf": "2026-07-23T08:42:41.088Z"
+      "headline": "OpenAI signs 25-year, 3.2GW Georgia Power deal for Project Camellia",
+      "summary": "Deal velocity remains extremely high, with OpenAI's $20B+ Georgia Power PPA landing days after Microsoft's Chevron deal and Crusoe's 5GW UPS partnership—confirming this trend resolves YES with near certainty each 30-day window, though OpenAI's 57:1 commitment-to-revenue gap flags growing financial strain behind the headlines.",
+      "asOf": "2026-07-24T08:38:57.092Z"
     }
   ]
 }
