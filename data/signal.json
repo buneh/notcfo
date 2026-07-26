@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-25T08:18:37.322Z",
+  "generatedAt": "2026-07-26T08:38:48.839Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "US CPI rebound likely, but Eurozone HICP direction is the swing factor",
-      "summary": "Analysts expect US July CPI to tick up on energy base effects, but Eurozone HICP has been decelerating sharply (3.2%→2.8%) with broad-based disinflation across member states, making a simultaneous rise in both unlikely; the joint \"yes\" hinges on an unexpected Eurozone uptick at the July 31 flash estimate.",
-      "asOf": "2026-07-25T08:15:43.196Z"
+      "headline": "Oil surge and energy pass-through favor both CPI and HICP rising",
+      "summary": "Brent's climb toward $89 amid Iran/Houthi supply threats, plus economist previews (PNC, Barclays) arguing gasoline declines won't repeat, point to a likely rebound in both July US CPI and Eurozone HICP after June's dip; ECB's own projections and Lagarde's second-round-effects warning reinforce the case, though low-liquidity prediction markets (48.5% YES) show real uncertainty remains.",
+      "asOf": "2026-07-26T08:35:11.386Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads near historic tights at 2.68%, bias skews toward widening",
-      "summary": "At 2.68%, spreads sit in the tightest 5% of readings since 2000, and strategists (State Street, Janus Henderson, LPL) argue the statistical and fundamental odds favor eventual widening, though most concede timing is uncertain and spreads can grind sideways for extended periods; no near-term catalyst (FOMC July 29 expected to hold) points to a clear 30-day trigger.",
-      "asOf": "2026-07-25T08:16:22.126Z"
+      "headline": "HY OAS tight at 2.77%, but private credit stress signals brewing",
+      "summary": "Headline high-yield spreads remain historically tight and stable even as rate volatility and Middle East tensions push Treasury yields higher, but mounting private credit/BDC distress (redemption caps, NAV cuts, rising defaults) mirrors the early-2026 pattern that preceded a 50bp HY spread widening—suggesting risk of contagion into public HY OAS over the next 30 days even though no acute break has occurred yet.",
+      "asOf": "2026-07-26T08:36:04.104Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "BTC ETFs post $225M outflow, snapping seven-day inflow streak",
-      "summary": "After nearly $1B in inflows over seven days, spot Bitcoin ETFs saw $225.2M leave on July 24 while Ether ETFs kept extending gains; Citi cut its 12-month inflow forecast to zero, and analysts say a single choppy week isn't enough to confirm sustained institutional demand returning.",
-      "asOf": "2026-07-25T08:16:58.938Z"
+      "headline": "BTC ETF inflow streak breaks as FOMC decision looms",
+      "summary": "US spot Bitcoin ETFs snapped a seven-day inflow run with $225-240M in outflows on July 24, and with BTC hovering near $64K in \"fear\" territory heading into the July 28-29 FOMC decision (rates expected to hold), the next 7 days hinge on whether that outflow was a one-off geopolitical blip or the start of a renewed downtrend.",
+      "asOf": "2026-07-26T08:36:52.877Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX spikes near 19 amid FOMC, tariffs, and Iran risk",
-      "summary": "VIX jumped 12% to 18.70 (trailing 3-month avg ~17), driven by looming Trump tariffs, a July 29 FOMC decision, and Middle East oil-price fears; but with contango historically dominant and vol prone to mean-revert once catalysts pass, the setup is genuinely two-sided for the 30-day window.",
-      "asOf": "2026-07-25T08:17:33.785Z"
+      "headline": "VIX term structure and catalysts point to higher volatility ahead",
+      "summary": "VIX sits at 18.58 but futures in contango (VIX3M 20.51) signal markets expect it to rise, backed by a semiconductor selloff, escalating US-Iran conflict, and fresh Trump tariffs on Canada/China; with hawkish Fed signals adding fuel, odds favor VIX finishing above its 3-month average in 30 days.",
+      "asOf": "2026-07-26T08:37:54.929Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Microsoft-Chevron 2GW PPA confirms near-monthly hyperscaler power deal pace",
-      "summary": "Microsoft's July 2 20-year deal with Chevron subsidiary Energy Forge One for 2GW in Pecos, Texas is the latest concrete example of a pattern that's now recurring almost weekly, alongside Brookfield-Bloom's $25B initiative and continued nuclear-adjacent tie-ups (Terrestrial-Riot, GE Vernova-Blue Energy), strongly suggesting another such announcement within 30 days is highly likely.",
-      "asOf": "2026-07-25T08:18:37.322Z"
+      "headline": "Deal pace stays torrid despite NY moratorium and grid pushback",
+      "summary": "Chevron-Microsoft's 20-year Pecos power deal, Digital Realty's Kansas City agreement, and GE Vernova's surging turbine backlog show hyperscaler power deals are still landing at a rapid clip, even as New York's data-center moratorium and Texas' new ERCOT load-review process signal rising regulatory friction.",
+      "asOf": "2026-07-26T08:38:48.839Z"
     }
   ]
 }
