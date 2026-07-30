@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-07-29T08:52:43.787Z",
+  "generatedAt": "2026-07-30T08:41:10.737Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Oil spike post-ceasefire collapse raises odds of dual US-EU CPI acceleration",
-      "summary": "Brent's jump above $85 after renewed Mideast conflict reverses the energy base effect that cooled June's US and Eurozone inflation prints, with practitioners citing 2022's post-plateau rebound as precedent; both regions' July/August readings now face real upside risk, though Fed/ECB officials and thin prediction-market volume urge caution against overconfidence.",
-      "asOf": "2026-07-29T08:49:39.872Z"
+      "headline": "Eurozone and US inflation both poised to rebound in July",
+      "summary": "Deutsche Bank expects Euro Area HICP to rise to 3.0% from 2.8% (Spain's flash already confirming upward moves), while US CPI is broadly expected to rebound in July as energy prices stop falling — raising real odds both regions post higher YoY inflation next release, though the US print isn't due until August 12.",
+      "asOf": "2026-07-30T08:37:47.050Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads drift wider as hawkish Fed and tech selloff collide",
-      "summary": "HY OAS has crept up to 2.77% amid rising rate-hike odds (36%, up from 16%) ahead of the July 29 FOMC decision and a sharp semiconductor-led equity selloff, but spreads remain near historic tights, so any widening from here is likely to be modest rather than dramatic.",
-      "asOf": "2026-07-29T08:50:20.112Z"
+      "headline": "HY OAS at 2.77%, near cycle lows despite asymmetric widening risk",
+      "summary": "HY spreads sit at 2.77%, well off April's 4.61% tariff-driven spike, with recent moves tied to rate volatility rather than credit deterioration; strategists note spreads remain in the tightest 5% of 25-year readings, meaning statistically more room to widen than compress, but the Fed's hold and stable IG markets suggest no imminent stress catalyst over the next 30 days.",
+      "asOf": "2026-07-30T08:38:42.041Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "Bitcoin ETFs hit four-day outflow streak amid Fed hike odds",
-      "summary": "US spot Bitcoin ETFs bled ~$49.7M on July 28 (fourth straight down day, led by IBIT), while an unusually live 31.5% Fed hike probability and BTC stuck below $64,402 resistance keep momentum bearish; still, redemptions are concentrated in tactical/hedge-fund holders rather than sticky RIA/institutional accounts, leaving near-term flows fragile but not clearly trend-broken.",
-      "asOf": "2026-07-29T08:51:03.274Z"
+      "headline": "Bitcoin ETFs snap outflow streak, but inflows remain fragile",
+      "summary": "After four straight days of redemptions totaling $526M, US spot Bitcoin ETFs eked out a modest $32.1M inflow on July 29, led by IBIT, but analysts say this reflects easing selling pressure rather than renewed institutional conviction, especially with the White House digital asset report due and Bitcoin still stuck below the $65,000 breakout level.",
+      "asOf": "2026-07-30T08:39:23.185Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX near lows, but contango and FOMC signal upside risk",
-      "summary": "Spot VIX sits around 18-19, below its recent trailing average, with futures in contango (19.07 front-month, 20.54 VIX3M) suggesting the market expects some rise ahead; the July 28-29 FOMC meeting falls squarely in the 30-day window and adds event risk that could push VIX above its 3-month average.",
-      "asOf": "2026-07-29T08:52:11.072Z"
+      "headline": "VIX spikes to 20.66 on Fed hold, Iran tensions",
+      "summary": "VIX jumped 13% to 20.66 after a hawkish Fed hold and Iran-related Treasury sanctions, sitting well above its ~17 trailing-month average; history and crowded short-vol positioning suggest a real chance of further squeeze, though experts and mean-reversion patterns argue it likely fades back toward trend within 30 days.",
+      "asOf": "2026-07-30T08:40:13.184Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "Near-continuous hyperscaler power deal cadence makes 30-day YES near-certain",
-      "summary": "Beyond the March 4 White House pledge, fresh deals keep landing within the window—Chevron-Microsoft's 20-year Texas PPA, National Grid's $1.75B Joulent investment, PowerPlay AI's Abilene project, and a wave of 2026 nuclear agreements—confirming that new generation/PPA announcements have become monthly-or-faster occurrences rather than isolated events.",
-      "asOf": "2026-07-29T08:52:43.787Z"
+      "headline": "Deal cadence stays hot: Constellation-hyperscaler 1.2GW PPA filed",
+      "summary": "Constellation's June 8-K dedicating 1.2GW of nuclear capacity to a hyperscaler, plus the Chevron-Microsoft Project Kilby deal and OpenAI-Oracle's 4.5GW Stargate expansion, show the 30-day announcement question resolving YES almost by default given continuous 2026 deal flow; the real uncertainty is deal quality, as critics note these commitments remain a fraction of hyperscalers' overall capex.",
+      "asOf": "2026-07-30T08:41:10.737Z"
     }
   ]
 }
