@@ -1,40 +1,19 @@
 {
-  "generatedAt": "2026-07-31T09:01:32.463Z",
+  "generatedAt": "2026-08-01T08:30:40.984Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "Energy price rebound points to both CPI and HICP rising in July",
-      "summary": "Germany's flash reading already jumped to 2.8% from 2.3% on an 8.3% energy spike, and renewed Hormuz tensions plus a ~30% oil rally make a similar rebound likely for both US CPI and Eurozone HICP after June's energy-driven dip. Reports land July 31 (Eurozone flash) and August 12 (US CPI).",
-      "asOf": "2026-07-31T08:58:39.865Z"
+      "headline": "Eurozone HICP already confirmed higher; US CPI rebound highly likely too",
+      "summary": "Eurostat's flash estimate shows eurozone inflation accelerated to 2.9% in July from 2.8%, driven by a jump in energy prices, while surging oil and gasoline costs, a 96-cent Kalshi price on a positive core CPI print, and consensus forecaster views all point to a US CPI rebound after June's energy-driven dip. Both conditions look on track to be met, though the official US July CPI release on August 12 remains the key confirming data point.",
+      "asOf": "2026-08-01T08:29:13.006Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY spreads drift wider to 2.77-2.84%, driven by rates not credit stress",
-      "summary": "High yield OAS has widened modestly (up ~15bps to 278bps) mainly due to a Treasury selloff and rate volatility rather than credit deterioration, with spreads still in the lower third of their five-year range; AI-related hyperscaler debt issuance and elevated capex are a watch item, but no imminent Fed action or credit shock points to a dramatic 30-day break wider.",
-      "asOf": "2026-07-31T08:59:28.050Z"
-    },
-    {
-      "id": "crypto",
-      "domain": "Crypto Market Dynamics",
-      "headline": "BTC ETF flows flip positive July 30, but pattern remains fragile",
-      "summary": "A $233M inflow day led by IBIT snapped a rough four-session, $526M outflow stretch and turned weekly/monthly flows positive, but with July's $205M total the weakest month on record and flows whipsawing between inflows and outflows every few days, sustained net inflows over the next week are far from assured.",
-      "asOf": "2026-07-31T09:00:04.928Z"
-    },
-    {
-      "id": "geopolitics",
-      "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX plunges 17% off spike high, but Fed uncertainty lingers",
-      "summary": "VIX dropped to 17.09 (-17.28%) after briefly hitting 20.66 on Fed rate-hold jitters, but new chair Warsh's anti-forward-guidance stance and rising hawkish-hike odds (46.9%) suggest volatility could reassert above its 3-month average within 30 days.",
-      "asOf": "2026-07-31T09:00:39.195Z"
-    },
-    {
-      "id": "ai",
-      "domain": "Frontier AI & Energy",
-      "headline": "OpenAI, Chevron/Microsoft, NRG deals confirm near-certain YES resolution",
-      "summary": "Within the past 30 days OpenAI secured 3.2GW from Georgia Power for Project Camellia while Chevron signed a 20-year dedicated power deal with Microsoft and expanded its 4GW behind-the-meter turbine buildout, alongside NRG/LandBridge and Brookfield/Bloom Energy agreements — deal velocity is now essentially weekly, making this question resolve YES with near certainty.",
-      "asOf": "2026-07-31T09:01:32.463Z"
+      "headline": "HY spreads near cycle tights, but risks tilt toward widening",
+      "summary": "The BofA HY OAS sits at 2.87 (near multi-year tights vs. a 4.9% historical average), with this week's modest widening driven by a rate selloff amid oil/Iran tensions rather than credit deterioration. Fed held rates steady with a data-dependent stance, and strong issuance/ETF demand offsets bearish flags from PineBridge and Man Group about 2026 supply-driven widening risk.",
+      "asOf": "2026-08-01T08:30:00.814Z"
     }
   ]
 }
