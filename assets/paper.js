@@ -51,7 +51,7 @@
         ? `<a href="${esc(item.source)}" target="_blank" rel="noreferrer">${esc(String(item.source).replace(/^https?:\/\//, ""))}</a>`
         : "";
       const tag = [item.category, item.relevance].filter(Boolean).join(" · ");
-      return `<p class="meta">${tag ? esc(tag) + " · " : ""}${esc(item.value)} ${esc(item.unit)} · ${esc(item.observedOn)}${href ? " · " + href : ""}</p><p>${esc(item.point)}</p>`;
+      return `<div class="print"><p class="meta">${tag ? esc(tag) + " · " : ""}${esc(item.value)} ${esc(item.unit)} · ${esc(item.observedOn)}</p><p>${esc(item.point)}</p>${href ? `<p class="src">${href}</p>` : ""}</div>`;
     }).join("");
     const gaps = (topic.gaps || []).slice(0, 3).map((gap) => `<p class="muted">${esc(gap)}</p>`).join("");
     return `<li>

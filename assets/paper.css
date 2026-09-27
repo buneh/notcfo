@@ -26,8 +26,9 @@ button { font: inherit; cursor: pointer; }
 ::selection { background: #f4e6e2; }
 
 .top, .foot, .page {
-  width: min(72rem, calc(100% - 2rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  width: min(72rem, 100%);
   margin-inline: auto;
+  padding-inline: max(1.25rem, env(safe-area-inset-left), env(safe-area-inset-right));
 }
 .top {
   display: flex;
@@ -35,7 +36,7 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem 1.5rem;
-  padding: 1rem 0;
+  padding-block: 1rem;
 }
 .shell { border-bottom: 1px solid var(--line); }
 .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; flex-shrink: 0; }
@@ -72,7 +73,7 @@ nav a {
 }
 nav a[aria-current="page"] { color: var(--ink); }
 
-.page { padding: 2rem 0 3rem; }
+.page { padding-block: 2rem 3rem; }
 .kicker {
   margin: 0;
   color: var(--oxblood);
@@ -128,25 +129,22 @@ nav a[aria-current="page"] { color: var(--ink); }
 .block h2 { margin: 0.35rem 0 0; font-size: 1.9rem; }
 .more { color: var(--oxblood); text-decoration: none; font-size: 0.95rem; }
 
-.cards { display: grid; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
-.cards li { border-top: 1px solid var(--line); padding-top: 1rem; }
-.cards h3 { margin: 0.2rem 0; font-size: 1.45rem; }
 .domain, .meta {
   margin: 0;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-.cards a {
-  color: var(--oxblood);
-  font-size: 0.85rem;
-  letter-spacing: 0;
-  text-transform: none;
   overflow-wrap: anywhere;
 }
+.cards { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.cards li { min-width: 0; border-top: 1px solid var(--line); padding: 1.15rem 0 1.35rem; }
+.cards h3 { margin: 0.35rem 0 0; font-size: 1.45rem; overflow-wrap: break-word; }
 .cards p, .call p { margin: 0.35rem 0 0; }
+.print { margin-top: 0.85rem; }
+.print p { margin: 0.25rem 0 0; }
+.src, .src a { display: block; margin: 0.15rem 0 0; color: var(--oxblood); font-size: 0.8rem; letter-spacing: 0; text-transform: none; overflow-wrap: anywhere; }
 
 .calls { margin: 0; padding: 0; list-style: none; }
 .call {
@@ -183,7 +181,7 @@ nav a[aria-current="page"] { color: var(--ink); }
   width: fit-content;
 }
 
-.prose { width: min(44rem, calc(100% - 2rem)); }
+.prose { width: min(44rem, 100%); }
 .prose h1 { margin: 0.5rem 0 0; font-size: clamp(2.4rem, 5vw, 3.2rem); }
 .steps, .roles { margin: 2.5rem 0 0; padding: 0; list-style: none; }
 .steps li, .roles li {
@@ -212,7 +210,7 @@ nav a[aria-current="page"] { color: var(--ink); }
 }
 .score .prob { font-size: 3.6rem; }
 .footwrap { border-top: 1px solid var(--line); }
-.foot { padding: 2rem 0; color: var(--muted); font-size: 0.95rem; }
+.foot { padding-block: 2rem; color: var(--muted); font-size: 0.95rem; }
 .foot a { color: var(--oxblood); }
 
 .oracle { display: grid; gap: 2.5rem; }
@@ -273,7 +271,9 @@ nav a[aria-current="page"] { color: var(--ink); }
   .hero { gap: 1.25rem; padding-bottom: 1.5rem; }
   .hero h1 { font-size: clamp(2.05rem, 11vw, 2.7rem); }
   .lede { font-size: 1.05rem; }
-  .block { margin-top: 2.25rem; }
+  .block-head { flex-direction: column; align-items: flex-start; gap: 0.35rem; margin-bottom: 0.25rem; }
+  h1, h2, h3 { text-wrap: wrap; }
+  .cards { grid-template-columns: 1fr; }
   .block h2, .note h2 { font-size: 1.55rem; }
   .cards h3, .steps h2, .roles strong { font-size: 1.28rem; }
   .stats { gap: 0.4rem; padding: 0.75rem; }
@@ -291,12 +291,14 @@ nav a[aria-current="page"] { color: var(--ink); }
 }
 @media (min-width: 800px) {
   .hero { grid-template-columns: 1.4fr 1fr; }
-  .cards { grid-template-columns: 1fr 1fr; }
   .call { grid-template-columns: 7rem 1fr auto; align-items: baseline; }
   .split { grid-template-columns: 1fr 1fr; }
   .steps li, .roles li { grid-template-columns: 3rem 1fr; }
   .roles li { grid-template-columns: 9rem 1fr; }
   .sheet { grid-template-columns: 1fr 16rem; }
+}
+@media (min-width: 960px) {
+  .cards { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; }
 }
 @media (min-width: 900px) {
   .oracle { grid-template-columns: 22rem 1fr; align-items: start; }
