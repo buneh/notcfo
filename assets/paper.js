@@ -78,6 +78,45 @@
     scholar: "#243656",
   };
 
+  function deskPeak(ballots) {
+    const z90 = 1.2815515655446004;
+    const rows = (ballots || []).filter((row) => Number.isFinite(row.lo) && Number.isFinite(row.hi) && row.hi > row.lo && Number.isFinite(row.mid));
+    if (!rows.length) return null;
+    const models = rows.map((row) => ({ mid: row.mid, sigma: (row.hi - row.lo) / (2 * z90) }));
+    const minX = Math.min(...models.map((row) => row.mid - 4 * row.sigma));
+    const maxX = Math.max(...models.map((row) => row.mid + 4 * row.sigma));
+    let bestX = models[0].mid;
+    let bestY = -1;
+    for (let x = minX; x <= maxX + 1e-9; x += 0.01) {
+      const y = models.reduce((sum, row) => sum + normalPdf(x, row.mid, row.sigma), 0) / models.length;
+      if (y > bestY) {
+        bestY = y;
+        bestX = x;
+      }
+    }
+    return Math.round(bestX * 10) / 10;
+  }
+
+  function withDeskForecasts(call) {
+    const latest = Number(call.latest && call.latest.value);
+    const horizons = (call.horizons || []).map((row) => {
+      const point = deskPeak(call.curves && call.curves[row.id]);
+      return point == null ? row : { ...row, point };
+    });
+    const labels = { "1m": "1 month", "3m": "3 months", "6m": "6 months", "1y": "1 year" };
+    const bits = horizons.map((row) => {
+      const point = Number(row.point);
+      const label = labels[row.id] || row.id;
+      if (!Number.isFinite(point)) return `${label} n/a`;
+      if (!Number.isFinite(latest)) return `${label} ${point.toFixed(1)}%`;
+      const delta = Math.round((point - latest) * 10) / 10;
+      const sign = delta > 0 ? "+" : "";
+      return `${label} ${point.toFixed(1)}% (${sign}${delta.toFixed(1)} pp)`;
+    });
+    const base = Number.isFinite(latest) ? `${latest.toFixed(1)}% now` : "the latest print";
+    return { ...call, horizons, forecast: `${call.domain} versus ${base}: ${bits.join(", ")}.` };
+  }
+
   function normalPdf(x, mid, sigma) {
     const z = (x - mid) / sigma;
     return Math.exp(-0.5 * z * z) / (sigma * Math.sqrt(2 * Math.PI));
@@ -104,17 +143,25 @@
     const X = (x) => box.l + ((x - minX) / (maxX - minX)) * (w - box.l - box.r);
     const Y = (y) => box.t + (1 - y / peak) * (h - box.t - box.b);
     const path = (ys) => ys.map((y, i) => `${i ? "L" : "M"}${X(xs[i]).toFixed(1)},${Y(y).toFixed(1)}`).join("");
-    const lines = sigmas.map((row, i) => `<path d="${path(series[i])}" fill="none" stroke="${ROLE_INK[row.role] || "#1b1814"}" stroke-width="1.4"/>`).join("");
+    const forecast = deskPeak(rows);
+    const lines = sigmas.map((row, i) => `<path d="${path(series[i])}" fill="none" stroke="${ROLE_INK[row.role] || "#1b1814"}" stroke-width="1.4" stroke-opacity="0.7"/>`).join("");
     const ticks = [minX, (minX + maxX) / 2, maxX];
     const labels = ticks.map((x) => `<text x="${X(x).toFixed(1)}" y="${h - 8}" text-anchor="middle" fill="#6f675c" font-size="11">${x.toFixed(1)}%</text>`).join("");
     const mark = Number.isFinite(latest)
       ? `<line x1="${X(latest).toFixed(1)}" x2="${X(latest).toFixed(1)}" y1="${box.t}" y2="${h - box.b}" stroke="#8f2d2b" stroke-dasharray="3 3" stroke-width="1"/>`
       : "";
+    let forecastMark = "";
+    if (Number.isFinite(forecast)) {
+      const x = X(forecast);
+      const anchor = x > w - 56 ? "end" : "start";
+      const tx = anchor === "end" ? x - 4 : x + 4;
+      forecastMark = `<line x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${box.t}" y2="${h - box.b}" stroke="#1b1814" stroke-width="1.25"/><text x="${tx.toFixed(1)}" y="${box.t + 12}" text-anchor="${anchor}" fill="#1b1814" font-size="11">${forecast.toFixed(1)}%</text>`;
+    }
     return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(HORIZON_LABEL[id] || id)} density">
       <text x="${box.l}" y="13" fill="#1b1814" font-size="12">${esc(HORIZON_LABEL[id] || id)}</text>
       <text x="4" y="${box.t + 4}" fill="#6f675c" font-size="10">density</text>
       <line x1="${box.l}" x2="${w - box.r}" y1="${h - box.b}" y2="${h - box.b}" stroke="#ddd4c6"/>
-      ${mark}${lines}<path d="${path(mix)}" fill="none" stroke="#8f2d2b" stroke-width="2.2"/>${labels}
+      ${mark}${lines}<path d="${path(mix)}" fill="none" stroke="#8f2d2b" stroke-width="2.2" stroke-opacity="1"/>${forecastMark}${labels}
     </svg>`;
   }
 
@@ -125,16 +172,18 @@
     const latest = Number(call.latest && call.latest.value);
     const sample = curves[ids[0]] || [];
     const legend = sample.map((row) => `<span><i style="background:${ROLE_INK[row.role] || "#1b1814"}"></i>${esc(row.title)}</span>`).join("");
-    return `<figure class="curves">${ids.map((id) => curvePanel(id, curves[id], latest)).join("")}<figcaption><p class="legend">${legend}<span><i style="background:#8f2d2b"></i>Desk</span></p><p>Probability density of the year-over-year rate. Each line is one ballot, from that ballot's 10th to 90th percentile. The dashed mark is today's print.</p></figcaption></figure>`;
+    return `<figure class="curves">${ids.map((id) => curvePanel(id, curves[id], latest)).join("")}<figcaption><p class="legend">${legend}<span><i style="background:#8f2d2b"></i>Desk</span></p><p>Probability density of the year-over-year rate. Ballot lines are at 70% opacity. The desk line is solid. The solid vertical line is the forecast, at the peak of the desk density. The dashed mark is today's print.</p></figcaption></figure>`;
   }
 
   function callRow(call) {
+    call = withDeskForecasts(call);
     const due = callDue(call.calledAt, call.horizon);
     return `<li class="call">
       ${(call.horizons || []).length ? horizonGrid(call) : `<p class="prob">${esc(call.probability)}</p>`}
       <div>
         <p class="domain">${esc(call.domain)}</p>
         <p class="q">${esc(call.question)}</p>
+        <p>${esc(call.forecast)}</p>
         <p class="meta">${due ? "Closed" : "Open"}${call.latest ? ` · latest ${esc(call.latest.value)}% · ${esc(call.latest.observedOn)}` : ` · ${esc(fmtDate(call.calledAt))}`}</p>
       </div>
       ${curveFigure(call)}
@@ -142,6 +191,7 @@
   }
 
   function callSheet(call) {
+    call = withDeskForecasts(call);
     const due = callDue(call.calledAt, call.horizon);
     return `<article class="sheet">
       <div>

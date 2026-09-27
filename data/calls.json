@@ -21,7 +21,7 @@
         {
           "id": "6m",
           "probability": 52,
-          "point": 3.1
+          "point": 3.2
         },
         {
           "id": "1y",
@@ -34,7 +34,7 @@
         "observedOn": "2026-08-31",
         "unit": "% YoY"
       },
-      "forecast": "US CPI versus 3.4% now: 1 month 3.3% (-0.1 pp), 3 months 3.3% (-0.1 pp), 6 months 3.1% (-0.3 pp), 1 year 3.0% (-0.4 pp).",
+      "forecast": "US CPI versus 3.4% now: 1 month 3.3% (-0.1 pp), 3 months 3.3% (-0.1 pp), 6 months 3.2% (-0.2 pp), 1 year 3.0% (-0.4 pp).",
       "resolutionCriteria": "Yes if US CPI headline year-over-year exceeds 3.4% at the 1-month horizon.",
       "curves": {
         "1m": [
@@ -299,17 +299,17 @@
         {
           "id": "3m",
           "probability": 48,
-          "point": 2.8
+          "point": 2.9
         },
         {
           "id": "6m",
           "probability": 51,
-          "point": 2.6
+          "point": 2.7
         },
         {
           "id": "1y",
           "probability": 53,
-          "point": 2.3
+          "point": 2.5
         }
       ],
       "latest": {
@@ -317,7 +317,7 @@
         "observedOn": "2026-08-31",
         "unit": "% YoY"
       },
-      "forecast": "Eurozone CPI versus 3.2% now: 1 month 3.1% (-0.1 pp), 3 months 2.8% (-0.4 pp), 6 months 2.6% (-0.6 pp), 1 year 2.3% (-0.9 pp).",
+      "forecast": "Eurozone CPI versus 3.2% now: 1 month 3.1% (-0.1 pp), 3 months 2.9% (-0.3 pp), 6 months 2.7% (-0.5 pp), 1 year 2.5% (-0.7 pp).",
       "resolutionCriteria": "Eurozone HICP headline YoY above 3.2% counts as yes at the 1-month horizon.",
       "curves": {
         "1m": [

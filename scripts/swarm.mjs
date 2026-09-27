@@ -803,6 +803,25 @@ async function chiefOfStaff(q, board, reading) {
   return { fault, order, updatedAt: new Date().toISOString() };
 }
 
+function deskMode(bands) {
+  const z90 = 1.2815515655446004;
+  const rows = (bands || []).filter((row) => row && Number.isFinite(row.lo) && Number.isFinite(row.hi) && row.hi > row.lo && Number.isFinite(row.mid));
+  if (!rows.length) return null;
+  const models = rows.map((row) => ({ mid: row.mid, sigma: (row.hi - row.lo) / (2 * z90) }));
+  const minX = Math.min(...models.map((row) => row.mid - 4 * row.sigma));
+  const maxX = Math.max(...models.map((row) => row.mid + 4 * row.sigma));
+  let bestX = models[0].mid;
+  let bestY = -1;
+  for (let x = minX; x <= maxX + 1e-9; x += 0.01) {
+    const y = models.reduce((sum, row) => sum + Math.exp(-0.5 * ((x - row.mid) / row.sigma) ** 2) / (row.sigma * Math.sqrt(2 * Math.PI)), 0) / models.length;
+    if (y > bestY) {
+      bestY = y;
+      bestX = x;
+    }
+  }
+  return Math.round(bestX * 10) / 10;
+}
+
 async function vote(q, board) {
   console.log(`[${q.id}] ${ROLES.length} ballots, no cross-talk`);
   const settled = await Promise.all(
@@ -825,7 +844,7 @@ async function vote(q, board) {
   const horizons = HORIZONS.map((id) => ({
     id,
     probability: median(ballots.map((ballot) => ballot.probs[id])),
-    point: pointOf(id),
+    point: deskMode(ballots.map((ballot) => ballot.bands?.[id]).filter(Boolean)) ?? pointOf(id),
   }));
   const month = horizons.find((row) => row.id === "1m");
   const thinEvidenceCount = ballots.filter((ballot) => ballot.thin).length;
