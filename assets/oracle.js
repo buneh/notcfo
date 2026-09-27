@@ -7,6 +7,7 @@
     { id: "quant", title: "Quant", brief: "What the price already says.", instruction: "Start from what prices, spreads, vols, or betting markets already imply. If none are in the board, set thin to true and stay near 50." },
     { id: "historian", title: "Historian", brief: "The closest analogue.", instruction: "Use the closest precedent in the board. If there is no analogue, say so rather than inventing one, and set thin to true." },
     { id: "contrarian", title: "Contrarian", brief: "The neglected mechanism.", instruction: "Identify a neglected mechanism, not the reflexive opposite. Move far from 50 only when that mechanism is concrete in the evidence." },
+    { id: "scholar", title: "Scholar", brief: "Behavior, not another macro story.", instruction: "Read the series from the psychological and behavioral side: positioning, fear, or habit the numbers already show. If the board has no positioning or behavior, set thin to true and stay near 50. Do not invent a public mood." },
   ];
   const DOMAINS = {
     macro: "Macro Health & Sentiment",

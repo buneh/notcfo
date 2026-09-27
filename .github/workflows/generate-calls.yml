@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "notcfo-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/calls.json data/signal.json data/resolution-drafts.json
+          git add data/calls.json data/signal.json data/resolution-drafts.json data/archive.json data/standing-orders.json data/readings.json
           if git diff --staged --quiet; then
             echo "Nothing changed — skipping commit."
             exit 0

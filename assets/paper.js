@@ -50,7 +50,8 @@
       const href = item.source && String(item.source).indexOf("http") === 0
         ? `<a href="${esc(item.source)}" target="_blank" rel="noreferrer">${esc(String(item.source).replace(/^https?:\/\//, ""))}</a>`
         : "";
-      return `<p class="meta">${esc(item.value)} ${esc(item.unit)} · ${esc(item.observedOn)}${href ? " · " + href : ""}</p><p>${esc(item.point)}</p>`;
+      const tag = [item.category, item.relevance].filter(Boolean).join(" · ");
+      return `<p class="meta">${tag ? esc(tag) + " · " : ""}${esc(item.value)} ${esc(item.unit)} · ${esc(item.observedOn)}${href ? " · " + href : ""}</p><p>${esc(item.point)}</p>`;
     }).join("");
     const gaps = (topic.gaps || []).slice(0, 3).map((gap) => `<p class="muted">${esc(gap)}</p>`).join("");
     return `<li>
@@ -59,7 +60,7 @@
       <p class="muted">${esc(topic.summary)}</p>
       ${rows}
       ${gaps}
-      ${topic.asOf ? `<p class="meta">${esc(fmtDate(topic.asOf))}</p>` : ""}
+      ${topic.desk ? `<p class="meta">Desk reading ${esc(topic.desk.median)} · dissent ${esc(topic.desk.dissent)} · not the standing call</p>` : ""}
     </li>`;
   }
 
