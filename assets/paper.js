@@ -55,7 +55,16 @@
   function horizonGrid(call) {
     return `<div class="hz">${(call.horizons || []).map((row) => {
       const rate = Number(row.point);
-      const rateText = Number.isFinite(rate) ? rate.toFixed(1) + "%" : "";
+      const latest = Number(call.latest && call.latest.value);
+      let rateText = "";
+      if (Number.isFinite(rate)) {
+        rateText = rate.toFixed(1) + "%";
+        if (Number.isFinite(latest)) {
+          const delta = Math.round((rate - latest) * 10) / 10;
+          const sign = delta > 0 ? "+" : "";
+          rateText += " · " + sign + delta.toFixed(1) + " pp";
+        }
+      }
       return `<div><b>${esc(row.probability)}%</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(rateText)}</span></div>`;
     }).join("")}</div>`;
   }

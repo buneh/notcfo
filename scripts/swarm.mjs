@@ -163,10 +163,13 @@ function clamp(n) {
   return Math.max(0, Math.min(100, Math.round(x)));
 }
 
-function median(nums) {
-  const s = [...nums].sort((a, b) => a - b);
+function median(nums, digits = 0) {
+  const s = [...nums].map(Number).filter((n) => Number.isFinite(n)).sort((a, b) => a - b);
+  if (!s.length) return null;
   const mid = Math.floor(s.length / 2);
-  return s.length % 2 ? s[mid] : Math.round((s[mid - 1] + s[mid]) / 2);
+  const value = s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+  const factor = 10 ** digits;
+  return Math.round(value * factor) / factor;
 }
 
 function safeErr(status, raw) {
@@ -765,7 +768,7 @@ async function vote(q, board) {
   const pointOf = (horizon) => {
     const nums = ballots.map((ballot) => ballot.points?.[horizon]).filter((n) => Number.isFinite(n));
     if (!nums.length) return board.latest ? board.latest.value : null;
-    return Math.round(median(nums) * 10) / 10;
+    return median(nums, 1);
   };
   const horizons = HORIZONS.map((id) => ({
     id,
@@ -794,6 +797,22 @@ async function vote(q, board) {
   };
 }
 
+function forecastFromPoints(q, board, horizons) {
+  const latest = Number(board.latest && board.latest.value);
+  const labels = { "1m": "1 month", "3m": "3 months", "6m": "6 months", "1y": "1 year" };
+  const bits = horizons.map((row) => {
+    const point = Number(row.point);
+    const label = labels[row.id] || row.id;
+    if (!Number.isFinite(point)) return `${label} n/a`;
+    if (!Number.isFinite(latest)) return `${label} ${point.toFixed(1)}%`;
+    const delta = Math.round((point - latest) * 10) / 10;
+    const sign = delta > 0 ? "+" : "";
+    return `${label} ${point.toFixed(1)}% (${sign}${delta.toFixed(1)} pp)`;
+  });
+  const base = Number.isFinite(latest) ? `${latest.toFixed(1)}% now` : "the latest print";
+  return `${q.domain} versus ${base}: ${bits.join(", ")}.`;
+}
+
 async function generateCall(q, board, reading) {
   const prose = await speak(q, board, reading.ballots, reading.probability);
   return {
@@ -804,7 +823,7 @@ async function generateCall(q, board, reading) {
     probability: reading.probability,
     horizons: reading.horizons,
     latest: board.latest || null,
-    forecast: prose.forecast,
+    forecast: forecastFromPoints(q, board, reading.horizons),
     resolutionCriteria: prose.resolutionCriteria,
     calledAt: new Date().toISOString(),
     _debug: {
@@ -890,7 +909,7 @@ async function main() {
           role: ballot.role,
           title: ballot.title,
           probability: ballot.probs["1m"],
-          point: ballot.points?.["1m"],
+          points: ballot.points,
           thin: ballot.thin,
           thesis: ballot.thesis,
         })),
