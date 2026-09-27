@@ -163,7 +163,13 @@ nav a[aria-current="page"] { color: var(--ink); }
 .hz { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.35rem; }
 .hz b { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 450; line-height: 1; font-variant-numeric: tabular-nums; }
 .hz span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.call .q { margin: 0.25rem 0 0; }
+.sheet .curves, .call .curves { grid-column: 1 / -1; }
+.curves { margin: 0.85rem 0 0; }
+.curves svg { width: 100%; height: auto; display: block; margin-top: 0.35rem; }
+.curves figcaption { margin-top: 0.45rem; color: var(--muted); font-size: 0.82rem; }
+.curves figcaption p { margin: 0.25rem 0 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 0.3rem 0.85rem; }
+.legend i { display: inline-block; width: 0.85rem; height: 2px; margin-right: 0.3rem; vertical-align: middle; }
 
 .split {
   display: grid;
