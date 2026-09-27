@@ -87,7 +87,7 @@
     }
 
     (Array.isArray(row.items) ? row.items : []).forEach(function (item) {
-      if (items.length >= 8) return;
+      if (items.length >= 10) return;
       const point = clip(item && item.point, 320);
       const value = clip(item && item.value, 32);
       const unit = clip(item && item.unit, 24);
