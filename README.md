@@ -20,12 +20,7 @@ data, market pricing, deal flow, expert commentary, social discourse,
 historical precedent, practitioner accounts, cross-domain analogy, peer
 benchmarking, academic literature) rather than one vague summary.
 
-- **The Oracle** — on-demand, visitor-triggered, using the visitor's own
-  Anthropic API key. Five independent reasoning personas (Analyst,
-  Skeptic, Quant, Historian, Contrarian) forecast with no cross-talk,
-  then one synthesis pass converges on a consensus and names the
-  strongest dissent. Four horizons every run: 24 hours, 1 week, 1 month,
-  1 year.
+- **The Oracle** — on-demand, on [oracle.html](https://notcfo.com/oracle.html). The visitor's own xAI key, held in that tab only. Five ballots forecast with no cross-talk. The one-month number is their median. The speaker writes the sentence and does not move it. Four horizons every run.
 - **The Orchestra** — scheduled, runs itself once daily with no human
   trigger, using a server-side xAI key. One search, then five ballots
   (Analyst, Skeptic, Quant, Historian, Contrarian) that cannot see each
@@ -77,7 +72,7 @@ notcfo/
 Static site on GitHub Pages. Generation and resolution happen via
 scheduled GitHub Actions calling the xAI API server-side — no backend,
 no database. The secret is `XAI_API_KEY`. The Oracle still runs in the
-browser on the visitor's own Anthropic key, held in memory only.
+browser on the visitor's own xAI key, held in memory only.
 
 ## Security
 

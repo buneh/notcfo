@@ -57,6 +57,7 @@ nav a {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
+  white-space: nowrap;
 }
 nav a[aria-current="page"] { color: var(--ink); }
 
@@ -196,6 +197,48 @@ nav a[aria-current="page"] { color: var(--ink); }
 .foot { padding: 2rem 0; color: var(--muted); font-size: 0.95rem; }
 .foot a { color: var(--oxblood); }
 
+.oracle { display: grid; gap: 2.5rem; }
+.ask { display: flex; flex-direction: column; gap: 1rem; }
+.ask label, .ask legend { font-size: 0.95rem; }
+.ask textarea, .ask input[type="password"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.75rem;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; border: 0; margin: 0; padding: 0; }
+.chips button, .try button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+}
+.chips button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.try { display: flex; flex-direction: column; gap: 0.35rem; }
+.try button { border: 0; text-align: left; color: var(--muted); padding: 0.2rem 0; min-height: 0; }
+.ask .btn { border: 0; justify-content: center; }
+.ask .btn:disabled { opacity: 0.5; cursor: default; }
+.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; border-block: 1px solid var(--line); padding: 1rem 0; margin: 1rem 0; list-style: none; }
+.phases span { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.phases .now span, .phases .done span { color: var(--oxblood); }
+.phases strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 450; }
+.phases .wait strong { color: var(--muted); }
+.alert { border: 1px solid var(--oxblood); background: #f4e6e2; padding: 0.75rem 1rem; }
+.ev, .ballots { margin: 0; padding: 0; list-style: none; }
+.ev li, .ballots li { display: grid; gap: 0.35rem; border-top: 1px solid var(--line); padding: 1rem 0; }
+.ev a { color: var(--oxblood); font-size: 0.9rem; word-break: break-all; }
+.bars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; align-items: end; height: 9rem; margin-top: 1rem; }
+.bars div { display: flex; flex-direction: column; justify-content: end; height: 100%; gap: 0.35rem; }
+.bars i { display: block; background: var(--oxblood); min-height: 2px; }
+.bars b { font-family: var(--serif); font-weight: 450; }
+.pair { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+.panel { border: 1px solid var(--line); background: var(--paper-2); padding: 1rem; }
+.past { margin: 2rem 0 0; padding: 0; list-style: none; }
+.past button { display: flex; flex-direction: column; gap: 0.2rem; width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--line); padding: 0.75rem 0; color: inherit; }
+
 @media (min-width: 800px) {
   .hero { grid-template-columns: 1.4fr 1fr; }
   .cards { grid-template-columns: 1fr 1fr; }
@@ -204,4 +247,11 @@ nav a[aria-current="page"] { color: var(--ink); }
   .steps li, .roles li { grid-template-columns: 3rem 1fr; }
   .roles li { grid-template-columns: 9rem 1fr; }
   .sheet { grid-template-columns: 1fr 16rem; }
+}
+@media (min-width: 900px) {
+  .oracle { grid-template-columns: 22rem 1fr; align-items: start; }
+  .ask { position: sticky; top: 1rem; }
+  .ev li { grid-template-columns: 8rem 1fr; }
+  .ballots li { grid-template-columns: 11rem 1fr; }
+  .pair { grid-template-columns: 1fr 1fr; }
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ask the notcfo oracle. One search, five ballots, a median computed in the browser.">
+<meta name="theme-color" content="#f4f0e6">
+<title>Oracle — notcfo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/paper.css">
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <a class="brand" href="/"><span class="mark">n</span><span class="word">notcfo</span></a>
+    <nav aria-label="Sections">
+      <a href="/">Desk</a>
+      <a href="/oracle.html" aria-current="page">Oracle</a>
+      <a href="/orchestra.html">Orchestra</a>
+      <a href="/notes.html">Notes</a>
+      <a href="/method.html">Method</a>
+    </nav>
+  </header>
+</div>
+<main class="page">
+  <div class="oracle">
+    <form class="ask" id="ask">
+      <div>
+        <p class="kicker">Oracle</p>
+        <h1 style="margin:0.4rem 0 0;font-size:clamp(2.2rem,4vw,2.8rem)">Ask the swarm</h1>
+        <p class="muted">Four horizons on every consult. The one-month median is the headline.</p>
+      </div>
+      <label>xAI key for this tab
+        <input id="key" type="password" name="key" autocomplete="off" placeholder="xai-..." required>
+      </label>
+      <p class="muted" style="margin:0;font-size:0.85rem">Held in this tab’s memory only. Never saved, never sent anywhere but xAI. The repository secret runs the daily orchestra. It is not available to this page. Create a key at <a href="https://console.x.ai/" style="color:var(--oxblood)">console.x.ai</a>.</p>
+      <label>Question
+        <textarea id="question" rows="5" maxlength="500" required>Will the next published US CPI year-over-year headline be higher than the most recent print?</textarea>
+      </label>
+      <fieldset class="chips">
+        <legend>Domain</legend>
+        <button type="button" data-domain="macro" aria-pressed="true">Macro</button>
+        <button type="button" data-domain="markets" aria-pressed="false">Markets</button>
+        <button type="button" data-domain="crypto" aria-pressed="false">Crypto</button>
+        <button type="button" data-domain="geopolitics" aria-pressed="false">Geopolitics</button>
+        <button type="button" data-domain="ai" aria-pressed="false">Frontier</button>
+      </fieldset>
+      <div class="try">
+        <p class="domain">Try</p>
+        <button type="button" data-domain="macro" data-question="Will the next published US CPI year-over-year headline be higher than the most recent print?">Will the next published US CPI year-over-year headline be higher than the most recent print?</button>
+        <button type="button" data-domain="markets" data-question="Will the ICE BofA US High Yield Index option-adjusted spread be wider in 30 days than it is today?">Will the ICE BofA US High Yield Index option-adjusted spread be wider in 30 days than it is today?</button>
+        <button type="button" data-domain="crypto" data-question="Will US-listed spot Bitcoin ETFs register net inflows over the next 7 days?">Will US-listed spot Bitcoin ETFs register net inflows over the next 7 days?</button>
+      </div>
+      <button class="btn" id="go" type="submit">Ask the swarm</button>
+      <p class="muted" style="margin:0;font-size:0.85rem">One search and five short ballots. Nothing runs until you press the button.</p>
+    </form>
+    <div>
+      <div id="result"></div>
+      <div id="past"></div>
+    </div>
+  </div>
+</main>
+<div class="footwrap">
+  <footer class="foot">
+    <p>Shota Zhvania, with a Grok swarm. Forecasts can be wrong. Criteria are written first.</p>
+    <p><a href="/about.html">About</a> · <a href="/desk.html">Desk</a></p>
+  </footer>
+</div>
+<script src="/assets/oracle.js"></script>
+</body>
+</html>
