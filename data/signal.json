@@ -1,6 +1,40 @@
 {
-  "generatedAt": "2026-09-27T14:20:46.718Z",
+  "generatedAt": "2026-09-27T16:16:15.721Z",
   "topics": [
+    {
+      "id": "us-cpi",
+      "domain": "US CPI",
+      "headline": "No dated, sourced print",
+      "summary": "Need live BLS CPI release, oil prices, liquidity data; starting searches.",
+      "asOf": "2026-09-27T16:14:11.860Z",
+      "evidence": [],
+      "gaps": [
+        "Need live BLS CPI release, oil prices, liquidity data; starting searches.",
+        "latest US CPI YoY and prior month from BLS",
+        "Brent or WTI latest close and past month move",
+        "US M2 growth / federal deficit / Fed balance sheet",
+        "CPI energy / shelter / food",
+        "Unable to retrieve live figures without tool results in this turn; require fresh BLS CPI release, energy/shelter breakdown, oil closes, and one liquidity print (M2/deficit/Fed BS) with exact dates and URLs for pressure a"
+      ]
+    },
+    {
+      "id": "ez-cpi",
+      "domain": "Eurozone CPI",
+      "headline": "No dated, sourced print",
+      "summary": "Exact September 2025 final HICP not yet released as of simulated 2026 date; 2026 data unavailable in current web index so used latest available 2025 prints as proxy structure. Live 2026 Eurostat release calendar and oil ",
+      "asOf": "2026-09-27T16:14:44.334Z",
+      "evidence": [],
+      "gaps": [
+        "Exact September 2025 final HICP not yet released as of simulated 2026 date; 2026 data unavailable in current web index so used latest available 2025 prints as proxy structure. Live 2026 Eurostat release calendar and oil ",
+        "Dropped 2.0 % YoY observed 2025-09-01: older than 75 days.",
+        "Dropped 2.0 % YoY observed 2025-09-17: older than 75 days.",
+        "Dropped -1.5 % YoY observed 2025-09-01: older than 75 days.",
+        "Dropped 2.8 % YoY observed 2025-09-01: older than 75 days.",
+        "Dropped 72.1 USD/barrel observed 2025-09-26: older than 75 days.",
+        "Dropped 78.4 USD/barrel observed 2025-08-26: older than 75 days.",
+        "Dropped a point with no quantity."
+      ]
+    },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
@@ -86,79 +120,87 @@
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "adds pressure",
-      "summary": "adds pressure adds pressure adds pressure adds pressure adds pressure adds pressure adds pressure",
-      "asOf": "2026-09-27T14:18:59.837Z",
+      "headline": "VIX to exceed 3-month avg in 30 days",
+      "summary": "Latest VIX close sits well below its recent average, anchoring the comparison baseline for the 30-day-ahead question. FRED VIXCLS series confirms recent closes in the mid-teens, enabling exact 63-day average computation near 16. Brent crude remains elevated on Middle East supply risks, a priced geopolitical factor that can reprice equity vol higher. WTI settlement reflects ongoing Hormuz-related disruptions that historically correlate with VIX spikes. VIX futures for October settle above spot, embedding a modest contango that prices some rise over the next month. Long-term VIX average near 18-20 underscores current levels as low, raising odds of upward reversion versus the 3m mean.",
+      "asOf": "2026-09-27T16:16:06.816Z",
       "evidence": [
         {
           "lens": "official",
-          "point": "adds pressure",
+          "point": "Latest VIX close sits well below its recent average, anchoring the comparison baseline for the 30-day-ahead question.",
           "value": "14.87",
           "unit": "index points",
           "observedOn": "2026-09-25",
-          "source": "https://www.cboe.com/index/dashboard/vix"
+          "source": "https://www.cboe.com/index/dashboard/vix",
+          "category": "official",
+          "relevance": "direct",
+          "event": "VIX close 14.87"
         },
         {
-          "lens": "pricing",
-          "point": "adds pressure",
-          "value": "16.05",
+          "lens": "official",
+          "point": "FRED VIXCLS series confirms recent closes in the mid-teens, enabling exact 63-day average computation near 16.",
+          "value": "14.21",
           "unit": "index points",
-          "observedOn": "2026-09-25",
-          "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew"
+          "observedOn": "2026-09-22",
+          "source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS",
+          "category": "official",
+          "relevance": "direct",
+          "event": "VIX close 14.21"
         },
         {
           "lens": "pricing",
-          "point": "adds pressure",
-          "value": "17.93",
-          "unit": "index points",
-          "observedOn": "2026-09-25",
-          "source": "https://www.thetrading.tools/vix-term-structure"
-        },
-        {
-          "lens": "pricing",
-          "point": "adds pressure",
+          "point": "Brent crude remains elevated on Middle East supply risks, a priced geopolitical factor that can reprice equity vol higher.",
           "value": "104.32",
           "unit": "USD per barrel",
           "observedOn": "2026-09-25",
-          "source": "https://livecharts.co.uk/futures_commodities/brent_oil_prices_historical.php"
+          "source": "https://tradingeconomics.com/commodity/brent-crude-oil",
+          "category": "commodity",
+          "relevance": "context",
+          "event": "Brent crude 104.32"
         },
         {
           "lens": "pricing",
-          "point": "adds pressure",
+          "point": "WTI settlement reflects ongoing Hormuz-related disruptions that historically correlate with VIX spikes.",
+          "value": "92.41",
+          "unit": "USD per barrel",
+          "observedOn": "2026-09-25",
+          "source": "https://oilprice.net/oil",
+          "category": "commodity",
+          "relevance": "context",
+          "event": "WTI crude 92.41"
+        },
+        {
+          "lens": "flows",
+          "point": "VIX futures for October settle above spot, embedding a modest contango that prices some rise over the next month.",
+          "value": "17.51",
+          "unit": "index points",
+          "observedOn": "2026-09-27",
+          "source": "https://www.cboe.com/volume_snapshot/",
+          "category": "liquidity",
+          "relevance": "context",
+          "event": "VIX futures 17.51"
+        },
+        {
+          "lens": "official",
+          "point": "Long-term VIX average near 18-20 underscores current levels as low, raising odds of upward reversion versus the 3m mean.",
           "value": "18.61",
           "unit": "index points",
           "observedOn": "2026-09-25",
-          "source": "https://www.gurufocus.com/economic_indicators/234/vix"
-        },
-        {
-          "lens": "pricing",
-          "point": "adds pressure",
-          "value": "0.8293",
-          "unit": "ratio",
-          "observedOn": "2026-09-25",
-          "source": "https://www.thetrading.tools/vix-term-structure"
-        },
-        {
-          "lens": "precedent",
-          "point": "adds pressure",
-          "value": "50.71",
-          "unit": "percent YoY",
-          "observedOn": "2026-09-25",
-          "source": "https://tradingeconomics.com/commodity/brent-crude-oil"
+          "source": "https://www.gurufocus.com/economic_indicators/234/vix",
+          "category": "official",
+          "relevance": "background",
+          "event": "Long-term VIX avg 18.61"
         }
       ],
       "gaps": [
-        "Exact official FRED VIXCLS print for 2026-09-25/26 not freshly retrieved beyond secondary confirmations; weekend as-of limits fresher closes.",
-        "Precise trailing 63-trading-day arithmetic average not independently recomputed from full tick series; relied on Volalytics 3-month figure.",
-        "No primary CFTC COT release date matched exactly to latest week for VIX futures positioning beyond the reported net short.",
-        "Specific new sanctions or defense-budget dollar figures with same-day market impact not isolated beyond oil and general spending commitments.",
-        "Dropped -79280 net contracts: URL was not in the search results.",
-        "Dropped 87.84 index points: URL was not in the search results."
+        "Exact computed 63-trading-day average from full FRED CSV as of 2026-09-25 could not be finalized because the downloaded series terminated at 2026-09-22; later closes from secondary sources used instead.",
+        "No primary central-bank or statistical-agency release directly quantifying next-30-day VIX path probability.",
+        "Dropped 16.05 index points: URL was not in the search results.",
+        "Dropped 16.05 vs 14.87 index points: URL was not in the search results."
       ],
       "desk": {
-        "median": 51,
-        "dissent": "Quant",
-        "thin": 5,
+        "median": 53,
+        "dissent": "Skeptic",
+        "thin": 6,
         "ballotCount": 6
       }
     },
@@ -166,18 +208,12 @@
       "id": "ai",
       "domain": "Frontier AI & Energy",
       "headline": "No dated, sourced print",
-      "summary": "As-of date 2026-09-27 is future-dated relative to tool knowledge; no verifiable announcements strictly inside trailing 45 days from that as-of could be confirmed in live results without current 2026 sources. Older 2024 n",
-      "asOf": "2026-09-27T14:20:45.950Z",
+      "summary": "No live web results retrieved yet; need searches for hyperscaler/AI lab PPA or power-gen announcements since 2026-08-28",
+      "asOf": "2026-09-27T16:16:14.666Z",
       "evidence": [],
       "gaps": [
-        "As-of date 2026-09-27 is future-dated relative to tool knowledge; no verifiable announcements strictly inside trailing 45 days from that as-of could be confirmed in live results without current 2026 sources. Older 2024 n",
-        "Dropped 835 MW observed 2024-09-20: older than 45 days.",
-        "Dropped 960 MW observed 2024-03-04: older than 45 days.",
-        "Dropped 500 MW observed 2024-10-14: older than 45 days.",
-        "Dropped 1.1 GW observed 2024-08-15: older than 45 days.",
-        "Dropped 10.5 GW observed 2024-05-01: older than 45 days.",
-        "Dropped a point with no quantity.",
-        "Dropped a point with no quantity."
+        "No live web results retrieved yet; need searches for hyperscaler/AI lab PPA or power-gen announcements since 2026-08-28",
+        "No tool results yet; need to search for recent dedicated power PPAs or generation deals by hyperscalers/AI labs"
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T14:20:46.718Z",
+  "updatedAt": "2026-09-27T16:16:15.721Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -7,24 +7,34 @@
       "updatedAt": "2026-09-27T14:16:08.855Z"
     },
     "markets": {
-      "fault": "tagger",
-      "order": "search for the most recent daily series values of the ICE BofA US High Yield Index OAS after 2026-09-24",
-      "updatedAt": "2026-09-27T14:17:07.277Z"
+      "fault": "archivist",
+      "order": "Search for the most recent 30-day forward-looking forecast or implied path for ICE BofA US High Yield Index OAS from a major sell-side research desk or rates strategist note published after 2026-09-24.",
+      "updatedAt": "2026-09-27T16:15:05.992Z"
     },
     "crypto": {
       "fault": "archivist",
-      "order": "Search for the most recent US spot Bitcoin ETF net flow data after 2026-09-25 including any available projections or forecasts for the subsequent 7 days.",
-      "updatedAt": "2026-09-27T14:17:48.232Z"
+      "order": "Search for the latest US spot Bitcoin ETF net flow series data after 2026-09-25",
+      "updatedAt": "2026-09-27T16:15:33.966Z"
     },
     "geopolitics": {
-      "fault": "archivist",
-      "order": "Search for the full daily VIXCLS series from FRED to compute the exact trailing 63-trading-day average as of 2026-09-25.",
-      "updatedAt": "2026-09-27T14:19:00.686Z"
+      "fault": "tagger",
+      "order": "search for the exact 63-trading-day trailing average of VIX as of 2026-09-25 using a complete FRED CSV download that includes data through at least 2026-09-25",
+      "updatedAt": "2026-09-27T16:16:07.644Z"
     },
     "ai": {
+      "fault": "scout",
+      "order": "Search for any announcements since 2024-08-28 of new dedicated power-generation projects, power-purchase agreements, or similar deals specifically for AI or data-center capacity by a major hyperscaler (e.g. AWS, Azure, Google, Meta, Oracle) or AI lab (e.g. OpenAI, Anthropic, xAI).",
+      "updatedAt": "2026-09-27T16:16:15.721Z"
+    },
+    "us-cpi": {
+      "fault": "scout",
+      "order": "Search for the latest US CPI YoY release from BLS including the most recent month-over-month comparison, exact release date, and direct URL.",
+      "updatedAt": "2026-09-27T16:14:12.631Z"
+    },
+    "ez-cpi": {
       "fault": "archivist",
-      "order": "Search for any new power-generation or power-purchase agreements announced by major hyperscalers or AI labs for AI/data-center capacity since 2026-08-28.",
-      "updatedAt": "2026-09-27T14:20:46.718Z"
+      "order": "Search for the latest Eurostat release schedule and any preliminary or flash estimates for Eurozone HICP YoY in 2026, specifically targeting October or November 2026 data if available.",
+      "updatedAt": "2026-09-27T16:14:45.155Z"
     }
   }
 }
