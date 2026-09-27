@@ -1,0 +1,175 @@
+{
+  "updatedAt": "2026-09-27T14:20:46.718Z",
+  "domains": {
+    "macro": {
+      "series": [
+        {
+          "name": "US CPI YoY",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-14",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://www.bls.gov/opub/ted/2026/consumer-prices-up-3-4-over-the-year-in-july-2026.htm",
+              "event": "US Aug CPI flat at 3.4% YoY"
+            },
+            {
+              "observedOn": "2026-09-11",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://www.bls.gov/news.release/cpi.htm",
+              "event": "US Aug CPI flat at 3.4% YoY"
+            }
+          ]
+        },
+        {
+          "name": "US Energy CPI YoY",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-09-11",
+              "value": "16.3",
+              "unit": "% YoY",
+              "source": "https://www.bls.gov/news.release/cpi.htm",
+              "event": "US energy surging 16.3% YoY"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T14:16:03.991Z"
+    },
+    "markets": {
+      "series": [
+        {
+          "name": "ICE BofA US High Yield Index OAS",
+          "unit": "%",
+          "points": [
+            {
+              "observedOn": "2026-09-24",
+              "value": "3.85",
+              "unit": "%",
+              "source": "https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread",
+              "event": "Current OAS at 3.85%"
+            }
+          ]
+        },
+        {
+          "name": "CBOE VIX",
+          "unit": "index",
+          "points": [
+            {
+              "observedOn": "2026-09-25",
+              "value": "14.87",
+              "unit": "index",
+              "source": "https://www.cboe.com/index/dashboard/vix",
+              "event": "VIX at 14.87"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T14:17:03.178Z"
+    },
+    "crypto": {
+      "series": [
+        {
+          "name": "US spot Bitcoin ETF net flow",
+          "unit": "million USD",
+          "points": [
+            {
+              "observedOn": "2026-09-25",
+              "value": "2978",
+              "unit": "million USD",
+              "source": "https://www.tftc.io/bitcoin-etf-flows",
+              "event": "trailing inflows add buy-side pressure"
+            },
+            {
+              "observedOn": "2026-09-25",
+              "value": "2390",
+              "unit": "million USD",
+              "source": "https://bykaranteli.com/etf/btc",
+              "event": "trailing inflows add buy-side pressure"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T14:17:44.051Z"
+    },
+    "geopolitics": {
+      "series": [
+        {
+          "name": "VIX",
+          "unit": "index points",
+          "points": [
+            {
+              "observedOn": "2026-09-25",
+              "value": "14.87",
+              "unit": "index points",
+              "source": "https://www.cboe.com/index/dashboard/vix",
+              "event": "VIX level on 2026-09-25"
+            },
+            {
+              "observedOn": "2026-09-25",
+              "value": "16.05",
+              "unit": "index points",
+              "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew",
+              "event": "VIX level on 2026-09-25"
+            },
+            {
+              "observedOn": "2026-09-25",
+              "value": "17.93",
+              "unit": "index points",
+              "source": "https://www.thetrading.tools/vix-term-structure",
+              "event": "VIX level on 2026-09-25"
+            },
+            {
+              "observedOn": "2026-09-25",
+              "value": "18.61",
+              "unit": "index points",
+              "source": "https://www.gurufocus.com/economic_indicators/234/vix",
+              "event": "VIX level on 2026-09-25"
+            }
+          ]
+        },
+        {
+          "name": "Brent oil",
+          "unit": "USD per barrel",
+          "points": [
+            {
+              "observedOn": "2026-09-25",
+              "value": "104.32",
+              "unit": "USD per barrel",
+              "source": "https://livecharts.co.uk/futures_commodities/brent_oil_prices_historical.php",
+              "event": "Brent oil price and YoY change on 2026-09-25"
+            },
+            {
+              "observedOn": "2026-09-25",
+              "value": "50.71",
+              "unit": "percent YoY",
+              "source": "https://tradingeconomics.com/commodity/brent-crude-oil",
+              "event": "Brent oil price and YoY change on 2026-09-25"
+            }
+          ]
+        },
+        {
+          "name": "VIX term ratio",
+          "unit": "ratio",
+          "points": [
+            {
+              "observedOn": "2026-09-25",
+              "value": "0.8293",
+              "unit": "ratio",
+              "source": "https://www.thetrading.tools/vix-term-structure",
+              "event": "VIX term structure ratio on 2026-09-25"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T14:18:56.365Z"
+    },
+    "ai": {
+      "series": [],
+      "updatedAt": "2026-09-27T14:20:45.950Z"
+    }
+  }
+}

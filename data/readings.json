@@ -1,0 +1,217 @@
+{
+  "updatedAt": "2026-09-27T14:20:46.718Z",
+  "domains": {
+    "macro": {
+      "median": 48,
+      "horizon": "1m",
+      "thin": 6,
+      "ballotCount": 6,
+      "dissent": "Contrarian",
+      "spread": 11,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 49,
+          "thin": true,
+          "thesis": "US CPI flat at 3.4% requires acceleration to rise next while energy surge at 16.3% YoY transmits upward pressure, but Eurozone HICP lacks any board print or component so the joint outcome defaults near neutral."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 48,
+          "thin": true,
+          "thesis": "US CPI is already flat at 3.4% for two straight months and the next print (Oct) must accelerate to exceed it, but energy's 16.3% surge is one-month-old and likely to moderate while core services disinflation continues; Eurozone HICP faces similar base effects and ECB easing, so simultaneous rises are slightly less than even odds near-term and trend to 50% at"
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 49,
+          "thin": true,
+          "thesis": "US CPI needs acceleration from flat 3.4% base while energy surge provides upward momentum but core shelter/food lags; Eurozone HICP faces similar base-effect and ECB easing pressures that historically produce mixed directional prints, netting near-coinflip odds that both rise simultaneously."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 48,
+          "thin": true,
+          "thesis": "US CPI is flat at 3.4% for two straight months with energy surging 16.3% YoY providing upward pressure, but Eurozone HICP trends lower overall and lacks fresh consensus or component data, leading to near-coinflip odds both prints rise next month."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 38,
+          "thin": true,
+          "thesis": "Energy surge provides upward pressure but base effects from prior flat 3.4% readings plus typical post-summer energy mean-reversion and lagged shelter deceleration make sequential acceleration in both US CPI and Eurozone HICP unlikely at next prints."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 48,
+          "thin": true,
+          "thesis": "US CPI is flat at 3.4% for two straight months with energy surging 16.3% but shelter/food lags and base effects make acceleration uncertain; Eurozone HICP shows no recent prints or drivers on the board, defaulting the joint outcome near a coin-flip."
+        }
+      ],
+      "asOf": "2026-09-27T14:16:06.711Z"
+    },
+    "markets": {
+      "median": 53,
+      "horizon": "1m",
+      "thin": 5,
+      "ballotCount": 6,
+      "dissent": "Skeptic",
+      "spread": 3,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 53,
+          "thin": false,
+          "thesis": "Current HY OAS sits well below its long-run average while VIX is subdued, implying modest mean-reversion pressure toward wider spreads over 30 days that is partially offset by still-benign liquidity and no acute fiscal shock visible on the board."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 51,
+          "thin": true,
+          "thesis": "High-yield OAS exhibits mean-reversion around its 3.85% long-run average and is currently at that exact level; with low VIX (14.87) signaling calm markets, modest daily volatility makes a 30-day widening slightly more likely than not due to random walk behavior and potential macro shocks, but near-term persistence pulls probabilities close to 50%."
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 51,
+          "thin": true,
+          "thesis": "Current HY OAS sits near all-time lows (3.85% vs long-run avg ~5.5%), with low VIX (14.87) signaling calm markets that typically allow spreads to remain tight or tighten slightly over short horizons, though mean-reversion risk grows over 1m-1y."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 53,
+          "thin": true,
+          "thesis": "Current HY OAS sits at a multi-year low of 3.85% (well below the long-run average), while VIX is only 14.87; mean-reversion pressure and typical month-to-month volatility imply a modest upward drift in spread over 30 days."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 54,
+          "thin": true,
+          "thesis": "Current OAS sits materially below its long-run average while VIX remains subdued, creating mild mean-reversion pressure that modestly favors widening over the coming month."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 52,
+          "thin": true,
+          "thesis": "Current HY OAS sits near all-time lows (3.85 vs long-run ~5.5), while VIX is subdued at 14.87; mean-reversion pressure and typical short-term noise push slight upward drift in probability of widening over each horizon."
+        }
+      ],
+      "asOf": "2026-09-27T14:17:05.371Z"
+    },
+    "crypto": {
+      "median": 54,
+      "horizon": "1w",
+      "thin": 6,
+      "ballotCount": 6,
+      "dissent": "Quant",
+      "spread": 5,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 54,
+          "thin": true,
+          "thesis": "Recent $2.978B 7-day and $2.39B 5-day inflows demonstrate sustained buy-side pressure that typically persists at least one more week absent a sharp BTC price reversal or macro shock."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 53,
+          "thin": true,
+          "thesis": "Recent multi-billion cumulative inflows have established strong positive momentum that typically persists for at least several more trading days, but decelerating pace plus weekend effect and potential mean-reversion after the large 7-day total make continuation barely more likely than not over the exact next-7-calendar-day window."
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 58,
+          "thin": true,
+          "thesis": "Recent multi-billion cumulative inflows have established strong positive momentum that typically persists for at least one week absent a major price or macro reversal."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 54,
+          "thin": true,
+          "thesis": "Recent 7-day and 5-day inflows exceeding $2B have established strong positive momentum that typically persists for at least one more week barring major external shocks, though decelerating pace and lack of fresh data introduce modest downside risk."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 54,
+          "thin": true,
+          "thesis": "Recent $2.4-3B inflows over 5-7 days create persistent buy-side momentum that typically persists at least one more week absent a sharp BTC price reversal or macro shock."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 54,
+          "thin": true,
+          "thesis": "Recent 5- and 7-day cumulative inflows exceeding $2.3B have established strong positive momentum that typically persists for at least one more week absent a sharp price reversal or macro shock."
+        }
+      ],
+      "asOf": "2026-09-27T14:17:46.144Z"
+    },
+    "geopolitics": {
+      "median": 51,
+      "horizon": "1m",
+      "thin": 5,
+      "ballotCount": 6,
+      "dissent": "Quant",
+      "spread": 4,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 51,
+          "thin": true,
+          "thesis": "Current spot VIX (14.87) sits materially below the 3-month average implied by component prints (≈16.5-17.9), while elevated oil (104.32, +51% YoY) and a sub-1.0 term-structure ratio (0.8293) transmit upward pressure on volatility that is likely to close only part of the gap inside 30 days."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 51,
+          "thin": true,
+          "thesis": "VIX mean-reverts quickly; current spot ~15-18 sits below most cited 3m averages (~19-22 from term-structure and pricing sources), but oil spike to 104 (+51% YoY) and backwardation (term ratio 0.83) add upward pressure that can keep VIX elevated or push it higher over 30 days unless risk subsides."
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 49,
+          "thin": true,
+          "thesis": "Current spot VIX ~15-18 sits below most forward term-structure readings and elevated oil prices (+50% YoY), implying modest upward drift in realized vol over next month that is roughly balanced by mean-reversion tendency, producing near-coin-flip odds the index exceeds its trailing 3m avg in 30 days."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 51,
+          "thin": true,
+          "thesis": "Current VIX spot around 15-18 sits below most cited 3-month averages (≈17-19) amid elevated oil and backwardation, producing mild upward mean-reversion pressure that slowly lifts the probability of being above the trailing average as time passes."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 49,
+          "thin": true,
+          "thesis": "Current spot VIX sits materially below all cited 3-month component averages (14.87 vs 16–18.6), so mean-reversion and any oil-driven risk premium lift tend to push the index higher over the next 30 days unless volatility rapidly collapses further."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 53,
+          "thin": false,
+          "thesis": "Current VIX readings cluster 14.9-18.6 around a 3m avg near 17; elevated oil (104 USD, +51% YoY) and contango (term ratio 0.83) exert mild upward pressure on volatility, but without acute geopolitical shock the index is more likely to mean-revert than rise materially in the near term."
+        }
+      ],
+      "asOf": "2026-09-27T14:18:58.683Z"
+    }
+  }
+}

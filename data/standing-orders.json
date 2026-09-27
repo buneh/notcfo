@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-09-27T14:20:46.718Z",
+  "domains": {
+    "macro": {
+      "fault": "archivist",
+      "order": "search for latest Eurozone HICP YoY flash estimate and consensus for next release",
+      "updatedAt": "2026-09-27T14:16:08.855Z"
+    },
+    "markets": {
+      "fault": "tagger",
+      "order": "search for the most recent daily series values of the ICE BofA US High Yield Index OAS after 2026-09-24",
+      "updatedAt": "2026-09-27T14:17:07.277Z"
+    },
+    "crypto": {
+      "fault": "archivist",
+      "order": "Search for the most recent US spot Bitcoin ETF net flow data after 2026-09-25 including any available projections or forecasts for the subsequent 7 days.",
+      "updatedAt": "2026-09-27T14:17:48.232Z"
+    },
+    "geopolitics": {
+      "fault": "archivist",
+      "order": "Search for the full daily VIXCLS series from FRED to compute the exact trailing 63-trading-day average as of 2026-09-25.",
+      "updatedAt": "2026-09-27T14:19:00.686Z"
+    },
+    "ai": {
+      "fault": "archivist",
+      "order": "Search for any new power-generation or power-purchase agreements announced by major hyperscalers or AI labs for AI/data-center capacity since 2026-08-28.",
+      "updatedAt": "2026-09-27T14:20:46.718Z"
+    }
+  }
+}
