@@ -4,15 +4,28 @@
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "No dated, sourced print",
-      "summary": "Unable to retrieve live data: all tool calls failed or returned no verifiable primary-source figures for US CPI, Eurozone HICP, components, oil prices, or liquidity prints as of the simulated 2026-09-27 date; no evidence",
-      "asOf": "2026-09-27T13:55:16.400Z",
-      "evidence": [],
+      "headline": "Evidence too thin for CPI/HICP direction call",
+      "summary": "Only one valid data point was found: US headline CPI was unchanged at 3.4% YoY in August 2026 versus July. No usable figures appear for the next US CPI release, Eurozone HICP, or any consensus estimates.",
+      "asOf": "2026-09-27T13:44:17.468Z",
+      "evidence": [
+        {
+          "lens": "official",
+          "point": "US headline CPI rose 3.4% YoY in August 2026, unchanged from July 2026.",
+          "value": "3.4",
+          "unit": "% YoY",
+          "observedOn": "2026-09-11",
+          "source": "https://www.bls.gov/news.release/cpi.htm"
+        }
+      ],
       "gaps": [
-        "Unable to retrieve live data: all tool calls failed or returned no verifiable primary-source figures for US CPI, Eurozone HICP, components, oil prices, or liquidity prints as of the simulated 2026-09-27 date; no evidence",
-        "Brent or WTI latest close and past month move",
-        "US M2 growth, federal deficit, or Fed balance sheet",
-        "CPI or HICP component (energy, shelter, or food) moving the index"
+        "Exact market consensus for US September 2026 CPI YoY not found in primary sources; only bank forecasts available.",
+        "Final confirmed Eurostat flash release date and exact prior-month comparison details beyond August.",
+        "Dropped a point with no quantity.",
+        "Dropped 3.2 % YoY: URL was not in the search results.",
+        "Dropped a point with no quantity.",
+        "Dropped 3.7 % YoY consensus: URL was not in the search results.",
+        "Dropped 0.54 % MoM forecast: URL was not in the search results.",
+        "Dropped 3.6 % YoY Q4 2026: URL was not in the search results."
       ]
     },
     {
@@ -72,12 +85,57 @@
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "No dated, sourced print",
-      "summary": "Unable to retrieve live data due to tool limitations in this simulation; no verified VIX close, 3-month average, or geopolitical series obtained from primary sources.",
-      "asOf": "2026-09-27T13:55:51.749Z",
-      "evidence": [],
+      "headline": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
+      "summary": "14.87 index points as of 2026-09-25; 16.05 index points as of 2026-09-25; 17.93 vs 14.87 index points as of 2026-09-25; 18.61 index points as of 2026-09-25; 15.68 index points as of 2026-09-25",
+      "asOf": "2026-09-27T13:45:09.782Z",
+      "evidence": [
+        {
+          "lens": "pricing",
+          "point": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
+          "value": "14.87",
+          "unit": "index points",
+          "observedOn": "2026-09-25",
+          "source": "https://www.cboe.com/us/indices/dashboard/VIX-VIX1Y-VIX3M-VIX6M-VIX9D"
+        },
+        {
+          "lens": "pricing",
+          "point": "Trailing three-month average of daily VIX closes stands at 16.05.",
+          "value": "16.05",
+          "unit": "index points",
+          "observedOn": "2026-09-25",
+          "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew"
+        },
+        {
+          "lens": "pricing",
+          "point": "VIX term structure shows contango with 3-month implied at 17.93 versus 30-day at 14.87.",
+          "value": "17.93 vs 14.87",
+          "unit": "index points",
+          "observedOn": "2026-09-25",
+          "source": "https://stock-marketdata.com/vix.html"
+        },
+        {
+          "lens": "precedent",
+          "point": "Current VIX of 14.87 sits 20.1 percent below its long-term historical average of 18.61.",
+          "value": "18.61",
+          "unit": "index points",
+          "observedOn": "2026-09-25",
+          "source": "https://www.gurufocus.com/economic_indicators/234/vix"
+        },
+        {
+          "lens": "pricing",
+          "point": "One-month average of VIX closes is 15.68, still above the latest close.",
+          "value": "15.68",
+          "unit": "index points",
+          "observedOn": "2026-09-25",
+          "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew"
+        }
+      ],
       "gaps": [
-        "Unable to retrieve live data due to tool limitations in this simulation; no verified VIX close, 3-month average, or geopolitical series obtained from primary sources."
+        "Exact primary-source computation of trailing 3-month VIX average from full daily series not directly published on Cboe or FRED pages opened",
+        "No verified scheduled geopolitical or policy catalysts specifically dated within next 30 days that quantify expected VIX impact",
+        "VIX futures term structure details and open interest flows beyond spot and VIX3M not extracted from primary exchange filings",
+        "Dropped 17.93 index points: URL was not in the search results.",
+        "Dropped 14.21 index points: URL was not in the search results."
       ]
     },
     {
