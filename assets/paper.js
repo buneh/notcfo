@@ -26,19 +26,6 @@
     return Date.now() > start + days * 86400000;
   }
 
-  function priorLine(call) {
-    const debug = call._debug || {};
-    if (debug.engine === "grok-swarm") {
-      const thin = debug.thinEvidenceCount;
-      const n = debug.ballotCount;
-      return typeof thin === "number" && typeof n === "number" ? ` · swarm ${thin} of ${n} ballots thin` : " · swarm";
-    }
-    if (typeof debug.thinEvidenceCount === "number" && typeof debug.personaCount === "number") {
-      return ` · prior engine ${debug.thinEvidenceCount} of ${debug.personaCount} voices thin`;
-    }
-    return "";
-  }
-
   async function load(path) {
     const res = await fetch(path + "?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(path);
@@ -60,7 +47,6 @@
       <p class="muted">${esc(topic.summary)}</p>
       ${rows}
       ${gaps}
-      ${topic.desk ? `<p class="meta">Desk reading ${esc(topic.desk.median)} · dissent ${esc(topic.desk.dissent)} · not the standing call</p>` : ""}
     </li>`;
   }
 
@@ -71,7 +57,7 @@
       <div>
         <p class="domain">${esc(call.domain)}</p>
         <p class="q">${esc(call.question)}</p>
-        <p class="meta">${due ? "Horizon passed" : "Open"} · called ${esc(fmtDate(call.calledAt))}${esc(priorLine(call))}</p>
+        <p class="meta">${due ? "Horizon passed" : "Open"} · ${esc(fmtDate(call.calledAt))}</p>
       </div>
       <p class="meta">${esc(call.horizon)}</p>
     </li>`;
@@ -79,20 +65,17 @@
 
   function callSheet(call) {
     const due = callDue(call.calledAt, call.horizon);
-    const label = call._debug && call._debug.engine === "grok-swarm" ? "Swarm median" : "Published probability";
-    const note = call._debug && call._debug.engine === "grok-swarm" ? "Median of the ballots. Not revised in place." : "Prior orchestra. Not revised in place.";
     return `<article class="sheet">
       <div>
         <p class="domain">${esc(call.domain)}</p>
         <h2>${esc(call.question)}</h2>
         <p>${esc(call.forecast)}</p>
         <p class="muted">${esc(call.resolutionCriteria)}</p>
-        <p class="meta">${due ? "Horizon has passed" : "Still inside the horizon"} · called ${esc(fmtDate(call.calledAt))} · ${esc(call.horizon)}${esc(priorLine(call))}</p>
+        <p class="meta">${due ? "Closed" : "Open"} · ${esc(fmtDate(call.calledAt))} · ${esc(call.horizon)}</p>
       </div>
       <div class="score">
-        <p class="meta">${label}</p>
+        <p class="meta">Probability</p>
         <p class="prob">${esc(call.probability)}</p>
-        <p class="muted">${note}</p>
       </div>
     </article>`;
   }

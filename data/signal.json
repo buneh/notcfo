@@ -2,55 +2,6 @@
   "generatedAt": "2026-09-27T14:20:46.718Z",
   "topics": [
     {
-      "id": "macro",
-      "domain": "Macro Health & Sentiment",
-      "headline": "US CPI flat, energy surge adds pressure; Eurozone HICP unverified",
-      "summary": "Latest official US CPI print was 3.4% YoY in August (flat versus July's 3.4%), so the next release needs acceleration to rise. US energy at +16.3% YoY adds upward pressure while shelter/food and liquidity prints were not verified. Eurozone HICP was not in the evidence so that channel was not verified; this leaves the question open over its horizon.",
-      "asOf": "2026-09-27T14:16:08.131Z",
-      "evidence": [
-        {
-          "lens": "official",
-          "point": "US August CPI held flat at prior month’s level, so next print needs acceleration to rise versus August.",
-          "value": "3.4",
-          "unit": "% YoY",
-          "observedOn": "2026-09-11",
-          "source": "https://www.bls.gov/news.release/cpi.htm"
-        },
-        {
-          "lens": "official",
-          "point": "US July CPI matched the subsequent August reading, establishing the baseline the next release must beat.",
-          "value": "3.4",
-          "unit": "% YoY",
-          "observedOn": "2026-08-14",
-          "source": "https://www.bls.gov/opub/ted/2026/consumer-prices-up-3-4-over-the-year-in-july-2026.htm"
-        },
-        {
-          "lens": "official",
-          "point": "US energy component surging adds upward pressure that can lift the next headline CPI print.",
-          "value": "16.3",
-          "unit": "% YoY",
-          "observedOn": "2026-09-11",
-          "source": "https://www.bls.gov/news.release/cpi.htm"
-        }
-      ],
-      "gaps": [
-        "Exact Fed balance sheet or latest monthly federal deficit figure not freshly verified from primary release on this pass.",
-        "September flash HICP or CPI consensus not pulled as primary dated print.",
-        "Shelter or food component monthly moves secondary to energy dominance already captured.",
-        "Dropped 3.2 % YoY: URL was not in the search results.",
-        "Dropped 2.9 % YoY: URL was not in the search results.",
-        "Dropped 14.3 % YoY: URL was not in the search results.",
-        "Dropped 104.32 USD/bbl close: URL was not in the search results.",
-        "Dropped 19.99 % change over past month: URL was not in the search results."
-      ],
-      "desk": {
-        "median": 48,
-        "dissent": "Contrarian",
-        "thin": 6,
-        "ballotCount": 6
-      }
-    },
-    {
       "id": "markets",
       "domain": "Financial & Capital Markets",
       "headline": "Downward pressure on HY OAS from low VIX",
