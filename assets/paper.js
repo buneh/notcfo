@@ -54,7 +54,7 @@
 
   function horizonGrid(call) {
     return `<div class="hz">${(call.horizons || []).map((row) =>
-      `<div><b>${esc(row.probability)}</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(row.point)}%</span></div>`
+      `<div><b>${esc(row.probability)}</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(Number(row.point).toFixed(1))}%</span></div>`
     ).join("")}</div>`;
   }
 
