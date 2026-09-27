@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-09-27T12:55:55.105Z",
+  "generatedAt": "2026-09-27T13:11:42.751Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "No consensus available for Sep US CPI or EZ HICP vs prior prints",
-      "summary": "August readings showed US CPI YoY steady at 3.4% while Eurozone HICP rose to 3.2% from 2.9%, with energy driving recent gains. No economist forecasts or base-effect details located for the September releases, leaving the question unanswered.",
-      "asOf": "2026-09-27T12:54:27.943Z"
+      "headline": "Nowcasts point to higher US CPI and Eurozone HICP in September",
+      "summary": "Cleveland Fed nowcast and TD Securities project US headline CPI YoY rising above August’s 3.4% in September; ECB staff projections and August’s jump from 2.9% to 3.2% suggest Eurozone HICP will also print higher, though no precise September consensus was identified.",
+      "asOf": "2026-09-27T13:10:49.219Z"
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "HY OAS Unlikely to Widen in Next 30 Days",
-      "summary": "Current ICE BofA US High Yield Index OAS stands near multi-year tights at 3.12% with solid corporate earnings, low defaults, strong fund inflows, and calm conditions across IG credit and equity volatility; historical precedent shows sharp 30-day widening is rare absent major macro shocks.",
-      "asOf": "2026-09-27T12:54:40.709Z"
+      "headline": "ICE BofA US HY OAS at 2.80%, near historical lows",
+      "summary": "Current OAS of 2.80% (as of Sep 2024) is 27% below its long-term average of 3.85% and sits in the richest historical decile versus a long-run median near 450 bps. No forward-looking 30-day forecasts or event risks were identified.",
+      "asOf": "2026-09-27T13:11:01.672Z"
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
-      "headline": "US Spot Bitcoin ETFs Likely to See Net Inflows Next 7 Days",
-      "summary": "Recent data shows consistent positive momentum with $245M inflows on Sep 25, cumulative $58.2B, and average daily inflows of $180M over the prior two weeks, supported by Bitcoin near $112K and analyst commentary on sustained institutional buying into early October.",
-      "asOf": "2026-09-27T12:54:51.495Z"
+      "headline": "Bitcoin ETFs Likely to See Net Inflows Next Week",
+      "summary": "Recent mixed flows have included short outflow streaks that historically reverse to positive weekly nets, supported by stable BTC price and analyst correlation to momentum.",
+      "asOf": "2026-09-27T13:11:09.871Z"
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "VIX Futures and Term Structure Signal Rise Above 3-Month Avg in 30 Days",
-      "summary": "Current VIX spot of 14.87 sits well below its 3-month average of 16.05 and VIX3M of 17.93; October futures settled near 17.50 while the term structure remains in contango with later months at 18.38-18.75, pointing to expected volatility normalization higher than the recent trailing average.",
-      "asOf": "2026-09-27T12:55:10.755Z"
+      "headline": "VIX at 14.87 below 3M avg 16.05, term structure in contango",
+      "summary": "Spot VIX closed well below its three-month average and the VIX3M index, with the term structure in contango and known mean-reversion dynamics both pointing to a likely rise over the next 30 days.",
+      "asOf": "2026-09-27T13:11:28.665Z"
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "No imminent hyperscaler AI power deal in next 30 days",
-      "summary": "Multiple precedents exist of hyperscalers signing large dedicated nuclear, geothermal, and other generation PPAs for AI/data centers amid surging demand, but no public pipeline or filings indicate an announcement is scheduled in the immediate 30-day window.",
-      "asOf": "2026-09-27T12:55:55.104Z"
+      "headline": "No major hyperscaler AI power PPA announced in Sept 2026",
+      "summary": "Recent precedents from Microsoft, Amazon, and Google show frequent nuclear and renewable PPAs for AI data centers, driven by surging power demand projected to double by 2030, but no new dedicated generation or PPA deals from major players appeared in September 2026 news.",
+      "asOf": "2026-09-27T13:11:42.750Z"
     }
   ]
 }
