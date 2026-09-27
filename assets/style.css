@@ -369,7 +369,9 @@ footer { padding: 1.75rem 0; }
   h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
   .sect { padding: 3.5rem 0; }
   #hero { padding-top: calc(var(--nav-h) + 2.5rem); }
-  .ls-row { grid-template-columns: 60px 1fr; }
+  .kvt td:first-child { white-space: normal; width: 5.5rem; }
+  .burger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  .mob-menu a, .mob-menu .theme-btn { min-height: 44px; }
 }
 
 /* NOTE on .fl input's border-bottom above: this is the one deliberate
