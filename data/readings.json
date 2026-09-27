@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T16:16:15.721Z",
+  "updatedAt": "2026-09-27T18:28:21.654Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -212,6 +212,124 @@
         }
       ],
       "asOf": "2026-09-27T16:16:05.752Z"
+    },
+    "us-cpi": {
+      "median": 47,
+      "horizon": "1m",
+      "thin": 5,
+      "ballotCount": 6,
+      "dissent": "Analyst",
+      "spread": 3,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 45,
+          "point": 3.3,
+          "thin": true,
+          "thesis": "Energy CPI reaccelerated sharply while shelter and food continued to decelerate, producing a flat headline print; next prints will reflect whether energy pressure persists or reverses."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 48,
+          "point": 3.4,
+          "thin": true,
+          "thesis": "Recent monthly headline prints have been flat-to-down from the 4.2% peak while shelter continues to decelerate and food is also easing, outweighing the modest energy rebound and producing a mild downward drift in the YoY rate over the next several quarters."
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 45,
+          "point": 3.3,
+          "thin": true,
+          "thesis": "Recent energy rebound and sticky shelter are offset by softening food and base effects that should keep headline CPI stable-to-lower over the next several months."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 48,
+          "point": 3.4,
+          "thin": true,
+          "thesis": "Recent headline CPI has stabilized at 3.4% after a volatile climb to 4.2% in May, with shelter continuing to decelerate, food ticking lower, and energy rebounding but unlikely to drive a sharp near-term rise given monthly seasonality and base effects."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 45,
+          "point": 3.4,
+          "thin": true,
+          "thesis": "Energy CPI reaccelerated to 3.3% from 2.7% while food and shelter continued to decelerate, producing a flat 3.4% headline that sets a high bar for the next two monthly prints to exceed it given typical base effects and no oil price signal."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 48,
+          "point": 3.4,
+          "thin": false,
+          "thesis": "Recent headline stability at 3.4% masks mixed component trends with food decelerating, shelter continuing to ease, and energy rebounding; monthly prints show volatility but no strong directional momentum for the next release."
+        }
+      ],
+      "asOf": "2026-09-27T18:27:53.047Z"
+    },
+    "ez-cpi": {
+      "median": 45,
+      "horizon": "1m",
+      "thin": 0,
+      "ballotCount": 6,
+      "dissent": "Contrarian",
+      "spread": 10,
+      "ballots": [
+        {
+          "role": "analyst",
+          "title": "Analyst",
+          "probability": 45,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the latest 3.2% print but services and core continue easing while food remains subdued, producing modest net downward drift over most horizons after the immediate flash."
+        },
+        {
+          "role": "skeptic",
+          "title": "Skeptic",
+          "probability": 45,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the August jump to 3.2% but services and core continue easing and base effects from prior energy surges will likely pull headline lower over coming months despite volatility."
+        },
+        {
+          "role": "quant",
+          "title": "Quant",
+          "probability": 45,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the August jump to 3.2%, but fading services, food, and core trends point to mean reversion over coming months with only modest upside risks from energy base effects at the one-year horizon."
+        },
+        {
+          "role": "historian",
+          "title": "Historian",
+          "probability": 45,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the August jump to 3.2% but services and core continue easing and food is flat, so next prints are likely to stabilize or edge lower until base effects or new energy moves intervene."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 55,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the August jump to 3.2% but services and core both eased and food continued to trend lower, so the next print is likely to moderate unless energy accelerates further."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 48,
+          "point": 3.1,
+          "thin": false,
+          "thesis": "Energy spike to 14.3% drove the August jump to 3.2% while core, services and food all eased; next prints will reflect whether energy volatility persists or mean-reverts."
+        }
+      ],
+      "asOf": "2026-09-27T18:28:12.728Z"
     }
   }
 }

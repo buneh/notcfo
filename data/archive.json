@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T16:16:15.721Z",
+  "updatedAt": "2026-09-27T18:28:21.654Z",
   "domains": {
     "macro": {
       "series": [
@@ -205,12 +205,1109 @@
       "updatedAt": "2026-09-27T16:16:14.666Z"
     },
     "us-cpi": {
-      "series": [],
-      "updatedAt": "2026-09-27T16:14:11.860Z"
+      "series": [
+        {
+          "name": "US CPI headline",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-02-28",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-03-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "4.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "3.5",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            }
+          ]
+        },
+        {
+          "name": "US CPI food",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-02-28",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-03-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            }
+          ]
+        },
+        {
+          "name": "US CPI shelter",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-02-28",
+              "value": "4.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-03-31",
+              "value": "4.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "4.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "3.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "3.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "3.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            }
+          ]
+        },
+        {
+          "name": "US CPI energy",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-02-28",
+              "value": "3.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-03-31",
+              "value": "3.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "3.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "3.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "3.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "3.5",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0"
+            }
+          ]
+        },
+        {
+          "name": "US CPI headline YoY",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "0.3",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T18:27:50.951Z"
     },
     "ez-cpi": {
-      "series": [],
-      "updatedAt": "2026-09-27T16:14:44.334Z"
+      "series": [
+        {
+          "name": "Eurozone HICP headline",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-03-31",
+              "value": "2.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "2.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "1.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "2.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "2.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "2.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "2.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-10-31",
+              "value": "2.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "2.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "1.7",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "1.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "2.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "14.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "1.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY ending 2026-08-31"
+            }
+          ]
+        },
+        {
+          "name": "Eurozone HICP energy",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-03-31",
+              "value": "-1.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "-3.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "-3.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "-2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "-2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "-2.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "-0.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-10-31",
+              "value": "-0.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "-0.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "-1.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "-4.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "-3.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "5.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "10.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "10.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "8.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "10.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "14.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            }
+          ]
+        },
+        {
+          "name": "Eurozone HICP food",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-03-31",
+              "value": "2.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-10-31",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "1.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "1.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "1.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "1.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            }
+          ]
+        },
+        {
+          "name": "Eurozone HICP services",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-03-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "4.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "3.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-10-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "3.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "3.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "3.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            }
+          ]
+        },
+        {
+          "name": "Eurozone HICP core",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2025-03-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-04-30",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-05-31",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-06-30",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-07-31",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-08-31",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-09-30",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-10-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-11-30",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2025-12-31",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-01-31",
+              "value": "2.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-02-28",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-03-31",
+              "value": "2.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-04-30",
+              "value": "2.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-05-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-06-30",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-07-31",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-27T18:28:10.906Z"
     }
   }
 }
