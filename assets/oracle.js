@@ -296,7 +296,7 @@
     const driver = clip(row.driver, 240) || "Not stated.";
     if (!thesis) throw new Error(role.title + " returned an empty thesis.");
     const probs = { "24h": clamp(row.p24), "1w": clamp(row.p1w), "1m": clamp(row.p1m), "1y": clamp(row.p1y) };
-    const grounded = NotcfoEvidence.citesBoard(driver, board.items);
+    const grounded = NotcfoEvidence.citesBoard(driver + " " + thesis, board.items);
     if (!grounded) {
       Object.keys(probs).forEach(function (horizon) { probs[horizon] = Math.round((probs[horizon] + 50) / 2); });
     }
