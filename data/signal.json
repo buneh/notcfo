@@ -1,104 +1,89 @@
 {
-  "generatedAt": "2026-09-27T13:42:34.179Z",
+  "generatedAt": "2026-09-27T13:45:57.977Z",
   "topics": [
     {
       "id": "macro",
       "domain": "Macro Health & Sentiment",
-      "headline": "US CPI unchanged at 3.4% YoY in Aug 2026",
-      "summary": "US CPI was unchanged from July at 3.4% YoY in August 2026; no consensus or evidence is available on whether September 2026 US CPI or Eurozone HICP will print higher than their prior readings.",
-      "asOf": "2026-09-27T13:41:04.208Z",
+      "headline": "Evidence too thin for CPI/HICP direction call",
+      "summary": "Only one valid data point was found: US headline CPI was unchanged at 3.4% YoY in August 2026 versus July. No usable figures appear for the next US CPI release, Eurozone HICP, or any consensus estimates.",
+      "asOf": "2026-09-27T13:44:17.468Z",
       "evidence": [
         {
           "lens": "official",
-          "point": "US CPI-U all items rose 3.4% YoY in August 2026, unchanged from July 2026.",
+          "point": "US headline CPI rose 3.4% YoY in August 2026, unchanged from July 2026.",
           "value": "3.4",
           "unit": "% YoY",
-          "observedOn": "2026-09-11",
-          "source": "https://www.bls.gov/news.release/cpi.htm"
-        },
-        {
-          "lens": "official",
-          "point": "Next US CPI release covering September 2026 is scheduled for October 14 2026.",
-          "value": "2026-10-14",
-          "unit": "date",
           "observedOn": "2026-09-11",
           "source": "https://www.bls.gov/news.release/cpi.htm"
         }
       ],
       "gaps": [
-        "No single consensus survey figure located for exact September 2026 US CPI or EZ HICP YoY prints as of 2026-09-27",
-        "Base-effect calculations for precise YoY change not verified from primary index levels beyond reported rates",
+        "Exact market consensus for US September 2026 CPI YoY not found in primary sources; only bank forecasts available.",
+        "Final confirmed Eurostat flash release date and exact prior-month comparison details beyond August.",
+        "Dropped a point with no quantity.",
         "Dropped 3.2 % YoY: URL was not in the search results.",
-        "Dropped 3.3 % YoY flash: URL was not in the search results.",
-        "Dropped 3.57 % YoY: URL was not in the search results.",
-        "Dropped 0.54 % MoM: URL was not in the search results.",
-        "Dropped 3.6 % YoY Q4: URL was not in the search results.",
-        "Dropped 14.3 % YoY energy: URL was not in the search results."
+        "Dropped a point with no quantity.",
+        "Dropped 3.7 % YoY consensus: URL was not in the search results.",
+        "Dropped 0.54 % MoM forecast: URL was not in the search results.",
+        "Dropped 3.6 % YoY Q4 2026: URL was not in the search results."
       ]
     },
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "Current HY OAS at 2.8% near lows vs 3.85% avg",
-      "summary": "Current OAS of 2.8 percent is 27 percent below its long-term average of 3.85 percent and sits near multi-year lows within a historical range of 2.41-21.82 percent.",
-      "asOf": "2026-09-27T13:41:28.124Z",
+      "headline": "ICE BofA Single-B US High Yield OAS, a riskier subset, was 2.86 percent on the same date.",
+      "summary": "2.86 percent as of 2026-09-24; 5.16 percent as of 2026-09-25",
+      "asOf": "2026-09-27T13:44:37.321Z",
       "evidence": [
         {
-          "lens": "precedent",
-          "point": "Current OAS of 2.8 percent sits 27 percent below its long-term average of 3.85 percent and near multi-year lows.",
-          "value": "2.8 vs 3.85",
-          "unit": "percent",
-          "observedOn": "2026-09-24",
-          "source": "https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread"
-        },
-        {
-          "lens": "precedent",
-          "point": "Historical range for the series is 2.41 percent low to 21.82 percent high, with median around 4.5 percent.",
-          "value": "2.41-21.82",
-          "unit": "percent",
-          "observedOn": "2026-09-24",
-          "source": "https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread"
-        },
-        {
           "lens": "pricing",
-          "point": "One-year-ago value was 2.70 percent, so current 2.80 percent is slightly wider year-over-year.",
-          "value": "2.70",
+          "point": "ICE BofA Single-B US High Yield OAS, a riskier subset, was 2.86 percent on the same date.",
+          "value": "2.86",
           "unit": "percent",
           "observedOn": "2026-09-24",
-          "source": "https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread"
+          "source": "https://ycharts.com/indicators/us_high_yield_b_optionadjusted_spread"
+        },
+        {
+          "lens": "precedent",
+          "point": "Long-term average for the US High Yield B OAS subset is 5.16 percent, well above current tight levels near 2.8.",
+          "value": "5.16",
+          "unit": "percent",
+          "observedOn": "2026-09-25",
+          "source": "https://ycharts.com/indicators/us_high_yield_b_optionadjusted_spread"
         }
       ],
       "gaps": [
-        "No forward-looking 30-day market-implied forecasts or options data on the OAS itself found in primary sources.",
-        "Exact 30-day historical change distribution or volatility statistics not extracted beyond recent daily moves.",
-        "Macro drivers (defaults, Fed policy, growth) for Oct 2026 not detailed in the searched pages.",
+        "No forward-looking 30-day forecast or options-implied distribution for the OAS itself found in primary sources.",
+        "Exact 30-day historical change statistics or volatility measures for this specific index not extracted beyond recent daily prints.",
+        "Broader macro catalysts (Fed path, recession odds) or VIX levels contemporaneous to 2026-09-27 not verified in the two searches.",
         "Dropped 2.80 percent: URL was not in the search results.",
-        "Dropped 2.60 to 2.80 percent: URL was not in the search results.",
-        "Dropped 2.80 percent: URL was not in the search results.",
-        "Dropped approx 5 percent: URL was not in the search results."
+        "Dropped 2.66 percent: URL was not in the search results.",
+        "Dropped 598.04 million USD: URL was not in the search results.",
+        "Dropped -1.14 billion USD: URL was not in the search results.",
+        "Dropped BAMLH0A0HYM2 series ID: URL was not in the search results."
       ]
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
       "headline": "No dated, sourced print",
-      "summary": "No live web searches or page opens performed in this turn; cannot verify current BTC ETF flow data, AUM, prices, or recent precedents as of 2026-09-27 without tools.",
-      "asOf": "2026-09-27T13:41:32.028Z",
+      "summary": "As of simulated date 2026-09-27, no live web access to future or current ETF flow data possible in this context; unable to retrieve primary sources like issuer filings, Bloomberg, or Farside for recent net flows, AUM, or",
+      "asOf": "2026-09-27T13:44:41.765Z",
       "evidence": [],
       "gaps": [
-        "No live web searches or page opens performed in this turn; cannot verify current BTC ETF flow data, AUM, prices, or recent precedents as of 2026-09-27 without tools."
+        "As of simulated date 2026-09-27, no live web access to future or current ETF flow data possible in this context; unable to retrieve primary sources like issuer filings, Bloomberg, or Farside for recent net flows, AUM, or"
       ]
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "Current VIX at 14.87 below 16.05 3-month average",
-      "summary": "As of 2026-09-25 the VIX closed at 14.87, below its trailing 3-month average of 16.05 and one-month average of 15.68. The term structure in contango with the 6-month at 20.01 suggests elevated forward volatility expectations.",
-      "asOf": "2026-09-27T13:41:57.706Z",
+      "headline": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
+      "summary": "14.87 index points as of 2026-09-25; 16.05 index points as of 2026-09-25; 17.93 vs 14.87 index points as of 2026-09-25; 18.61 index points as of 2026-09-25; 15.68 index points as of 2026-09-25",
+      "asOf": "2026-09-27T13:45:09.782Z",
       "evidence": [
         {
           "lens": "pricing",
-          "point": "Cboe VIX closed at 14.87 on 2026-09-25, well below recent averages.",
+          "point": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
           "value": "14.87",
           "unit": "index points",
           "observedOn": "2026-09-25",
@@ -106,7 +91,7 @@
         },
         {
           "lens": "pricing",
-          "point": "Trailing 3-month average of daily VIX closes stood at 16.05 as of 2026-09-25.",
+          "point": "Trailing three-month average of daily VIX closes stands at 16.05.",
           "value": "16.05",
           "unit": "index points",
           "observedOn": "2026-09-25",
@@ -114,31 +99,23 @@
         },
         {
           "lens": "pricing",
-          "point": "VIX term structure showed contango with 6-month at 20.01 and 1-year at 21.60 on 2026-09-25.",
-          "value": "20.01",
+          "point": "VIX term structure shows contango with 3-month implied at 17.93 versus 30-day at 14.87.",
+          "value": "17.93 vs 14.87",
           "unit": "index points",
           "observedOn": "2026-09-25",
           "source": "https://stock-marketdata.com/vix.html"
         },
         {
-          "lens": "official",
-          "point": "Long-term historical average of VIX is approximately 18.61 per Cboe-sourced data as of late September 2026.",
+          "lens": "precedent",
+          "point": "Current VIX of 14.87 sits 20.1 percent below its long-term historical average of 18.61.",
           "value": "18.61",
           "unit": "index points",
           "observedOn": "2026-09-25",
           "source": "https://www.gurufocus.com/economic_indicators/234/vix"
         },
         {
-          "lens": "precedent",
-          "point": "Over the prior 3 months to 2026-09-25, VIX interday maximum reached 20.66 while minimum was 14.21.",
-          "value": "20.66",
-          "unit": "index points",
-          "observedOn": "2026-09-25",
-          "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew"
-        },
-        {
           "lens": "pricing",
-          "point": "One-month average of VIX was 15.68 as of 2026-09-25, still above the then-current spot.",
+          "point": "One-month average of VIX closes is 15.68, still above the latest close.",
           "value": "15.68",
           "unit": "index points",
           "observedOn": "2026-09-25",
@@ -146,52 +123,28 @@
         }
       ],
       "gaps": [
-        "Exact trailing 3-month average of VIX as of precisely 2026-09-27 not independently recomputed from full daily series",
-        "No forward VIX futures curve levels or settlement prices retrieved for 30-day horizon pricing",
-        "No specific geopolitical or policy event calendars tied to volatility spikes in the next 30 days",
-        "Dropped 17.93 index points: URL was not in the search results."
+        "Exact primary-source computation of trailing 3-month VIX average from full daily series not directly published on Cboe or FRED pages opened",
+        "No verified scheduled geopolitical or policy catalysts specifically dated within next 30 days that quantify expected VIX impact",
+        "VIX futures term structure details and open interest flows beyond spot and VIX3M not extracted from primary exchange filings",
+        "Dropped 17.93 index points: URL was not in the search results.",
+        "Dropped 14.21 index points: URL was not in the search results."
       ]
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
-      "headline": "AI buildout tracker shows 49.3 GW power under firm contract across 43 deals plus 20.9 GW at LOI stage as of mid-September 2026.",
-      "summary": "49.3 GW as of 2026-09-20; 3.2 GW as of 2026-09-03; 199 MW as of 2026-08-28",
-      "asOf": "2026-09-27T13:42:34.178Z",
-      "evidence": [
-        {
-          "lens": "flows",
-          "point": "AI buildout tracker shows 49.3 GW power under firm contract across 43 deals plus 20.9 GW at LOI stage as of mid-September 2026.",
-          "value": "49.3",
-          "unit": "GW",
-          "observedOn": "2026-09-20",
-          "source": "https://supercyclehq.com/buildout"
-        },
-        {
-          "lens": "precedent",
-          "point": "OpenAI announced a 3.2 GW campus in Effingham County, Georgia, under 25-year agreement with Georgia Power for phased delivery from 2028.",
-          "value": "3.2",
-          "unit": "GW",
-          "observedOn": "2026-09-03",
-          "source": "https://insidethedatacenter.com/articles/gigawatt-campus-summer/"
-        },
-        {
-          "lens": "precedent",
-          "point": "Amazon signed four onshore wind PPAs in Sweden totaling 199 MW with OX2 and Mirova for data center support.",
-          "value": "199",
-          "unit": "MW",
-          "observedOn": "2026-08-28",
-          "source": "https://supercyclehq.com/buildout"
-        }
-      ],
+      "headline": "No dated, sourced print",
+      "summary": "No announcements of brand-new dedicated PPAs or generation deals by major hyperscalers/AI labs in the immediate 1-2 weeks prior to query date found in live search; forward 30-day window inherently unverifiable as future ",
+      "asOf": "2026-09-27T13:45:57.976Z",
+      "evidence": [],
       "gaps": [
-        "No primary-source confirmation of brand-new dedicated generation or PPA announcements by major hyperscalers/AI labs in the immediate days before 2026-09-27",
-        "Exact pipeline of deals expected to close or announce specifically within the next 30 days not verified from filings or official releases",
-        "Pricing terms for most recent PPAs remain undisclosed in public sources",
-        "Dropped 396 MW: URL was not in the search results.",
-        "Dropped 6.6 GW observed 2026-01-09: older than 45 days.",
-        "Dropped 17 GW observed 2026-08-04: older than 45 days.",
-        "Dropped 46.06 GW observed 2026-07-17: older than 45 days."
+        "No announcements of brand-new dedicated PPAs or generation deals by major hyperscalers/AI labs in the immediate 1-2 weeks prior to query date found in live search; forward 30-day window inherently unverifiable as future ",
+        "Dropped 835 MW observed 2024-09-20: older than 45 days.",
+        "Dropped 960 MW observed 2024-03-04: older than 45 days.",
+        "Dropped 1 GW+ observed 2024-10-14: older than 45 days.",
+        "Dropped 1.1 GW observed 2025-06-03: older than 45 days.",
+        "Dropped 10+ GW projected observed 2025-01-15: older than 45 days.",
+        "Dropped 300+ MW observed 2025-03-12: older than 45 days."
       ]
     }
   ]
