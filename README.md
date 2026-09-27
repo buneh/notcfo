@@ -57,11 +57,10 @@ notcfo/
 ├── data/                                — live JSON: calls, signal, track record,
 │                                           desk notes, resolution drafts, backtest results
 ├── scripts/
-│   ├── swarm.mjs                      — Sensing + Signal + Orchestra (Grok swarm)
-│   ├── generate-calls.mjs             — retired 50-persona Claude council, kept for the record
-│   ├── resolve-calls.mjs              — resolution research agent (Grok)
-│   └── backtest-resolutions.mjs         — verifies the resolution agent against
-│                                           20 known historical windows
+│   ├── swarm.mjs                        — Sensing + Signal + Orchestra
+│   ├── resolve-calls.mjs                — resolution drafts
+│   └── backtest-resolutions.mjs         — manual check of the resolution pass
+│                                            against 20 historical windows
 └── .github/
     ├── workflows/                       — daily generation/resolution run + manual backtest
     └── dependabot.yml                   — keeps Actions versions current

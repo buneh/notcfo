@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // scripts/swarm.mjs
 //
-// Scheduled forecasting swarm for notcfo. Replaces the 50-persona Claude
-// council. Per domain, every run:
+// Scheduled forecasting swarm for notcfo.
+// Per domain, every run:
 //   1. One web search (sensing) builds an evidence board.
 //   2. That board is distilled into the public Signal.
 //   3. If the domain's call slot is empty, five ballots vote in parallel

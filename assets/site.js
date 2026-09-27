@@ -19,11 +19,7 @@ function toggleTheme() {
 
 /* ─── view toggle: human / machine ────────────────────────────
    Machine view shows the same underlying data an agent would get
-   from the published JSON files (data/calls.json, signal.json,
-   track-record.json) — literal fields, not restyled prose. Other
-   scripts (signal.js, calls.js) listen for 'notcfo:viewchange' and
-   re-render their already-fetched data in the new mode, so toggling
-   never triggers a re-fetch. */
+   from the published JSON files. Toggling does not refetch. */
 function toggleView() {
   const isMachine = document.documentElement.classList.toggle('machine-view');
   try { localStorage.setItem('notcfo-view', isMachine ? 'machine' : 'human'); } catch (e) {}

@@ -4,8 +4,8 @@ notcfo is a small, personal forecasting practice — but it handles two
 genuinely sensitive things, and both are worth a real disclosure process
 rather than none:
 
-- **The Oracle** holds each visitor's own Anthropic API key in browser
-  memory for the duration of their session.
+- **The Oracle** holds each visitor's own xAI API key in browser
+  memory for the duration of that tab. It is not written to disk.
 - **The Desk** holds a GitHub personal access token with write access to
   this repository, in browser memory, for whoever is reviewing
   resolutions.

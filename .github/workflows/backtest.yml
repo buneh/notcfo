@@ -18,7 +18,7 @@ jobs:
 
       - name: Run 20 historical resolution cases
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
         run: node scripts/backtest-resolutions.mjs
 
       - name: Commit results
