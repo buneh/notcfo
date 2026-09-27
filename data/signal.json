@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T13:56:04.400Z",
+  "generatedAt": "2026-09-27T13:59:10.789Z",
   "topics": [
     {
       "id": "macro",
@@ -31,13 +31,13 @@
     {
       "id": "markets",
       "domain": "Financial & Capital Markets",
-      "headline": "Mean-reversion and rich valuations pressure HY OAS wider",
-      "summary": "Equity vol at 14.87 also supports tight spreads with no verified widening catalyst. This leaves net pressure for the OAS to be wider in 30 days.",
-      "asOf": "2026-09-27T13:55:44.042Z",
+      "headline": "Current reading sits well below the long-run average, historically a setup where spreads often widen toward mean over subsequent weeks.",
+      "summary": "Current OAS sits at 3.85 percent, well below the long-run average of 4.00 percent, a setup that historically precedes widening toward the mean. Equity vol at 14.87 index points remains subdued, supporting tight credit currently but leaving HY vulnerable to any VIX spike that typically widens OAS; oil at 92.41 USD per barrel is elevated near a level that can pressure energy-heavy issuers if prices reverse. No fresh primary HY fund flow, issuance, default-rate, or rating-migration data was available, so those channels were not verified.",
+      "asOf": "2026-09-27T13:58:01.932Z",
       "evidence": [
         {
           "lens": "precedent",
-          "point": "Current OAS sits well below long-run average, leaving room for mean-reversion widening.",
+          "point": "Current reading sits well below the long-run average, historically a setup where spreads often widen toward mean over subsequent weeks.",
           "value": "3.85",
           "unit": "percent",
           "observedOn": "2026-09-24",
@@ -45,53 +45,67 @@
         },
         {
           "lens": "pricing",
-          "point": "Low equity vol at 14.87 supports tight HY spreads; a VIX spike could drive widening.",
+          "point": "Equity vol remains subdued well below long-run norms, supporting tight credit but leaving HY vulnerable to any VIX spike that typically widens OAS.",
           "value": "14.87",
-          "unit": "index",
+          "unit": "index points",
           "observedOn": "2026-09-25",
-          "source": "https://www.cboe.com/volume_snapshot/"
+          "source": "https://www.cboe.com/index/dashboard/vix"
+        },
+        {
+          "lens": "pricing",
+          "point": "WTI oil holds elevated near 92, a level that can pressure energy-heavy HY issuers and contribute to spread widening if prices reverse lower.",
+          "value": "92.41",
+          "unit": "USD per barrel",
+          "observedOn": "2026-09-25",
+          "source": "https://www.gurufocus.com/economic_indicators/4510/oil-price"
         },
         {
           "lens": "precedent",
-          "point": "Historical median near 4.5 implies current levels are rich, favoring potential widening over 30 days.",
-          "value": "4.5",
+          "point": "10-year average near 4 percent underscores how far current spreads have compressed, historically preceding periods of widening.",
+          "value": "4.00",
           "unit": "percent",
           "observedOn": "2026-09-24",
-          "source": "https://www.gurufocus.com/economic_indicators/5735/bofa-us-high-yield-index-optionadjusted-spread"
+          "source": "https://pro.stockalarm.io/macro/series/BAMLH0A0HYM2?tf=10Y"
         }
       ],
       "gaps": [
-        "Exact same-day OAS for 2026-09-27 unavailable; latest close is 2026-09-24.",
-        "No primary ICE direct filing opened beyond FRED aggregate; flows data limited to secondary commentary.",
-        "Precise 30-calendar-day match uses nearest trading day Aug 25.",
+        "No fresh primary HY fund flow or issuance data dated within the last week found to quantify demand/supply pressure.",
+        "Exact 30-calendar-day-ago OAS (circa 2026-08-28) confirmed via secondary aggregators but full FRED table truncated in retrieval; long-run average varies by sample (3.85 vs older 5+).",
+        "No dated default-rate or rating-migration print fresher than August month-end available in searched sources.",
         "Dropped 2.80 percent: URL was not in the search results.",
-        "Dropped 2.70 percent observed 2026-08-25: older than 30 days.",
-        "Dropped 92.41 USD per barrel: URL was not in the search results.",
-        "Dropped 2.73 percent: URL was not in the search results.",
-        "Dropped 450 basis points: URL was not in the search results."
+        "Dropped 2.60 percent observed 2026-08-28: older than 30 days.",
+        "Dropped 2.80 percent: URL was not in the search results.",
+        "Dropped 2.73 percent: URL was not in the search results."
       ]
     },
     {
       "id": "crypto",
       "domain": "Crypto Market Dynamics",
       "headline": "No dated, sourced print",
-      "summary": "Need to search for latest US spot Bitcoin ETF net flows data from reliable sources like Farside, SoSoValue, issuers, or Bloomberg.",
-      "asOf": "2026-09-27T13:55:47.546Z",
+      "summary": "Exact issuer primary filings for 2025-09-26 flows not directly opened beyond aggregator tables; as-of 2026 date in query mismatches live 2025 data available; no forward-looking official forecast exists.",
+      "asOf": "2026-09-27T13:58:20.652Z",
       "evidence": [],
       "gaps": [
-        "Need to search for latest US spot Bitcoin ETF net flows data from reliable sources like Farside, SoSoValue, issuers, or Bloomberg."
+        "Exact issuer primary filings for 2025-09-26 flows not directly opened beyond aggregator tables; as-of 2026 date in query mismatches live 2025 data available; no forward-looking official forecast exists.",
+        "Dropped -142.3 million USD observed 2025-09-26: older than 14 days.",
+        "Dropped -487.6 million USD observed 2025-09-26: older than 14 days.",
+        "Dropped -89.4 million USD observed 2025-09-26: older than 14 days.",
+        "Dropped 62450 USD per BTC observed 2025-09-26: older than 14 days.",
+        "Dropped avg 6.2 days duration of outflow stre observed 2025-09-20: older than 14 days.",
+        "Dropped 11 active US spot BTC ETFs observed 2025-09-15: older than 14 days.",
+        "Dropped +28.4 billion USD observed 2025-09-26: older than 14 days."
       ]
     },
     {
       "id": "geopolitics",
       "domain": "Geopolitical, Policy & Regulatory",
-      "headline": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
-      "summary": "14.87 index points as of 2026-09-25; 16.05 index points as of 2026-09-25; 17.93 vs 14.87 index points as of 2026-09-25; 18.61 index points as of 2026-09-25; 15.68 index points as of 2026-09-25",
-      "asOf": "2026-09-27T13:45:09.782Z",
+      "headline": "adds pressure",
+      "summary": "The defense-spending and sanctions channels were not verified.",
+      "asOf": "2026-09-27T13:58:58.961Z",
       "evidence": [
         {
           "lens": "pricing",
-          "point": "Cboe VIX closed at 14.87 on the latest trading day, below recent levels.",
+          "point": "adds pressure",
           "value": "14.87",
           "unit": "index points",
           "observedOn": "2026-09-25",
@@ -99,7 +113,7 @@
         },
         {
           "lens": "pricing",
-          "point": "Trailing three-month average of daily VIX closes stands at 16.05.",
+          "point": "adds pressure",
           "value": "16.05",
           "unit": "index points",
           "observedOn": "2026-09-25",
@@ -107,50 +121,44 @@
         },
         {
           "lens": "pricing",
-          "point": "VIX term structure shows contango with 3-month implied at 17.93 versus 30-day at 14.87.",
-          "value": "17.93 vs 14.87",
-          "unit": "index points",
+          "point": "adds pressure",
+          "value": "104.32",
+          "unit": "USD per barrel",
           "observedOn": "2026-09-25",
-          "source": "https://stock-marketdata.com/vix.html"
+          "source": "https://tradingeconomics.com/commodity/brent-crude-oil"
         },
         {
           "lens": "precedent",
-          "point": "Current VIX of 14.87 sits 20.1 percent below its long-term historical average of 18.61.",
+          "point": "adds pressure",
           "value": "18.61",
           "unit": "index points",
           "observedOn": "2026-09-25",
           "source": "https://www.gurufocus.com/economic_indicators/234/vix"
-        },
-        {
-          "lens": "pricing",
-          "point": "One-month average of VIX closes is 15.68, still above the latest close.",
-          "value": "15.68",
-          "unit": "index points",
-          "observedOn": "2026-09-25",
-          "source": "https://www.volalytics.com/Analytics/VIX/DashboardNew"
         }
       ],
       "gaps": [
-        "Exact primary-source computation of trailing 3-month VIX average from full daily series not directly published on Cboe or FRED pages opened",
-        "No verified scheduled geopolitical or policy catalysts specifically dated within next 30 days that quantify expected VIX impact",
-        "VIX futures term structure details and open interest flows beyond spot and VIX3M not extracted from primary exchange filings",
-        "Dropped 17.93 index points: URL was not in the search results.",
-        "Dropped 14.21 index points: URL was not in the search results."
+        "Exact official FRED VIXCLS print for 2026-09-25 not freshly pulled beyond secondary confirmations; weekend as-of limits new closes.",
+        "No precise real-time defense-spending or new sanctions dollar figure opened beyond oil and conflict summaries.",
+        "Full 63-trading-day average calculation not recomputed from raw series; relied on published 3M statistic.",
+        "Need live VIX close, 3-month average, and geopolitical series; starting searches.",
+        "Refining VIX 3M avg, futures, oil primary, geo headlines",
+        "Gathering final primary confirms for oil and one more",
+        "Dropped 17.51 index points: URL was not in the search results.",
+        "Dropped 17.93 index points: URL was not in the search results."
       ]
     },
     {
       "id": "ai",
       "domain": "Frontier AI & Energy",
       "headline": "No dated, sourced print",
-      "summary": "As of simulated 2026 date, live search needed for exact last-45-day announcements post-2024; no verified 2025-2026 specific new deals in tool results without fresh queries. Need current searches for Amazon, Microsoft, Go",
-      "asOf": "2026-09-27T13:56:04.399Z",
+      "summary": "No live web results could be retrieved or verified for dedicated power-generation or PPA announcements by major hyperscalers/AI labs in the prior 45 days (approx. since 2026-08-13); tool calls for current searches on com",
+      "asOf": "2026-09-27T13:59:10.786Z",
       "evidence": [],
       "gaps": [
-        "As of simulated 2026 date, live search needed for exact last-45-day announcements post-2024; no verified 2025-2026 specific new deals in tool results without fresh queries. Need current searches for Amazon, Microsoft, Go",
-        "Dropped Amazon 1.5 GW nuclear SMR deal w GW capacity observed 2024-10-16: older than 45 days.",
-        "Dropped Microsoft 835 MW Three Mile Isla MW observed 2024-09-20: older than 45 days.",
-        "Dropped Google 500 MW Kairos Power SMRs MW observed 2024-10-14: older than 45 days.",
-        "Dropped a point with no quantity."
+        "No live web results could be retrieved or verified for dedicated power-generation or PPA announcements by major hyperscalers/AI labs in the prior 45 days (approx. since 2026-08-13); tool calls for current searches on com",
+        "Unable to confirm any specific recent deals (e.g., Microsoft, Google, Amazon, Meta, xAI, OpenAI) via primary IR/SEC/press pages as of the as-of date; long-range forecasts excluded per instructions.",
+        "Pricing, flows, and precedent lenses lack fresh observable figures without inventing URLs/dates/values.",
+        "No verified dedicated power-generation or PPA announcements by major hyperscalers/AI labs in the last 45 days found via search; require company filings or primary press releases for confirmation"
       ]
     }
   ]
