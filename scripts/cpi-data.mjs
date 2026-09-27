@@ -114,7 +114,7 @@ async function loadBls() {
     sources: [BLS, BLS_PAGE],
     series,
     latest,
-    schedule: `Latest US CPI month ends ${latest.observedOn}. CPI does not print weekly. The one-week point stays on ${latest.value} unless a BLS release falls inside seven days.`,
+    schedule: `Latest US CPI is ${latest.value}% year-over-year, month ending ${latest.observedOn}. Forecast the print about 1 month, 3 months, 6 months, and 1 year out. The 1-month horizon is the next BLS release.`,
   };
 }
 
@@ -167,7 +167,7 @@ async function loadEcb() {
     sources: [`${ECB}M.U2.N.000000.4D0.ANR`, ECB_PAGE],
     series,
     latest,
-    schedule: `Latest Eurozone HICP month ends ${latest.observedOn}. A flash for the next month is often the last working day of that month. If no flash falls inside seven days, the one-week point stays on ${latest.value}.`,
+    schedule: `Latest Eurozone HICP is ${latest.value}% year-over-year, month ending ${latest.observedOn}. Forecast the print about 1 month, 3 months, 6 months, and 1 year out. The 1-month horizon is the next release.`,
   };
 }
 

@@ -17,7 +17,7 @@
     }).format(d);
   }
 
-  const HORIZON_DAYS = { "24h": 1, "1w": 7, "1m": 30, "1y": 365 };
+  const HORIZON_DAYS = { "1m": 30, "3m": 91, "6m": 182, "1y": 365 };
 
   function callDue(calledAt, horizon) {
     const days = HORIZON_DAYS[horizon] ?? 30;
@@ -50,12 +50,14 @@
     </li>`;
   }
 
-  const HORIZON_LABEL = { "1w": "1 week", "1m": "1 month", "1q": "1 quarter", "1y": "1 year" };
+  const HORIZON_LABEL = { "1m": "1 month", "3m": "3 months", "6m": "6 months", "1y": "1 year" };
 
   function horizonGrid(call) {
-    return `<div class="hz">${(call.horizons || []).map((row) =>
-      `<div><b>${esc(row.probability)}</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(Number(row.point).toFixed(1))}%</span></div>`
-    ).join("")}</div>`;
+    return `<div class="hz">${(call.horizons || []).map((row) => {
+      const rate = Number(row.point);
+      const rateText = Number.isFinite(rate) ? rate.toFixed(1) + "%" : "";
+      return `<div><b>${esc(row.probability)}%</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(rateText)}</span></div>`;
+    }).join("")}</div>`;
   }
 
   function callRow(call) {
