@@ -93,7 +93,8 @@
       const unit = clip(item && item.unit, 24);
       const source = clip(item && item.source, 300);
       const observed = parseDay(item && item.observedOn);
-      if (!point || !/\d/.test(value)) {
+      const quantity = numericTokens(String(value).replace(/\d{4}-\d{2}-\d{2}/g, ""));
+      if (!point || !quantity.length) {
         drop("Dropped a point with no quantity.");
         return;
       }
