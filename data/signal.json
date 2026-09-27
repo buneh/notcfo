@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-27T18:47:19.889Z",
+  "generatedAt": "2026-09-27T19:58:01.782Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
-      "summary": "Latest print is 3.4; recent upward trend in headline and energy components implies next monthly release will print higher.",
-      "asOf": "2026-09-27T18:46:40.498Z",
+      "summary": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4. US CPI index rose 0.3% from the prior month. US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0. US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2. US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
+      "asOf": "2026-09-27T19:57:17.885Z",
       "evidence": [
         {
           "lens": "official",
@@ -69,18 +69,18 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 48,
+        "median": 49,
         "dissent": "Skeptic",
-        "thin": 0,
+        "thin": 1,
         "ballotCount": 6
       }
     },
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next HICP to exceed 3.2",
+      "headline": "Next HICP > 3.2",
       "summary": "Energy surge to 14.3 from 10.3 drives headline above latest 3.2 print.",
-      "asOf": "2026-09-27T18:47:08.752Z",
+      "asOf": "2026-09-27T19:57:50.515Z",
       "evidence": [
         {
           "lens": "official",
@@ -143,8 +143,8 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Scholar",
-        "thin": 1,
+        "dissent": "Contrarian",
+        "thin": 2,
         "ballotCount": 6
       }
     }
