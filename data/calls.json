@@ -34,7 +34,7 @@
         "observedOn": "2026-08-31",
         "unit": "% YoY"
       },
-      "forecast": "US CPI headline YoY edges above 3.4% next month.",
+      "forecast": "US CPI is seen at 3.0% in 1 month and 4.0% in 1 year.",
       "resolutionCriteria": "Yes if US CPI headline year-over-year exceeds 3.4% at the 1-month horizon.",
       "calledAt": "2026-09-27T18:46:58.700Z",
       "_debug": {
@@ -139,7 +139,7 @@
         "observedOn": "2026-08-31",
         "unit": "% YoY"
       },
-      "forecast": "Eurozone HICP headline YoY eases to 3.0% in one month.",
+      "forecast": "Eurozone HICP is seen at 3.0% in 1 month and 2.0% in 1 year.",
       "resolutionCriteria": "Yes if Eurozone HICP headline YoY exceeds 3.2% at the 1-month horizon.",
       "calledAt": "2026-09-27T18:47:19.888Z",
       "_debug": {
