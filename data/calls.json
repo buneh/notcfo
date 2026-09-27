@@ -1,4 +1,570 @@
 {
-  "generatedAt": "2026-09-27T20:17:23.547Z",
-  "calls": []
+  "generatedAt": "2026-09-27T20:18:18.878Z",
+  "calls": [
+    {
+      "id": "us-cpi",
+      "domain": "US CPI",
+      "question": "Will US CPI headline, year-over-year, be higher than the latest official print?",
+      "horizon": "1m",
+      "probability": 45,
+      "horizons": [
+        {
+          "id": "1m",
+          "probability": 45,
+          "point": 3.3
+        },
+        {
+          "id": "3m",
+          "probability": 48,
+          "point": 3.3
+        },
+        {
+          "id": "6m",
+          "probability": 52,
+          "point": 3.1
+        },
+        {
+          "id": "1y",
+          "probability": 55,
+          "point": 3
+        }
+      ],
+      "latest": {
+        "value": 3.4,
+        "observedOn": "2026-08-31",
+        "unit": "% YoY"
+      },
+      "forecast": "US CPI versus 3.4% now: 1 month 3.3% (-0.1 pp), 3 months 3.3% (-0.1 pp), 6 months 3.1% (-0.3 pp), 1 year 3.0% (-0.4 pp).",
+      "resolutionCriteria": "Yes if US CPI headline year-over-year exceeds 3.4% at the 1-month horizon.",
+      "curves": {
+        "1m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.9,
+            "mid": 3.3,
+            "hi": 3.7
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.8,
+            "mid": 3.3,
+            "hi": 3.8
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.9,
+            "mid": 3.3,
+            "hi": 3.7
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.9,
+            "mid": 3.4,
+            "hi": 3.8
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.9,
+            "mid": 3.3,
+            "hi": 3.7
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.9,
+            "mid": 3.4,
+            "hi": 3.9
+          }
+        ],
+        "3m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.6,
+            "mid": 3.2,
+            "hi": 3.8
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.6,
+            "mid": 3.2,
+            "hi": 3.9
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.8,
+            "mid": 3.4,
+            "hi": 4
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.7,
+            "mid": 3.3,
+            "hi": 3.9
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.6,
+            "mid": 3.2,
+            "hi": 3.8
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.6,
+            "mid": 3.3,
+            "hi": 4
+          }
+        ],
+        "6m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.4,
+            "mid": 3.1,
+            "hi": 3.9
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.4,
+            "mid": 3.1,
+            "hi": 4
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.7,
+            "mid": 3.5,
+            "hi": 4.3
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.5,
+            "mid": 3.2,
+            "hi": 4
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.4,
+            "mid": 3.1,
+            "hi": 3.9
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.3,
+            "mid": 3.1,
+            "hi": 3.9
+          }
+        ],
+        "1y": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.2,
+            "mid": 3,
+            "hi": 4
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.2,
+            "mid": 3,
+            "hi": 4.1
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.6,
+            "mid": 3.6,
+            "hi": 4.6
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.3,
+            "mid": 3.1,
+            "hi": 4.1
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.2,
+            "mid": 3,
+            "hi": 4
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2,
+            "mid": 2.8,
+            "hi": 3.7
+          }
+        ]
+      },
+      "calledAt": "2026-09-27T20:17:53.254Z",
+      "_debug": {
+        "engine": "grok-swarm",
+        "ballotCount": 6,
+        "thinEvidenceCount": 1,
+        "dissent": "Scholar",
+        "spread": 7,
+        "evidence": [
+          {
+            "lens": "official",
+            "point": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4.",
+            "value": "3.4",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+            "category": "official",
+            "relevance": "direct",
+            "event": "Latest CPI print 3.4% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "US CPI index rose 0.3% from the prior month.",
+            "value": "0.3",
+            "unit": "% MoM",
+            "observedOn": "2026-08-31",
+            "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+            "category": "official",
+            "relevance": "direct",
+            "event": "Latest CPI print 3.4% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0.",
+            "value": "2.7",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+            "category": "component",
+            "relevance": "context",
+            "event": "Latest food CPI 2.7% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2.",
+            "value": "3.0",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+            "category": "component",
+            "relevance": "context",
+            "event": "Latest shelter CPI 3.0% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
+            "value": "3.3",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+            "category": "component",
+            "relevance": "context",
+            "event": "Latest energy CPI 3.3% YoY"
+          }
+        ],
+        "gaps": [
+          "No oil price on this feed. The energy row is the CPI energy index.",
+          "US CPI is monthly. The next print is the following month, not this week."
+        ]
+      }
+    },
+    {
+      "id": "ez-cpi",
+      "domain": "Eurozone CPI",
+      "question": "Will Eurozone HICP headline, year-over-year, be higher than the latest official print?",
+      "horizon": "1m",
+      "probability": 45,
+      "horizons": [
+        {
+          "id": "1m",
+          "probability": 45,
+          "point": 3.1
+        },
+        {
+          "id": "3m",
+          "probability": 48,
+          "point": 2.8
+        },
+        {
+          "id": "6m",
+          "probability": 51,
+          "point": 2.6
+        },
+        {
+          "id": "1y",
+          "probability": 53,
+          "point": 2.3
+        }
+      ],
+      "latest": {
+        "value": 3.2,
+        "observedOn": "2026-08-31",
+        "unit": "% YoY"
+      },
+      "forecast": "Eurozone CPI versus 3.2% now: 1 month 3.1% (-0.1 pp), 3 months 2.8% (-0.4 pp), 6 months 2.6% (-0.6 pp), 1 year 2.3% (-0.9 pp).",
+      "resolutionCriteria": "Eurozone HICP headline YoY above 3.2% counts as yes at the 1-month horizon.",
+      "curves": {
+        "1m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.6,
+            "mid": 3.1,
+            "hi": 3.6
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.6,
+            "mid": 3.1,
+            "hi": 3.6
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.6,
+            "mid": 3.1,
+            "hi": 3.6
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.6,
+            "mid": 3.1,
+            "hi": 3.6
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.7,
+            "mid": 3.2,
+            "hi": 3.7
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.7,
+            "mid": 3.2,
+            "hi": 3.7
+          }
+        ],
+        "3m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 2.2,
+            "mid": 2.9,
+            "hi": 3.6
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 2.1,
+            "mid": 2.8,
+            "hi": 3.5
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 2.1,
+            "mid": 2.8,
+            "hi": 3.5
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 2.1,
+            "mid": 2.8,
+            "hi": 3.5
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.3,
+            "mid": 3,
+            "hi": 3.7
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.3,
+            "mid": 3.1,
+            "hi": 3.9
+          }
+        ],
+        "6m": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 1.8,
+            "mid": 2.7,
+            "hi": 3.6
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 1.7,
+            "mid": 2.5,
+            "hi": 3.3
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 1.7,
+            "mid": 2.5,
+            "hi": 3.3
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 1.8,
+            "mid": 2.5,
+            "hi": 3.3
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2.1,
+            "mid": 2.8,
+            "hi": 3.5
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 2.1,
+            "mid": 3,
+            "hi": 3.9
+          }
+        ],
+        "1y": [
+          {
+            "role": "analyst",
+            "title": "Analyst",
+            "lo": 1.5,
+            "mid": 2.4,
+            "hi": 3.3
+          },
+          {
+            "role": "skeptic",
+            "title": "Skeptic",
+            "lo": 1.4,
+            "mid": 2.2,
+            "hi": 3
+          },
+          {
+            "role": "quant",
+            "title": "Quant",
+            "lo": 1.4,
+            "mid": 2.3,
+            "hi": 3.2
+          },
+          {
+            "role": "historian",
+            "title": "Historian",
+            "lo": 1.5,
+            "mid": 2.3,
+            "hi": 3.2
+          },
+          {
+            "role": "contrarian",
+            "title": "Contrarian",
+            "lo": 2,
+            "mid": 2.7,
+            "hi": 3.4
+          },
+          {
+            "role": "scholar",
+            "title": "Scholar",
+            "lo": 1.9,
+            "mid": 2.8,
+            "hi": 3.7
+          }
+        ]
+      },
+      "calledAt": "2026-09-27T20:18:18.878Z",
+      "_debug": {
+        "engine": "grok-swarm",
+        "ballotCount": 6,
+        "thinEvidenceCount": 2,
+        "dissent": "Historian",
+        "spread": 9,
+        "evidence": [
+          {
+            "lens": "official",
+            "point": "Eurozone HICP headline was 3.2% year-over-year in the reference month ending 2026-08-31. Prior month 2.9.",
+            "value": "3.2",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+            "category": "official",
+            "relevance": "direct",
+            "event": "Latest HICP print 3.2% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "Eurozone HICP energy was 14.3% year-over-year in the reference month ending 2026-08-31. Prior month 10.3.",
+            "value": "14.3",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+            "category": "component",
+            "relevance": "context",
+            "event": "Energy component 14.3% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "Eurozone HICP food was 1.1% year-over-year in the reference month ending 2026-08-31. Prior month 1.2.",
+            "value": "1.1",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+            "category": "component",
+            "relevance": "context",
+            "event": "Food component 1.1% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "Eurozone HICP services was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.3.",
+            "value": "3.0",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+            "category": "component",
+            "relevance": "context",
+            "event": "Services component 3.0% YoY"
+          },
+          {
+            "lens": "official",
+            "point": "Eurozone HICP core was 2.4% year-over-year in the reference month ending 2026-08-31. Prior month 2.5.",
+            "value": "2.4",
+            "unit": "% YoY",
+            "observedOn": "2026-08-31",
+            "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+            "category": "component",
+            "relevance": "context",
+            "event": "Core component 2.4% YoY"
+          }
+        ],
+        "gaps": [
+          "Energy here is the HICP energy index, not a Brent quote."
+        ]
+      }
+    }
+  ]
 }
