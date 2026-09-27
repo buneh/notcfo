@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T18:28:21.654Z",
+  "updatedAt": "2026-09-27T18:47:19.889Z",
   "domains": {
     "macro": {
       "series": [
@@ -702,9 +702,58 @@
               "event": "Latest official print 3.4% YoY ending 2026-08-31"
             }
           ]
+        },
+        {
+          "name": "US CPI food YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "US CPI shelter YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "US CPI energy YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "Latest official CPI components",
+          "unit": "% MoM",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "0.3",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official CPI components %"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official CPI components %"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official CPI components %"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official CPI components %"
+            }
+          ]
         }
       ],
-      "updatedAt": "2026-09-27T18:27:50.951Z"
+      "updatedAt": "2026-09-27T18:46:37.721Z"
     },
     "ez-cpi": {
       "series": [
@@ -1305,9 +1354,70 @@
               "source": "https://data.ecb.europa.eu/data/concepts/hicp"
             }
           ]
+        },
+        {
+          "name": "Eurozone HICP headline YoY",
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY Aug 2026"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "14.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY Aug 2026"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "1.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY Aug 2026"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY Aug 2026"
+            },
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.2% YoY Aug 2026"
+            }
+          ]
+        },
+        {
+          "name": "Eurozone HICP energy YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "Eurozone HICP food YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "Eurozone HICP services YoY",
+          "unit": "",
+          "points": []
+        },
+        {
+          "name": "Eurozone HICP core YoY",
+          "unit": "",
+          "points": []
         }
       ],
-      "updatedAt": "2026-09-27T18:28:10.906Z"
+      "updatedAt": "2026-09-27T18:47:05.878Z"
     }
   }
 }

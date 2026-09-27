@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-27T18:28:21.654Z",
+  "generatedAt": "2026-09-27T18:47:19.889Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
-      "headline": "Next CPI YoY likely below 3.4",
-      "summary": "Evidence shows recent downward trends in food and shelter components (2.7 and 3.0) offsetting energy rise (3.3), implying next headline print under latest 3.4.",
-      "asOf": "2026-09-27T18:27:54.161Z",
+      "headline": "Next US CPI YoY to exceed 3.4",
+      "summary": "Latest print is 3.4; recent upward trend in headline and energy components implies next monthly release will print higher.",
+      "asOf": "2026-09-27T18:46:40.498Z",
       "evidence": [
         {
           "lens": "official",
@@ -27,7 +27,7 @@
           "observedOn": "2026-08-31",
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
-          "relevance": "context",
+          "relevance": "direct",
           "event": "Latest CPI MoM 0.3%"
         },
         {
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Food CPI 2.7% YoY"
+          "event": "Latest food CPI 2.7% YoY"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Shelter CPI 3.0% YoY"
+          "event": "Latest shelter CPI 3.0% YoY"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Energy CPI 3.3% YoY"
+          "event": "Latest energy CPI 3.3% YoY"
         }
       ],
       "gaps": [
@@ -69,9 +69,9 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 47,
-        "dissent": "Analyst",
-        "thin": 5,
+        "median": 48,
+        "dissent": "Skeptic",
+        "thin": 0,
         "ballotCount": 6
       }
     },
@@ -79,8 +79,8 @@
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
       "headline": "Next HICP to exceed 3.2",
-      "summary": "Energy spike to 14.3 drives headline above latest 3.2 print while core eases to 2.4.",
-      "asOf": "2026-09-27T18:28:13.780Z",
+      "summary": "Energy surge to 14.3 from 10.3 drives headline above latest 3.2 print.",
+      "asOf": "2026-09-27T18:47:08.752Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,7 +91,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP print 3.2% YoY"
+          "event": "Latest HICP 3.2% YoY"
         },
         {
           "lens": "official",
@@ -102,7 +102,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Energy component spikes to 14.3%"
+          "event": "Energy surge to 14.3%"
         },
         {
           "lens": "official",
@@ -113,7 +113,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Food component eases to 1.1%"
+          "event": "Food at 1.1% YoY"
         },
         {
           "lens": "official",
@@ -124,7 +124,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Services component falls to 3.0%"
+          "event": "Services at 3.0% YoY"
         },
         {
           "lens": "official",
@@ -135,7 +135,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Core HICP eases to 2.4%"
+          "event": "Core at 2.4% YoY"
         }
       ],
       "gaps": [
@@ -143,8 +143,8 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Contrarian",
-        "thin": 0,
+        "dissent": "Scholar",
+        "thin": 1,
         "ballotCount": 6
       }
     }
