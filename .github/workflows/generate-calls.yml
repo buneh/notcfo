@@ -2,14 +2,12 @@ name: Generate + resolve standing calls
 
 on:
   schedule:
-    # 06:00 UTC daily. Sensing now runs for all 5 domains every run (to
-    # keep Signal fresh), regardless of whether a call slot is open —
-    # that's a real, deliberate daily cost, not a bug. Call-generation
-    # itself still only spends the (much larger) 50-persona council cost
-    # on domains with an open slot. resolve-calls.mjs only researches
-    # calls past their horizon without an existing draft.
+    # 06:00 UTC daily. Sensing runs for all 5 domains every run so Signal
+    # stays fresh, whether or not a call slot is open. A new call is
+    # written only when a domain's slot is empty. resolve-calls.mjs only
+    # researches calls past their horizon that do not already have a draft.
     - cron: '0 6 * * *'
-  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -26,12 +24,12 @@ jobs:
 
       - name: Sense all domains, refresh Signal, fill any open call slots
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/generate-calls.mjs
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+        run: node scripts/swarm.mjs
 
       - name: Draft resolutions for calls past their horizon
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
         run: node scripts/resolve-calls.mjs
 
       - name: Commit if changed
@@ -44,14 +42,6 @@ jobs:
             exit 0
           fi
           git commit -m "Standing calls: refresh Signal + fill slots + draft resolutions [automated]"
-          # A concurrent commit (e.g. from the Desk approving/declining a
-          # draft) can land between checkout and push. Rebase once before
-          # giving up — this handles the common case (an unrelated or
-          # non-overlapping concurrent change) automatically, the same
-          # fetch+rebase recovery used manually throughout this project.
-          # A genuine same-line conflict still fails the job rather than
-          # guessing at a resolution — but this run's real API spend is
-          # at least not thrown away on every ordinary timing collision.
           for i in 1 2 3; do
             if git push; then
               echo "Pushed successfully."

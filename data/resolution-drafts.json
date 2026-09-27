@@ -21,6 +21,74 @@
         "TechTimes",
         "Memeburn"
       ]
+    },
+    {
+      "id": "macro",
+      "domain": "Macro Health & Sentiment",
+      "question": "Will both US CPI and Eurozone HICP (headline, year-over-year) come in higher at their next releases than their prior month’s readings?",
+      "resolutionCriteria": "Resolves YES if the next published US CPI YoY (BLS) and Eurozone HICP flash/final YoY (Eurostat) both exceed their respective immediately prior month's reported YoY figures. Resolves NO if either series is equal to or lower than its prior month's YoY reading, per the official BLS and Eurostat releases.",
+      "calledAt": "2026-07-07T11:58:23.182Z",
+      "calledProbability": 28,
+      "horizon": "1m",
+      "researchedAt": "2026-09-27T12:56:02.775Z",
+      "proposedOutcome": "no",
+      "evidenceSummary": "US CPI YoY for August 2026 was 3.4% (BLS), matching the July 2026 reading of 3.4% and thus not higher. Eurozone HICP YoY for August 2026 was 3.2% (Eurostat final), up from July's 2.9%. Since US did not exceed its prior month, the joint condition fails.",
+      "sources": [
+        "BLS CPI news release",
+        "Eurostat euro indicators"
+      ]
+    },
+    {
+      "id": "markets",
+      "domain": "Financial & Capital Markets",
+      "question": "Will the ICE BofA US High Yield Index Option-Adjusted Spread be wider in 30 days than it is today?",
+      "resolutionCriteria": "Resolves YES if the ICE BofA US High Yield Index Option-Adjusted Spread (FRED series BAMLH0A0HYM2) on the date 30 calendar days from today is higher than today's published value; resolves NO if it is equal to or lower.",
+      "calledAt": "2026-07-07T11:59:37.628Z",
+      "calledProbability": 54,
+      "horizon": "1m",
+      "researchedAt": "2026-09-27T12:56:09.983Z",
+      "proposedOutcome": "yes",
+      "evidenceSummary": "On 2026-07-07 the BAMLH0A0HYM2 value was 2.67. On 2026-08-06 (30 calendar days later) it was 2.71. Since 2.71 > 2.67 the spread was wider, meeting the YES criterion.",
+      "sources": [
+        "Equibles",
+        "FRED"
+      ]
+    },
+    {
+      "id": "geopolitics",
+      "domain": "Geopolitical, Policy & Regulatory",
+      "question": "Will the CBOE Volatility Index (VIX) be higher in 30 days than its trailing 3-month average?",
+      "resolutionCriteria": "Resolves YES if the CBOE VIX closing value 30 calendar days from now (per CBOE official data) exceeds the arithmetic average of daily VIX closes over the trailing 90 calendar days ending on that date; resolves NO if it is equal to or below that average.",
+      "calledAt": "2026-07-07T12:22:05.364Z",
+      "calledProbability": 52,
+      "horizon": "1m",
+      "researchedAt": "2026-09-27T12:56:14.470Z",
+      "proposedOutcome": "partial",
+      "evidenceSummary": "Could not locate primary CBOE official daily closing VIX series for the exact resolution window (≈2026-08-06 close vs arithmetic mean of daily closes over the prior 90 calendar days). Public aggregates and secondary charts exist but do not supply the precise primary print and comparison required; outcome therefore cannot be confirmed as strictly yes or no.",
+      "sources": [
+        "CBOE",
+        "Yahoo Finance",
+        "Federal Reserve FRED"
+      ]
+    },
+    {
+      "id": "ai",
+      "domain": "Frontier AI & Energy",
+      "question": "Will a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity within 30 days?",
+      "resolutionCriteria": "Resolves YES if a press release, SEC filing, or utility/PJM/FERC filing within 30 days documents a new signed power-purchase agreement or dedicated generation commitment (nuclear, gas, solar, storage, or grid interconnection ≥50MW) by any of Amazon, Google, Meta, Microsoft, Oracle, xAI, or OpenAI for AI/data-center load; resolves NO if no such announcement appears in company press releases, trade press (e.g., Utility Dive, Reuters energy desk), or regulatory filings during the window.",
+      "calledAt": "2026-07-07T12:23:41.328Z",
+      "calledProbability": 87,
+      "horizon": "1m",
+      "researchedAt": "2026-09-27T12:56:20.238Z",
+      "proposedOutcome": "no",
+      "evidenceSummary": "No press releases, SEC filings, utility/PJM/FERC filings, or trade press reports (Utility Dive, Reuters energy) document a new signed PPA or dedicated generation commitment (≥50MW nuclear/gas/solar/storage/interconnection) by Amazon, Google, Meta, Microsoft, Oracle, xAI, or OpenAI for AI/data-center load in the 30-day window from 2026-07-07. Searches of company newsrooms and energy desks for July–early August 2026 yield only prior or unrelated deals outside the period.",
+      "sources": [
+        "Google News",
+        "Reuters",
+        "Utility Dive",
+        "company press rooms (Amazon, Google, Meta, Microsoft, Oracle)",
+        "SEC EDGAR"
+      ]
     }
   ]
 }

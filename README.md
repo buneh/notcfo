@@ -6,8 +6,11 @@ notcfo runs two independent forecasting systems in the open, publishes
 their reasoning and resolution criteria before outcomes are known, and
 keeps a permanent public track record of every call, right or wrong.
 Built and maintained by Shota Zhvania (20+ years in debt capital
-markets) working alongside Claude (Anthropic) — the human half and the
-machine half, both named, neither hidden.
+markets) working alongside a forecasting swarm — the human half and the
+machine half, both named, neither hidden. The scheduled machine half is
+a Grok swarm: one live search, five independent ballots, and a median
+computed in code. The speaker writes the sentence. It does not move the
+number.
 
 ## What's actually running
 
@@ -24,11 +27,12 @@ benchmarking, academic literature) rather than one vague summary.
   strongest dissent. Four horizons every run: 24 hours, 1 week, 1 month,
   1 year.
 - **The Orchestra** — scheduled, runs itself once daily with no human
-  trigger, using a server-side key. Fifty personas (five reasoning
-  methodologies × ten evidence lenses) forecast one of five fixed
-  standing questions, synthesized into a single consensus call whenever
-  a domain's slot is open. A call is a fixed commitment from the moment
-  it's made — never silently revised while active.
+  trigger, using a server-side xAI key. One search, then five ballots
+  (Analyst, Skeptic, Quant, Historian, Contrarian) that cannot see each
+  other. The published probability is the median of those ballots. A
+  speaker writes the verdict and the resolution criteria and is not
+  allowed to change the number. A call is a fixed commitment from the
+  moment it's made — never silently revised while active.
 - **Resolution** — once a call's horizon passes, a research agent
   investigates the real outcome against resolution criteria written
   before anyone knew the answer, and drafts a verdict with evidence and
@@ -58,8 +62,9 @@ notcfo/
 ├── data/                                — live JSON: calls, signal, track record,
 │                                           desk notes, resolution drafts, backtest results
 ├── scripts/
-│   ├── generate-calls.mjs               — Sensing + Signal + Orchestra call generation
-│   ├── resolve-calls.mjs                — resolution research agent
+│   ├── swarm.mjs                      — Sensing + Signal + Orchestra (Grok swarm)
+│   ├── generate-calls.mjs             — retired 50-persona Claude council, kept for the record
+│   ├── resolve-calls.mjs              — resolution research agent (Grok)
 │   └── backtest-resolutions.mjs         — verifies the resolution agent against
 │                                           20 known historical windows
 └── .github/
@@ -69,11 +74,10 @@ notcfo/
 
 ## How it runs
 
-Static site on GitHub Pages. All generation and resolution happens via
-scheduled GitHub Actions calling the Anthropic API server-side — no
-backend, no database. The Oracle and the Desk both call external APIs
-(Anthropic, GitHub) directly from the browser, with credentials held in
-memory only, never persisted.
+Static site on GitHub Pages. Generation and resolution happen via
+scheduled GitHub Actions calling the xAI API server-side — no backend,
+no database. The secret is `XAI_API_KEY`. The Oracle still runs in the
+browser on the visitor's own Anthropic key, held in memory only.
 
 ## Security
 
