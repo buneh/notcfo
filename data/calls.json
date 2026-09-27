@@ -1,45 +1,4 @@
 {
-  "generatedAt": "2026-09-27T16:13:38.759Z",
-  "calls": [
-    {
-      "id": "markets",
-      "domain": "Financial & Capital Markets",
-      "question": "Will the ICE BofA US High Yield Index Option-Adjusted Spread be wider in 30 days than it is today?",
-      "horizon": "1m",
-      "probability": 54,
-      "forecast": "High-yield spreads likely widen modestly over 30 days.",
-      "resolutionCriteria": "YES if FRED BAMLH0A0HYM2 in 30 days is higher than today. NO if equal or lower.",
-      "calledAt": "2026-07-07T11:59:37.628Z"
-    },
-    {
-      "id": "crypto",
-      "domain": "Crypto Market Dynamics",
-      "question": "Will US-listed spot Bitcoin ETFs register net inflows over the next 7 days?",
-      "horizon": "1w",
-      "probability": 38,
-      "forecast": "US spot bitcoin ETFs likely see net outflows over 7 days.",
-      "resolutionCriteria": "YES if the 7-day sum of US spot bitcoin ETF flows is positive. NO if zero or negative.",
-      "calledAt": "2026-07-07T12:01:12.927Z"
-    },
-    {
-      "id": "geopolitics",
-      "domain": "Geopolitical, Policy & Regulatory",
-      "question": "Will the CBOE Volatility Index (VIX) be higher in 30 days than its trailing 3-month average?",
-      "horizon": "1m",
-      "probability": 52,
-      "forecast": "VIX is about even to finish above its 3-month average.",
-      "resolutionCriteria": "YES if the VIX close in 30 days is above the average of the prior 90 daily closes. NO otherwise.",
-      "calledAt": "2026-07-07T12:22:05.364Z"
-    },
-    {
-      "id": "ai",
-      "domain": "Frontier AI & Energy",
-      "question": "Will a major hyperscaler or AI lab announce a new dedicated power-generation or power-purchase agreement for AI/data-center capacity within 30 days?",
-      "horizon": "1m",
-      "probability": 87,
-      "forecast": "A major lab or hyperscaler likely announces a new power deal within 30 days.",
-      "resolutionCriteria": "YES if Amazon, Google, Meta, Microsoft, Oracle, xAI, or OpenAI announces a new power contract within 30 days. NO if none does.",
-      "calledAt": "2026-07-07T12:23:41.328Z"
-    }
-  ]
+  "generatedAt": "2026-09-27T18:27:20.055Z",
+  "calls": []
 }

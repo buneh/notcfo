@@ -160,6 +160,9 @@ nav a[aria-current="page"] { color: var(--ink); }
   line-height: 0.9;
   font-variant-numeric: tabular-nums;
 }
+.hz { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.35rem; }
+.hz b { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 450; line-height: 1; font-variant-numeric: tabular-nums; }
+.hz span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; }
 .call .q { margin: 0.25rem 0 0; }
 
 .split {
@@ -291,7 +294,6 @@ nav a[aria-current="page"] { color: var(--ink); }
 }
 @media (min-width: 800px) {
   .hero { grid-template-columns: 1.4fr 1fr; }
-  .call { grid-template-columns: 7rem 1fr auto; align-items: baseline; }
   .split { grid-template-columns: 1fr 1fr; }
   .steps li, .roles li { grid-template-columns: 3rem 1fr; }
   .roles li { grid-template-columns: 9rem 1fr; }

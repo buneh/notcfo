@@ -50,16 +50,23 @@
     </li>`;
   }
 
+  const HORIZON_LABEL = { "1w": "1 week", "1m": "1 month", "1q": "1 quarter", "1y": "1 year" };
+
+  function horizonGrid(call) {
+    return `<div class="hz">${(call.horizons || []).map((row) =>
+      `<div><b>${esc(row.probability)}</b><span>${esc(HORIZON_LABEL[row.id] || row.id)}</span><span>${esc(row.point)}%</span></div>`
+    ).join("")}</div>`;
+  }
+
   function callRow(call) {
     const due = callDue(call.calledAt, call.horizon);
     return `<li class="call">
-      <p class="prob">${esc(call.probability)}</p>
+      ${(call.horizons || []).length ? horizonGrid(call) : `<p class="prob">${esc(call.probability)}</p>`}
       <div>
         <p class="domain">${esc(call.domain)}</p>
         <p class="q">${esc(call.question)}</p>
-        <p class="meta">${due ? "Horizon passed" : "Open"} · ${esc(fmtDate(call.calledAt))}</p>
+        <p class="meta">${due ? "Closed" : "Open"}${call.latest ? ` · latest ${esc(call.latest.value)}% · ${esc(call.latest.observedOn)}` : ` · ${esc(fmtDate(call.calledAt))}`}</p>
       </div>
-      <p class="meta">${esc(call.horizon)}</p>
     </li>`;
   }
 
@@ -74,8 +81,7 @@
         <p class="meta">${due ? "Closed" : "Open"} · ${esc(fmtDate(call.calledAt))} · ${esc(call.horizon)}</p>
       </div>
       <div class="score">
-        <p class="meta">Probability</p>
-        <p class="prob">${esc(call.probability)}</p>
+        ${(call.horizons || []).length ? horizonGrid(call) : `<p class="prob">${esc(call.probability)}</p>`}
       </div>
     </article>`;
   }
