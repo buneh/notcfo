@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-27T20:18:18.878Z",
+  "generatedAt": "2026-09-28T13:28:28.000Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
       "summary": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4. US CPI index rose 0.3% from the prior month. US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0. US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2. US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
-      "asOf": "2026-09-27T20:17:42.941Z",
+      "asOf": "2026-09-28T13:28:10.950Z",
       "evidence": [
         {
           "lens": "official",
@@ -17,7 +17,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI print 3.4% YoY"
+          "event": "Latest CPI 3.4% YoY"
         },
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI print 3.4% YoY"
+          "event": "Latest CPI 0.3% MoM"
         },
         {
           "lens": "official",
@@ -69,8 +69,8 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Scholar",
+        "median": 48,
+        "dissent": "Skeptic",
         "thin": 1,
         "ballotCount": 6
       }
@@ -78,9 +78,9 @@
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next Eurozone HICP > 3.2%",
-      "summary": "Energy surge to 14.3 from 10.3 drives headline above latest 3.2 print.",
-      "asOf": "2026-09-27T20:18:02.881Z",
+      "headline": "Next HICP > 3.2",
+      "summary": "Latest print 3.2 implies next release will exceed it given 14.3 energy surge.",
+      "asOf": "2026-09-28T13:28:25.408Z",
       "evidence": [
         {
           "lens": "official",
@@ -142,9 +142,9 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Historian",
-        "thin": 2,
+        "median": 47,
+        "dissent": "Contrarian",
+        "thin": 1,
         "ballotCount": 6
       }
     }
