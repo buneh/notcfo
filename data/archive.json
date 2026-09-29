@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T13:28:28.000Z",
+  "updatedAt": "2026-09-29T12:31:30.563Z",
   "domains": {
     "macro": {
       "series": [
@@ -705,18 +705,42 @@
         },
         {
           "name": "US CPI food YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "US CPI food YoY %"
+            }
+          ]
         },
         {
           "name": "US CPI shelter YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "US CPI shelter YoY %"
+            }
+          ]
         },
         {
           "name": "US CPI energy YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "US CPI energy YoY %"
+            }
+          ]
         },
         {
           "name": "Latest official CPI components",
@@ -753,7 +777,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-09-28T13:28:02.913Z"
+      "updatedAt": "2026-09-29T12:31:10.484Z"
     },
     "ez-cpi": {
       "series": [
@@ -1398,26 +1422,58 @@
         },
         {
           "name": "Eurozone HICP energy YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "14.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Energy component 14.3% YoY"
+            }
+          ]
         },
         {
           "name": "Eurozone HICP food YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "1.1",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Food component 1.1% YoY"
+            }
+          ]
         },
         {
           "name": "Eurozone HICP services YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "3.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Services component 3.0% YoY"
+            }
+          ]
         },
         {
           "name": "Eurozone HICP core YoY",
-          "unit": "",
-          "points": []
+          "unit": "% YoY",
+          "points": [
+            {
+              "observedOn": "2026-08-31",
+              "value": "2.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Core component 2.4% YoY"
+            }
+          ]
         }
       ],
-      "updatedAt": "2026-09-28T13:28:21.897Z"
+      "updatedAt": "2026-09-29T12:31:22.764Z"
     }
   }
 }
