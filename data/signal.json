@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-29T12:31:30.563Z",
+  "generatedAt": "2026-09-30T12:16:37.281Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
       "summary": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4. US CPI index rose 0.3% from the prior month. US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0. US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2. US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
-      "asOf": "2026-09-29T12:31:14.759Z",
+      "asOf": "2026-09-30T12:16:18.231Z",
       "evidence": [
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI MoM 0.3%"
+          "event": "Latest CPI print 0.3% MoM"
         },
         {
           "lens": "official",
@@ -70,7 +70,7 @@
       ],
       "desk": {
         "median": 48,
-        "dissent": "Skeptic",
+        "dissent": "Contrarian",
         "thin": 4,
         "ballotCount": 6
       }
@@ -78,9 +78,9 @@
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next HICP > 3.2%",
-      "summary": "Latest print 3.2; energy surge to 14.3 from 10.3 and services at 3.0 imply next headline above 3.2.",
-      "asOf": "2026-09-29T12:31:29.804Z",
+      "headline": "Next HICP > 3.2",
+      "summary": "Energy surge to 14.3 from 10.3 drives headline above latest 3.2 print.",
+      "asOf": "2026-09-30T12:16:36.325Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,7 +91,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP print 3.2% YoY"
+          "event": "Latest HICP 3.2% YoY Aug 2026"
         },
         {
           "lens": "official",
@@ -102,7 +102,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Energy component 14.3% YoY"
+          "event": "Energy surge to 14.3% YoY"
         },
         {
           "lens": "official",
@@ -113,7 +113,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Food component 1.1% YoY"
+          "event": "Food at 1.1% YoY"
         },
         {
           "lens": "official",
@@ -124,7 +124,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Services component 3.0% YoY"
+          "event": "Services at 3.0% YoY"
         },
         {
           "lens": "official",
@@ -135,16 +135,16 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Core component 2.4% YoY"
+          "event": "Core at 2.4% YoY"
         }
       ],
       "gaps": [
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Scholar",
-        "thin": 1,
+        "median": 48,
+        "dissent": "Quant",
+        "thin": 2,
         "ballotCount": 6
       }
     }
