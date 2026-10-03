@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T12:14:21.279Z",
+  "updatedAt": "2026-10-03T11:26:26.046Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -218,8 +218,8 @@
       "horizon": "1m",
       "thin": 2,
       "ballotCount": 6,
-      "dissent": "Quant",
-      "spread": 7,
+      "dissent": "Scholar",
+      "spread": 6,
       "ballots": [
         {
           "role": "analyst",
@@ -232,7 +232,7 @@
             "1y": 3
           },
           "thin": false,
-          "thesis": "Recent stabilization at 3.4% with decelerating shelter/food and rising energy creates mixed but slightly downward-tilted pressures over coming horizons."
+          "thesis": "Recent headline stability at 3.4% masks diverging component trends with shelter decelerating, food cooling, and energy rebounding, producing modest net downward drift over time absent new shocks."
         },
         {
           "role": "skeptic",
@@ -245,24 +245,11 @@
             "1y": 3
           },
           "thin": false,
-          "thesis": "Recent headline stability at 3.4% masks diverging components (food decelerating, energy accelerating, shelter still easing) plus base effects that can easily produce small moves either way in the near term."
+          "thesis": "Recent energy rebound and sticky shelter are offset by softening food and base effects that tend to pull headline CPI lower over time, making modest declines the central case even as volatility keeps upside risk alive."
         },
         {
           "role": "quant",
           "title": "Quant",
-          "probability": 52,
-          "points": {
-            "1m": 3.4,
-            "3m": 3.3,
-            "6m": 3.1,
-            "1y": 2.8
-          },
-          "thin": true,
-          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (shelter and food easing, energy rebounding) and no strong disinflationary driver visible in the data."
-        },
-        {
-          "role": "historian",
-          "title": "Historian",
           "probability": 48,
           "points": {
             "1m": 3.3,
@@ -271,11 +258,11 @@
             "1y": 3.6
           },
           "thin": false,
-          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (shelter and food easing, energy rising), producing roughly balanced odds of the next prints being higher or lower than the latest official 3.4% reading."
+          "thesis": "Recent energy rebound and sticky shelter are pushing headline CPI higher after a 2025 dip, with modest further upside likely over the forecast horizon."
         },
         {
-          "role": "contrarian",
-          "title": "Contrarian",
+          "role": "historian",
+          "title": "Historian",
           "probability": 45,
           "points": {
             "1m": 3.3,
@@ -284,23 +271,36 @@
             "1y": 3
           },
           "thin": false,
-          "thesis": "Recent energy acceleration to 3.3% from 2.7% is the main upward pressure but shelter and food are still decelerating, producing modest net drift lower in headline over time."
+          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (shelter and food still decelerating while energy reaccelerated), producing roughly even odds of a higher print at short horizons and modest downward drift over longer ones as base effects and shelter lag work through."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 48,
+          "points": {
+            "1m": 3.4,
+            "3m": 3.3,
+            "6m": 3.3,
+            "1y": 3.2
+          },
+          "thin": true,
+          "thesis": "Recent energy rebound and volatile headline path (3.4-4.2 range in 2026) suggest modest downward drift from shelter/food cooling is likely to be offset by energy volatility, producing roughly neutral odds of exceeding the latest 3.4% print at most horizons."
         },
         {
           "role": "scholar",
           "title": "Scholar",
-          "probability": 48,
+          "probability": 51,
           "points": {
-            "1m": 3.3,
+            "1m": 3.4,
             "3m": 3.4,
-            "6m": 3.5,
-            "1y": 3.6
+            "6m": 3.3,
+            "1y": 3.3
           },
           "thin": true,
-          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (food decelerating, shelter decelerating, energy accelerating) and no strong directional momentum visible in the series."
+          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends: food and shelter still decelerating while energy reaccelerated, producing no strong directional momentum for the next several prints."
         }
       ],
-      "asOf": "2026-10-02T12:14:07.483Z"
+      "asOf": "2026-10-03T11:25:21.444Z"
     },
     "ez-cpi": {
       "median": 49,

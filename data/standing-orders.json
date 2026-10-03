@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T12:14:21.279Z",
+  "updatedAt": "2026-10-03T11:26:26.046Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -28,8 +28,8 @@
     },
     "us-cpi": {
       "fault": "aggregator",
-      "order": "search for the latest monthly oil price series and recent trends",
-      "updatedAt": "2026-10-02T12:14:09.086Z"
+      "order": "Search for the latest US CPI forecast series for September 2026 and beyond from sources like Bloomberg, Reuters, or the Cleveland Fed nowcast.",
+      "updatedAt": "2026-10-03T11:25:23.376Z"
     },
     "ez-cpi": {
       "fault": "aggregator",

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-02T12:14:21.279Z",
+  "generatedAt": "2026-10-03T11:26:26.046Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
-      "headline": "Next US CPI YoY likely below 3.4",
-      "summary": "Latest print 3.4; recent trend, easing shelter and food components imply next monthly YoY print will print lower.",
-      "asOf": "2026-10-02T12:14:08.406Z",
+      "headline": "Next US CPI YoY to exceed 3.4",
+      "summary": "Latest print is 3.4; recent upward trend in headline and energy components implies next release will print higher.",
+      "asOf": "2026-10-03T11:25:22.363Z",
       "evidence": [
         {
           "lens": "official",
@@ -17,7 +17,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI print 3.4% YoY"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI MoM 0.3%"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest food CPI 2.7% YoY"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest shelter CPI 3.0% YoY"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest energy CPI 3.3% YoY"
+          "event": "Latest CPI print"
         }
       ],
       "gaps": [
@@ -70,7 +70,7 @@
       ],
       "desk": {
         "median": 47,
-        "dissent": "Quant",
+        "dissent": "Scholar",
         "thin": 2,
         "ballotCount": 6
       }
