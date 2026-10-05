@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T12:06:34.253Z",
+  "updatedAt": "2026-10-05T14:11:45.842Z",
   "domains": {
     "macro": {
       "series": [
@@ -790,7 +790,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-04T12:06:12.046Z"
+      "updatedAt": "2026-10-05T14:11:24.819Z"
     },
     "ez-cpi": {
       "series": [
@@ -1430,6 +1430,41 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Latest official print 3.2% YoY Aug 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "18.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "1.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Latest official print 3.8% Sep 2026"
             }
           ]
         },
@@ -1486,7 +1521,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-04T12:06:29.505Z"
+      "updatedAt": "2026-10-05T14:11:40.947Z"
     }
   }
 }
