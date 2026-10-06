@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-05T14:11:45.842Z",
+  "generatedAt": "2026-10-06T13:12:48.313Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
-      "summary": "Latest print is 3.4; rising energy, shelter stickiness and recent monthly trend of 0.3 imply next release will print above 3.4.",
-      "asOf": "2026-10-05T14:11:30.971Z",
+      "summary": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4. US CPI index rose 0.3% from the prior month. US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0. US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2. US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
+      "asOf": "2026-10-06T13:07:33.910Z",
       "evidence": [
         {
           "lens": "official",
@@ -17,7 +17,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI print 3.4% YoY"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI MoM 0.3%"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest food CPI 2.7% YoY"
+          "event": "Latest CPI components"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest shelter CPI 3.0% YoY"
+          "event": "Latest CPI components"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest energy CPI 3.3% YoY"
+          "event": "Latest CPI components"
         }
       ],
       "gaps": [
@@ -70,8 +70,8 @@
       ],
       "desk": {
         "median": 48,
-        "dissent": "Scholar",
-        "thin": 2,
+        "dissent": "Historian",
+        "thin": 4,
         "ballotCount": 6
       }
     },

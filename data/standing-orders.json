@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T14:11:45.842Z",
+  "updatedAt": "2026-10-06T13:12:48.313Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -27,9 +27,9 @@
       "updatedAt": "2026-09-27T16:16:15.721Z"
     },
     "us-cpi": {
-      "fault": "archivist",
-      "order": "Search for the next US CPI headline release date and forecast after August 2026.",
-      "updatedAt": "2026-10-05T14:11:31.970Z"
+      "fault": "tagger",
+      "order": "search for the latest US CPI forecast series from sources like Bloomberg, Reuters, or the Cleveland Fed nowcast",
+      "updatedAt": "2026-10-06T13:07:34.956Z"
     },
     "ez-cpi": {
       "fault": "tagger",
