@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T13:12:48.313Z",
+  "updatedAt": "2026-10-07T13:02:50.335Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -216,27 +216,40 @@
     "us-cpi": {
       "median": 48,
       "horizon": "1m",
-      "thin": 4,
-      "ballotCount": 6,
-      "dissent": "Historian",
-      "spread": 4,
+      "thin": 2,
+      "ballotCount": 3,
+      "dissent": "Analyst",
+      "spread": 3,
       "ballots": [
         {
           "role": "analyst",
           "title": "Analyst",
-          "probability": 48,
+          "probability": 45,
           "points": {
-            "1m": 3.4,
-            "3m": 3.5,
-            "6m": 3.6,
-            "1y": 3.7
+            "1m": 3.3,
+            "3m": 3.2,
+            "6m": 3.1,
+            "1y": 3
           },
           "thin": false,
-          "thesis": "Energy component has begun to reaccelerate while shelter and food continue to ease, producing mixed but slightly upward pressure on headline CPI over the forecast horizon."
+          "thesis": "Recent energy acceleration is offset by continued shelter deceleration and stable food, producing modest net downward drift in headline CPI over the forecast horizon."
         },
         {
-          "role": "skeptic",
-          "title": "Skeptic",
+          "role": "quant",
+          "title": "Quant",
+          "probability": 48,
+          "points": {
+            "1m": 3.3,
+            "3m": 3.4,
+            "6m": 3.5,
+            "1y": 3.6
+          },
+          "thin": true,
+          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (shelter decelerating, energy accelerating, food easing) and no strong disinflationary impulse visible in the data."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
           "probability": 48,
           "points": {
             "1m": 3.4,
@@ -245,62 +258,10 @@
             "1y": 3.2
           },
           "thin": true,
-          "thesis": "Recent energy rebound and volatile monthly readings suggest headline CPI will fluctuate around the current 3.4% level with modest downward drift over time from shelter deceleration, but near-term base effects and energy volatility keep the probability of exceeding 3.4% near 50%."
-        },
-        {
-          "role": "quant",
-          "title": "Quant",
-          "probability": 49,
-          "points": {
-            "1m": 3.4,
-            "3m": 3.4,
-            "6m": 3.5,
-            "1y": 3.5
-          },
-          "thin": true,
-          "thesis": "Recent energy rebound and sticky shelter are pushing headline CPI higher after a mid-2026 dip, with modest further drift expected over the forecast horizon."
-        },
-        {
-          "role": "historian",
-          "title": "Historian",
-          "probability": 45,
-          "points": {
-            "1m": 3.3,
-            "3m": 3.2,
-            "6m": 3.1,
-            "1y": 3
-          },
-          "thin": true,
-          "thesis": "Recent headline CPI has stabilized near 3.4% with mixed component trends (declining food/shelter, rising energy) and no strong disinflationary driver visible in the data."
-        },
-        {
-          "role": "contrarian",
-          "title": "Contrarian",
-          "probability": 45,
-          "points": {
-            "1m": 3.3,
-            "3m": 3.2,
-            "6m": 3.1,
-            "1y": 3
-          },
-          "thin": false,
-          "thesis": "Recent energy acceleration to 3.3% and flat headline MoM of 0.3% are being offset by continued deceleration in shelter (to 3.0%) and food (to 2.7%), producing mild downward drift in the overall YoY rate over coming quarters."
-        },
-        {
-          "role": "scholar",
-          "title": "Scholar",
-          "probability": 49,
-          "points": {
-            "1m": 3.4,
-            "3m": 3.4,
-            "6m": 3.5,
-            "1y": 3.5
-          },
-          "thin": true,
-          "thesis": "Recent headline CPI has stabilized at 3.4% after a volatile climb from 2.4% earlier in 2026, with shelter still decelerating but energy rebounding and food easing, producing no strong directional momentum for the next several prints."
+          "thesis": "Recent energy acceleration to 3.3% and stable shelter/food are offsetting each other while the headline has been range-bound near 3.4% for months, producing modest mean-reversion pressure that slightly favors lower prints at longer horizons but keeps the 1-month outcome near a coin-flip."
         }
       ],
-      "asOf": "2026-10-06T13:07:32.543Z"
+      "asOf": "2026-10-07T13:02:18.192Z"
     },
     "ez-cpi": {
       "median": 47,
