@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T13:02:50.335Z",
+  "updatedAt": "2026-10-08T13:09:41.399Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -27,14 +27,14 @@
       "updatedAt": "2026-09-27T16:16:15.721Z"
     },
     "us-cpi": {
-      "fault": "tagger",
-      "order": "search for the latest US CPI forecast series from sources like Bloomberg, Reuters, or the Cleveland Fed nowcast",
-      "updatedAt": "2026-10-06T13:07:34.956Z"
+      "fault": "archivist",
+      "order": "Search for the latest US CPI headline YoY series data after 2026-08-31",
+      "updatedAt": "2026-10-08T13:09:26.373Z"
     },
     "ez-cpi": {
       "fault": "tagger",
       "order": "search for the next Eurozone HICP headline release after September 2026",
-      "updatedAt": "2026-10-05T14:11:45.841Z"
+      "updatedAt": "2026-10-08T13:09:41.399Z"
     }
   }
 }
