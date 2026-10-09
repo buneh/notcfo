@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-08T13:09:41.399Z",
+  "generatedAt": "2026-10-09T12:57:32.217Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
-      "summary": "The next print will be higher than the latest official 3.4, implying continued above-target inflation.",
-      "asOf": "2026-10-08T13:09:25.414Z",
+      "summary": "US CPI headline was 3.4% year-over-year in the reference month ending 2026-08-31. Prior month 3.4. US CPI index rose 0.3% from the prior month. US CPI food was 2.7% year-over-year in the reference month ending 2026-08-31. Prior month 3.0. US CPI shelter was 3.0% year-over-year in the reference month ending 2026-08-31. Prior month 3.2. US CPI energy was 3.3% year-over-year in the reference month ending 2026-08-31. Prior month 2.7.",
+      "asOf": "2026-10-09T12:56:13.315Z",
       "evidence": [
         {
           "lens": "official",
@@ -17,7 +17,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest US CPI print"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest US CPI MoM change"
+          "event": "Latest CPI print"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest US CPI food YoY"
+          "event": "Latest CPI components"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest US CPI shelter YoY"
+          "event": "Latest CPI components"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Latest US CPI energy YoY"
+          "event": "Latest CPI components"
         }
       ],
       "gaps": [
@@ -69,9 +69,9 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 48,
-        "dissent": "Skeptic",
-        "thin": 2,
+        "median": 46,
+        "dissent": "Quant",
+        "thin": 3,
         "ballotCount": 6
       }
     },
@@ -79,8 +79,8 @@
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
       "headline": "Next HICP > 3.8",
-      "summary": "Energy surge to 18.8 from 14.3 drives headline above latest 3.8 print.",
-      "asOf": "2026-10-08T13:09:40.646Z",
+      "summary": "Energy surge to 18.8 drives headline above latest 3.8 print.",
+      "asOf": "2026-10-09T12:57:31.454Z",
       "evidence": [
         {
           "lens": "official",
@@ -142,9 +142,9 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 51,
+        "median": 45,
         "dissent": "Contrarian",
-        "thin": 3,
+        "thin": 2,
         "ballotCount": 6
       }
     }
