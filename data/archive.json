@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T12:28:49.277Z",
+  "updatedAt": "2026-10-12T15:00:29.248Z",
   "domains": {
     "macro": {
       "series": [
@@ -790,7 +790,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-11T12:28:32.953Z"
+      "updatedAt": "2026-10-12T15:00:06.365Z"
     },
     "ez-cpi": {
       "series": [
@@ -1478,6 +1478,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Energy component 14.3% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "18.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Energy surge to 18.8% Sep 2026"
             }
           ]
         },
@@ -1491,6 +1498,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Food component 1.1% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "1.4",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Food at 1.4% Sep 2026"
             }
           ]
         },
@@ -1504,6 +1518,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Services component 3.0% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Services at 3.2% Sep 2026"
             }
           ]
         },
@@ -1517,11 +1538,18 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Core component 2.4% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Core at 2.5% Sep 2026"
             }
           ]
         }
       ],
-      "updatedAt": "2026-10-11T12:28:46.027Z"
+      "updatedAt": "2026-10-12T15:00:24.247Z"
     }
   }
 }
