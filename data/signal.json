@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-12T15:00:29.248Z",
+  "generatedAt": "2026-10-13T13:56:13.338Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.4",
-      "summary": "Latest print is 3.4; recent upward trend in headline and energy components implies next release will print higher.",
-      "asOf": "2026-10-12T15:00:10.334Z",
+      "summary": "Evidence shows recent upward trend in headline CPI reaching 3.4 in Aug 2026 with energy at 3.3 and shelter at 3.0; series data implies continued rise in following months.",
+      "asOf": "2026-10-13T13:55:58.400Z",
       "evidence": [
         {
           "lens": "official",
@@ -69,9 +69,9 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 47,
-        "dissent": "Contrarian",
-        "thin": 5,
+        "median": 48,
+        "dissent": "Skeptic",
+        "thin": 1,
         "ballotCount": 6
       }
     },
@@ -80,7 +80,7 @@
       "domain": "Eurozone CPI",
       "headline": "Next HICP > 3.8",
       "summary": "Energy surge to 18.8 drives headline above latest 3.8 print.",
-      "asOf": "2026-10-12T15:00:28.106Z",
+      "asOf": "2026-10-13T13:56:12.696Z",
       "evidence": [
         {
           "lens": "official",
@@ -142,7 +142,7 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 54,
+        "median": 49,
         "dissent": "Contrarian",
         "thin": 2,
         "ballotCount": 6
