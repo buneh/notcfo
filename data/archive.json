@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T11:33:21.977Z",
+  "updatedAt": "2026-10-15T11:11:30.123Z",
   "domains": {
     "macro": {
       "series": [
@@ -700,6 +700,41 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "Latest official print 3.4% YoY ending 2026-08-31"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.7",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "0.6",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
             }
           ]
         },
@@ -790,7 +825,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-14T11:32:59.127Z"
+      "updatedAt": "2026-10-15T11:11:15.254Z"
     },
     "ez-cpi": {
       "series": [
@@ -1549,7 +1584,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-14T11:33:14.045Z"
+      "updatedAt": "2026-10-15T11:11:26.756Z"
     }
   }
 }
