@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T10:44:32.068Z",
+  "updatedAt": "2026-10-19T12:44:00.735Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -29,7 +29,7 @@
     "us-cpi": {
       "fault": "aggregator",
       "order": "Search for the next US CPI headline YoY print after 2026-09-30",
-      "updatedAt": "2026-10-18T10:44:20.260Z"
+      "updatedAt": "2026-10-19T12:43:58.518Z"
     },
     "ez-cpi": {
       "fault": "tagger",

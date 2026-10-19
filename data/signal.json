@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-18T10:44:32.068Z",
+  "generatedAt": "2026-10-19T12:44:00.735Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.7",
-      "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.6% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
-      "asOf": "2026-10-18T10:44:19.635Z",
+      "summary": "Evidence shows latest print at 3.7 with rising energy and shelter components at 3.8 and 3.2 implying upward pressure on headline.",
+      "asOf": "2026-10-19T12:43:57.732Z",
       "evidence": [
         {
           "lens": "official",
@@ -70,8 +70,8 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Contrarian",
-        "thin": 1,
+        "dissent": "Scholar",
+        "thin": 2,
         "ballotCount": 6
       }
     },
