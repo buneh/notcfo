@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T11:15:00.893Z",
+  "updatedAt": "2026-10-21T11:31:13.222Z",
   "domains": {
     "macro": {
       "series": [
@@ -825,7 +825,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-20T11:14:48.155Z"
+      "updatedAt": "2026-10-21T11:30:54.034Z"
     },
     "ez-cpi": {
       "series": [
@@ -1534,6 +1534,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Energy surge to 18.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "18.9",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Energy surge to 18.9% Sep 2026"
             }
           ]
         },
@@ -1554,6 +1561,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Food at 1.4% Sep 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "1.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Food at 1.3% Sep 2026"
             }
           ]
         },
@@ -1598,7 +1612,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-20T11:14:57.307Z"
+      "updatedAt": "2026-10-21T11:31:08.509Z"
     }
   }
 }
