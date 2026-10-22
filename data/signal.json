@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-21T11:31:13.222Z",
+  "generatedAt": "2026-10-22T11:31:06.285Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
-      "headline": "Next US CPI YoY to exceed 3.7",
+      "headline": "Next US CPI YoY > 3.7%",
       "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.6% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
-      "asOf": "2026-10-21T11:30:58.314Z",
+      "asOf": "2026-10-22T11:30:50.301Z",
       "evidence": [
         {
           "lens": "official",
@@ -70,8 +70,8 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Historian",
-        "thin": 2,
+        "dissent": "Contrarian",
+        "thin": 1,
         "ballotCount": 6
       }
     },
@@ -80,7 +80,7 @@
       "domain": "Eurozone CPI",
       "headline": "Next HICP > 3.8",
       "summary": "Energy surge to 18.9 drives headline above latest 3.8 print.",
-      "asOf": "2026-10-21T11:31:12.561Z",
+      "asOf": "2026-10-22T11:31:05.609Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,7 +91,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP 3.8% YoY Sep 2026"
+          "event": "Latest HICP print 3.8% Sep 2026"
         },
         {
           "lens": "official",
@@ -142,9 +142,9 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 55,
+        "median": 54,
         "dissent": "Skeptic",
-        "thin": 1,
+        "thin": 2,
         "ballotCount": 6
       }
     }
