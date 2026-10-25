@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T10:39:58.062Z",
+  "updatedAt": "2026-10-25T11:04:14.653Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -303,38 +303,38 @@
       "asOf": "2026-10-24T10:39:44.758Z"
     },
     "ez-cpi": {
-      "median": 55,
+      "median": 53,
       "horizon": "1m",
-      "thin": 1,
+      "thin": 2,
       "ballotCount": 6,
-      "dissent": "Skeptic",
-      "spread": 25,
+      "dissent": "Contrarian",
+      "spread": 20,
       "ballots": [
         {
           "role": "analyst",
           "title": "Analyst",
-          "probability": 65,
+          "probability": 45,
           "points": {
-            "1m": 3.9,
-            "3m": 3.6,
-            "6m": 3.2,
-            "1y": 2.8
+            "1m": 3.7,
+            "3m": 3.5,
+            "6m": 3.4,
+            "1y": 3.3
           },
           "thin": false,
-          "thesis": "Energy surge from 14.3% to 18.9% drove headline from 3.2% to 3.8%; continued but moderating energy pressure plus stable services and food will keep headline near current levels near-term before gradual base-effect decline."
+          "thesis": "Headline HICP has reaccelerated on a sharp energy rebound that is still feeding through while food and core remain subdued, but base effects and expected energy stabilization point to gradual moderation over the forecast horizon."
         },
         {
           "role": "skeptic",
           "title": "Skeptic",
-          "probability": 40,
+          "probability": 48,
           "points": {
-            "1m": 3.6,
-            "3m": 3.4,
-            "6m": 3.1,
-            "1y": 2.8
+            "1m": 3.8,
+            "3m": 3.7,
+            "6m": 3.5,
+            "1y": 3.3
           },
-          "thin": false,
-          "thesis": "Energy surge to 18.9% drove the September jump to 3.8% but base effects and likely energy moderation should pull headline lower over time despite sticky services and core."
+          "thin": true,
+          "thesis": "Energy surge to 18.9% drove the jump to 3.8% but base effects and recent food/services/core moderation point to gradual reversion toward 2-3% range over the year."
         },
         {
           "role": "quant",
@@ -344,10 +344,10 @@
             "1m": 3.7,
             "3m": 3.4,
             "6m": 2.9,
-            "1y": 2.4
+            "1y": 2.5
           },
-          "thin": true,
-          "thesis": "Energy surge to 18.9% drove headline to 3.8% in Sep but base effects and moderating core/services should pull the rate lower over most horizons."
+          "thin": false,
+          "thesis": "Energy surge to +18.9% is driving the jump to 3.8% but base effects and moderating core/services should pull headline gradually lower over the year."
         },
         {
           "role": "historian",
@@ -355,12 +355,12 @@
           "probability": 55,
           "points": {
             "1m": 3.7,
-            "3m": 3.1,
-            "6m": 2.4,
-            "1y": 2.1
+            "3m": 3.5,
+            "6m": 3.2,
+            "1y": 2.8
           },
           "thin": false,
-          "thesis": "Energy surge to 18.9% drove headline to 3.8% in Sep 2026 but base effects and moderating core/services should pull the rate lower over most horizons."
+          "thesis": "Energy surge to 18.9% drove headline to 3.8% in Sep; with energy base effects and core/services stable-to-softening, headline is expected to edge lower over time but with high uncertainty around energy path."
         },
         {
           "role": "contrarian",
@@ -369,27 +369,27 @@
           "points": {
             "1m": 3.9,
             "3m": 3.4,
-            "6m": 2.8,
-            "1y": 2.3
+            "6m": 2.7,
+            "1y": 2.1
           },
           "thin": false,
-          "thesis": "Energy's sharp acceleration to 18.9% is the dominant neglected driver that will likely keep headline above 3.8% in the next print before base effects and moderating services/core gradually pull the rate lower over the year."
+          "thesis": "Energy component surged from 14.3% to 18.9% YoY and drove the latest 3.8% print; this volatile component is the main swing factor for near-term headline moves while core remains anchored near 2.5%."
         },
         {
           "role": "scholar",
           "title": "Scholar",
-          "probability": 52,
+          "probability": 51,
           "points": {
-            "1m": 3.7,
-            "3m": 3.4,
-            "6m": 2.9,
-            "1y": 2.2
+            "1m": 3.8,
+            "3m": 3.6,
+            "6m": 3.4,
+            "1y": 3
           },
-          "thin": false,
-          "thesis": "Energy surge to 18.9% drove the September jump to 3.8% from 3.2%, but base effects and moderating services/core will likely pull headline lower over most horizons."
+          "thin": true,
+          "thesis": "Headline HICP has risen sharply to 3.8% on a 4.6-point surge in energy inflation that is unlikely to repeat at the same pace, while core and services remain stable near 2.5% and 3.2%."
         }
       ],
-      "asOf": "2026-10-24T10:39:56.856Z"
+      "asOf": "2026-10-25T11:04:12.823Z"
     }
   }
 }
