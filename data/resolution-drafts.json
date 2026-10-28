@@ -89,6 +89,39 @@
         "company press rooms (Amazon, Google, Meta, Microsoft, Oracle)",
         "SEC EDGAR"
       ]
+    },
+    {
+      "id": "us-cpi",
+      "domain": "US CPI",
+      "question": "Will US CPI headline, year-over-year, be higher than the latest official print?",
+      "resolutionCriteria": "Yes if US CPI headline year-over-year exceeds 3.4% at the 1-month horizon.",
+      "calledAt": "2026-09-27T20:17:53.254Z",
+      "calledProbability": 45,
+      "horizon": "1m",
+      "researchedAt": "2026-10-28T12:29:53.093Z",
+      "proposedOutcome": "no",
+      "evidenceSummary": "As of the September 2026 call, the latest official US CPI headline YoY was 3.4%. The subsequent October 2026 BLS release showed headline CPI at 3.3% YoY, which does not exceed 3.4%. No higher print met the strict 1-month criterion.",
+      "sources": [
+        "BLS CPI releases",
+        "BEA/FRED CPI data"
+      ]
+    },
+    {
+      "id": "ez-cpi",
+      "domain": "Eurozone CPI",
+      "question": "Will Eurozone HICP headline, year-over-year, be higher than the latest official print?",
+      "resolutionCriteria": "Eurozone HICP headline YoY above 3.2% counts as yes at the 1-month horizon.",
+      "calledAt": "2026-09-27T20:18:18.878Z",
+      "calledProbability": 45,
+      "horizon": "1m",
+      "researchedAt": "2026-10-28T12:30:01.710Z",
+      "proposedOutcome": "yes",
+      "evidenceSummary": "The latest official print at call time was the August 2026 Eurozone HICP headline YoY of 3.2%. At the 1-month horizon, the September 2026 final/confirmed HICP headline YoY printed at 3.8%, which is above 3.2%. This is confirmed across Eurostat releases and secondary reports.",
+      "sources": [
+        "Eurostat",
+        "Trading Economics",
+        "RAC-EU"
+      ]
     }
   ]
 }
