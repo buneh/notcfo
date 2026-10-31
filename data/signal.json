@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-30T12:32:30.983Z",
+  "generatedAt": "2026-10-31T11:59:02.458Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.7",
-      "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.6% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
-      "asOf": "2026-10-30T12:32:08.414Z",
+      "summary": "Latest print is 3.7; rising energy and shelter components plus recent upward trend in headline series imply next monthly YoY release will print above 3.7.",
+      "asOf": "2026-10-31T11:58:50.100Z",
       "evidence": [
         {
           "lens": "official",
@@ -17,7 +17,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI print 3.7% YoY"
+          "event": "Latest CPI Print"
         },
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Sep 2026 MoM change 0.6%"
+          "event": "Latest CPI MoM"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Food CPI 2.5% YoY Sep"
+          "event": "Latest Food CPI"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Shelter CPI 3.2% YoY Sep"
+          "event": "Latest Shelter CPI"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Energy CPI 3.8% YoY Sep"
+          "event": "Latest Energy CPI"
         }
       ],
       "gaps": [
@@ -70,7 +70,7 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Quant",
+        "dissent": "Scholar",
         "thin": 3,
         "ballotCount": 6
       }
@@ -78,9 +78,9 @@
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next HICP likely below 3.8",
-      "summary": "Eurozone HICP headline was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.2. Eurozone HICP energy was 18.9% year-over-year in the reference month ending 2026-09-30. Prior month 14.3. Eurozone HICP food was 1.3% year-over-year in the reference month ending 2026-09-30. Prior month 1.1. Eurozone HICP services was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. Eurozone HICP core was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.4.",
-      "asOf": "2026-10-30T12:32:30.207Z",
+      "headline": "Next HICP > 3.8%",
+      "summary": "Energy surge to 18.9 drives headline above latest 3.8 print.",
+      "asOf": "2026-10-31T11:59:01.684Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,7 +91,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP 3.8% YoY Sep 2026"
+          "event": "Latest HICP print 3.8% Sep 2026"
         },
         {
           "lens": "official",
@@ -142,8 +142,8 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 54,
-        "dissent": "Contrarian",
+        "median": 55,
+        "dissent": "Analyst",
         "thin": 1,
         "ballotCount": 6
       }

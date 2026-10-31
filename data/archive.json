@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T12:32:30.983Z",
+  "updatedAt": "2026-10-31T11:59:02.458Z",
   "domains": {
     "macro": {
       "series": [
@@ -748,6 +748,13 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "US CPI food YoY %"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest food CPI 2.5% YoY Sep 2026"
             }
           ]
         },
@@ -761,6 +768,13 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "US CPI shelter YoY %"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.2",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest shelter CPI 3.2% YoY Sep 2026"
             }
           ]
         },
@@ -774,6 +788,13 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "US CPI energy YoY %"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "3.8",
+              "unit": "% YoY",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest energy CPI 3.8% YoY Sep 2026"
             }
           ]
         },
@@ -821,11 +842,18 @@
               "unit": "% MoM",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "Latest CPI MoM 0.3% Aug 2026"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "0.6",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest MoM 0.6% Sep 2026"
             }
           ]
         }
       ],
-      "updatedAt": "2026-10-30T12:32:04.868Z"
+      "updatedAt": "2026-10-31T11:58:47.641Z"
     },
     "ez-cpi": {
       "series": [
@@ -1612,7 +1640,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-10-30T12:32:26.801Z"
+      "updatedAt": "2026-10-31T11:58:59.230Z"
     }
   }
 }
