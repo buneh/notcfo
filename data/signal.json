@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-05T14:25:48.251Z",
+  "generatedAt": "2026-11-06T14:01:46.103Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
-      "headline": "Next US CPI YoY to exceed 3.7",
-      "summary": "Latest print 3.7; rising energy 3.8, shelter 3.2, and recent headline trend from 3.4 to 3.7 imply next print above 3.7.",
-      "asOf": "2026-11-05T14:25:35.412Z",
+      "headline": "Next US CPI YoY to exceed 3.7%",
+      "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.6% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
+      "asOf": "2026-11-06T14:01:17.948Z",
       "evidence": [
         {
           "lens": "official",
@@ -69,9 +69,9 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 46,
-        "dissent": "Quant",
-        "thin": 2,
+        "median": 45,
+        "dissent": "Scholar",
+        "thin": 4,
         "ballotCount": 6
       }
     },
@@ -79,8 +79,8 @@
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
       "headline": "Next HICP > 4.0?",
-      "summary": "Evidence shows 4.0 latest with rising energy 20.8, food 1.6, services 3.3 from prior 3.8, implying next print likely exceeds 4.0.",
-      "asOf": "2026-11-05T14:25:47.610Z",
+      "summary": "Evidence shows 4.0 latest with energy at 20.8, food at 1.6, services at 3.3 and core at 2.5 all rising from priors, implying next print exceeds 4.0.",
+      "asOf": "2026-11-06T14:01:45.060Z",
       "evidence": [
         {
           "lens": "official",
@@ -142,9 +142,9 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 54,
-        "dissent": "Skeptic",
-        "thin": 2,
+        "median": 52,
+        "dissent": "Contrarian",
+        "thin": 1,
         "ballotCount": 6
       }
     }
