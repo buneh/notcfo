@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T13:03:59.815Z",
+  "updatedAt": "2026-11-09T15:48:11.276Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -218,7 +218,7 @@
       "horizon": "1m",
       "thin": 1,
       "ballotCount": 6,
-      "dissent": "Contrarian",
+      "dissent": "Skeptic",
       "spread": 17,
       "ballots": [
         {
@@ -232,20 +232,20 @@
             "1y": 3.3
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% driven by rebound in energy and shelter components is likely to moderate gradually as food continues to ease and base effects from 2025 volatility fade."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy and shelter, but food is easing and base effects plus assumed Fed policy should gradually pull the trend lower over the forecast horizon."
         },
         {
           "role": "skeptic",
           "title": "Skeptic",
-          "probability": 45,
+          "probability": 35,
           "points": {
-            "1m": 3.6,
-            "3m": 3.5,
-            "6m": 3.4,
-            "1y": 3.3
+            "1m": 3.5,
+            "3m": 3.4,
+            "6m": 3.2,
+            "1y": 2.9
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by energy rebound and shelter reacceleration, but base effects, stable food, and assumed Fed restraint should gradually pull the rate lower over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by energy rebound and sticky shelter, but base effects, moderating food, and assumed Fed policy should gradually pull the rate lower over time despite volatility."
         },
         {
           "role": "quant",
@@ -258,7 +258,7 @@
             "1y": 3.3
           },
           "thin": true,
-          "thesis": "Recent acceleration in headline CPI to 3.7% has been driven by a rebound in energy and shelter, but food is easing and base effects plus assumed Fed policy should gradually pull the trend lower over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by energy and shelter reacceleration while food eases, but base effects and assumed energy stabilization point to modest net decline over the forecast horizon."
         },
         {
           "role": "historian",
@@ -271,7 +271,7 @@
             "1y": 3.3
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% (driven by rebounding energy and shelter) is likely to moderate gradually as base effects and softer food trends exert downward pressure over time."
+          "thesis": "Recent acceleration in headline CPI to 3.7% has been driven by rebounding energy (3.8%) and shelter (3.2%) while food continues to ease; base effects and assumed gradual energy stabilization point to modest net decline over the forecast horizon."
         },
         {
           "role": "contrarian",
@@ -284,23 +284,23 @@
             "1y": 3
           },
           "thin": false,
-          "thesis": "Recent 0.6% MoM spike and rising energy/shelter components pushed headline to 3.7% but historical mean-reversion plus softening food and lagged shelter effects point to gradual decline over the year."
+          "thesis": "Recent energy and shelter acceleration plus 0.6% MoM spike are pushing headline higher now, but historical mean-reversion in energy and ongoing shelter deceleration dominate at longer horizons."
         },
         {
           "role": "scholar",
           "title": "Scholar",
           "probability": 52,
           "points": {
-            "1m": 3.7,
-            "3m": 3.6,
-            "6m": 3.5,
-            "1y": 3.4
+            "1m": 3.6,
+            "3m": 3.5,
+            "6m": 3.4,
+            "1y": 3.3
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy and shelter components while food eases; the path forward depends on whether energy volatility and sticky shelter continue to push readings above the latest print or if base effects and moderating services pull it lower over time."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy and shelter, but food is easing and the overall series shows volatility around 3% with no strong directional trend."
         }
       ],
-      "asOf": "2026-11-08T13:03:27.079Z"
+      "asOf": "2026-11-09T15:47:04.746Z"
     },
     "ez-cpi": {
       "median": 45,
