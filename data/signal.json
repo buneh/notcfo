@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-09T15:48:11.276Z",
+  "generatedAt": "2026-11-10T14:39:53.507Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.7",
-      "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.6% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
-      "asOf": "2026-11-09T15:47:05.970Z",
+      "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.2% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
+      "asOf": "2026-11-10T14:39:21.377Z",
       "evidence": [
         {
           "lens": "official",
@@ -21,14 +21,14 @@
         },
         {
           "lens": "official",
-          "point": "US CPI index rose 0.6% from the prior month.",
-          "value": "0.6",
+          "point": "US CPI index rose 0.2% from the prior month.",
+          "value": "0.2",
           "unit": "% MoM",
           "observedOn": "2026-09-30",
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest CPI MoM 0.6%"
+          "event": "Latest CPI MoM 0.2%"
         },
         {
           "lens": "official",
@@ -70,17 +70,17 @@
       ],
       "desk": {
         "median": 45,
-        "dissent": "Skeptic",
-        "thin": 1,
+        "dissent": "Contrarian",
+        "thin": 2,
         "ballotCount": 6
       }
     },
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next Eurozone HICP > 4.0?",
-      "summary": "Latest print is 4.0; recent upward trend in headline, energy and services (3.8 to 4.0) implies next release likely higher.",
-      "asOf": "2026-11-08T13:03:58.732Z",
+      "headline": "Next HICP > 4.0",
+      "summary": "Latest print 4.0 implies next release above 4.0 from energy 20.8 and services 3.3 acceleration.",
+      "asOf": "2026-11-10T14:39:50.328Z",
       "evidence": [
         {
           "lens": "official",
@@ -142,9 +142,9 @@
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Skeptic",
-        "thin": 2,
+        "median": 47,
+        "dissent": "Contrarian",
+        "thin": 3,
         "ballotCount": 6
       }
     }
