@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T14:39:53.507Z",
+  "updatedAt": "2026-11-11T13:55:42.877Z",
   "domains": {
     "macro": {
       "fault": "archivist",
@@ -28,8 +28,8 @@
     },
     "us-cpi": {
       "fault": "aggregator",
-      "order": "search for the latest US CPI forecast series from sources like Bloomberg, Reuters, or the Cleveland Fed nowcast",
-      "updatedAt": "2026-11-10T14:39:22.892Z"
+      "order": "Search for the latest US CPI headline YoY series data after 2026-09-30",
+      "updatedAt": "2026-11-11T13:54:39.480Z"
     },
     "ez-cpi": {
       "fault": "aggregator",
