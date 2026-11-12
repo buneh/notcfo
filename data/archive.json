@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T13:55:42.877Z",
+  "updatedAt": "2026-11-12T14:56:25.266Z",
   "domains": {
     "macro": {
       "series": [
@@ -853,7 +853,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-11T13:54:27.112Z"
+      "updatedAt": "2026-11-12T14:55:41.305Z"
     },
     "ez-cpi": {
       "series": [
@@ -1542,6 +1542,41 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Latest official print 3.8% Sep 2026"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "4.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP print vs latest 4%"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "20.8",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP print vs latest 4%"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "1.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP print vs latest 4%"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "3.3",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP print vs latest 4%"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "2.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP print vs latest 4%"
             }
           ]
         },
@@ -1640,7 +1675,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-10T14:39:32.120Z"
+      "updatedAt": "2026-11-12T14:56:20.591Z"
     }
   }
 }
