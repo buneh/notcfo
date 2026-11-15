@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T13:17:59.026Z",
+  "updatedAt": "2026-11-15T13:45:30.227Z",
   "domains": {
     "macro": {
       "series": [
@@ -735,6 +735,13 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "Latest official print 3.7% YoY"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "0.2",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 3.7% YoY"
             }
           ]
         },
@@ -881,7 +888,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-14T13:16:42.301Z"
+      "updatedAt": "2026-11-15T13:45:09.402Z"
     },
     "ez-cpi": {
       "series": [
@@ -1731,7 +1738,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-14T13:17:55.783Z"
+      "updatedAt": "2026-11-15T13:45:26.059Z"
     }
   }
 }
