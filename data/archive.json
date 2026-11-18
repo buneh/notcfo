@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T15:47:23.408Z",
+  "updatedAt": "2026-11-18T15:27:23.594Z",
   "domains": {
     "macro": {
       "series": [
@@ -888,7 +888,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-17T15:46:13.707Z"
+      "updatedAt": "2026-11-18T15:26:29.522Z"
     },
     "ez-cpi": {
       "series": [
@@ -1646,6 +1646,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Energy component 20.8% YoY"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "21.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Energy component of HICP headline"
             }
           ]
         },
@@ -1680,6 +1687,13 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Food component 1.6% YoY"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "1.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Food component of HICP headline"
             }
           ]
         },
@@ -1734,11 +1748,18 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "Core HICP 2.5% YoY"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "Core HICP excluding energy/food"
             }
           ]
         }
       ],
-      "updatedAt": "2026-11-17T15:47:19.423Z"
+      "updatedAt": "2026-11-18T15:27:18.924Z"
     }
   }
 }

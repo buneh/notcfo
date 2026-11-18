@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-17T15:47:23.408Z",
+  "generatedAt": "2026-11-18T15:27:23.594Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.7",
       "summary": "US CPI headline was 3.7% year-over-year in the reference month ending 2026-09-30. Prior month 3.4. US CPI index rose 0.2% from the prior month. US CPI food was 2.5% year-over-year in the reference month ending 2026-09-30. Prior month 2.7. US CPI shelter was 3.2% year-over-year in the reference month ending 2026-09-30. Prior month 3.0. US CPI energy was 3.8% year-over-year in the reference month ending 2026-09-30. Prior month 3.3.",
-      "asOf": "2026-11-17T15:46:17.172Z",
+      "asOf": "2026-11-18T15:26:32.709Z",
       "evidence": [
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Sep 2026 MoM change 0.2%"
+          "event": "Latest CPI MoM 0.2%"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Food CPI 2.5% YoY Sep"
+          "event": "Latest food CPI 2.5% YoY"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Shelter CPI 3.2% YoY Sep"
+          "event": "Latest shelter CPI 3.2% YoY"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Energy CPI 3.8% YoY Sep"
+          "event": "Latest energy CPI 3.8% YoY"
         }
       ],
       "gaps": [
@@ -69,18 +69,18 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Scholar",
-        "thin": 2,
+        "median": 47,
+        "dissent": "Analyst",
+        "thin": 4,
         "ballotCount": 6
       }
     },
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next HICP > 4.0",
-      "summary": "Latest print 4.0 implies next release above 4.0 given energy at 20.8 accelerating from 18.9.",
-      "asOf": "2026-11-17T15:47:22.687Z",
+      "headline": "Next HICP > 4.0?",
+      "summary": "Evidence shows 4.0 latest with rising energy at 21.0, food at 1.5, services at 3.3 and core at 2.6 implying next print likely higher.",
+      "asOf": "2026-11-18T15:27:22.292Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,29 +91,29 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP print 4.0% YoY"
+          "event": "Latest HICP 4.0% YoY"
         },
         {
           "lens": "official",
-          "point": "Eurozone HICP energy was 20.8% year-over-year in the reference month ending 2026-10-31. Prior month 18.9.",
-          "value": "20.8",
+          "point": "Eurozone HICP energy was 21.0% year-over-year in the reference month ending 2026-10-31. Prior month 19.0.",
+          "value": "21.0",
           "unit": "% YoY",
           "observedOn": "2026-10-31",
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Energy component 20.8% YoY"
+          "event": "Energy 21.0% YoY"
         },
         {
           "lens": "official",
-          "point": "Eurozone HICP food was 1.6% year-over-year in the reference month ending 2026-10-31. Prior month 1.3.",
-          "value": "1.6",
+          "point": "Eurozone HICP food was 1.5% year-over-year in the reference month ending 2026-10-31. Prior month 1.3.",
+          "value": "1.5",
           "unit": "% YoY",
           "observedOn": "2026-10-31",
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Food component 1.6% YoY"
+          "event": "Food 1.5% YoY"
         },
         {
           "lens": "official",
@@ -124,27 +124,27 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Services component 3.3% YoY"
+          "event": "Services 3.3% YoY"
         },
         {
           "lens": "official",
-          "point": "Eurozone HICP core was 2.5% year-over-year in the reference month ending 2026-10-31. Prior month 2.5.",
-          "value": "2.5",
+          "point": "Eurozone HICP core was 2.6% year-over-year in the reference month ending 2026-10-31. Prior month 2.5.",
+          "value": "2.6",
           "unit": "% YoY",
           "observedOn": "2026-10-31",
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Core HICP 2.5% YoY"
+          "event": "Core 2.6% YoY"
         }
       ],
       "gaps": [
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 43,
-        "dissent": "Scholar",
-        "thin": 0,
+        "median": 53,
+        "dissent": "Contrarian",
+        "thin": 3,
         "ballotCount": 6
       }
     }
