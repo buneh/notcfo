@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T15:11:27.485Z",
+  "updatedAt": "2026-11-21T14:28:09.074Z",
   "domains": {
     "macro": {
       "median": 48,
@@ -214,12 +214,12 @@
       "asOf": "2026-09-27T16:16:05.752Z"
     },
     "us-cpi": {
-      "median": 47,
+      "median": 49,
       "horizon": "1m",
       "thin": 4,
       "ballotCount": 6,
-      "dissent": "Historian",
-      "spread": 8,
+      "dissent": "Quant",
+      "spread": 12,
       "ballots": [
         {
           "role": "analyst",
@@ -232,7 +232,7 @@
             "1y": 3.3
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebound in energy and shelter, but food is easing and base effects plus assumed Fed policy should gradually pull the trend lower over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy and shelter inflation while food eases; base effects and assumed energy stabilization point to modest mean-reversion over the forecast horizon."
         },
         {
           "role": "skeptic",
@@ -245,20 +245,20 @@
             "1y": 3.3
           },
           "thin": false,
-          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy and shelter, but food is decelerating and base effects plus assumed Fed policy should gradually pull the trend lower over the forecast horizon."
+          "thesis": "Recent energy and shelter acceleration pushed headline to 3.7% but food is decelerating and base effects plus assumed Fed policy should gradually pull the rate lower over the forecast horizon."
         },
         {
           "role": "quant",
           "title": "Quant",
-          "probability": 45,
+          "probability": 55,
           "points": {
             "1m": 3.6,
             "3m": 3.5,
             "6m": 3.4,
-            "1y": 3.3
+            "1y": 3.2
           },
           "thin": true,
-          "thesis": "Recent uptrend in headline CPI to 3.7% has been driven by rebounding energy and shelter, but food is easing and base effects plus assumed Fed policy should gradually pull the rate lower over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% has been driven by rebounding energy and shelter, but food is easing and base effects plus assumed Fed policy should gradually pull the rate lower over the forecast horizon."
         },
         {
           "role": "historian",
@@ -271,43 +271,43 @@
             "1y": 3.5
           },
           "thin": true,
-          "thesis": "Recent energy and shelter acceleration pushed headline CPI to 3.7% in Sep 2026, but food is still decelerating and the overall trend since mid-2025 has been volatile around 3% with no sustained breakout."
+          "thesis": "Recent headline acceleration to 3.7% is driven by rebounding energy (3.8%) and shelter (3.2%) while food continues to ease; history shows these swings tend to mean-revert within 3-12 months, producing roughly even odds of being above or below the latest print at each horizon."
         },
         {
           "role": "contrarian",
           "title": "Contrarian",
-          "probability": 48,
+          "probability": 43,
           "points": {
-            "1m": 3.7,
+            "1m": 3.6,
             "3m": 3.6,
-            "6m": 3.6,
-            "1y": 3.5
+            "6m": 3.5,
+            "1y": 3.3
           },
           "thin": true,
-          "thesis": "Recent energy acceleration to 3.8% and shelter rebound to 3.2% are pushing headline higher in the near term, but food deceleration and base effects from the 2026 spring surge are likely to pull the series back toward 3.0-3.5% range over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy (3.8%) and shelter (3.2%), but food is decelerating (2.5%) and historical series shows YoY peaks tend to be followed by moderation within 3-6 months absent new shocks."
         },
         {
           "role": "scholar",
           "title": "Scholar",
-          "probability": 51,
+          "probability": 52,
           "points": {
-            "1m": 3.7,
-            "3m": 3.6,
-            "6m": 3.6,
-            "1y": 3.5
+            "1m": 3.6,
+            "3m": 3.5,
+            "6m": 3.4,
+            "1y": 3.2
           },
           "thin": true,
-          "thesis": "Recent headline CPI has been rising from 2.4% early 2026 to 3.7% in Sep, driven by rebound in energy and shelter, but food has eased and base effects plus assumed Fed policy should gradually pull the rate lower over the forecast horizon."
+          "thesis": "Recent acceleration in headline CPI to 3.7% is driven by rebounding energy (3.8%) and shelter (3.2%) while food continues to ease; the series shows volatility around 3% with no clear sustained upward or downward trend visible in the data provided."
         }
       ],
-      "asOf": "2026-11-20T15:10:48.912Z"
+      "asOf": "2026-11-21T14:27:53.359Z"
     },
     "ez-cpi": {
-      "median": 47,
+      "median": 51,
       "horizon": "1m",
-      "thin": 2,
+      "thin": 3,
       "ballotCount": 6,
-      "dissent": "Skeptic",
+      "dissent": "Contrarian",
       "spread": 20,
       "ballots": [
         {
@@ -317,79 +317,79 @@
           "points": {
             "1m": 3.9,
             "3m": 3.7,
-            "6m": 3.4,
-            "1y": 3.2
+            "6m": 3.2,
+            "1y": 2.8
           },
           "thin": false,
-          "thesis": "Energy surge to 21% is lifting headline but food and core remain subdued; recent upward momentum likely to moderate over coming quarters as base effects and ECB policy bite."
+          "thesis": "Headline HICP has accelerated to 4.0% on a sharp energy rebound to +21%, but food, services and core remain subdued and the energy surge is likely to moderate over time."
         },
         {
           "role": "skeptic",
           "title": "Skeptic",
-          "probability": 35,
-          "points": {
-            "1m": 3.9,
-            "3m": 3.7,
-            "6m": 3.4,
-            "1y": 2.8
-          },
-          "thin": false,
-          "thesis": "Energy surge to +21% is lifting headline but base effects and likely energy stabilization plus moderating services/core will pull the YoY rate lower over time despite recent upside surprises."
-        },
-        {
-          "role": "quant",
-          "title": "Quant",
-          "probability": 55,
-          "points": {
-            "1m": 3.9,
-            "3m": 3.7,
-            "6m": 3.2,
-            "1y": 2.5
-          },
-          "thin": false,
-          "thesis": "Energy surge to +21% is pushing headline to 4.0% but food and core remain subdued around 1.5% and 2.6%, with energy base effects likely to moderate inflation over the coming year."
-        },
-        {
-          "role": "historian",
-          "title": "Historian",
           "probability": 48,
           "points": {
             "1m": 4,
             "3m": 3.9,
-            "6m": 3.6,
+            "6m": 3.7,
             "1y": 3.4
           },
           "thin": true,
-          "thesis": "Energy surge to 21% is lifting headline to 4.0% from 3.8%, but core/services remain stable near 2.5-3.3% and food is soft, so reversion toward 2-3% range is likely over the forecast horizon."
+          "thesis": "Energy surge to 21% is pushing headline up sharply from 2% range earlier in 2026, but base effects, moderating food/services and ECB policy should gradually pull the YoY rate back toward 2-3% over the forecast horizon."
         },
         {
-          "role": "contrarian",
-          "title": "Contrarian",
-          "probability": 35,
+          "role": "quant",
+          "title": "Quant",
+          "probability": 45,
           "points": {
-            "1m": 3.8,
+            "1m": 3.9,
             "3m": 3.7,
-            "6m": 3.5,
-            "1y": 3.2
+            "6m": 3.2,
+            "1y": 2.8
           },
           "thin": false,
-          "thesis": "Energy surge to +21% is still feeding through with positive momentum while food/services/core show only modest acceleration, but base effects and expected policy response should gradually pull headline lower over time."
+          "thesis": "Energy surge to +21% is lifting headline to 4.0% but base effects and moderating services/core should pull the rate lower over the forecast horizon."
         },
         {
-          "role": "scholar",
-          "title": "Scholar",
-          "probability": 51,
+          "role": "historian",
+          "title": "Historian",
+          "probability": 53,
           "points": {
             "1m": 4,
             "3m": 3.9,
             "6m": 3.6,
-            "1y": 3.4
+            "1y": 3.3
           },
           "thin": true,
-          "thesis": "Recent sharp energy-driven acceleration to 4.0% is likely to moderate as base effects and services/core momentum stabilize around 2.5-3.0% range observed earlier in 2026."
+          "thesis": "Headline HICP has risen sharply to 4.0% in Oct 2026 on surging energy (21.0%), with modest upticks in food/services/core, but historical volatility and base effects suggest slight near-term moderation then longer-term decline toward 2%."
+        },
+        {
+          "role": "contrarian",
+          "title": "Contrarian",
+          "probability": 65,
+          "points": {
+            "1m": 4.1,
+            "3m": 3.9,
+            "6m": 3.4,
+            "1y": 2.7
+          },
+          "thin": false,
+          "thesis": "Energy component has accelerated sharply to 21% and continues rising while food/services/core show modest upticks, but base effects and ECB tightening should gradually pull headline lower after near-term momentum."
+        },
+        {
+          "role": "scholar",
+          "title": "Scholar",
+          "probability": 53,
+          "points": {
+            "1m": 4,
+            "3m": 3.6,
+            "6m": 3.4,
+            "1y": 3.2
+          },
+          "thin": true,
+          "thesis": "Recent sharp energy-driven acceleration to 4.0% is likely to moderate as base effects and services/core momentum stabilize around 2.5-3.0% range over the forecast horizon."
         }
       ],
-      "asOf": "2026-11-20T15:11:24.494Z"
+      "asOf": "2026-11-21T14:28:07.739Z"
     }
   }
 }
