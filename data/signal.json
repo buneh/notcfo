@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-22T14:23:43.122Z",
+  "generatedAt": "2026-11-23T17:47:56.517Z",
   "topics": [
     {
       "id": "us-cpi",
       "domain": "US CPI",
       "headline": "Next US CPI YoY to exceed 3.7",
-      "summary": "Latest print 3.7; recent trend, shelter and energy rises imply next release above 3.7.",
-      "asOf": "2026-11-22T14:23:02.473Z",
+      "summary": "Evidence shows latest print at 3.7 with rising energy and shelter components at 3.8 and 3.2 implying upward pressure on headline.",
+      "asOf": "2026-11-23T17:47:40.720Z",
       "evidence": [
         {
           "lens": "official",
@@ -28,7 +28,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "official",
           "relevance": "direct",
-          "event": "Sep 2026 MoM change 0.2%"
+          "event": "Latest CPI MoM 0.2%"
         },
         {
           "lens": "official",
@@ -39,7 +39,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Food CPI 2.5% YoY Sep"
+          "event": "Latest food CPI 2.5% YoY"
         },
         {
           "lens": "official",
@@ -50,7 +50,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Shelter CPI 3.2% YoY Sep"
+          "event": "Latest shelter CPI 3.2% YoY"
         },
         {
           "lens": "official",
@@ -61,7 +61,7 @@
           "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
           "category": "component",
           "relevance": "context",
-          "event": "Energy CPI 3.8% YoY Sep"
+          "event": "Latest energy CPI 3.8% YoY"
         }
       ],
       "gaps": [
@@ -69,18 +69,18 @@
         "US CPI is monthly. The next print is the following month, not this week."
       ],
       "desk": {
-        "median": 45,
-        "dissent": "Scholar",
-        "thin": 3,
+        "median": 47,
+        "dissent": "Analyst",
+        "thin": 2,
         "ballotCount": 6
       }
     },
     {
       "id": "ez-cpi",
       "domain": "Eurozone CPI",
-      "headline": "Next HICP > 4.0?",
-      "summary": "Evidence shows 4.0 latest with energy at 21.0, food 1.5, services 3.3 and core 2.6 all rising from priors, implying next print exceeds 4.0.",
-      "asOf": "2026-11-22T14:23:42.616Z",
+      "headline": "Next HICP > 4.0",
+      "summary": "Latest print 4.0 implies next release above 4.0 given 21.0 energy, 3.3 services, 2.6 core all rising from prior.",
+      "asOf": "2026-11-23T17:47:55.538Z",
       "evidence": [
         {
           "lens": "official",
@@ -91,7 +91,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "official",
           "relevance": "direct",
-          "event": "Latest HICP 4.0% YoY"
+          "event": "Latest HICP print 4.0% YoY"
         },
         {
           "lens": "official",
@@ -102,7 +102,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Energy 21.0% YoY"
+          "event": "Energy component 21.0% YoY"
         },
         {
           "lens": "official",
@@ -113,7 +113,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Food 1.5% YoY"
+          "event": "Food component 1.5% YoY"
         },
         {
           "lens": "official",
@@ -124,7 +124,7 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Services 3.3% YoY"
+          "event": "Services component 3.3% YoY"
         },
         {
           "lens": "official",
@@ -135,15 +135,15 @@
           "source": "https://data.ecb.europa.eu/data/concepts/hicp",
           "category": "component",
           "relevance": "context",
-          "event": "Core 2.6% YoY"
+          "event": "Core component 2.6% YoY"
         }
       ],
       "gaps": [
         "Energy here is the HICP energy index, not a Brent quote."
       ],
       "desk": {
-        "median": 48,
-        "dissent": "Scholar",
+        "median": 47,
+        "dissent": "Historian",
         "thin": 3,
         "ballotCount": 6
       }
