@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T17:47:56.517Z",
+  "updatedAt": "2026-11-24T17:20:13.961Z",
   "domains": {
     "macro": {
       "series": [
@@ -884,11 +884,18 @@
               "unit": "% YoY",
               "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
               "event": "US CPI headline MoM print"
+            },
+            {
+              "observedOn": "2026-09-30",
+              "value": "0.2",
+              "unit": "% MoM",
+              "source": "https://data.bls.gov/timeseries/CUUR0000SA0",
+              "event": "Latest official print 0.2% MoM Sep 2026"
             }
           ]
         }
       ],
-      "updatedAt": "2026-11-23T17:47:37.534Z"
+      "updatedAt": "2026-11-24T17:19:52.287Z"
     },
     "ez-cpi": {
       "series": [
@@ -1759,7 +1766,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-23T17:47:52.612Z"
+      "updatedAt": "2026-11-24T17:20:10.659Z"
     }
   }
 }
