@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T17:20:13.961Z",
+  "updatedAt": "2026-11-25T17:00:07.461Z",
   "domains": {
     "macro": {
       "series": [
@@ -895,7 +895,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-24T17:19:52.287Z"
+      "updatedAt": "2026-11-25T16:59:49.137Z"
     },
     "ez-cpi": {
       "series": [
@@ -1619,6 +1619,27 @@
               "unit": "% YoY",
               "source": "https://data.ecb.europa.eu/data/concepts/hicp",
               "event": "bears on next HICP print vs latest 4%"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "21.0",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP release vs latest 4% print"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "1.5",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP release vs latest 4% print"
+            },
+            {
+              "observedOn": "2026-10-31",
+              "value": "2.6",
+              "unit": "% YoY",
+              "source": "https://data.ecb.europa.eu/data/concepts/hicp",
+              "event": "bears on next HICP release vs latest 4% print"
             }
           ]
         },
@@ -1766,7 +1787,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-11-24T17:20:10.659Z"
+      "updatedAt": "2026-11-25T17:00:02.809Z"
     }
   }
 }
